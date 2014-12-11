@@ -1,0 +1,175 @@
+\documentclass[11pt]{amsart}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{Note on adapted SPIKE Distance and its extension to Multi-Unit recordings}
+\author{Cathal Cooney and Conor Houghton}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+\section{SPIKE distance}
+
+\subsection{Single unit recordings}
+
+
+With a view to extending the SPIKE distance to a multi-unit distance measure, it is useful to review the previous definition of the SPIKE distance between two spike trains $\mathbf{x}$ and $\mathbf{y}$ .  Here a simple version of the SPIKE distance is used, unlike the version described in Kreuz et al. (2013), this SPIKE distance is not bounded by zero and one, but appears to lead to a more natural generalisation to the multi-unit case.
+\bigskip
+
+To calculate this distance, a \lq{}gap\rq{} is calculated for each spike; this is the distance to the nearest spike in the other spike train. The total distance between two spike trains is then the sum of these gaps. To form the time-local distance we make a weighted sum of the gaps for the corner spikes, that is, the spikes preceding and following the time of interest in each of the two spike trains. The weighting is chosen so that the integral of the time-local function is just the sum of the gaps.
+
+First, the gaps are calculated for each spike in the spike trains.  This is simply the nearest spike in the other spike train:
+\begin{equation}
+\Delta t_{i}^{\mathbf{x}} = \min_{i} \left( | t_{i}^{\mathbf{x}} - t_i^{\mathbf{y}} | \right)
+\end{equation}
+ At each time instant, there is a unique set of four corner spikes: the preceding and following spikes from each spike train, which we label $t_{\mathrm{P}}^{\mathbf{x}}(t) ,t_{\mathrm{F}}^{\mathbf{x}}(t) ,t_{\mathrm{P}}^{\mathbf{y}}(t)$ and $t_{\mathrm{F}}^{\mathbf{y}}(t)$.
+\bigskip
+
+For each spike-train, $\mathbf{w}$, a time-local distance is then calculated using the associated gap of the four corner spikes for each spike train, $\mathbf{w}=\mathbf{x},\mathbf{y}$:
+\begin{equation}
+s_{\mathbf{w}}(t) = \frac{\lambda_{\mathrm{P}}(t)\Delta t_{\mathrm{P}}^{\mathbf{w}}(t)  + \lambda_{\mathrm{F}}(t)\Delta t_{\mathrm{F}}^{\mathbf{w}}(t) }{I^{\mathbf{w}}(t)}%t_{\mathrm{F}}^{\mathbf{w}} - t_{\mathrm{P}}^{\mathbf{w}}}
+\end{equation}
+where
+\begin{equation}
+\lambda_{\mathrm{F}}^{\mathbf{w}}(t) = \frac{t-t_{\mathrm{P}}^{\mathbf{w}}(t)}{I^{\mathbf{w}}(t)},%t_{\mathrm{F}}^{\mathbf{w}}(t)-t_{\mathrm{P}}^{\mathbf{w}}(t)}, 
+\, \lambda_{\mathrm{P}}^{\mathbf{w}}(t) = \frac{t_{\mathrm{F}}^{\mathbf{w}}(t) - t}{I^{\mathbf{w}}(t)}%t_{\mathrm{F}}^{\mathbf{w}}(t)-t_{\mathrm{P}}^{\mathbf{w}}(t)}
+\end{equation}
+and $I^{\mathbf{w}}(t)$ is the size of the interval in which $t$ is contained, $I^{\mathbf{w}}(t) = t_{\mathrm{F}}^{\mathbf{w}}(t) - t_{\mathrm{P}}^{\mathbf{w}}(t)$.
+Now, the time-local distance for each neuron is added to give the overall time-local distance:
+\begin{equation}
+s(t) = s_{\mathbf{x}}(t) + s_{\mathbf{y}}(t)
+\end{equation}
+
+This time-local SPIKE distance, while simpler than the original SPIKE distance, has the advantage that its integral is simply the sum of the gaps of each spike, that is:
+\begin{equation}
+\int_{0}^{T} s(t) \,dt = \sum_{\mathbf{w}} \sum_i \Delta t_i^{\mathbf{w}}
+\end{equation}
+Furthermore, in practice it produces similar profiles.  The time-local distance profile for two similar spike-trains is given below:
+
+\begin{figure}[ht]
+\begin{center}
+\include{multi}
+\end{center}
+\caption{The time-local SPIKE distance for two nearly identical periodic spike trains, one with period $0.1$ and the other with period $0.11$.}
+\end{figure}
+
+
+\subsection{The extension to multi-unit recordings}
+
+In the multi-unit case a distance is defined to be between two multi-unit recordings.  Thus, rather than two spike-trains there are two sets of spike-trains; $\mathbf{X}=\{ \mathbf{x}_i \}$ and $ \mathbf{Y}=\{ \mathbf{y}_i \}$, where $i \in 1\ldots N$ and the index $i$ is labelling the neuron.
+
+Here the single-unit distance above is extended to a multi-unit distance by including the possibility that the nearest spike for one neuron may belong to a different neuron in the other set, however there is a distance penalty associated with changing from one neuron to the other. In other words, it is necessary to introduce a parameter $k$, which quantifies a fictional distance between spikes fired in different cells.  The size of this distance quantifies the importance of the labelling of the neurons, and varying $k$ interpolates smoothly from $k=0$, a summed population (SP) code, to $k$ large, a labeled line  (LL) code.  Then the gaps can be calculated as follows:
+\begin{equation}
+\Delta t_{\alpha}^{\mathbf{x}_i} = \min_{\beta,j} \left( |t_{\alpha}^{\mathbf{x}_i} - t_{\beta}^{\mathbf{y}_j} | + k\left[1-\delta(i,j)\right] \right)
+\end{equation}
+where $\delta(i,j)$ is the Kroneker delta, hence if the spikes have the same label in $\mathbf{x}$ and $\mathbf{y}$, then there is no added distance, otherwise $k$ is added to the time difference between the spikes.  This is illustrated in Figure \ref{fig:gaps}:
+
+\begin{figure}[ht]
+\label{fig:gaps}
+\begin{center}
+\setlength{\unitlength}{.1cm}
+\begin{picture}(100,80)
+
+\linethickness{1pt}
+\put(95,9){\mbox{$2$}}
+\put(10,10){\line(1,0){80}}
+\put(5,17){\mbox{$\mathbf{Y}$}}
+\put(10,24){\line(1,0){13}}%24,60
+\put(25,24){\line(1,0){34}}
+\put(61,24){\line(1,0){29}}
+\put(95,23){\mbox{$1$}}
+
+\linethickness{1.5pt}
+\put(40,10){\line(0,1){7}}
+\put(70,10){\line(0,1){7}}
+
+\put(20,24){\line(0,1){7}}
+\put(65,24){\line(0,1){7}}
+
+\linethickness{1pt}
+\put(95,50){\mbox{$2$}}
+\put(10,51){\line(1,0){19}} %30,80
+\put(31,51){\line(1,0){48}}
+\put(81,51){\line(1,0){9}}
+\put(5,58){\mbox{$\mathbf{X}$}}
+\put(10,65){\line(1,0){80}}
+\put(95,64){\mbox{$1$}}
+
+%\put(30,50){\line(0,1){9}}
+\linethickness{0.5pt}
+\put(30,41){\line(0,1){22}}
+\put(30,41){\line(-1,0){5}}
+\put(23,41){\line(-1,0){3}}
+\put(30.5,46){\mbox{$| t^{\mathbf{x}_1}_{a} - t^{\mathbf{y}_1}_{a}    | $}}
+\put(20,41){\vector(0,-1){8}}
+\put(20,17){\vector(0,1){5}}
+\put(24,17){\line(0,1){32}}
+\put(24,17){\line(-1,0){4}}
+
+
+%\put(80,50){\line(0,1){9}}
+\put(80,41){\line(0,1){22}}
+\put(80,41){\line(-1,0){10}}
+\put(70.5,32){\mbox{$| t^{\mathbf{x}_1}_b - t^{\mathbf{y}_2}_b | + k$}}
+\put(70,41){\line(0,-1){16}}
+\put(70,23){\vector(0,-1){4}}
+
+\put(60,17){\line(0,1){32}}
+\put(60,17){\line(1,0){5}}
+\put(65,17){\vector(0,1){5}}
+
+\linethickness{1.5pt}
+\put(24,51){\line(0,1){7}}
+\put(60,51){\line(0,1){7}}
+\put(24.5,27){\mbox{$| t^{\mathbf{x}_2}_{a} - t^{\mathbf{y}_1}_{a} |+k$}}
+\put(35.5,36.5){\mbox{$| t^{\mathbf{x}_2}_b - t^{\mathbf{y}_1}_b |+ k$}}
+
+\put(30,65){\line(0,1){7}}
+\put(80,65){\line(0,1){7}}
+\end{picture}
+\end{center}
+\caption{An example of how to calculate the gaps associated with the spikes in response $\mathbf{x}$.  The spikes are labelled $a$ and $b$ for each spike train for convenience, so for example the two spikes in spike train $\mathbf{x}_1$ are $t^{\mathbf{x}_1}_a , t^{\mathbf{x}_1}_b$. In this example $k$ is quite low, so that $t^{\mathbf{x}_1}_b$ is paired with $t^{\mathbf{y}_2}_b$ rather than $t^{\mathbf{y}_1}_b$.  In other words, for this example, $k$ is less than $ |t^{\mathbf{y}_1}_b - t^{\mathbf{y}_2}_b | $.}
+
+\end{figure}
+
+
+
+The time-local distance measure is then defined as before, using the corner spikes normalised by the inter-spike-interval:
+\begin{equation}
+s_{\mathbf{X}}(t) = \sum_{\mathbf{x}_i \in \mathbf{X}} \frac{\lambda_{\mathrm{P}}(t)\Delta t_{\mathrm{P}}^{\mathbf{x}_i} (t) + \lambda_{\mathrm{F}}(t)\Delta t_{\mathrm{F}}^{\mathbf{x}_i}(t) }{I^{\mathbf{x}_i}(t) }%t_{\mathrm{F}}^{\mathbf{x}_i} - t_{\mathrm{P}}^{\mathbf{x}_i}}
+\end{equation}
+where 
+\begin{equation}
+\lambda_{\mathrm{F}}^{\mathbf{x}_i}(t) =\frac{ t-t_{\mathrm{P}}^{\mathbf{x}_i}(t)}{I^{\mathbf{x}_i}(t)}%t_{\mathrm{F}}^{\mathbf{x}_i}(t) - t_{\mathrm{P}}^{\mathbf{x}_i}(t)}
+, \, \lambda_{\mathrm{P}}^{\mathbf{x}_i}(t) =\frac{ t_{\mathrm{F}}^{\mathbf{x}_i}(t) - t}{I^{\mathbf{x}_i}(t)}%{t_{\mathrm{F}}^\mathbf{x}_i}(t) - t_{\mathrm{P}}^{\mathbf{x}_i}(t)}
+\end{equation}
+and $I^{\mathbf{x}_i}(t)$ is the length of the interval in which $t$ is contained in the spike-train $\mathbf{x}_i$, $I^{\mathbf{x}_i}(t) = t_{\mathrm{F}}^{\mathbf{x}_i}(t) - t_{\mathrm{P}}^{\mathbf{x}_i}(t)$.
+ As before:
+\begin{equation}
+s(t) = s_{\mathbf{X}}(t) + s_{\mathbf{Y}}(t)
+\end{equation}
+
+Once more, this distance measure has the nice property that if the time-local measure is integrated over the course of the trial it equals the sum of the gaps of each spike:
+\begin{equation}
+\int_0^T s(t)\,dt = \sum_{\mathbf{W}} \sum_{\mathbf{w}_i \in \mathbf{W}} \sum_{\alpha} \Delta t_{\alpha}^{\mathbf{w}_i}
+\end{equation}
+
+\end{document}
+ \subsection{Testing on data}
+ 
+
+
+ The multi-unit distance measure was tested similar data to that found in Houghton \& Sen \cite{H}, where two Poisson neurons form a receptive field and are each connected to two leaky integrate-and-fire neurons with relative strength $a$ and $1-a$.  Hence, for $a=0$ each receptive neuron is connected to a single LIF neuron, and for $a=0.5$, each LIF neuron receives input equally from each of the receptive neurons.  
+
+%\section{}
+%\subsection{}
+
+
+
+\end{document}  
