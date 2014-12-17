@@ -1,6 +1,9 @@
 \contentsline {chapter}{\numberline {1}Introduction}{6}
 \contentsline {chapter}{\numberline {2}Clustering methods in Spike Train Analysis}{7}
 \contentsline {chapter}{\numberline {3}Spike Train Metrics}{8}
-\contentsline {chapter}{\numberline {4}A simple neuron model}{9}
-\contentsline {chapter}{\numberline {5}Conclusion}{10}
-\contentsline {chapter}{\numberline {A}Appendix}{11}
+\contentsline {section}{\numberline {3.1}Single-unit recordings}{8}
+\contentsline {section}{\numberline {3.2}Extension to multi-unit recordings}{10}
+\contentsline {chapter}{\numberline {4}A simple neuron model}{11}
+\contentsline {section}{\numberline {4.1}Estimating the firing rate $r(t)$}{12}
+\contentsline {chapter}{\numberline {5}Conclusion}{13}
+\contentsline {chapter}{\numberline {A}Appendix}{14}

@@ -1,5 +1,40 @@
 Sparse coding has been observed in neurons in the visual tract \cite{OlshausenField2004}, a simple model is proposed for such neurons.
 
-It is unlikely that a neuron is ever truly ``off’’, so it is assumed that a neuron has a base-firing state that will be referred to as the ``off-state’’.  For the sake of simplicity, it is assumed that a neuron in such an ``off-state’’ would have a constant firing rate, $\lambda_d$.  Correspondingly, for sparse-coding a neuron must have a higher firing-rate when the feature that it codes for is present; this firing rate, $\lambda_u$, is also taken to be constant.
+It is unlikely that a neuron is ever truly ``off'', so it is assumed that a neuron has a base-firing state that will be referred to as the ``off-state''.  For the sake of simplicity, it is assumed that a neuron in such an ``off-state'' would have a constant firing rate, $\lambda_d$.  Correspondingly, for sparse-coding a neuron must have a higher firing-rate when the feature that it codes for is present; this firing rate, $\lambda_u$, is also taken to be constant.
 
-The model also assumes that the
+
+This idea is simplified to the extreme case, where a neuron is either in its up-state and has a high firing-rate, or it is ``off''.   The model is treated as a poisson process, for ease of calculation.
+
+The data that is simulated has an ``up rate'' $\lambda_u$ and a ``down rate'' $\lambda_d$.  For the initial trials, $\lambda_d = 0$.  When in the down-state, the state switches ``up'' with expected frequency $u$, and when in the up-state it switches ``down'' with expected frequency $d$.  Thus, the average background rate, $r$, of the inhomogeneous poisson process can be calculated as:
+\begin{equation}\label{lam}
+r = \frac{ \frac{\lambda_u }{d}}{ \frac{1}{u} + \frac{1}{d}} = \frac{u\, \lambda_u}{u+d}
+\end{equation}
+since the expected time for being in the up-state is simply $1/d$ and the expected time in the down-state is $1/u$.
+
+
+\section{Estimating the firing rate $r(t)$}
+
+With the model for the firing rate as above, it is possible to explicitly calculate the probability of being in the up-state for the time following a spike.  In the initial setting, where $\lambda_d$ is set to zero, then it is known when there is a spike that the rate is in the up-state, so at the time of spiking $t_0$ the probability $p(t_0)$ of being in the up-state is equal to one.  For the estimate of the rate, $\tilde{r}(t)$, this is reflected by setting $\tilde{r}(t_0) = \lambda_u$.  Then, the probability is reset every time there is a spike, so it is only required to calculate the probability of being in the up-state given that there has been no spike since the time $t_0$ of the last spike.  
+
+It is possible, using Baye's Theorem, to calculate a first approximation of the probability of being in the up-state at a time $t+\Delta t$, given a spike at time $t=t_0$ for small $\Delta t$.
+
+ Let $X=$ up at $t=t_0+\Delta t$, $Y=$ no spike since $t=t_0$ and $Z=$ spike at $t=t_0$. Then,
+\begin{equation}\label{p}
+P(X|Y|Z) = \frac{P(Y|X|Z)P(X|Z)}{P(Y|Z)} = \frac{(1-\lambda_u \Delta t) (1-d \Delta t)}{1-r\Delta t}
+\end{equation}
+
+Then, it is possible to calculate the first approximation to the probability  of being up at time $t$, by letting $t_0=0, \,\Delta t =t/n$.
+
+\begin{equation}
+\begin{split}
+P(\mbox{up at } t | Y | Z)   &=  \lim_{n \rightarrow \infty}\prod_{k=1}^n \frac{(1-\lambda_ut/n)(1-dt/n)}{1-rt/n}  \\
+&= \lim_{n \rightarrow \infty} \prod_{k=1}^n \left(1+ t\frac{r-\lambda_u-d}{n}\right) \\
+& = \lim_{n \rightarrow \infty} \left(1 + t\frac{r-\lambda_u -d}{n} \right)^n \\
+&=  e^{(r-\lambda_u-d)t}
+\end{split}
+\end{equation}
+
+Recalling from equation \ref{lam} that $\lambda_u = r(u+d)/u$, get:
+\begin{equation}
+p=e^{-\frac{d(r+u)}{u}(t-t_0)}
+\end{equation}
