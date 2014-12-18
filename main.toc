@@ -1,9 +1,25 @@
 \contentsline {chapter}{\numberline {1}Introduction}{6}
 \contentsline {chapter}{\numberline {2}Clustering methods in Spike Train Analysis}{7}
-\contentsline {chapter}{\numberline {3}Spike Train Metrics}{8}
-\contentsline {section}{\numberline {3.1}Single-unit recordings}{8}
-\contentsline {section}{\numberline {3.2}Extension to multi-unit recordings}{10}
-\contentsline {chapter}{\numberline {4}A simple neuron model}{11}
-\contentsline {section}{\numberline {4.1}Estimating the firing rate $r(t)$}{12}
-\contentsline {chapter}{\numberline {5}Conclusion}{13}
-\contentsline {chapter}{\numberline {A}Appendix}{14}
+\contentsline {section}{\numberline {2.1}Networks}{7}
+\contentsline {subsection}{\numberline {2.1.1}Modularity}{8}
+\contentsline {subsection}{\numberline {2.1.2}Newman's Eigenvalue Algorithm}{10}
+\contentsline {section}{\numberline {2.2}Spike Trains}{14}
+\contentsline {subsection}{\numberline {2.2.1}Spike Train Metrics}{15}
+\contentsline {subsection}{\numberline {2.2.2}Van Rossum metric}{15}
+\contentsline {subsection}{\numberline {2.2.3}$k$-Medoids Clustering}{16}
+\contentsline {subsection}{\numberline {2.2.4}Clustering Responses with Modularity}{17}
+\contentsline {section}{\numberline {2.3}Discussion}{18}
+\contentsline {chapter}{\numberline {3}Spike Train Metrics}{19}
+\contentsline {section}{\numberline {3.1}Single-unit recordings}{19}
+\contentsline {section}{\numberline {3.2}Extension to multi-unit recordings}{21}
+\contentsline {subsection}{\numberline {3.2.1}Testing on data}{22}
+\contentsline {section}{\numberline {3.3}ISI distance}{23}
+\contentsline {subsection}{\numberline {3.3.1}Single unit recordings}{23}
+\contentsline {subsection}{\numberline {3.3.2}Initial extension to multi-unit recordings}{23}
+\contentsline {subsection}{\numberline {3.3.3}Numerical tests}{25}
+\contentsline {subsection}{\numberline {3.3.4}Alternative extensions to the multi-unit case}{25}
+\contentsline {section}{\numberline {3.4}Adaptive SPIKE \& ISI distances}{27}
+\contentsline {chapter}{\numberline {4}A simple neuron model}{29}
+\contentsline {section}{\numberline {4.1}Estimating the firing rate $r(t)$}{30}
+\contentsline {chapter}{\numberline {5}Conclusion}{31}
+\contentsline {chapter}{\numberline {A}Appendix}{32}
