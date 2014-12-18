@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  18 DEC 2014 10:27
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  18 DEC 2014 14:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -456,119 +456,113 @@ e
 
 ] [4
 
-] (./main.toc)
+] (./main.toc [5
+
+])
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
- [5
-
-]
+ [6]
 Chapter 1.
-(./chapters/introduction.tex) [6
+(./chapters/introduction.tex) [1
 
 ]
 Chapter 2.
-(./chapters/chapter02.tex [7
+(./chapters/chapter02.tex [2
 
 ]
 
-LaTeX Warning: Citation `Newman2006b' on page 8 undefined on input line 45.
+LaTeX Warning: Citation `Newman2006b' on page 3 undefined on input line 45.
 
 
-LaTeX Warning: Citation `Newman2006a' on page 8 undefined on input line 75.
+LaTeX Warning: Citation `Newman2006a' on page 3 undefined on input line 75.
 
-[8]
+[3]
 
-LaTeX Warning: Reference `probki' on page 9 undefined on input line 88.
-
-
-LaTeX Warning: Reference `netclus' on page 9 undefined on input line 110.
+LaTeX Warning: Reference `netclus' on page 4 undefined on input line 110.
 
 
-LaTeX Warning: Citation `Newman2006a' on page 9 undefined on input line 134.
+LaTeX Warning: Citation `Newman2006a' on page 4 undefined on input line 134.
 
-[9]
+[4]
 
-LaTeX Warning: Citation `Zachary1977a' on page 10 undefined on input line 184.
-
-
-LaTeX Warning: Citation `Newman2006a' on page 10 undefined on input line 184.
-
-[10] [11]
-
-LaTeX Warning: Reference `algo-split' on page 12 undefined on input line 241.
+LaTeX Warning: Citation `Zachary1977a' on page 5 undefined on input line 184.
 
 
-LaTeX Warning: Citation `Newman2006a' on page 12 undefined on input line 271.
+LaTeX Warning: Citation `Newman2006a' on page 5 undefined on input line 184.
+
+[5] [6]
+
+LaTeX Warning: Citation `Newman2006a' on page 7 undefined on input line 271.
 
 
-LaTeX Warning: Citation `NewmanGirvan2004a' on page 12 undefined on input line 
-273.
+LaTeX Warning: Citation `NewmanGirvan2004a' on page 7 undefined on input line 2
+73.
 
 
-LaTeX Warning: Citation `Humphries2011a' on page 12 undefined on input line 276
+LaTeX Warning: Citation `Humphries2011a' on page 7 undefined on input line 276.
+
+
+
+LaTeX Warning: Citation `DayanAbbott2001a' on page 7 undefined on input line 29
+1.
+
+[7] [8] [9]
+
+LaTeX Warning: Citation `VanRossum2001a' on page 10 undefined on input line 351
 .
 
 
-LaTeX Warning: Citation `DayanAbbott2001a' on page 12 undefined on input line 2
-91.
+LaTeX Warning: Reference `stk' on page 10 undefined on input line 377.
 
-[12] [13] [14]
+[10]
 
-LaTeX Warning: Citation `VanRossum2001a' on page 15 undefined on input line 351
-.
-
-
-LaTeX Warning: Reference `stk' on page 15 undefined on input line 377.
-
-[15]
-
-LaTeX Warning: Citation `VictorPurpura1997a' on page 16 undefined on input line
+LaTeX Warning: Citation `VictorPurpura1997a' on page 11 undefined on input line
  389.
 
 
-LaTeX Warning: Reference `kmed' on page 16 undefined on input line 418.
+LaTeX Warning: Reference `kmed' on page 11 undefined on input line 418.
 
-[16]
+[11]
 
-LaTeX Warning: Citation `NarayanEtAl2006b' on page 17 undefined on input line 4
+LaTeX Warning: Citation `NarayanEtAl2006b' on page 12 undefined on input line 4
 53.
 
 
-LaTeX Warning: Reference `graphs' on page 17 undefined on input line 475.
+LaTeX Warning: Reference `graphs' on page 12 undefined on input line 475.
 
 
-LaTeX Warning: Citation `Humphries2011a' on page 17 undefined on input line 498
+LaTeX Warning: Citation `Humphries2011a' on page 12 undefined on input line 498
 .
 
-[17]
+[12]
 
-LaTeX Warning: Citation `SinghLesica2010a' on page 18 undefined on input line 5
+LaTeX Warning: Citation `SinghLesica2010a' on page 13 undefined on input line 5
 23.
 
 
-LaTeX Warning: Citation `Newman2010a' on page 18 undefined on input line 528.
+LaTeX Warning: Citation `Newman2010a' on page 13 undefined on input line 528.
 
 
-LaTeX Warning: Citation `RubinovSporns2010a' on page 18 undefined on input line
+LaTeX Warning: Citation `RubinovSporns2010a' on page 13 undefined on input line
  534.
 
-) [18]
+) [13]
 Chapter 3.
 (./chapters/chapter03.tex
 
-LaTeX Warning: Citation `Kreuzetal2010' on page 19 undefined on input line 1.
+LaTeX Warning: Citation `Kreuzetal2010' on page 14 undefined on input line 1.
 
 
-LaTeX Warning: Citation `Kreuzetal2010' on page 19 undefined on input line 1.
+LaTeX Warning: Citation `Kreuzetal2010' on page 14 undefined on input line 1.
 
 
-LaTeX Warning: Citation `Kreuzetal2010' on page 19 undefined on input line 4.
+LaTeX Warning: Citation `Kreuzetal2010' on page 14 undefined on input line 4.
 
 
-LaTeX Warning: Citation `Kreuzetal2010' on page 19 undefined on input line 4.
+LaTeX Warning: Citation `Kreuzetal2010' on page 14 undefined on input line 4.
 
-[19
+[14
 
 ]
 Overfull \hbox (0.5547pt too wide) in paragraph at lines 11--13
@@ -579,105 +573,88 @@ L/cmm/m/it/12 ; t[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 )\OML/cmm
  []
 
 
-LaTeX Warning: Citation `Kreuzetal2010' on page 20 undefined on input line 36.
+LaTeX Warning: Citation `Kreuzetal2010' on page 15 undefined on input line 36.
 
-[20]
+[15]
 
-LaTeX Warning: Citation `VictorPurpura1997' on page 21 undefined on input line 
+LaTeX Warning: Citation `VictorPurpura1997' on page 16 undefined on input line 
 42.
 
+[16]
 
-LaTeX Warning: Reference `fig:gaps2' on page 21 undefined on input line 47.
-
-[21]
-
-LaTeX Warning: Citation `HoughtonSen2008' on page 22 undefined on input line 13
+LaTeX Warning: Citation `HoughtonSen2008' on page 17 undefined on input line 13
 8.
 
-[22]
+[17]
 
-LaTeX Warning: Citation `HoughtonSen2008' on page 23 undefined on input line 16
+LaTeX Warning: Citation `HoughtonSen2008' on page 18 undefined on input line 16
 6.
 
-[23] [24]
+[18] [19]
 
-LaTeX Warning: Reference `fig:minmax' on page 25 undefined on input line 208.
+LaTeX Warning: Reference `fig:minmax' on page 20 undefined on input line 208.
 
 
-LaTeX Warning: Reference `fig:bestalpha' on page 25 undefined on input line 208
+LaTeX Warning: Reference `fig:bestalpha' on page 20 undefined on input line 208
 .
 
 
-LaTeX Warning: Citation `HoughtonSen2008' on page 25 undefined on input line 20
+LaTeX Warning: Citation `HoughtonSen2008' on page 20 undefined on input line 20
 8.
 
 
-LaTeX Warning: Citation `Kreuzetal2009' on page 25 undefined on input line 222.
+LaTeX Warning: Citation `Kreuzetal2009' on page 20 undefined on input line 222.
 
 
 
-LaTeX Warning: Citation `Kreuzetal2009' on page 25 undefined on input line 225.
+LaTeX Warning: Citation `Kreuzetal2009' on page 20 undefined on input line 225.
 
 
-[25]
-
-LaTeX Warning: Reference `pop' on page 26 undefined on input line 253.
-
-
-LaTeX Warning: Reference `av' on page 26 undefined on input line 253.
-
-
+[20]
 Overfull \hbox (5.80815pt too wide) in paragraph at lines 255--256
 []\OT1/cmr/bx/n/12 [combine the pop-u-la-tion dis-tance and the av-er-age dis-t
 ance graphs
  []
 
-[26]
+[21]
 
-LaTeX Warning: Reference `adpop' on page 27 undefined on input line 271.
-
-
-LaTeX Warning: Reference `adav' on page 27 undefined on input line 271.
+LaTeX Warning: Reference `adpop' on page 22 undefined on input line 271.
 
 
-LaTeX Warning: Reference `popmaxmin' on page 27 undefined on input line 271.
+LaTeX Warning: Reference `adav' on page 22 undefined on input line 271.
 
 
-LaTeX Warning: Reference `avmaxmin' on page 27 undefined on input line 271.
+LaTeX Warning: Reference `popmaxmin' on page 22 undefined on input line 271.
 
-) [27] [28]
+
+LaTeX Warning: Reference `avmaxmin' on page 22 undefined on input line 271.
+
+) [22] [23]
 Chapter 4.
 (./chapters/chapter04.tex
 
-LaTeX Warning: Citation `OlshausenField2004' on page 29 undefined on input line
+LaTeX Warning: Citation `OlshausenField2004' on page 24 undefined on input line
  1.
 
-[29
+[24
 
-]
-
-LaTeX Warning: Reference `lam' on page 30 undefined on input line 37.
-
-) [30]
+]) [25]
 Chapter 5.
-(./chapters/conclusion.tex) [31
+(./chapters/conclusion.tex) [26
 
 ]
 Appendix A.
-(./chapters/appendix.tex) [32
+(./chapters/appendix.tex) [27
 
 ] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
  2667 strings out of 493488
  34832 string characters out of 3141326
- 99367 words of memory out of 3000000
+ 99442 words of memory out of 3000000
  5911 multiletter control sequences out of 15000+200000
  13852 words of font info for 49 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -702,10 +679,10 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2012/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2012/texm
 f-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb></usr/local/texlive/20
 12/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on main.pdf (33 pages, 263355 bytes).
+Output written on main.pdf (34 pages, 264679 bytes).
 PDF statistics:
- 191 PDF objects out of 1000 (max. 8388607)
- 134 compressed objects within 2 object streams
+ 194 PDF objects out of 1000 (max. 8388607)
+ 136 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
