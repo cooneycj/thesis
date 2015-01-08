@@ -1,25 +1,28 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}
-\contentsline {chapter}{\numberline {2}Clustering methods in Spike Train Analysis}{2}
-\contentsline {section}{\numberline {2.1}Networks}{2}
-\contentsline {subsection}{\numberline {2.1.1}Modularity}{3}
-\contentsline {subsection}{\numberline {2.1.2}Newman's Eigenvalue Algorithm}{5}
-\contentsline {section}{\numberline {2.2}Spike Trains}{9}
-\contentsline {subsection}{\numberline {2.2.1}Spike Train Metrics}{10}
-\contentsline {subsection}{\numberline {2.2.2}Van Rossum metric}{10}
-\contentsline {subsection}{\numberline {2.2.3}$k$-Medoids Clustering}{11}
-\contentsline {subsection}{\numberline {2.2.4}Clustering Responses with Modularity}{12}
-\contentsline {section}{\numberline {2.3}Discussion}{13}
-\contentsline {chapter}{\numberline {3}Spike Train Metrics}{14}
-\contentsline {section}{\numberline {3.1}Single-unit recordings}{14}
-\contentsline {section}{\numberline {3.2}Extension to multi-unit recordings}{16}
-\contentsline {subsection}{\numberline {3.2.1}Testing on data}{17}
-\contentsline {section}{\numberline {3.3}ISI distance}{18}
-\contentsline {subsection}{\numberline {3.3.1}Single unit recordings}{18}
-\contentsline {subsection}{\numberline {3.3.2}Initial extension to multi-unit recordings}{18}
-\contentsline {subsection}{\numberline {3.3.3}Numerical tests}{20}
-\contentsline {subsection}{\numberline {3.3.4}Alternative extensions to the multi-unit case}{20}
-\contentsline {section}{\numberline {3.4}Adaptive SPIKE \& ISI distances}{22}
-\contentsline {chapter}{\numberline {4}A simple neuron model}{24}
-\contentsline {section}{\numberline {4.1}Estimating the firing rate $r(t)$}{25}
-\contentsline {chapter}{\numberline {5}Conclusion}{26}
-\contentsline {chapter}{\numberline {A}Appendix}{27}
+\contentsline {section}{\numberline {1.1}Spike Trains}{1}
+\contentsline {subsection}{\numberline {1.1.1}Spike Train Metrics}{2}
+\contentsline {subsection}{\numberline {1.1.2}Van Rossum metric}{2}
+\contentsline {section}{\numberline {1.2}Information Theory}{3}
+\contentsline {chapter}{\numberline {2}Clustering methods in Spike Train Analysis}{4}
+\contentsline {section}{\numberline {2.1}Networks}{4}
+\contentsline {subsection}{\numberline {2.1.1}Modularity}{5}
+\contentsline {subsection}{\numberline {2.1.2}Newman's Eigenvalue Algorithm}{7}
+\contentsline {subsection}{\numberline {2.1.3}New network clustering algorithms}{11}
+\contentsline {subsubsection}{Genetic algorithm}{11}
+\contentsline {subsubsection}{Simulated Annealing}{13}
+\contentsline {subsection}{\numberline {2.1.4}$k$-Medoids Clustering}{13}
+\contentsline {subsection}{\numberline {2.1.5}Clustering Responses with Modularity}{14}
+\contentsline {section}{\numberline {2.2}Discussion}{15}
+\contentsline {chapter}{\numberline {3}Spike Train Metrics}{17}
+\contentsline {section}{\numberline {3.1}Single-unit recordings}{17}
+\contentsline {section}{\numberline {3.2}Extension to multi-unit recordings}{19}
+\contentsline {subsection}{\numberline {3.2.1}Testing on data}{20}
+\contentsline {section}{\numberline {3.3}ISI distance}{21}
+\contentsline {subsection}{\numberline {3.3.1}Single unit recordings}{21}
+\contentsline {subsection}{\numberline {3.3.2}Initial extension to multi-unit recordings}{21}
+\contentsline {subsection}{\numberline {3.3.3}Numerical tests}{23}
+\contentsline {subsection}{\numberline {3.3.4}Alternative extensions to the multi-unit case}{23}
+\contentsline {section}{\numberline {3.4}Adaptive SPIKE \& ISI distances}{25}
+\contentsline {chapter}{\numberline {4}A simple neuron model}{27}
+\contentsline {section}{\numberline {4.1}Estimating the firing rate $r(t)$}{28}
+\contentsline {chapter}{\numberline {5}Conclusion}{29}

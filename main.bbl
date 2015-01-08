@@ -1,0 +1,97 @@
+\begin{thebibliography}{10}
+
+\bibitem{DayanAbbott2001a}
+P.~Dayan and L.~F. Abbott.
+\newblock {\em Theoretical neuroscience}.
+\newblock MIT Press, 2001.
+
+\bibitem{HoughtonSen2008}
+Conor Houghton and Kamal Sen.
+\newblock A new multineuron spike train metric.
+\newblock {\em Neural Computation}, 20(6):1495--1511, June 2008.
+
+\bibitem{Humphries2011a}
+M.~D. Humphries.
+\newblock Spike-train communities: Finding groups of similar spike trains.
+\newblock {\em Journal of Neuroscience}, 31:2321--2336, 2011.
+
+\bibitem{Kreuzetal2009}
+Thomas Kreuz, Daniel Chicharro, Ralph~G. Andrzejak, Julie~S. Haas, and
+  Henry~D.I. Abarbanel.
+\newblock Measuring multiple spike train synchrony.
+\newblock {\em Journal of Neuroscience Methods}, 183(2):287--299, October 2009.
+
+\bibitem{Kreuzetal2011}
+Thomas Kreuz, Daniel Chicharro, Martin Greschner, and Ralph~G. Andrzejak.
+\newblock Time-resolved and time-scale adaptive measures of spike train
+  synchrony.
+\newblock {\em Journal of Neuroscience Methods}, 195:92--106, 2011.
+
+\bibitem{NarayanEtAl2006b}
+R.~Narayan, G.~Gra{\~{n}}a, and K.~Sen.
+\newblock Distinct time scales in cortical discrimination of natural sounds in
+  songbirds.
+\newblock {\em Journal of Neurophysiology}, 96:252--258, 2006.
+
+\bibitem{Newman2006b}
+M.~E.~J. Newman.
+\newblock Finding community structure in networks using the eigenvectors of
+  matrices.
+\newblock {\em Physical Review E}, 74:036104, 2006.
+
+\bibitem{Newman2006a}
+M.~E.~J. Newman.
+\newblock Modularity and community structure in networks.
+\newblock {\em Proceedings of the National Academy of Sciences of the United
+  States of America}, 103(23):8577--8582, 2006.
+
+\bibitem{Newman2010a}
+M.~E.~J. Newman.
+\newblock {\em Networks: An Introduction}.
+\newblock Oxford University Press, 2010.
+
+\bibitem{NewmanGirvan2004a}
+M.~E.~J. Newman and M.~Girvan.
+\newblock Finding and evaluating community structure in networks.
+\newblock {\em Physical Review}, 69:026113, 2004.
+
+\bibitem{OlshausenField2004}
+Bruno~A Olshausen and David~J Field.
+\newblock Sparse coding of sensory inputs.
+\newblock {\em Current Opinion in Neurobiology}, 14:481--487, 2004.
+
+\bibitem{RubinovSporns2010a}
+M.~Rubinov and O.~Sporns.
+\newblock Complex network measures of brain connectivity: Uses and
+  interpretations.
+\newblock {\em Neuroimage}, 52:1059--1069, 2010.
+
+\bibitem{SinghLesica2010a}
+A.~Singh and N.~A. Lesica.
+\newblock Incremental mutual information: A new method for characterizing the
+  stregth and dynamics of connections in neuronal circuits.
+\newblock {\em PLOS Computational Biology}, 6(12), December 2010.
+
+\bibitem{VanRossum2001a}
+M.~van Rossum.
+\newblock A novel spike distance.
+\newblock {\em Neural Computation}, 13:751--763, 2001.
+
+\bibitem{VictorPurpura1997a}
+J.~D. Victor and K.~P. Purpura.
+\newblock Metric-space analysis of spike trains: theory, algorithms and
+  application.
+\newblock {\em Network: Computation in Neural Systems}, 8(2):127--164, 1997.
+
+\bibitem{VictorPurpura1997}
+Jonathan~D Victor and Keith~P Purpura.
+\newblock Metric-space analysis of spike trains: theory, algorithms and
+  application.
+\newblock {\em Network: Computation in Neural Systems}, 8(2):127--164, 1997.
+
+\bibitem{Zachary1977a}
+W.~W. Zachary.
+\newblock An information flow model for conflict and fission in small groups.
+\newblock {\em Journal of Anthropological Research}, 33:452--473, 1977.
+
+\end{thebibliography}

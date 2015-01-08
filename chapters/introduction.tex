@@ -1,1 +1,116 @@
-more to follow
+
+\section{Spike Trains}
+
+Neurons convey information through the nervous system by generating
+electric pulses which propagate along nerve fibers.  These pulses are
+called action potentials or spikes \cite{DayanAbbott2001a}. 
+
+A neuron has a resting potential of approximately -70mV relative to
+its surroundings, and we say that the cell is polarised at this point.
+The membrane potential of a neuron becomes less negative with current
+flowing into it, but will tend back towards its resting potential
+unless the membrane potential nears a certain threshold. If a neuron
+is depolarised so that its membrane potential is raised above this
+threshold, the neuron generates an action potential. An action potential, or 
+spike, is a 100mV fluctuation in the membrane potential which lasts 
+approximately 1ms. Following the production of a spike the neuron briefly 
+becomes hyperpolarised, and as such cannot generate a spike for the next
+couple of milliseconds.  This period, when a spike cannot be fired, is
+called the absolute refractory period of a neuron.  Since the neuron
+becomes hyperpolarised by the spike, there is also a period in which
+it is ``more difficult'' for the neuron to spike again, this is called
+the relative refractory period of a neuron. 
+
+Spikes are very important because they propagate over long distances without 
+attenuation, and so are the way in which neurons communicate with one another 
+throughout the nervous system.  The timing of spikes is of particular 
+importance; for example, in motor neurons when a number of spikes happen close 
+together it leads to movement of the muscle, the more spikes that happen 
+together, the faster the muscle twitches.  While there is some variation in 
+the duration, amplitude and shape of action potentials, we can largely treat 
+them as identical processes, where the timing is the only consideration.  So, 
+if a neuron spikes $n$ times in a certain trial, then the trial can be 
+described by the times of the spikes $t_i$.  Then we can describe the 
+{\sl spike train} mathematically as:
+
+\begin{equation}
+s(t) = \sum_{i=1}^n \delta(t-t_i).
+\end{equation}
+The $\delta$ here is the Dirac delta, which essentially gives a spike of volume 
+one at the point $t_i$. It can be very difficult to differentiate between 
+different spike trains, and so we have {\sl metrics} to tell them apart.
+
+\subsection{Spike Train Metrics}
+
+If we look at spike trains from a specific neuron, we would like to be able to 
+``decode'' them and be able to describe the stimulus which evoked them.  
+Unfortunately, this seems like a very difficult problem, so we first settle for 
+trying to distinguish which spike trains amongst a collection were evoked by 
+the same stimulus.  To do this, there are several {\sl metrics} in the 
+literature which tell us the ``distance'' between two spike trains.  
+
+In Mathematics a metric space is a space where we can always tell the 
+``distance'' between two elements, whether or not we can give the 
+``coordinates'' of the elements in the space.  A metric is a function on a set 
+$X$, $d: X\times X \rightarrow [0,\infty )$ that basically follows our 
+intuition for what a distance should be. That is, distances are non-negative, 
+symmetric and only zero if two elements are the same. The Triangle Inequality 
+states that you should never be able to shorten the distance between two points 
+by going through an intermediate point, so it is the notion that the shortest 
+distance between two points is a straight line.
+
+
+\subsection{Van Rossum metric}
+
+The metric that we primarily use is the metric described by van Rossum in 
+\cite{VanRossum2001a}, which is simply based on the $L^2$ metric on function 
+spaces.  If we view the spike trains as a collection of Dirac delta functions, 
+then we can get a function by convolving the distribution $s(t)$ as above with 
+a kernel.  A common kernel that is used is the exponential kernel 
+\begin{equation}
+k(t) = \left\{ \begin{array}{ll}\frac{1}{\tau}e^{-\frac{t}{\tau}}, & t\geq 0 \\
+0, & t<0\end{array} \right. .
+\end{equation}
+
+This kernel has some advantages, like causality and computability, over a 
+gaussian kernel.  So, we get a new function $u(t)$ after convolving the spike 
+train with the kernel:
+\begin{equation}
+u(t) = s*k(t) = \int_0^T s(t-s)k(s)\,ds
+\end{equation}
+
+
+
+%\begin{figure}[tb]
+%  \centering
+%  \includegraphics[width=0.8\textwidth]{spiketrainkernel.eps}
+%  \rule{35em}{0.5pt}
+%  \caption{This figure shows  an exponential kernel (a), which we convolve with a spike train (b), to get the function (c) which represents the spike train.  We take the  $L^2$-metric between such functions to get the van Rossum metric between spike trains.}
+%  \label{stk}
+%\end{figure}
+
+Figure \ref{stk} above shows the form of the function that we get when we 
+convolve a spike train with the exponential kernel.  Once we have these 
+functions for different spike trains, $u$ and $v$ say, then we calculate the 
+distance between them by taking the $L^2$ metric on the function space, that is:
+
+\begin{equation}
+d(u,v) = \sqrt{\int_0^T (u(t) - v(t))^2\,dt}
+\end{equation}
+
+
+
+This metric has some mathematical advantages over other metrics, such as Victor-
+Purpura \cite{VictorPurpura1997a}, an ``edit-length'' metric, because there is 
+a lot of material in functional analysis on the $L^2$ metric.  It performs to a 
+similar standard to most other metrics, and remarkably the choice of kernel has 
+little effect on its efficiency.
+
+\section{Information Theory}
+Information Theory has been used widely in Computational Neuroscience, eg. to compare spike trains \cite{BialekEtAl1998a} and to try to determine the information content of spike-trains\cite{GillespieHoughton2009a}.
+
+The topic of Information Theory is centred around the definition of \emph{entropy}, provided by Shannon in 1948 \cite{Shannon1948a}.  Entropy is a measure of the information content of a random variable $X$, with observations $x \in \mathcal{X}$ and probability distribution $p:\mathcal{X} \rightarrow [0,1]$, it is defined as:
+\begin{equation}
+H(X) = -\sum_{x\in\mathcal{X}}  p(x) \log_2 p(x)
+\end{equation}
+Entropy is measured in \emph{bits}, so the entropy of a random variable can be viewed as the minimum number of binary bits required to efficiently code the random variable.
