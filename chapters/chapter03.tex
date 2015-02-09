@@ -1,4 +1,16 @@
-The SPIKE distance proposed by Kreuz et al in \cite{Kreuzetal2011} is an instantaneous parameter-free distance measure between spike-trains.  By instantaneous measure, it is meant that for each time $t$ there is a time-local distance between two spike-trains.  This measure can the be integrated over the length of the spike-trains to give a parameter-free distance measure between spike trains. In the study of spike-train metrics, often a multi-unit measure is desired (to minimise compounding any errors that may result from inefficient spike-sorting?). A multi-unit measure is a distance between collections of labelled spike-trains.  The SPIKE distance in \cite{Kreuzetal2011} does not lend itself to a simple multi-unit extension, so instead a simpler version of the SPIKE distance is extended.
+The van Rossum \cite{VanRossum2001a} and Victor-Purpura \cite{VictorPurpura1996a} (VP) metrics introduced in Chapter 1 are the most commonly used metrics in the field of Computational Neuroscience, but they do have some drawbacks.  For example, they both have a time-scale parameter which must be chosen according to the cell, $\tau$ for the van Rossum metric and $q$ for the VP metric.  They also do not have a time-local measure to discriminate between the behaviour of different spike-trains at specific times.  The SPIKE and ISI measures introduced in \cite{KreuzEtAl2007a, Kreuzetal2011a} are two newer measures that address these concerns.
+
+It is actually possible to develop a time-local version of the VP metric.  Such a time-local version must integrate to the VP metric between two spike-trains.  This is more complicated than in the case of the SPIKE distance, since it is not just a case of assigning a `gap' to each spike and interpolating between them.  There is a way to assign gaps, but it requires to calculate the VP metric itself on the spike-trains first.  
+
+The VP metric is defined as in chapter 1:
+\begin{equation}
+d_{\text{VP}}(X,Y) = \inf_f \sum_i c(f_i(X))
+\end{equation}
+where $f = f_1\o f_2\o \ldots \o f_n$ is any transformation that takes spike-train $X$ to spike-train $Y$, and $c$ is the associated cost function for the elementary transformations $f_i, i\in 1,\ldots,n$.
+
+The permitted elementary transformations are insertion of a spike, with a cost of 1; deletion of a spike, with a cost of 1 also; and translation of a spike by a distance $\delta t$, with a cost of $q\delta t$.  Thus, each spike in $X$ and $Y$ has an associated transformation which has a fixed cost; but there is a lack of symmetry between 
+
+The SPIKE distance proposed by Kreuz et al in \cite{Kreuzetal2011a} is an instantaneous parameter-free distance measure between spike-trains.  By instantaneous measure, it is meant that for each time $t$ there is a time-local distance between two spike-trains.  This measure can the be integrated over the length of the spike-trains to give a parameter-free distance measure between spike trains. In the study of spike-train metrics, often a multi-unit measure is desired (to minimise compounding any errors that may result from inefficient spike-sorting?). A multi-unit measure is a distance between collections of labelled spike-trains.  The SPIKE distance in \cite{Kreuzetal2011a} does not lend itself to a simple multi-unit extension, so instead a simpler version of the SPIKE distance is extended.
 
 \section{Single-unit recordings}
 With a view to extending the SPIKE distance to a multi-unit distance measure, it is useful to review the definition of the SPIKE measure provided in \cite{Kreuzetal2011}:  Given two spike-trains $x$ and $y$, where $x = \{ t_1^x, \ldots, t_n^x \}$ and $y = \{ t_1^y, \ldots , t_m^y\}$, where $t_1^x,\ldots,t_n^x,t_1^y,\ldots,t_m^y$ are the spike times.  The SPIKE distance in \cite{Kreuzetal2011} has the nice property that the distance is bounded such that it is always between zero and one.  Unfortunately, to achieve a "natural" extension to a multi-unit measure, this property is sacrificed.  A simpler version of the distance, without the strict upper bound of one, is used.
@@ -257,9 +269,11 @@ There is a fundamental difference in how each of these distance measures view wh
 \newpage
 \section{Adaptive SPIKE \& ISI distances}
 
-The downside to the measures introduced above is that there must be parameters to vary between the SP and LL cases, and there is no good way to choose a parameter, which often leads to a grid search to find the optimal parameter.  A goal of this work is to find a way for the data itself to choose its own population parameter.  The SPIKE and ISI distances for single neurons are both parameter-free, so it would be ideal if an extension could be found that was also parameter-free.
+The downside to the measures introduced above is that there must be parameters to vary between the SP and LL cases, and thus far there is way to choose a parameter, which often leads to a grid search to find the optimal parameter.  A goal of this work is to find a way for the data itself to choose its own population parameter.  The SPIKE and ISI distances for single neurons are both parameter-free, so it would be ideal if an extension could be found that was also parameter-free.
 
 Since the ISI distance is a distance based on the firing rate of the neurons, the assumption was made that if the rates of the individual neurons were reasonably similar throughout the two populations, then the correct code to use would be an SP code, whereas if they were very different, then a LL code should be used.
+
+
 
 The ISI extensions above have a population parameter $p$ that varies from $0$ to $1$, so a measure of similarity (or dissimilarity) that varies from 0 to 1 would be ideal.  The normalised cross-entropy of the ISIs of the two populations is such a measure.  Labelling the ISIs as above, the cross-entropy at any point in time $t$ is calculated as:
 \begin{equation}

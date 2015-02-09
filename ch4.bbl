@@ -1,0 +1,25 @@
+\begin{thebibliography}{}
+
+\bibitem[Massey~Jr, 1951]{Massey1951a}
+Massey~Jr, F.~J. (1951).
+\newblock The kolmogorov-smirnov test for goodness of fit.
+\newblock {\em Journal of the American statistical Association},
+  46(253):68--78.
+
+\bibitem[Olshausen and Field, 2004]{OlshausenField2004}
+Olshausen, B.~A. and Field, D.~J. (2004).
+\newblock Sparse coding of sensory inputs.
+\newblock {\em Current Opinion in Neurobiology}, 14:481--487.
+
+\bibitem[Sen et~al., 2001]{SenEtAl2001a}
+Sen, K., Theunissen, F.~E., and Doupe, A.~J. (2001).
+\newblock Feature analysis of natural sounds in the songbird auditory
+  forebrain.
+\newblock {\em Journal of Neurophysiology}, 86:1445--1458.
+
+\bibitem[van Rossum, 2001]{vanRossum2001}
+van Rossum, M. (2001).
+\newblock A novel spike distance.
+\newblock {\em Neural Computation}, 13(4):751--763.
+
+\end{thebibliography}

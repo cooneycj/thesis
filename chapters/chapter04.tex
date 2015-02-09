@@ -38,3 +38,351 @@ Recalling from equation \ref{lam} that $\lambda_u = r(u+d)/u$, get:
 \begin{equation}
 p=e^{-\frac{d(r+u)}{u}(t-t_0)}
 \end{equation}
+
+
+Comparing this to the exponential kernel in the Van Rossum metric \cite{vanRossum2001}, then:
+\begin{equation}
+\tau = \frac{u}{d(r+u)}
+\end{equation}
+
+This is clearly just the first approximation, since it does not take into account the possibility of the model switching into the down-state and back up.  To calculate the full probability, let $y(t) = P(\mbox{up at } t | Y | Z)$, with $Y,Z$ as in equation \ref{p} above.  Then:
+
+\begin{equation}
+\begin{split}
+y(t+h) &=  y(t)P(\mbox{staying in up-state} | \mbox{up at t}|Y|Z)  \\
+& + (1-y(t))P(\mbox{switching up} | \mbox{down at t}|Y|Z)\\
+&\\
+&= y(t)\left( \frac{(1-dh)(1-\lambda_uh)}{1-rh} \right) + (1-y(t)) \left(\frac{(uh)(1)}{1-rh}  \right)\\
+&\\
+& = y(t)\left( 1 + h(r-d-\lambda_u-u ) \right) + uh
+\end{split}
+\end{equation}
+
+\begin{figure}[b!]
+\begin{center}
+\resizebox{0.75\textwidth}{!}{\input{tauoptoverpred}}
+\caption{\label{predovertauopt} This figure shows the ratio of the predicted value for $\tau$ in an exponential model over the empirical optimised value $\tau_o$.}
+\end{center}
+\end{figure}
+
+This leads to the following ordinary differential equation:
+
+\begin{equation}
+y^\prime(t) = \left( r - d - u - \lambda_u \right)y(t) + u
+\end{equation}
+
+This ODE has general solution:
+\begin{equation}
+y(t) = Ce^{(r-d-u-\lambda_u)(t-t_0)} + \frac{u}{u+d+\lambda_u - r}
+\end{equation}
+
+Since $y(t_0) = 1$, get:
+\begin{equation}
+y(t) = \frac{d+\lambda_u - r}{d+u+\lambda_u -r} e^{(r-d-u-\lambda_u)(t-t_0)} + \frac{u}{u+d+\lambda_u-r}
+\end{equation}
+
+Letting $\lambda_u = r(u+d)/u$, get:
+\begin{equation}
+y(t) = \frac{d(u+r)}{u^2 + d(u+r)} e^{-\frac{u^2+d(u+r)}{u}(t-t_0)} + \frac{u^2}{u^2+ d(u+r)}
+\end{equation}
+
+This solution was tested against a standard exponential model, which was minimised over $\tau$ with a downhill simplex method.  Figure \ref{predovertauopt} shows how the ratio of the predicted value for $\tau$ over the optimised value rises towards one as the value for $u$ increases.  This suggests that, while this method is clearly not completely correct, that it is at least a reasonable approximation.
+
+\section{Markov Process}
+
+The switching of the up and down states defines a Continuous-time Markov Chain (CTMC).  That is, the future of the process does not depend on the past at all, merely whether the model is currently in the up-state or the down-state.
+
+By the theory of Markov Chains, this process can be described by the simultaneous differential equations:
+\begin{equation}
+\left\{
+\begin{split} &p_u^{\prime}(t) = -dp_u(t) + dp_d(t)\\ &p_d^{\prime}(t)=up_u(t) - up_d(t)
+\end{split}
+\right.
+\end{equation}
+This is simply the linear ODE:
+\begin{equation}
+P^{\prime}(t) = P(t)Q
+\end{equation}
+where
+\begin{equation}
+Q =  \begin{pmatrix} -d & d \\ u & -u \end{pmatrix}
+\end{equation}
+
+Then the solution to the matrix $P(t)$ is simply the exponential, $e^{tQ}$ of the transition matrix $Q$. 
+
+\begin{equation}
+P(t) = e^{tQ} = \begin{pmatrix} \frac{u}{u+d}+\frac{d}{u+d}e^{-(u+d)t} & \frac{d}{u+d} - \frac{d}{u+d}e^{-(u+d)t} \\ \frac{u}{u+d} - \frac{u}{u+d}e^{-(u+d)t} & \frac{d}{u+d} + \frac{u}{u+d}e^{-(u+d)t}\end{pmatrix}
+\end{equation}
+
+
+To calculate the probability of being in the up-state at a time $t$ after a spike at $t=0$, provided there has been no spike since $t=0$, it suffices to calculate the exponential of the transition matrix $Q_s$ below:
+
+\begin{equation}
+Q_s = \begin{pmatrix} -d-\lambda_u & d & \lambda_u \\ u & -u & 0 \\ 0 & 0 & 0\end{pmatrix}
+\end{equation}
+
+The third state of the Markov chain described by the transition matrix $Q_s$ is an ``absorbing'' state, the state of spiking, from which it is impossible to return to either the up or the down state.
+
+The solution to the spiking Markov chain is:
+\begin{equation}
+P(t)  = \begin{pmatrix} Ae^{-\alpha t} + (1-A)e^{-\beta t} & Be^{-\alpha t} - Be^{-\beta t} & 1 - (A+B)e^{-\alpha t} - (1-A-B)e^{-\beta t} \\ Ce^{-\alpha t} - Ce^{-\beta t} & (1-A)e^{-\alpha t} +  Ae^{-\beta t} & 1 - (1-A+C)e^{-\alpha t} - (A+C)e^{-\beta t} \\ 0 & 0 & 1 \end{pmatrix}
+\end{equation}
+where $-\alpha,-\beta$ are the roots to the characteristic polynomial of $Q_s$.
+\begin{equation}
+\begin{split}
+-\alpha = \frac{-(u+d+\lambda_u) + \sqrt{(u-d-\lambda_u)^2 + 4ud}}{2}\\
+-\beta = \frac{-(u+d+\lambda_u) - \sqrt{(u-d-\lambda_u)^2 + 4ud}}{2}
+\end{split}
+\end{equation}
+Since $u,d,\lambda_u >0$, these probabilities are simply double exponentials, and there are no trigonometric terms.
+
+Specifically:
+\begin{equation}
+\begin{split}
+&A = \frac{\left(u-d-\lambda_u+\sqrt{(u-d-\lambda_u)^2+4ud}\right)}{2\sqrt{(u-d-\lambda_u)^2+4ud}}\\
+&B = \frac{d}{\sqrt{(u-d-\lambda_u)^2+4ud}}\\
+&C = \frac{u}{\sqrt{(u-d-\lambda_u)^2+4ud}}
+\end{split}
+\end{equation}
+It can be  easily confirmed that $A,B,C>0$, which is necessary to ensure that all the probabilities are between 0 and 1.
+
+If the model is changed such that there is a non-zero spiking probability, $\lambda_d>0$, in the down-state, then the transition matrix $Q_s$ becomes:
+\begin{equation}
+Q_s = \begin{pmatrix} -d-\lambda_u & d & \lambda_u \\ u & -u-\lambda_d & \lambda_d \\ 0 & 0 & 0 \end{pmatrix}
+\end{equation}
+
+This matrix has solution:
+\begin{equation}
+\begin{pmatrix}
+Ae^{-\alpha t} + (1-A)e^{-\beta t} & B\left(e^{-\alpha t} - e^{-\beta t}\right) & 1-e^{-\beta t} - (A+B)\left(e^{-\alpha t} - e^{-\beta t}\right) \\
+C\left(e^{-\alpha t} - e^{-\beta t}\right) & (1-A)e^{-\alpha t} + Ae^{-\beta t} & 1-e^{-\alpha t} - (C-A)\left(e^{-\alpha t} - e^{-\beta t}\right)\\
+0 & 0 & 1
+\end{pmatrix}
+\end{equation}
+where $-\alpha,-\beta$ are once again the roots of the characteristic polynomial of $Q_s$.
+\begin{equation}
+\begin{split}
+-\alpha = \frac{-(u+d+\lambda_u+\lambda_d) + \sqrt{(u-d+\lambda_d-\lambda_u)^2+4ud}}{2}\\
+-\beta = \frac{-(u+d+\lambda_u+\lambda_d) - \sqrt{(u-d+\lambda_d-\lambda_u)^2+4ud}}{2}
+\end{split}
+\end{equation}
+again, $u,d>0$ means that the probabilities above are all double exponentials, with no trigonometric terms.
+
+\begin{equation}
+\begin{split}
+& A = \frac{u-d+\lambda_d-\lambda_u + \sqrt{(u-d+\lambda_d-\lambda_u)^2+4ud}}{2\sqrt{(u-d+\lambda_d-\lambda_u)^2 + 4ud}}\\
+& B = \frac{d}{\sqrt{(u-d+\lambda_d-\lambda_u)^2 + 4ud}}\\
+& C = \frac{u}{\sqrt{(u-d+\lambda_d-\lambda_u)^2 + 4ud}}
+\end{split}
+\end{equation}
+
+To simplify notation, set:
+\begin{equation}
+\begin{split}
+\label{dg}
+\Delta &= \lambda_u - \lambda_d\\
+\gamma &= \sqrt{(u-d-\Delta)^2 + 4ud}
+\end{split}
+\end{equation}
+
+Thus:
+\begin{equation}
+\begin{split}
+A = \frac{u-d - \Delta + \gamma}{2\gamma},\, B = \frac{d}{\gamma}, \,C = \frac{u}{\gamma}
+\end{split}
+\end{equation}
+
+\subsection{Estimating the rate function $r(t)$}
+
+These probabilities can now be used to calculate the estimated rate function, $r(t)$, based on the timing of spikes.  Assuming that the probability of the last spike is known, then the rate function between any two spikes is estimated by this Markov model. 
+
+If the probability vector at the time of the last spike is ${\bf p_0}=(p_0, 1-p_0,0)$, then the probabilities at a time $t$ after the spike are:
+\begin{equation}
+{\bf p(t)} = {\bf p_0}e^{Q_s} = (p_u(t),p_d(t),p_s(t))
+\end{equation}
+where
+\begin{equation}
+\begin{split}
+p_u(t) &= (p_0(A-C)+C)e^{-\alpha t}+(p_0(1-A+C)-C)e^{-\beta t}\\
+p_d(t) &= (p_0(A+B-1)+1-A)e^{-\alpha t}+(p_0(-A-B)+A)e^{-\beta t}\\
+p_s(t) &= 1 - p_u(t) - p_d(t)
+\end{split}
+\end{equation}
+
+The probabilities $p_u(t), \,p_d(t)$ represent the probability of being in the up/down state and not spiking.  The probability required to calculate the rate function, $r(t)$, between spikes is the probability of being in the up-state given that there has not been a spike.  This is because it is known that there has been no spike since the last spike.  Therefore, by Baye's Theorem, the probability $p(t)$ is just:
+\begin{equation}
+p(t)  = \frac{p_u(t)}{p_u(t) + p_d(t)}
+\end{equation}
+so, the rate function becomes:
+\begin{equation}
+r(t) = \Delta p(t) + \lambda_d = \frac{A_0e^{-\alpha t}+B_0e^{-\beta t}}{C_0e^{-\alpha t} + D_0e^{\beta t}}
+\end{equation}
+where:
+\begin{equation}
+\begin{split}
+\label{abcd}
+A_0 & = \Delta(p_0(-u-d-\Delta + \gamma)+2u)+\lambda_d(p_0(-2\Delta)+u+d+\Delta+\gamma)\\
+B_0 & =\Delta(p_0(u+d+\Delta + \gamma)-2u)+\lambda_d(p_0(2\Delta)-u-d-\Delta+\gamma)\\
+C_0 & = p_0(-2\Delta)+u+d+\Delta+\gamma\\
+D_0 & = p_0(2\Delta) -u-d-\Delta + \gamma
+\end{split}
+\end{equation}
+
+Since $-\beta<-\alpha$, this can be written as:
+\begin{equation}
+r(t) = \frac{A_0+B_0e^{-\gamma t}}{C_0 + D_0e^{-\gamma t}}
+\end{equation}
+so the asymptotic value of $r(t)$ is equal to the fraction $A_0/C_0$, so this value should not depend on $p_0$.  Allowing $\delta=u+d+\Delta$, then $\delta^2 -4u\Delta= \gamma^2$ which simplifies the calculation.
+
+$A_0 = 2\Delta u + p_0\Delta(\gamma-\delta) + \lambda_d C_0$, and $C_0 = \gamma + \delta -2\Delta p_0$:
+
+\begin{equation}
+\Delta p_0 = -\frac{C_0 - \gamma - \delta}{2}
+\end{equation}
+then
+\begin{equation}
+A_0 = 2\Delta u - \frac{1}{2}C_0(\gamma-\delta - 2\lambda_d) +\frac{1}{2}(\gamma+\delta)(\gamma-\delta)
+\end{equation}
+
+Therefore:
+\begin{equation}
+\frac{A_0}{C_0} = \lambda_d + \frac{1}{2}(\delta-\gamma) = \alpha
+\end{equation}
+
+similarly
+\begin{equation}
+\frac{B_0}{D_0} = \lambda_d + \frac{1}{2}(\gamma+\delta) = \beta
+\end{equation}
+
+This can be viewed as the asymptotic value of the rate as time goes to $-\infty$.
+
+So the rate function $r(t)$ simplifies to:
+\begin{equation}\label{rate}
+r(t) = \frac{\alpha C_0 + \beta D_0e^{-\gamma t}}{C_o + D_0e^{-\gamma t}} = \frac{\alpha C_0e^{-\alpha t} + \beta D_0e^{-\beta t}}{C_oe^{-\alpha t} + D_0e^{-\beta t}} 
+\end{equation}
+
+In fact, comparing $C_0$ to $\beta$ and $D_0$ to $\alpha$, get:
+\begin{equation}
+C_0 = 2(\beta - \lambda_d - p_0\Delta), \, D_0 = 2(-\alpha + \lambda_d + p_0\Delta)
+\end{equation}
+
+which further simplifies equation \ref{rate} to:
+\begin{equation}
+r(t) = \frac{\alpha(\beta - \lambda_d - p_0\Delta)e^{-\alpha t} + \beta(-\alpha + \lambda_d + p_0\Delta)e^{-\beta t}}{(\beta - \lambda_d - p_0\Delta)e^{-\alpha t} + (-\alpha + \lambda_d + p_0\Delta)e^{-\beta t}}
+\end{equation}
+
+\subsection{Change in probability when a spike arrives}
+
+In the previous section, the rate function, $r(t)$, and the pdf of the ISI distribution, $p_{ISI}(t)$, were calculated, given that the probability of being in the up-state at the time of the last spike, $p_0$, is known.  However, it is necessary to reevaluate the probability at the time a spike arrives.
+
+If the probability of being in the up-state before the spike is $p_u(t)$, then the presence of a spike provides information on the state of the model. By Baye's Theorem:
+
+\begin{equation}
+\begin{split}
+P(\mbox{up-state} | \mbox{spike}) &= \frac{P(\mbox{spike}|\mbox{up-state})P(\mbox{up-state})}{P(\mbox{spike})} \\
+&=\frac{\lambda_u p_u(t)}{\Delta p_u(t) + \lambda_d }
+\end{split}
+\end{equation}
+
+Thus:
+\begin{equation}
+p_u(t) \rightarrow \frac{\lambda_u p_u(t)}{\Delta p(t) + \lambda_d}
+\end{equation}
+
+equivalently:
+\begin{equation}
+\begin{split}
+r(t) \rightarrow &(\lambda_u - \lambda_d)\frac{\lambda_u p_u(t)}{\Delta p_u(t)+ \lambda_d} + \lambda_d\\
+= & \frac{\lambda_u^2 p_u(t) + \lambda_d^2(1-p_u(t))}{\lambda_up_u(t) + \lambda_d(1-p_u(t))}
+\end{split}
+\end{equation}
+
+Equivalently, this can be written as:
+\begin{equation}
+r(t) \rightarrow (\lambda_u +\lambda_d) - \frac{\lambda_u\lambda_d}{r(t)}
+\end{equation}
+
+\subsection{Calculating the ISI distribution from the estimated rate function}
+When dealing with spike-train data, it is very useful to know the inter-spike interval (ISI) distribution, as this can be observed much easier than the firing rate of a neuron.
+
+The probability density function of the ISI distribution of an inhomogeneous Poisson process, with rate function $r(t)$, is:
+\begin{equation}
+p_{ISI}(t) = r(t) e^{-\int_0^t r(s)\,ds}
+\end{equation}
+
+Now it is necessary to integrate the rate function from $0$ to $t$:
+\begin{equation}
+\begin{split}
+\label{int}
+\int_0^t r(s)\,ds &= \int_0^t  \frac{A_0e^{-\alpha s}+B_0e^{-\beta s}}{C_0e^{-\alpha s} + D_0e^{\beta s}}\,ds\\ 
+&= \frac{\alpha A_0D_0 - \beta B_0 C_0}{(\alpha - \beta)C_0D_0}t + \frac{B_0 C_0-A_0D_0}{(\alpha - \beta)C_0D_0} \log\left({\frac{C_0e^{\beta t} + D_0e^{\alpha t}}{C_0 + D_0} }\right)
+\end{split}
+\end{equation}
+
+Substituting equations \ref{abcd} and \ref{dg}, and noting that $\beta-\alpha=\gamma$, the fractions in the above equation become:
+\begin{equation}
+\begin{split}
+\frac{\alpha A_0D_0 - \beta B_0 C_0}{(\alpha - \beta)C_0D_0} &= u+d+\lambda_u+\lambda_d = \alpha+\beta,\\
+ \frac{B_0 C_0-A_0D_0}{(\alpha - \beta)C_0D_0} &= -1
+\end{split}
+\end{equation}
+Thus equation \ref{int} becomes:
+\begin{equation}
+\begin{split}
+\int_0^t r(s)\,ds &= (\alpha+\beta)t - \log\left( {\frac{C_0e^{\beta t} + D_0e^{\alpha t}}{C_0 + D_0} }\right) \\
+&= \log\left( e^{(\alpha+\beta)t}\right) + \log \left( \frac{C_0 +D_0}{C_0e^{\beta t}+ D_0e^{\alpha t}}\right)\\
+&= \log \left( \frac{C_0e^{(\alpha+\beta)t}+D_0e^{(\alpha+\beta)t}}{C_0e^{\beta t}+D_0e^{\alpha t}}\right)\\
+&= \log \left( \frac{C_0+D_0}{C_0e^{-\alpha t}+D_0e^{-\beta t}}\right)
+\end{split}
+\end{equation}
+
+Now $p_{ISI}(t)$ becomes:
+\begin{equation}
+\begin{split}
+p_{ISI}(t) &= \frac{A_0e^{-\alpha t}+B_0e^{-\beta t}}{C_0e^{-\alpha t} + D_0e^{-\beta t}}e^{-\log \left( \frac{C_0+D_0}{C_0e^{-\alpha t}+D_0e^{-\beta t}}\right)}\\
+& = \frac{A_0e^{-\alpha t}+B_0e^{-\beta t}}{C_0e^{-\alpha t} + D_0e^{-\beta t}}e^{\log \left( \frac{C_0e^{-\alpha t}+D_0e^{-\beta t}}{C_0+D_0}\right)}\\
+&= \frac{A_0e^{-\alpha t}+B_0e^{-\beta t}}{C_0e^{-\alpha t} + D_0e^{-\beta t}}\left( \frac{C_0e^{-\alpha t}+D_0e^{-\beta t}}{C_0+D_0}\right)\\
+&= \frac{A_0}{C_0+D_0}e^{-\alpha t} + \frac{B_0}{C_0+D_0}e^{-\beta t}
+\end{split}
+\end{equation}
+
+This is the probability density function (pdf) of a hyper-exponential distribution, $H_2$, which has typical probability density function:
+\begin{equation}
+f(x) = \rho\lambda_1 e^{-\lambda_1 x} + (1-\rho) e^{-\lambda_2 x}
+\end{equation}
+
+Clearly, then $\lambda_1, \lambda_2$ which are calculated experimentally correspond to $\alpha,\beta$.  If $\lambda_1 = \alpha$ and $\lambda_2 = \beta$, then it can be calculated that:
+\begin{equation}
+\rho\alpha + (1-\rho) \beta = \rho\lambda_u + (1-\rho)\lambda_d
+\end{equation}
+
+This gives an expression for $\rho$ in terms of $\alpha, \beta, \lambda_u$ and $\lambda_d$.
+\begin{equation}
+\begin{split}
+\rho(\alpha - \beta + \lambda_d - \lambda_u) &= \lambda_d-\beta \\
+\rho = \frac{\beta-\alpha +\lambda_u- \lambda_d}{\beta-\lambda_d} &= 2\frac{\gamma+\Delta}{\gamma+\delta}
+\end{split}
+\end{equation}
+
+\section{Testing on data}
+The previous result allows for testing on real data.  The data used in this report is the data used in \cite{SenEtAl2001a}.  An electrode was placed in L1 of anaesthetised zebra finches, and the birds were presented with 20 natural stimuli ten times each.  As the model does not account for the refractory period of neurons, a well-documented feature of neurons \cite{OlshausenField2004a} , the ten presentations of each stimulus are overlaid to counter the impact of the refractory period \cite{BerryMeister1998a}. 
+
+The inter-spike intervals (ISIs) were then aggregated across 16 of the 20 stimuli, to give a representation of a typical ISI distribution for each neuron.  The hyperexponential distribution, $H_2$, was trained on the ISI distribution of the 16 stimuli by minimising the statistic $D_n$ of the Kolmogorov-Smirnov test \cite{Massey1951a} by downhill-simplex search.  Then the remaining four stimuli were aggregated across the ten trials to form a test ISI distribution upon which the calculated minimum hyperexponential distribution was tested using the Kolmogorov-Smirnov test for goodness-of-fit.
+
+The Kolmogorov-Smirnov (KS) test is a nonparametric goodness-of-fit test introduced in \cite{Massey1951a}.  It is used to compare a model probability distribution to a sample.  The KS statistic is the $d_{\infty}$ metric between the cumulative distribution function of the model distribution and the empirical distribution function of the data.
+\begin{equation}
+D_n = \sup_x \left| \hat{F}_n(x) - F(x) \right|
+\end{equation}
+where $\hat{F}_n(x)$ is the empirical distribution function of the data set of $n$ points and $F(x)$ is the cumulative distribution function of the proposed probability distribution.
+
+Then the ISI distributions were tested against the hyperexponential distribution with both two and three modes $(H_2$ and $H_3)$.  As the exponential distribution is a special case of the hyperexponential distribution, and $H_2$ is a special case of $H_3$ ,it is clear that there should be an improvement with each step.  What was observed, as shown in figure \ref{exphehe3}, was that the $H_2$ distribution was a drastic improvement on the exponential distribution, but the the improvement of $H_3$ over $H_2$ was insignificant. 
+
+\begin{figure}
+\input{ksdists}
+\caption{\label{exphehe3} The Kolmogorov-Smirnov test statistic $D_n$ for (a) the exponential distribution, (b) the hyperexponential distribution with two modes, and (c) the hyperexponential distribution with three modes.  The mean of the $p<0.05$ critical value is indicated by the broken line.}
+\end{figure}
+
+At the $p<0.05$ significance level, only three out of $24$ neurons were not rejected by the Kolmogorov-Smirnov test for both the $H_2$ and the $H_3$ distributions. This could be due to the number of data points, which would make the KS test extremely rigorous.  It is also notable that this model is simply a first approximation to a neuron model; the KS statistic serves as a metric to determine goodness-of-fit rather than fitting the exact ISI distribution.
+
+This seems to demonstrate that there is a bimodality of firing rates in neurons in the auditory forebrain of zebra finches.  This may suggest a sparse coding of features in the auditory forebrain of songbirds.  
+

@@ -1,28 +1,36 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}
 \contentsline {section}{\numberline {1.1}Spike Trains}{1}
 \contentsline {subsection}{\numberline {1.1.1}Spike Train Metrics}{2}
-\contentsline {subsection}{\numberline {1.1.2}Van Rossum metric}{2}
-\contentsline {section}{\numberline {1.2}Information Theory}{3}
-\contentsline {chapter}{\numberline {2}Clustering methods in Spike Train Analysis}{4}
-\contentsline {section}{\numberline {2.1}Networks}{4}
-\contentsline {subsection}{\numberline {2.1.1}Modularity}{5}
-\contentsline {subsection}{\numberline {2.1.2}Newman's Eigenvalue Algorithm}{7}
-\contentsline {subsection}{\numberline {2.1.3}New network clustering algorithms}{11}
-\contentsline {subsubsection}{Genetic algorithm}{11}
-\contentsline {subsubsection}{Simulated Annealing}{13}
-\contentsline {subsection}{\numberline {2.1.4}$k$-Medoids Clustering}{13}
-\contentsline {subsection}{\numberline {2.1.5}Clustering Responses with Modularity}{14}
-\contentsline {section}{\numberline {2.2}Discussion}{15}
-\contentsline {chapter}{\numberline {3}Spike Train Metrics}{17}
-\contentsline {section}{\numberline {3.1}Single-unit recordings}{17}
-\contentsline {section}{\numberline {3.2}Extension to multi-unit recordings}{19}
-\contentsline {subsection}{\numberline {3.2.1}Testing on data}{20}
-\contentsline {section}{\numberline {3.3}ISI distance}{21}
-\contentsline {subsection}{\numberline {3.3.1}Single unit recordings}{21}
-\contentsline {subsection}{\numberline {3.3.2}Initial extension to multi-unit recordings}{21}
-\contentsline {subsection}{\numberline {3.3.3}Numerical tests}{23}
-\contentsline {subsection}{\numberline {3.3.4}Alternative extensions to the multi-unit case}{23}
-\contentsline {section}{\numberline {3.4}Adaptive SPIKE \& ISI distances}{25}
-\contentsline {chapter}{\numberline {4}A simple neuron model}{27}
-\contentsline {section}{\numberline {4.1}Estimating the firing rate $r(t)$}{28}
-\contentsline {chapter}{\numberline {5}Conclusion}{29}
+\contentsline {subsection}{\numberline {1.1.2}Van Rossum metric}{3}
+\contentsline {section}{\numberline {1.2}Information Theory}{4}
+\contentsline {chapter}{\numberline {2}Clustering methods in Spike Train Analysis}{6}
+\contentsline {section}{\numberline {2.1}Modularity}{7}
+\contentsline {section}{\numberline {2.2}Newman's eigenvalue algorithm}{10}
+\contentsline {section}{\numberline {2.3}New network clustering algorithms}{14}
+\contentsline {subsection}{\numberline {2.3.1}Genetic algorithm}{16}
+\contentsline {subsection}{\numberline {2.3.2}Simulated annealing}{18}
+\contentsline {section}{\numberline {2.4}$k$-medoids clustering}{19}
+\contentsline {section}{\numberline {2.5}Clustering responses with modularity}{21}
+\contentsline {section}{\numberline {2.6}Mapping information flow in a simulated network of neurons}{23}
+\contentsline {section}{\numberline {2.7}The bibliographic network}{24}
+\contentsline {section}{\numberline {2.8}Incremental mutual information}{25}
+\contentsline {section}{\numberline {2.9}Numerical testing}{26}
+\contentsline {section}{\numberline {2.10}Bibliographic coupling}{27}
+\contentsline {chapter}{\numberline {3}Spike Train Metrics}{32}
+\contentsline {section}{\numberline {3.1}Single-unit recordings}{34}
+\contentsline {section}{\numberline {3.2}Extension to multi-unit recordings}{36}
+\contentsline {subsection}{\numberline {3.2.1}Testing on data}{37}
+\contentsline {section}{\numberline {3.3}ISI distance}{38}
+\contentsline {subsection}{\numberline {3.3.1}Single unit recordings}{38}
+\contentsline {subsection}{\numberline {3.3.2}Initial extension to multi-unit recordings}{38}
+\contentsline {subsection}{\numberline {3.3.3}Numerical tests}{41}
+\contentsline {subsection}{\numberline {3.3.4}Alternative extensions to the multi-unit case}{42}
+\contentsline {section}{\numberline {3.4}Adaptive SPIKE \& ISI distances}{44}
+\contentsline {chapter}{\numberline {4}A simple neuron model}{47}
+\contentsline {section}{\numberline {4.1}Estimating the firing rate $r(t)$}{48}
+\contentsline {section}{\numberline {4.2}Markov Process}{51}
+\contentsline {subsection}{\numberline {4.2.1}Estimating the rate function $r(t)$}{54}
+\contentsline {subsection}{\numberline {4.2.2}Change in probability when a spike arrives}{56}
+\contentsline {subsection}{\numberline {4.2.3}Calculating the ISI distribution from the estimated rate function}{57}
+\contentsline {section}{\numberline {4.3}Testing on data}{59}
+\contentsline {chapter}{\numberline {5}Conclusion}{63}
