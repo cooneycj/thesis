@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  8 FEB 2015 23:10
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  13 FEB 2015 03:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -466,27 +466,53 @@ s/tcd.png>] (./main.toc [1
 Chapter 1.
 (./chapters/introduction.tex [1
 
-] [2] [3]
+]
+<images/hhtrace.png, id=22, 722.7pt x 542.025pt>
+File: images/hhtrace.png Graphic file (type png)
+ <use images/hhtrace.png>
+Package pdftex.def Info: images/hhtrace.png used on input line 28.
+(pdftex.def)             Requested size: 390.0pt x 292.4989pt.
 
-LaTeX Warning: Reference `stk' on page 4 undefined on input line 92.
+Overfull \hbox (3.02509pt too wide) in paragraph at lines 32--33
+\OT1/cmr/m/n/12 that they recorded from the gi-ant axon in a squid [[]],
+ []
 
-) [4] [5]
+[2] [3 <./images/hhtrace.png>] (./vRfilter.tex
+Package epstopdf Info: Source file: <vRfilter.eps>
+(epstopdf)                    date: 2015-02-10 14:47:54
+(epstopdf)                    size: 24679 bytes
+(epstopdf)             Output file: <vRfilter-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-02-10 14:49:18
+(epstopdf)                    size: 7486 bytes
+(epstopdf)             Command: <repstopdf --outfile=vRfilter-eps-converted-to.
+pdf vRfilter.eps>
+(epstopdf)             \includegraphics on input line 124.
+Package epstopdf Info: Output file is already uptodate.
+
+<vRfilter-eps-converted-to.pdf, id=34, 361.35pt x 252.945pt>
+File: vRfilter-eps-converted-to.pdf Graphic file (type pdf)
+
+<use vRfilter-eps-converted-to.pdf>
+Package pdftex.def Info: vRfilter-eps-converted-to.pdf used on input line 124.
+(pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
+) [4] [5 <./vRfilter-eps-converted-to.pdf>]
+[6]) [7]
 Chapter 2.
-(./chapters/chapter02.tex [6
+(./chapters/chapter02.tex [8
 
 ]
 Package epstopdf Info: Source file: <images/networkcvsnc.eps>
-(epstopdf)                    date: 2011-11-24 09:35:52
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 20780 bytes
 (epstopdf)             Output file: <images/networkcvsnc-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-01-14 14:34:54
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 9275 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/networkcvsnc-eps-co
 nverted-to.pdf images/networkcvsnc.eps>
 (epstopdf)             \includegraphics on input line 36.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/networkcvsnc-eps-converted-to.pdf, id=46, 540.0175pt x 164.615pt>
+<images/networkcvsnc-eps-converted-to.pdf, id=56, 540.0175pt x 164.615pt>
 File: images/networkcvsnc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/networkcvsnc-eps-converted-to.pdf>
@@ -498,26 +524,26 @@ Overfull \hbox (21.24573pt too wide) in paragraph at lines 36--41
  [] 
  []
 
-[7] [8 <./images/networkcvsnc-eps-converted-to.pdf>] [9] [10] [11] [12]
-[13]
+[9] [10 <./images/networkcvsnc-eps-converted-to.pdf>] [11] [12] [13] [14]
+[15]
 Overfull \hbox (11.73752pt too wide) in paragraph at lines 265--275
 \OT1/cmr/m/n/12 the \OT1/cmr/m/sl/12 be-tween-ness \OT1/cmr/m/n/12 al-go-rithm 
 of New-man and Gir-van [[]],
  []
 
-[14] [15] [16] [17] [18]
+[16] [17] [18] [19] [20]
 Package epstopdf Info: Source file: <images/kmedoids.eps>
-(epstopdf)                    date: 2012-02-08 19:12:06
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 26583 bytes
 (epstopdf)             Output file: <images/kmedoids-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-01-19 23:24:24
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 11196 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/kmedoids-eps-conver
 ted-to.pdf images/kmedoids.eps>
 (epstopdf)             \includegraphics on input line 332.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/kmedoids-eps-converted-to.pdf, id=96, 273.02pt x 227.85126pt>
+<images/kmedoids-eps-converted-to.pdf, id=106, 273.02pt x 227.85126pt>
 File: images/kmedoids-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/kmedoids-eps-converted-to.pdf>
@@ -529,23 +555,23 @@ Overfull \hbox (21.24573pt too wide) in paragraph at lines 332--339
  [] 
  []
 
-[19] [20] [21]
+[21] [22] [23]
 
-LaTeX Warning: Reference `graphs' on page 22 undefined on input line 410.
+LaTeX Warning: Reference `graphs' on page 24 undefined on input line 410.
 
-[22] [23] [24] [25]
+[24] [25] [26] [27]
 Package epstopdf Info: Source file: <images/modelnetwork.eps>
-(epstopdf)                    date: 2012-07-18 02:14:46
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 209788 bytes
 (epstopdf)             Output file: <images/modelnetwork-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-01-19 22:34:07
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 10518 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/modelnetwork-eps-co
 nverted-to.pdf images/modelnetwork.eps>
 (epstopdf)             \includegraphics on input line 507.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/modelnetwork-eps-converted-to.pdf, id=121, 803.0pt x 462.72874pt>
+<images/modelnetwork-eps-converted-to.pdf, id=131, 803.0pt x 462.72874pt>
 File: images/modelnetwork-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/modelnetwork-eps-converted-to.pdf>
@@ -557,75 +583,38 @@ Overfull \hbox (21.24573pt too wide) in paragraph at lines 507--509
  [] 
  []
 
-[26]
+[28]
 Package epstopdf Info: Source file: <images/directednetnodes.eps>
-(epstopdf)                    date: 2012-07-18 15:36:32
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 43533 bytes
 (epstopdf)             Output file: <images/directednetnodes-eps-converted-to.p
 df>
-(epstopdf)                    date: 2015-01-19 23:11:57
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 12426 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/directednetnodes-ep
 s-converted-to.pdf images/directednetnodes.eps>
 (epstopdf)             \includegraphics on input line 523.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/directednetnodes-eps-converted-to.pdf, id=125, 799.98875pt x 521.95pt>
+<images/directednetnodes-eps-converted-to.pdf, id=136, 799.98875pt x 521.95pt>
 File: images/directednetnodes-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/directednetnodes-eps-converted-to.pdf>
 Package pdftex.def Info: images/directednetnodes-eps-converted-to.pdf used on i
 nput line 523.
 (pdftex.def)             Requested size: 292.5pt x 190.84068pt.
-
-./chapters/chapter02.tex:524: Missing $ inserted.
-<inserted text> 
-                $
-l.524 \left
-           . \right.\\
-? s
-OK, entering \scrollmode...
-./chapters/chapter02.tex:525: Extra }, or forgotten $.
-<template> \unskip \hfil }
-                          \hskip \tabcolsep \endtemplate 
-l.525 \epsfig
-             {file=weightmatrix.eps,width=0.75\textwidth}
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./chapters/chapter02.tex:525: Missing $ inserted.
-<inserted text> 
-                $
-l.525 \epsfig
-             {file=weightmatrix.eps,width=0.75\textwidth}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./chapters/chapter02.tex:525: Missing } inserted.
-<inserted text> 
-                }
-l.525 \epsfig
-             {file=weightmatrix.eps,width=0.75\textwidth}
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
 Package epstopdf Info: Source file: <images/weightmatrix.eps>
-(epstopdf)                    date: 2012-07-22 11:44:50
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 54179 bytes
 (epstopdf)             Output file: <images/weightmatrix-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-01-19 22:57:04
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 13422 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/weightmatrix-eps-co
 nverted-to.pdf images/weightmatrix.eps>
 (epstopdf)             \includegraphics on input line 525.
 Package epstopdf Info: Output file is already uptodate.
-<images/weightmatrix-eps-converted-to.pdf, id=126, 303.1325pt x 228.855pt>
+
+<images/weightmatrix-eps-converted-to.pdf, id=137, 303.1325pt x 228.855pt>
 File: images/weightmatrix-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/weightmatrix-eps-converted-to.pdf>
@@ -638,16 +627,16 @@ Overfull \hbox (21.24573pt too wide) in paragraph at lines 522--528
  []
 
 Package epstopdf Info: Source file: <images/IMI1.eps>
-(epstopdf)                    date: 2012-07-22 11:46:16
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 56385 bytes
 (epstopdf)             Output file: <images/IMI1-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-01-19 22:57:43
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 15757 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/IMI1-eps-converted-
 to.pdf images/IMI1.eps>
 (epstopdf)             \includegraphics on input line 534.
 Package epstopdf Info: Output file is already uptodate.
-<images/IMI1-eps-converted-to.pdf, id=127, 303.1325pt x 228.855pt>
+<images/IMI1-eps-converted-to.pdf, id=138, 303.1325pt x 228.855pt>
 File: images/IMI1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/IMI1-eps-converted-to.pdf>
@@ -655,17 +644,17 @@ Package pdftex.def Info: images/IMI1-eps-converted-to.pdf used on input line 53
 4.
 (pdftex.def)             Requested size: 90.3375pt x 68.20305pt.
 Package epstopdf Info: Source file: <images/IMI2.eps>
-(epstopdf)                    date: 2012-07-22 11:46:43
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 56381 bytes
 (epstopdf)             Output file: <images/IMI2-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-01-19 22:57:45
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 15727 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/IMI2-eps-converted-
 to.pdf images/IMI2.eps>
 (epstopdf)             \includegraphics on input line 534.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/IMI2-eps-converted-to.pdf, id=128, 303.1325pt x 228.855pt>
+<images/IMI2-eps-converted-to.pdf, id=139, 303.1325pt x 228.855pt>
 File: images/IMI2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/IMI2-eps-converted-to.pdf>
@@ -673,17 +662,17 @@ Package pdftex.def Info: images/IMI2-eps-converted-to.pdf used on input line 53
 4.
 (pdftex.def)             Requested size: 90.3375pt x 68.20305pt.
 Package epstopdf Info: Source file: <images/IMI3.eps>
-(epstopdf)                    date: 2012-07-22 11:46:52
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 56416 bytes
 (epstopdf)             Output file: <images/IMI3-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-01-19 22:57:47
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 15781 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/IMI3-eps-converted-
 to.pdf images/IMI3.eps>
 (epstopdf)             \includegraphics on input line 534.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/IMI3-eps-converted-to.pdf, id=129, 303.1325pt x 228.855pt>
+<images/IMI3-eps-converted-to.pdf, id=140, 303.1325pt x 228.855pt>
 File: images/IMI3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/IMI3-eps-converted-to.pdf>
@@ -691,17 +680,17 @@ Package pdftex.def Info: images/IMI3-eps-converted-to.pdf used on input line 53
 4.
 (pdftex.def)             Requested size: 90.3375pt x 68.20305pt.
 Package epstopdf Info: Source file: <images/IMI4.eps>
-(epstopdf)                    date: 2012-07-22 11:47:21
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 56329 bytes
 (epstopdf)             Output file: <images/IMI4-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-01-19 22:57:48
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 15878 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/IMI4-eps-converted-
 to.pdf images/IMI4.eps>
 (epstopdf)             \includegraphics on input line 534.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/IMI4-eps-converted-to.pdf, id=130, 303.1325pt x 228.855pt>
+<images/IMI4-eps-converted-to.pdf, id=141, 303.1325pt x 228.855pt>
 File: images/IMI4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/IMI4-eps-converted-to.pdf>
@@ -709,17 +698,17 @@ Package pdftex.def Info: images/IMI4-eps-converted-to.pdf used on input line 53
 4.
 (pdftex.def)             Requested size: 90.3375pt x 68.20305pt.
 Package epstopdf Info: Source file: <images/IMI5.eps>
-(epstopdf)                    date: 2012-07-22 11:47:45
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 56254 bytes
 (epstopdf)             Output file: <images/IMI5-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-01-19 22:57:50
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 15734 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/IMI5-eps-converted-
 to.pdf images/IMI5.eps>
 (epstopdf)             \includegraphics on input line 535.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/IMI5-eps-converted-to.pdf, id=131, 303.1325pt x 228.855pt>
+<images/IMI5-eps-converted-to.pdf, id=142, 303.1325pt x 228.855pt>
 File: images/IMI5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/IMI5-eps-converted-to.pdf>
@@ -727,17 +716,17 @@ Package pdftex.def Info: images/IMI5-eps-converted-to.pdf used on input line 53
 5.
 (pdftex.def)             Requested size: 90.3375pt x 68.20305pt.
 Package epstopdf Info: Source file: <images/IMI6.eps>
-(epstopdf)                    date: 2012-07-22 11:48:16
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 55971 bytes
 (epstopdf)             Output file: <images/IMI6-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-01-19 22:57:51
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 15555 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/IMI6-eps-converted-
 to.pdf images/IMI6.eps>
 (epstopdf)             \includegraphics on input line 535.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/IMI6-eps-converted-to.pdf, id=132, 303.1325pt x 228.855pt>
+<images/IMI6-eps-converted-to.pdf, id=143, 303.1325pt x 228.855pt>
 File: images/IMI6-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/IMI6-eps-converted-to.pdf>
@@ -745,17 +734,17 @@ Package pdftex.def Info: images/IMI6-eps-converted-to.pdf used on input line 53
 5.
 (pdftex.def)             Requested size: 90.3375pt x 68.20305pt.
 Package epstopdf Info: Source file: <images/IMI7.eps>
-(epstopdf)                    date: 2012-07-22 11:48:41
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 55879 bytes
 (epstopdf)             Output file: <images/IMI7-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-01-19 22:57:53
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 15507 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/IMI7-eps-converted-
 to.pdf images/IMI7.eps>
 (epstopdf)             \includegraphics on input line 535.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/IMI7-eps-converted-to.pdf, id=133, 303.1325pt x 228.855pt>
+<images/IMI7-eps-converted-to.pdf, id=144, 303.1325pt x 228.855pt>
 File: images/IMI7-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/IMI7-eps-converted-to.pdf>
@@ -763,17 +752,17 @@ Package pdftex.def Info: images/IMI7-eps-converted-to.pdf used on input line 53
 5.
 (pdftex.def)             Requested size: 90.3375pt x 68.20305pt.
 Package epstopdf Info: Source file: <images/IMI8.eps>
-(epstopdf)                    date: 2012-07-22 11:49:15
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 55740 bytes
 (epstopdf)             Output file: <images/IMI8-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-01-19 22:57:55
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 15304 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/IMI8-eps-converted-
 to.pdf images/IMI8.eps>
 (epstopdf)             \includegraphics on input line 535.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/IMI8-eps-converted-to.pdf, id=134, 303.1325pt x 228.855pt>
+<images/IMI8-eps-converted-to.pdf, id=145, 303.1325pt x 228.855pt>
 File: images/IMI8-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/IMI8-eps-converted-to.pdf>
@@ -781,17 +770,17 @@ Package pdftex.def Info: images/IMI8-eps-converted-to.pdf used on input line 53
 5.
 (pdftex.def)             Requested size: 90.3375pt x 68.20305pt.
 Package epstopdf Info: Source file: <images/IMI9.eps>
-(epstopdf)                    date: 2012-07-22 11:49:42
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 55509 bytes
 (epstopdf)             Output file: <images/IMI9-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-01-19 22:57:56
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 15107 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/IMI9-eps-converted-
 to.pdf images/IMI9.eps>
 (epstopdf)             \includegraphics on input line 536.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/IMI9-eps-converted-to.pdf, id=135, 303.1325pt x 228.855pt>
+<images/IMI9-eps-converted-to.pdf, id=146, 303.1325pt x 228.855pt>
 File: images/IMI9-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/IMI9-eps-converted-to.pdf>
@@ -799,17 +788,17 @@ Package pdftex.def Info: images/IMI9-eps-converted-to.pdf used on input line 53
 6.
 (pdftex.def)             Requested size: 90.3375pt x 68.20305pt.
 Package epstopdf Info: Source file: <images/IMI10.eps>
-(epstopdf)                    date: 2012-07-22 11:50:07
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 55482 bytes
 (epstopdf)             Output file: <images/IMI10-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-01-19 22:57:58
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 15061 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/IMI10-eps-converted
 -to.pdf images/IMI10.eps>
 (epstopdf)             \includegraphics on input line 536.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/IMI10-eps-converted-to.pdf, id=136, 303.1325pt x 228.855pt>
+<images/IMI10-eps-converted-to.pdf, id=147, 303.1325pt x 228.855pt>
 File: images/IMI10-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/IMI10-eps-converted-to.pdf>
@@ -817,17 +806,17 @@ Package pdftex.def Info: images/IMI10-eps-converted-to.pdf used on input line 5
 36.
 (pdftex.def)             Requested size: 90.3375pt x 68.20305pt.
 Package epstopdf Info: Source file: <images/IMI11.eps>
-(epstopdf)                    date: 2012-07-22 11:50:35
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 66090 bytes
 (epstopdf)             Output file: <images/IMI11-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-01-19 22:57:59
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 18585 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/IMI11-eps-converted
 -to.pdf images/IMI11.eps>
 (epstopdf)             \includegraphics on input line 536.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/IMI11-eps-converted-to.pdf, id=137, 303.1325pt x 228.855pt>
+<images/IMI11-eps-converted-to.pdf, id=148, 303.1325pt x 228.855pt>
 File: images/IMI11-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/IMI11-eps-converted-to.pdf>
@@ -835,17 +824,17 @@ Package pdftex.def Info: images/IMI11-eps-converted-to.pdf used on input line 5
 36.
 (pdftex.def)             Requested size: 90.3375pt x 68.20305pt.
 Package epstopdf Info: Source file: <images/IMI12.eps>
-(epstopdf)                    date: 2012-07-22 11:51:02
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 55025 bytes
 (epstopdf)             Output file: <images/IMI12-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-01-19 22:58:01
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 14475 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/IMI12-eps-converted
 -to.pdf images/IMI12.eps>
 (epstopdf)             \includegraphics on input line 536.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/IMI12-eps-converted-to.pdf, id=138, 303.1325pt x 228.855pt>
+<images/IMI12-eps-converted-to.pdf, id=149, 303.1325pt x 228.855pt>
 File: images/IMI12-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/IMI12-eps-converted-to.pdf>
@@ -853,17 +842,17 @@ Package pdftex.def Info: images/IMI12-eps-converted-to.pdf used on input line 5
 36.
 (pdftex.def)             Requested size: 90.3375pt x 68.20305pt.
 Package epstopdf Info: Source file: <images/IMI13.eps>
-(epstopdf)                    date: 2012-07-22 11:51:29
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 55105 bytes
 (epstopdf)             Output file: <images/IMI13-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-01-19 22:58:03
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 14534 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/IMI13-eps-converted
 -to.pdf images/IMI13.eps>
 (epstopdf)             \includegraphics on input line 537.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/IMI13-eps-converted-to.pdf, id=139, 303.1325pt x 228.855pt>
+<images/IMI13-eps-converted-to.pdf, id=150, 303.1325pt x 228.855pt>
 File: images/IMI13-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/IMI13-eps-converted-to.pdf>
@@ -871,17 +860,17 @@ Package pdftex.def Info: images/IMI13-eps-converted-to.pdf used on input line 5
 37.
 (pdftex.def)             Requested size: 90.3375pt x 68.20305pt.
 Package epstopdf Info: Source file: <images/IMI14.eps>
-(epstopdf)                    date: 2012-07-22 11:51:58
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 54742 bytes
 (epstopdf)             Output file: <images/IMI14-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-01-19 22:58:04
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 14146 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/IMI14-eps-converted
 -to.pdf images/IMI14.eps>
 (epstopdf)             \includegraphics on input line 537.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/IMI14-eps-converted-to.pdf, id=140, 303.1325pt x 228.855pt>
+<images/IMI14-eps-converted-to.pdf, id=151, 303.1325pt x 228.855pt>
 File: images/IMI14-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/IMI14-eps-converted-to.pdf>
@@ -889,17 +878,17 @@ Package pdftex.def Info: images/IMI14-eps-converted-to.pdf used on input line 5
 37.
 (pdftex.def)             Requested size: 90.3375pt x 68.20305pt.
 Package epstopdf Info: Source file: <images/IMI15.eps>
-(epstopdf)                    date: 2012-07-22 11:52:33
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 54664 bytes
 (epstopdf)             Output file: <images/IMI15-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-01-19 22:58:06
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 14045 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/IMI15-eps-converted
 -to.pdf images/IMI15.eps>
 (epstopdf)             \includegraphics on input line 537.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/IMI15-eps-converted-to.pdf, id=141, 303.1325pt x 228.855pt>
+<images/IMI15-eps-converted-to.pdf, id=152, 303.1325pt x 228.855pt>
 File: images/IMI15-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/IMI15-eps-converted-to.pdf>
@@ -907,17 +896,17 @@ Package pdftex.def Info: images/IMI15-eps-converted-to.pdf used on input line 5
 37.
 (pdftex.def)             Requested size: 90.3375pt x 68.20305pt.
 Package epstopdf Info: Source file: <images/IMI16.eps>
-(epstopdf)                    date: 2012-07-22 11:53:00
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 54469 bytes
 (epstopdf)             Output file: <images/IMI16-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-01-19 22:58:08
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 13847 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/IMI16-eps-converted
 -to.pdf images/IMI16.eps>
 (epstopdf)             \includegraphics on input line 537.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/IMI16-eps-converted-to.pdf, id=142, 303.1325pt x 228.855pt>
+<images/IMI16-eps-converted-to.pdf, id=153, 303.1325pt x 228.855pt>
 File: images/IMI16-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/IMI16-eps-converted-to.pdf>
@@ -934,9 +923,9 @@ Overfull \hbox (21.24573pt too wide) in paragraph at lines 533--541
  [] 
  []
 
-) [27] [28 <./images/kmedoids-eps-converted-to.pdf>] [29 <./images/modelnetwork
--eps-converted-to.pdf>] [30 <./images/directednetnodes-eps-converted-to.pdf> <.
-/images/weightmatrix-eps-converted-to.pdf>] [31 <./images/IMI1-eps-converted-to
+) [29] [30 <./images/kmedoids-eps-converted-to.pdf>] [31 <./images/modelnetwork
+-eps-converted-to.pdf>] [32 <./images/directednetnodes-eps-converted-to.pdf> <.
+/images/weightmatrix-eps-converted-to.pdf>] [33 <./images/IMI1-eps-converted-to
 .pdf> <./images/IMI2-eps-converted-to.pdf> <./images/IMI3-eps-converted-to.pdf>
  <./images/IMI4-eps-converted-to.pdf> <./images/IMI5-eps-converted-to.pdf> <./i
 mages/IMI6-eps-converted-to.pdf> <./images/IMI7-eps-converted-to.pdf> <./images
@@ -947,11 +936,15 @@ converted-to.pdf> <./images/IMI15-eps-converted-to.pdf> <./images/IMI16-eps-con
 verted-to.pdf>]
 Chapter 3.
 (./chapters/chapter03.tex
+
+LaTeX Warning: Citation `Kreuzetal2011a' on page 34 undefined on input line 1.
+
+
 Overfull \hbox (45.64273pt too wide) in paragraph at lines 1--2
 \OT1/cmr/m/n/12 The van Rossum [[]] and Victor-Purpura [[]]
  []
 
-[32
+[34
 
 ]
 
@@ -963,92 +956,406 @@ LaTeX Warning: Command \o invalid in math mode on input line 9.
 
 LaTeX Warning: Command \o invalid in math mode on input line 9.
 
-[33]
-Overfull \hbox (0.5547pt too wide) in paragraph at lines 23--25
+
+LaTeX Warning: Citation `Kreuzetal2011a' on page 35 undefined on input line 13.
+
+
+
+LaTeX Warning: Citation `Kreuzetal2011a' on page 35 undefined on input line 13.
+
+
+
+LaTeX Warning: Citation `Kreuzetal2011' on page 35 undefined on input line 19.
+
+
+LaTeX Warning: Citation `Kreuzetal2011' on page 35 undefined on input line 19.
+
+[35]
+Overfull \hbox (0.5547pt too wide) in paragraph at lines 26--28
 \OT1/cmr/m/n/12 and fol-low-ing spikes from each spike train, which are la-bell
 ed $\OML/cmm/m/it/12 t[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 )\OM
 L/cmm/m/it/12 ; t[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 )\OML/cmm
 /m/it/12 ; t[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 )$
  []
 
-[34] [35]
-Overfull \hbox (47.0177pt too wide) in paragraph at lines 54--55
+[36]
+
+LaTeX Warning: Citation `Kreuzetal2011' on page 37 undefined on input line 51.
+
+
+Overfull \hbox (47.0177pt too wide) in paragraph at lines 57--58
 \OT1/cmr/m/n/12 the ``costs'' in edit-length met-rics such as Victor-Purpura [[
 ]].
  []
 
-[36] [37] [38] [39]
+[37] [38] (./BS.tex
+Package epstopdf Info: Source file: <BS.eps>
+(epstopdf)                    date: 2015-02-12 20:22:00
+(epstopdf)                    size: 17025 bytes
+(epstopdf)             Output file: <BS-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-02-12 20:48:46
+(epstopdf)                    size: 2903 bytes
+(epstopdf)             Command: <repstopdf --outfile=BS-eps-converted-to.pdf BS
+.eps>
+(epstopdf)             \includegraphics on input line 97.
+Package epstopdf Info: Output file is already uptodate.
+ <BS-eps-converted-to.pdf, id=256, 361.35pt x 252.945pt>
+File: BS-eps-converted-to.pdf Graphic file (type pdf)
 
-LaTeX Warning: Reference `fig:minmax' on page 40 undefined on input line 220.
+<use BS-eps-converted-to.pdf>
+Package pdftex.def Info: BS-eps-converted-to.pdf used on input line 97.
+(pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
+) (./bestBS.tex
+Package epstopdf Info: Source file: <bestBS.eps>
+(epstopdf)                    date: 2015-02-13 02:14:34
+(epstopdf)                    size: 17028 bytes
+(epstopdf)             Output file: <bestBS-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-02-13 02:17:50
+(epstopdf)                    size: 3330 bytes
+(epstopdf)             Command: <repstopdf --outfile=bestBS-eps-converted-to.pd
+f bestBS.eps>
+(epstopdf)             \includegraphics on input line 95.
+Package epstopdf Info: Output file is already uptodate.
+
+<bestBS-eps-converted-to.pdf, id=257, 361.35pt x 252.945pt>
+File: bestBS-eps-converted-to.pdf Graphic file (type pdf)
+
+<use bestBS-eps-converted-to.pdf>
+Package pdftex.def Info: bestBS-eps-converted-to.pdf used on input line 95.
+(pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
+) (./multSPIKE.tex
+Package epstopdf Info: Source file: <multSPIKE.eps>
+(epstopdf)                    date: 2015-02-12 20:02:57
+(epstopdf)                    size: 17040 bytes
+(epstopdf)             Output file: <multSPIKE-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-02-12 20:48:49
+(epstopdf)                    size: 2917 bytes
+(epstopdf)             Command: <repstopdf --outfile=multSPIKE-eps-converted-to
+.pdf multSPIKE.eps>
+(epstopdf)             \includegraphics on input line 97.
+Package epstopdf Info: Output file is already uptodate.
+
+<multSPIKE-eps-converted-to.pdf, id=258, 361.35pt x 252.945pt>
+File: multSPIKE-eps-converted-to.pdf Graphic file (type pdf)
+
+<use multSPIKE-eps-converted-to.pdf>
+Package pdftex.def Info: multSPIKE-eps-converted-to.pdf used on input line 97.
+(pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
+) [39] [40 <./BS-eps-converted-to.pdf> <./bestBS-eps-converted-to.pdf>] (./best
+multSpike.tex
+Package epstopdf Info: Source file: <bestmultSpike.eps>
+(epstopdf)                    date: 2015-02-13 02:09:47
+(epstopdf)                    size: 17070 bytes
+(epstopdf)             Output file: <bestmultSpike-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-02-13 02:17:51
+(epstopdf)                    size: 3329 bytes
+(epstopdf)             Command: <repstopdf --outfile=bestmultSpike-eps-converte
+d-to.pdf bestmultSpike.eps>
+(epstopdf)             \includegraphics on input line 96.
+Package epstopdf Info: Output file is already uptodate.
+
+<bestmultSpike-eps-converted-to.pdf, id=272, 361.35pt x 252.945pt>
+File: bestmultSpike-eps-converted-to.pdf Graphic file (type pdf)
+
+<use bestmultSpike-eps-converted-to.pdf>
+Package pdftex.def Info: bestmultSpike-eps-converted-to.pdf used on input line 
+96.
+(pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
+) [41 <./multSPIKE-eps-converted-to.pdf>] [42 <./bestmultSpike-eps-converted-to
+.pdf>] [43] [44]
+
+LaTeX Warning: Reference `fig:minmax' on page 45 undefined on input line 240.
 
 
-LaTeX Warning: Reference `fig:bestalpha' on page 40 undefined on input line 220
+LaTeX Warning: Reference `fig:bestalpha' on page 45 undefined on input line 240
 .
 
-[40] [41] [42]
-Overfull \hbox (5.80815pt too wide) in paragraph at lines 267--268
+[45] (./maxmin.tex
+Package epstopdf Info: Source file: <maxmin.eps>
+(epstopdf)                    date: 2015-02-11 10:01:45
+(epstopdf)                    size: 17027 bytes
+(epstopdf)             Output file: <maxmin-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-02-11 10:32:41
+(epstopdf)                    size: 2916 bytes
+(epstopdf)             Command: <repstopdf --outfile=maxmin-eps-converted-to.pd
+f maxmin.eps>
+(epstopdf)             \includegraphics on input line 97.
+Package epstopdf Info: Output file is already uptodate.
+ <maxmin-eps-converted-to.pdf, id=292, 361.35pt x 252.945pt>
+File: maxmin-eps-converted-to.pdf Graphic file (type pdf)
+
+<use maxmin-eps-converted-to.pdf>
+Package pdftex.def Info: maxmin-eps-converted-to.pdf used on input line 97.
+(pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
+) [46 <./maxmin-eps-converted-to.pdf>]
+(./avvspop.tex
+Package epstopdf Info: Source file: <avvspop.eps>
+(epstopdf)                    date: 2015-02-11 09:56:50
+(epstopdf)                    size: 17268 bytes
+(epstopdf)             Output file: <avvspop-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-02-11 10:34:17
+(epstopdf)                    size: 2989 bytes
+(epstopdf)             Command: <repstopdf --outfile=avvspop-eps-converted-to.p
+df avvspop.eps>
+(epstopdf)             \includegraphics on input line 97.
+Package epstopdf Info: Output file is already uptodate.
+ <avvspop-eps-converted-to.pdf, id=299, 361.35pt x 252.945pt>
+File: avvspop-eps-converted-to.pdf Graphic file (type pdf)
+
+<use avvspop-eps-converted-to.pdf>
+Package pdftex.def Info: avvspop-eps-converted-to.pdf used on input line 97.
+(pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
+) (./bestpav.tex
+Package epstopdf Info: Source file: <bestpav.eps>
+(epstopdf)                    date: 2015-02-13 01:47:58
+(epstopdf)                    size: 16955 bytes
+(epstopdf)             Output file: <bestpav-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-02-13 01:51:41
+(epstopdf)                    size: 3304 bytes
+(epstopdf)             Command: <repstopdf --outfile=bestpav-eps-converted-to.p
+df bestpav.eps>
+(epstopdf)             \includegraphics on input line 96.
+Package epstopdf Info: Output file is already uptodate.
+
+<bestpav-eps-converted-to.pdf, id=300, 361.35pt x 252.945pt>
+File: bestpav-eps-converted-to.pdf Graphic file (type pdf)
+
+<use bestpav-eps-converted-to.pdf>
+Package pdftex.def Info: bestpav-eps-converted-to.pdf used on input line 96.
+(pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
+) (./bestppop.tex
+Package epstopdf Info: Source file: <bestppop.eps>
+(epstopdf)                    date: 2015-02-13 01:50:31
+(epstopdf)                    size: 16972 bytes
+(epstopdf)             Output file: <bestppop-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-02-13 01:51:42
+(epstopdf)                    size: 3315 bytes
+(epstopdf)             Command: <repstopdf --outfile=bestppop-eps-converted-to.
+pdf bestppop.eps>
+(epstopdf)             \includegraphics on input line 96.
+Package epstopdf Info: Output file is already uptodate.
+
+<bestppop-eps-converted-to.pdf, id=301, 361.35pt x 252.945pt>
+File: bestppop-eps-converted-to.pdf Graphic file (type pdf)
+
+<use bestppop-eps-converted-to.pdf>
+Package pdftex.def Info: bestppop-eps-converted-to.pdf used on input line 96.
+(pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
+) [47]
+Overfull \hbox (5.80815pt too wide) in paragraph at lines 306--307
 []\OT1/cmr/bx/n/12 [combine the pop-u-la-tion dis-tance and the av-er-age dis-t
 ance graphs
  []
 
-[43]
+[48 <./avvspop-eps-converted-to.pdf>] [49 <./bestpav-eps-converted-to.pdf>]
+[50 <./bestppop-eps-converted-to.pdf>]
 
-LaTeX Warning: Reference `adpop' on page 44 undefined on input line 285.
-
-
-LaTeX Warning: Reference `adav' on page 44 undefined on input line 285.
+LaTeX Warning: Reference `adpop' on page 51 undefined on input line 324.
 
 
-LaTeX Warning: Reference `popmaxmin' on page 44 undefined on input line 285.
+LaTeX Warning: Reference `adav' on page 51 undefined on input line 324.
 
 
-LaTeX Warning: Reference `avmaxmin' on page 44 undefined on input line 285.
+LaTeX Warning: Reference `popmaxmin' on page 51 undefined on input line 324.
 
-[44]) [45] [46]
+
+LaTeX Warning: Reference `avmaxmin' on page 51 undefined on input line 324.
+
+(./zoav.tex
+Package epstopdf Info: Source file: <zoav.eps>
+(epstopdf)                    date: 2015-02-13 01:14:19
+(epstopdf)                    size: 16503 bytes
+(epstopdf)             Output file: <zoav-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-02-13 01:17:51
+(epstopdf)                    size: 2961 bytes
+(epstopdf)             Command: <repstopdf --outfile=zoav-eps-converted-to.pdf 
+zoav.eps>
+(epstopdf)             \includegraphics on input line 100.
+Package epstopdf Info: Output file is already uptodate.
+ <zoav-eps-converted-to.pdf, id=320, 361.35pt x 252.945pt>
+File: zoav-eps-converted-to.pdf Graphic file (type pdf)
+
+<use zoav-eps-converted-to.pdf>
+Package pdftex.def Info: zoav-eps-converted-to.pdf used on input line 100.
+(pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
+) (./zopop.tex
+Package epstopdf Info: Source file: <zopop.eps>
+(epstopdf)                    date: 2015-02-13 01:16:16
+(epstopdf)                    size: 16514 bytes
+(epstopdf)             Output file: <zopop-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-02-13 01:17:53
+(epstopdf)                    size: 2969 bytes
+(epstopdf)             Command: <repstopdf --outfile=zopop-eps-converted-to.pdf
+ zopop.eps>
+(epstopdf)             \includegraphics on input line 100.
+Package epstopdf Info: Output file is already uptodate.
+
+<zopop-eps-converted-to.pdf, id=321, 361.35pt x 252.945pt>
+File: zopop-eps-converted-to.pdf Graphic file (type pdf)
+
+<use zopop-eps-converted-to.pdf>
+Package pdftex.def Info: zopop-eps-converted-to.pdf used on input line 100.
+(pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
+)) [51] [52 <./zoav-eps-converted-to.pdf> <./zopop-eps-converted-to.pdf>]
 Chapter 4.
 (./chapters/chapter04.tex
-Overfull \hbox (66.90498pt too wide) in paragraph at lines 1--2
+Overfull \hbox (72.77992pt too wide) in paragraph at lines 1--2
 \OT1/cmr/m/n/12 Sparse cod-ing has been ob-served in neu-rons in the vi-sual tr
 act [[]],
  []
 
-[47
+[53
 
-] [48] (./tauoptoverpred.tex
+] [54] (./tauoptoverpred.tex
 Package epstopdf Info: Source file: <tauoptoverpred.eps>
-(epstopdf)                    date: 2014-04-04 18:44:37
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 17113 bytes
 (epstopdf)             Output file: <tauoptoverpred-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-01-28 11:29:13
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 3377 bytes
 (epstopdf)             Command: <repstopdf --outfile=tauoptoverpred-eps-convert
 ed-to.pdf tauoptoverpred.eps>
 (epstopdf)             \includegraphics on input line 103.
 Package epstopdf Info: Output file is already uptodate.
 
-<tauoptoverpred-eps-converted-to.pdf, id=286, 361.35pt x 252.945pt>
+<tauoptoverpred-eps-converted-to.pdf, id=339, 361.35pt x 252.945pt>
 File: tauoptoverpred-eps-converted-to.pdf Graphic file (type pdf)
 
 <use tauoptoverpred-eps-converted-to.pdf>
 Package pdftex.def Info: tauoptoverpred-eps-converted-to.pdf used on input line
  103.
 (pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
-) [49] [50 <./tauoptoverpred-eps-converted-to.pdf>]
+) [55] [56 <./tauoptoverpred-eps-converted-to.pdf>]
 
 Package amsmath Warning: Cannot use `split' here;
 (amsmath)                trying to recover with `aligned' on input line 99.
 
-[51]
+[57]
 Overfull \hbox (78.45532pt too wide) detected at line 129
 \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ) = []
  []
 
-[52]
+[58]
 Overfull \hbox (26.059pt too wide) detected at line 161
 []
  []
 
-[53] [54] [55] [56] [57] [58] [59] (./ksdists.tex
+[59] [60] [61] [62] (./estrate.tex
+./estrate.tex:95: Missing $ inserted.
+<inserted text> 
+                $
+l.95     \gplbacktext
+                     
+? s
+OK, entering \scrollmode...
+./estrate.tex:95: Extra }, or forgotten $.
+\@imakepicbox ...t@ #1\unitlength {\mb@l #4\mb@r }
+                                                  \mb@b \kern \z@ }
+l.95     \gplbacktext
+                     
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./estrate.tex:95: Missing $ inserted.
+<inserted text> 
+                $
+l.95     \gplbacktext
+                     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./estrate.tex:95: Missing } inserted.
+<inserted text> 
+                }
+l.95     \gplbacktext
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+Package epstopdf Info: Source file: <estrate.eps>
+(epstopdf)                    date: 2015-02-13 03:05:23
+(epstopdf)                    size: 115859 bytes
+(epstopdf)             Output file: <estrate-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-02-13 03:13:52
+(epstopdf)                    size: 32167 bytes
+(epstopdf)             Command: <repstopdf --outfile=estrate-eps-converted-to.p
+df estrate.eps>
+(epstopdf)             \includegraphics on input line 96.
+Package epstopdf Info: Output file is already uptodate.
+<estrate-eps-converted-to.pdf, id=368, 361.35pt x 252.945pt>
+File: estrate-eps-converted-to.pdf Graphic file (type pdf)
+
+<use estrate-eps-converted-to.pdf>
+Package pdftex.def Info: estrate-eps-converted-to.pdf used on input line 96.
+(pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
+) (./estrate2.tex
+./estrate2.tex:95: Missing $ inserted.
+<inserted text> 
+                $
+l.95     \gplbacktext
+                     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./estrate2.tex:95: Extra }, or forgotten $.
+\@imakepicbox ...t@ #1\unitlength {\mb@l #4\mb@r }
+                                                  \mb@b \kern \z@ }
+l.95     \gplbacktext
+                     
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./estrate2.tex:95: Missing $ inserted.
+<inserted text> 
+                $
+l.95     \gplbacktext
+                     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./estrate2.tex:95: Missing } inserted.
+<inserted text> 
+                }
+l.95     \gplbacktext
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+Package epstopdf Info: Source file: <estrate2.eps>
+(epstopdf)                    date: 2015-02-13 03:10:35
+(epstopdf)                    size: 118161 bytes
+(epstopdf)             Output file: <estrate2-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-02-13 03:13:54
+(epstopdf)                    size: 34442 bytes
+(epstopdf)             Command: <repstopdf --outfile=estrate2-eps-converted-to.
+pdf estrate2.eps>
+(epstopdf)             \includegraphics on input line 96.
+Package epstopdf Info: Output file is already uptodate.
+<estrate2-eps-converted-to.pdf, id=369, 361.35pt x 252.945pt>
+File: estrate2-eps-converted-to.pdf Graphic file (type pdf)
+
+<use estrate2-eps-converted-to.pdf>
+Package pdftex.def Info: estrate2-eps-converted-to.pdf used on input line 96.
+(pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
+) [63] [64 <./estrate-eps-converted-to.pdf>] [65 <./estrate2-eps-converted-to.p
+df>]
+Overfull \hbox (29.76231pt too wide) in paragraph at lines 375--376
+\OT1/cmr/m/n/12 riod of neu-rons, a well-documented fea-ture of neu-rons [[]]
+ []
+
+[66] (./ksdists.tex
 ./ksdists.tex:96: Missing $ inserted.
 <inserted text> 
                 $
@@ -1088,38 +1395,38 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 Package epstopdf Info: Source file: <ksdists.eps>
-(epstopdf)                    date: 2015-01-29 10:42:50
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 16375 bytes
 (epstopdf)             Output file: <ksdists-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-01-29 10:45:39
+(epstopdf)                    date: 2015-02-09 12:11:43
 (epstopdf)                    size: 2946 bytes
 (epstopdf)             Command: <repstopdf --outfile=ksdists-eps-converted-to.p
 df ksdists.eps>
 (epstopdf)             \includegraphics on input line 97.
 Package epstopdf Info: Output file is already uptodate.
-<ksdists-eps-converted-to.pdf, id=325, 361.35pt x 252.945pt>
+<ksdists-eps-converted-to.pdf, id=388, 361.35pt x 252.945pt>
 File: ksdists-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ksdists-eps-converted-to.pdf>
 Package pdftex.def Info: ksdists-eps-converted-to.pdf used on input line 97.
 (pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
-) [60] [61 <./ksdists-eps-converted-to.pdf>]) [62]
+) [67] [68 <./ksdists-eps-converted-to.pdf>]) [69]
 Chapter 5.
-(./chapters/conclusion.tex) (./main.bbl [63
+(./chapters/conclusion.tex) (./main.bbl [70
 
-] [64
+] [71
 
-] [65] [66] [67]) [68]
+] [72] [73] [74] [75]) [76]
 (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2872 strings out of 493488
- 39758 string characters out of 3141326
- 99726 words of memory out of 3000000
- 6080 multiletter control sequences out of 15000+200000
+ 2981 strings out of 493488
+ 42200 string characters out of 3141326
+ 99896 words of memory out of 3000000
+ 6149 multiletter control sequences out of 15000+200000
  13852 words of font info for 49 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  38i,18n,31p,1218b,480s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1145,10 +1452,10 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2012/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2012/tex
 mf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb></usr/local/texlive/2
 012/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on main.pdf (71 pages, 726365 bytes).
+Output written on main.pdf (79 pages, 840801 bytes).
 PDF statistics:
- 428 PDF objects out of 1000 (max. 8388607)
- 281 compressed objects within 3 object streams
+ 496 PDF objects out of 1000 (max. 8388607)
+ 326 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
- 121 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 191 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -509,7 +509,7 @@ The downside to this method is that this is a very data-hungry calculation, whic
   \caption{\label{modelnetwork}The network model was based on the schematic shown here.  All simulated neurons in the recurrent layer were aEIF neurons.  The connection probability between two nodes at random was $0.1$, connections along arrows in the diagram occurred with probability $0.8$, and connections from the noise layer to the recurrent layer occurred with probability $0.2$.}
 \end{figure}
 
-Due to the data-hungry nature of the IMI and the scarcity of simultaneous recordings of  action potentials (spikes) for long periods of time, the proposed information mapping was instead carried out on a model network.  The network was designed to be small, for ease of calculations, but still had features worth noting in it - a divergence and a convergence of groups.  The network was randomly generated based on the schematic in figure \ref{modelnetwork}.  The neuron-model used was the Adaptive Exponential Integrate and Fire neuron-model of \cite{BretteGerstner2005a}, as it strikes a good balance between being ease of computation \cite{HopfieldHerz1995a}, and biological accuracy \cite{HodgkinHuxley1952a}.  The network was simulated using the python package BRIAN {\bf [CITATION]}, and each simulation ran for four minutes.  The amplitude of the poisson neurons in the noise layer was varied from 1 mV to 20 mV to investigate how well the IMI dealt with noise.
+Due to the data-hungry nature of the IMI and the scarcity of simultaneous recordings of  action potentials (spikes) for long periods of time, the proposed information mapping was instead carried out on a model network.  The network was designed to be small, for ease of calculations, but still had features worth noting in it - a divergence and a convergence of groups.  The network was randomly generated based on the schematic in figure \ref{modelnetwork}.  The neuron-model used was the Adaptive Exponential Integrate and Fire neuron-model of \cite{BretteGerstner2005a}, as it strikes a good balance between being ease of computation \cite{HopfieldHerz1995a}, and biological accuracy \cite{HodgkinHuxley1952a}.  The network was simulated using the python package BRIAN \cite{GoodmanBrette2008a}, and each simulation ran for four minutes.  The amplitude of the poisson neurons in the noise layer was varied from 1 mV to 20 mV to investigate how well the IMI dealt with noise.
 
 The proposed method to map the modules of neurons was to initially calculate the peak IMI between each pair of neurons, and determine the non-diagonal elements of an adjacency matrix of a weighted directed network:
 \begin{equation}\label{adjmat}
@@ -521,7 +521,7 @@ A_{ij} = \left\{ \begin{array}{ll} \max_{\delta} \Delta I_{ij}[\delta] & \text{i
 \linespread{2}
 \begin{tabular}{l}
 \epsfig{file=directednetnodes.eps,width=0.75\textwidth}\\
-\left. \right.\\
+$\left. \right.$\\
 \epsfig{file=weightmatrix.eps,width=0.75\textwidth}
 \end{tabular}
 \rule{35em}{0.5pt}

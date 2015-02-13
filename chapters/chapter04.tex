@@ -214,15 +214,15 @@ The probabilities $p_u(t), \,p_d(t)$ represent the probability of being in the u
 p(t)  = \frac{p_u(t)}{p_u(t) + p_d(t)}
 \end{equation}
 so, the rate function becomes:
-\begin{equation}
+\begin{equation}\label{roft}
 r(t) = \Delta p(t) + \lambda_d = \frac{A_0e^{-\alpha t}+B_0e^{-\beta t}}{C_0e^{-\alpha t} + D_0e^{\beta t}}
 \end{equation}
 where:
 \begin{equation}
 \begin{split}
 \label{abcd}
-A_0 & = \Delta(p_0(-u-d-\Delta + \gamma)+2u)+\lambda_d(p_0(-2\Delta)+u+d+\Delta+\gamma)\\
-B_0 & =\Delta(p_0(u+d+\Delta + \gamma)-2u)+\lambda_d(p_0(2\Delta)-u-d-\Delta+\gamma)\\
+A_0 & = \Delta(p_0(-u-d-\Delta + \gamma)+2u)+\lambda_dC_0\\
+B_0 & =\Delta(p_0(u+d+\Delta + \gamma)-2u)+\lambda_dD_0\\
 C_0 & = p_0(-2\Delta)+u+d+\Delta+\gamma\\
 D_0 & = p_0(2\Delta) -u-d-\Delta + \gamma
 \end{split}
@@ -263,12 +263,19 @@ r(t) = \frac{\alpha C_0 + \beta D_0e^{-\gamma t}}{C_o + D_0e^{-\gamma t}} = \fra
 
 In fact, comparing $C_0$ to $\beta$ and $D_0$ to $\alpha$, get:
 \begin{equation}
-C_0 = 2(\beta - \lambda_d - p_0\Delta), \, D_0 = 2(-\alpha + \lambda_d + p_0\Delta)
+\begin{split}
+C_0 = 2(\beta - \lambda_d - p_0\Delta), \\ 
+D_0 = 2(-\alpha + \lambda_d + p_0\Delta)
+\end{split}
 \end{equation}
 
-which further simplifies equation \ref{rate} to:
+Remembering that $p_0$ is just the probability of being in the up-state at $t=0$, then:
 \begin{equation}
-r(t) = \frac{\alpha(\beta - \lambda_d - p_0\Delta)e^{-\alpha t} + \beta(-\alpha + \lambda_d + p_0\Delta)e^{-\beta t}}{(\beta - \lambda_d - p_0\Delta)e^{-\alpha t} + (-\alpha + \lambda_d + p_0\Delta)e^{-\beta t}}
+\Delta p_0 + \lambda_d = r(0),
+\end{equation}
+that is, the firing rate at $t=0$.  Then the equation \ref{rate}, the firing rate at time $t$, simplifies to:
+\begin{equation}
+r(t) = \frac{\alpha(\beta - r(0))e^{-\alpha t} + \beta(r(0)-\alpha)e^{-\beta t}}{(\beta - r(0))e^{-\alpha t} + (r(0)-\alpha)e^{-\beta t}}
 \end{equation}
 
 \subsection{Change in probability when a spike arrives}
@@ -302,7 +309,18 @@ Equivalently, this can be written as:
 r(t) \rightarrow (\lambda_u +\lambda_d) - \frac{\lambda_u\lambda_d}{r(t)}
 \end{equation}
 
-\subsection{Calculating the ISI distribution from the estimated rate function}
+\begin{figure}[htb]
+\input{estrate}
+\caption{An example of the estimated rate, $r(t)$, for a bimodal Poisson spike train.  For this example, $u=d=5$, $\lambda_u=50$ and $\lambda_d=5$.  In this example, the initial rate was set randomly between $\alpha$ and $\beta$.}
+\end{figure}
+
+\begin{figure}
+\input{estrate2}
+\caption{An example of the estimated rate, $r(t)$, for a bimodal Poisson spike train.  For this example, $u=d=5$, $\lambda_u=50$ and $\lambda_d=5$.  In this example, the initial rate was set to zero and it subsequently set itself.}
+\end{figure}
+
+\subsection{Calculating the ISI distribution}
+
 When dealing with spike-train data, it is very useful to know the inter-spike interval (ISI) distribution, as this can be observed much easier than the firing rate of a neuron.
 
 The probability density function of the ISI distribution of an inhomogeneous Poisson process, with rate function $r(t)$, is:
@@ -314,24 +332,22 @@ Now it is necessary to integrate the rate function from $0$ to $t$:
 \begin{equation}
 \begin{split}
 \label{int}
-\int_0^t r(s)\,ds &= \int_0^t  \frac{A_0e^{-\alpha s}+B_0e^{-\beta s}}{C_0e^{-\alpha s} + D_0e^{\beta s}}\,ds\\ 
-&= \frac{\alpha A_0D_0 - \beta B_0 C_0}{(\alpha - \beta)C_0D_0}t + \frac{B_0 C_0-A_0D_0}{(\alpha - \beta)C_0D_0} \log\left({\frac{C_0e^{\beta t} + D_0e^{\alpha t}}{C_0 + D_0} }\right)
+&\int_0^t r(s)\,ds = \int_0^t  \frac{\alpha C_0e^{-\alpha s}+\beta D_0e^{-\beta s}}{C_0e^{-\alpha s} + D_0e^{\beta s}}\,ds\\ 
+&= \frac{\alpha^2 C_0D_0 - \beta^2 C_0D_0}{(\alpha - \beta)C_0D_0}t + \frac{\beta C_0D_0-\alpha C_0D_0}{(\alpha - \beta)C_0D_0} \log\left({\frac{C_0e^{\beta t} + D_0e^{\alpha t}}{C_0 + D_0} }\right)
 \end{split}
 \end{equation}
 
-Substituting equations \ref{abcd} and \ref{dg}, and noting that $\beta-\alpha=\gamma$, the fractions in the above equation become:
+Since $C_0$ and $D_0$ are not equal to zero, the fractions in the above equation become:
 \begin{equation}
 \begin{split}
-\frac{\alpha A_0D_0 - \beta B_0 C_0}{(\alpha - \beta)C_0D_0} &= u+d+\lambda_u+\lambda_d = \alpha+\beta,\\
- \frac{B_0 C_0-A_0D_0}{(\alpha - \beta)C_0D_0} &= -1
+\frac{\alpha^2 C_0D_0 - \beta^2 C_0D_0}{(\alpha - \beta)C_0D_0} & = \alpha+\beta,\\
+ \frac{ \beta C_0D_0-\alpha A_0D_0}{(\alpha - \beta)C_0D_0} &= -1
 \end{split}
 \end{equation}
 Thus equation \ref{int} becomes:
 \begin{equation}
 \begin{split}
 \int_0^t r(s)\,ds &= (\alpha+\beta)t - \log\left( {\frac{C_0e^{\beta t} + D_0e^{\alpha t}}{C_0 + D_0} }\right) \\
-&= \log\left( e^{(\alpha+\beta)t}\right) + \log \left( \frac{C_0 +D_0}{C_0e^{\beta t}+ D_0e^{\alpha t}}\right)\\
-&= \log \left( \frac{C_0e^{(\alpha+\beta)t}+D_0e^{(\alpha+\beta)t}}{C_0e^{\beta t}+D_0e^{\alpha t}}\right)\\
 &= \log \left( \frac{C_0+D_0}{C_0e^{-\alpha t}+D_0e^{-\beta t}}\right)
 \end{split}
 \end{equation}
@@ -340,8 +356,6 @@ Now $p_{ISI}(t)$ becomes:
 \begin{equation}
 \begin{split}
 p_{ISI}(t) &= \frac{A_0e^{-\alpha t}+B_0e^{-\beta t}}{C_0e^{-\alpha t} + D_0e^{-\beta t}}e^{-\log \left( \frac{C_0+D_0}{C_0e^{-\alpha t}+D_0e^{-\beta t}}\right)}\\
-& = \frac{A_0e^{-\alpha t}+B_0e^{-\beta t}}{C_0e^{-\alpha t} + D_0e^{-\beta t}}e^{\log \left( \frac{C_0e^{-\alpha t}+D_0e^{-\beta t}}{C_0+D_0}\right)}\\
-&= \frac{A_0e^{-\alpha t}+B_0e^{-\beta t}}{C_0e^{-\alpha t} + D_0e^{-\beta t}}\left( \frac{C_0e^{-\alpha t}+D_0e^{-\beta t}}{C_0+D_0}\right)\\
 &= \frac{A_0}{C_0+D_0}e^{-\alpha t} + \frac{B_0}{C_0+D_0}e^{-\beta t}
 \end{split}
 \end{equation}
@@ -351,23 +365,21 @@ This is the probability density function (pdf) of a hyper-exponential distributi
 f(x) = \rho\lambda_1 e^{-\lambda_1 x} + (1-\rho) e^{-\lambda_2 x}
 \end{equation}
 
-Clearly, then $\lambda_1, \lambda_2$ which are calculated experimentally correspond to $\alpha,\beta$.  If $\lambda_1 = \alpha$ and $\lambda_2 = \beta$, then it can be calculated that:
+Clearly, then $\lambda_1, \lambda_2$ which are calculated experimentally correspond to $\alpha,\beta$.  If $\lambda_1 = \alpha$ and $\lambda_2 = \beta$, then it is possible to derive the terms $C_0$ and $D_0$ from equation \ref{rate} for the probabilistic rate function:
 \begin{equation}
-\rho\alpha + (1-\rho) \beta = \rho\lambda_u + (1-\rho)\lambda_d
+C_0 = 2p(\lambda_2-\lambda_1), \, D_0 = 2(1-p)(\lambda_2-\lambda_1)
 \end{equation}
 
-This gives an expression for $\rho$ in terms of $\alpha, \beta, \lambda_u$ and $\lambda_d$.
-\begin{equation}
-\begin{split}
-\rho(\alpha - \beta + \lambda_d - \lambda_u) &= \lambda_d-\beta \\
-\rho = \frac{\beta-\alpha +\lambda_u- \lambda_d}{\beta-\lambda_d} &= 2\frac{\gamma+\Delta}{\gamma+\delta}
-\end{split}
-\end{equation}
 
 \section{Testing on data}
 The previous result allows for testing on real data.  The data used in this report is the data used in \cite{SenEtAl2001a}.  An electrode was placed in L1 of anaesthetised zebra finches, and the birds were presented with 20 natural stimuli ten times each.  As the model does not account for the refractory period of neurons, a well-documented feature of neurons \cite{OlshausenField2004a} , the ten presentations of each stimulus are overlaid to counter the impact of the refractory period \cite{BerryMeister1998a}. 
 
 The inter-spike intervals (ISIs) were then aggregated across 16 of the 20 stimuli, to give a representation of a typical ISI distribution for each neuron.  The hyperexponential distribution, $H_2$, was trained on the ISI distribution of the 16 stimuli by minimising the statistic $D_n$ of the Kolmogorov-Smirnov test \cite{Massey1951a} by downhill-simplex search.  Then the remaining four stimuli were aggregated across the ten trials to form a test ISI distribution upon which the calculated minimum hyperexponential distribution was tested using the Kolmogorov-Smirnov test for goodness-of-fit.
+
+\begin{figure}
+\input{ksdists}
+\caption{\label{exphehe3} The Kolmogorov-Smirnov test statistic $D_n$ for (a) the exponential distribution, (b) the hyperexponential distribution with two modes, and (c) the hyperexponential distribution with three modes.  The mean of the $p<0.05$ critical value is indicated by the broken line.}
+\end{figure}
 
 The Kolmogorov-Smirnov (KS) test is a nonparametric goodness-of-fit test introduced in \cite{Massey1951a}.  It is used to compare a model probability distribution to a sample.  The KS statistic is the $d_{\infty}$ metric between the cumulative distribution function of the model distribution and the empirical distribution function of the data.
 \begin{equation}
@@ -377,10 +389,7 @@ where $\hat{F}_n(x)$ is the empirical distribution function of the data set of $
 
 Then the ISI distributions were tested against the hyperexponential distribution with both two and three modes $(H_2$ and $H_3)$.  As the exponential distribution is a special case of the hyperexponential distribution, and $H_2$ is a special case of $H_3$ ,it is clear that there should be an improvement with each step.  What was observed, as shown in figure \ref{exphehe3}, was that the $H_2$ distribution was a drastic improvement on the exponential distribution, but the the improvement of $H_3$ over $H_2$ was insignificant. 
 
-\begin{figure}
-\input{ksdists}
-\caption{\label{exphehe3} The Kolmogorov-Smirnov test statistic $D_n$ for (a) the exponential distribution, (b) the hyperexponential distribution with two modes, and (c) the hyperexponential distribution with three modes.  The mean of the $p<0.05$ critical value is indicated by the broken line.}
-\end{figure}
+
 
 At the $p<0.05$ significance level, only three out of $24$ neurons were not rejected by the Kolmogorov-Smirnov test for both the $H_2$ and the $H_3$ distributions. This could be due to the number of data points, which would make the KS test extremely rigorous.  It is also notable that this model is simply a first approximation to a neuron model; the KS statistic serves as a metric to determine goodness-of-fit rather than fitting the exact ISI distribution.
 

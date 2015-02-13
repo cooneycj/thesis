@@ -17,21 +17,32 @@ Brette, R. and Gerstner, W. (2005).
   description of neuronal activity.
 \newblock {\em Journal of Neurophysiology}, 94:3637--3642.
 
-\bibitem[Dayan and Abbott, 2001]{DayanAbbott2001a}
-Dayan, P. and Abbott, L.~F. (2001).
-\newblock {\em Theoretical neuroscience}.
-\newblock MIT Press.
+\bibitem[Du~Bois-Reymond, 1884]{DuBoisReymond1884a}
+Du~Bois-Reymond, E.~H. (1884).
+\newblock {\em Untersuchungen {\"u}ber thierische elektricit{\"a}t: bd., 1.
+  abth}, volume~2.
+\newblock G. Reimer.
 
 \bibitem[Gillespie and Houghton, 2011]{GillespieHoughton2009a}
 Gillespie, J. and Houghton, C. (2011).
 \newblock A metric space approach to the information capacity of spike trains.
 \newblock {\em Journal of Computational Neuroscience}, 30(1):201--209.
 
+\bibitem[Goodman and Brette, 2008]{GoodmanBrette2008a}
+Goodman, D. and Brette, R. (2008).
+\newblock Brian: a simulator for spiking neural networks in python.
+\newblock {\em Frontiers in neuroinformatics}, 2.
+
 \bibitem[Hodgkin and Huxley, 1952]{HodgkinHuxley1952a}
 Hodgkin, A. and Huxley, A. (1952).
 \newblock A quantitative description of membrane current and its application to
   conduction and excitation in nerve.
 \newblock {\em Journal of Physiology}, 117:500--544.
+
+\bibitem[Hodgkin and Huxley, 1939]{HodgkinHuxley1939a}
+Hodgkin, A.~L. and Huxley, A.~F. (1939).
+\newblock Action potentials recorded from inside a nerve fibre.
+\newblock {\em Nature}, 144(3651):710--711.
 
 \bibitem[Hopfield and Herz, 1995]{HopfieldHerz1995a}
 Hopfield, J. and Herz, A. (1995).
@@ -49,6 +60,17 @@ Humphries, M.~D. (2011).
 \newblock Spike-train communities: Finding groups of similar spike trains.
 \newblock {\em Journal of Neuroscience}, 31:2321--2336.
 
+\bibitem[II and Meister, 1998]{BerryMeister1998a}
+II, M. J.~B. and Meister, M. (1998).
+\newblock Refractoriness and neural precision.
+\newblock {\em The Journal of Neuroscience}, 18(6):2200--2211.
+
+\bibitem[Izhikevich, 2004]{Izhikevich2004a}
+Izhikevich, E.~M. (2004).
+\newblock Which model to use for cortical spiking neurons?
+\newblock {\em IEEE transactions on neural networks / a publication of the IEEE
+  Neural Networks Council}, 15(5):1063--1070.
+
 \bibitem[Julienne and Houghton, 2013]{JulienneHoughton2012a}
 Julienne, H. and Houghton, C. (2013).
 \newblock A simple algorithm for averaging spike trains.
@@ -60,23 +82,23 @@ Kreuz, T., Chicharro, D., Andrzejak, R.~G., Haas, J.~S., and Abarbanel, H.~D.
 \newblock Measuring multiple spike train synchrony.
 \newblock {\em Journal of Neuroscience Methods}, 183(2):287--299.
 
-\bibitem[Kreuz et~al., 2011a]{Kreuzetal2011a}
-Kreuz, T., Chicharro, D., Greschner, M., and Andrzejak, R.~G. (2011a).
+\bibitem[Kreuz et~al., 2011]{KreuzEtAl2011a}
+Kreuz, T., Chicharro, D., Greschner, M., and Andrzejak, R.~G. (2011).
 \newblock Time-resolved and time-scale adaptive measures of spike train
   synchrony.
 \newblock {\em Journal of Neuroscience Methods}, 195(1):92 -- 106.
-
-\bibitem[Kreuz et~al., 2011b]{Kreuzetal2011}
-Kreuz, T., Chicharro, D., Greschner, M., and Andrzejak, R.~G. (2011b).
-\newblock Time-resolved and time-scale adaptive measures of spike train
-  synchrony.
-\newblock {\em Journal of Neuroscience Methods}, 195:92--106.
 
 \bibitem[Kreuz et~al., 2007]{KreuzEtAl2007a}
 Kreuz, T., Haas, J.~S., Morelli, A., Abarbanel, H. D.~I., and Politi, A.
   (2007).
 \newblock Measuring spike train synchrony.
 \newblock {\em Journal of Neuroscience Methods}, 165(1):151 -- 161.
+
+\bibitem[Lewicki, 1998]{Lewicki1998a}
+Lewicki, M. (1998).
+\newblock A review of methods for spike sorting: the detection and
+  classification of neural action potentials.
+\newblock {\em Network: Computational Neural Systems}, (9):53--78.
 
 \bibitem[Massey~Jr, 1951]{Massey1951a}
 Massey~Jr, F.~J. (1951).
@@ -112,10 +134,20 @@ Newman, M. E.~J. and Girvan, M. (2004).
 \newblock Finding and evaluating community structure in networks.
 \newblock {\em Physical Review}, 69:026113.
 
-\bibitem[Olshausen and Field, 2004]{OlshausenField2004}
-Olshausen, B.~A. and Field, D.~J. (2004).
+\bibitem[Olshausen and Field, 2004a]{OlshausenField2004}
+Olshausen, B.~A. and Field, D.~J. (2004a).
 \newblock Sparse coding of sensory inputs.
 \newblock {\em Current Opinion in Neurobiology}, 14:481--487.
+
+\bibitem[Olshausen and Field, 2004b]{OlshausenField2004a}
+Olshausen, B.~A. and Field, D.~J. (2004b).
+\newblock Sparse coding of sensory inputs.
+\newblock {\em Current Opinion in Neurobiology}, 14(4):481--487.
+
+\bibitem[Paiva et~al., 2010]{PaivaParkPrincipe2010}
+Paiva, A.~C., Park, I., and Pr{\'\i}ncipe, J.~C. (2010).
+\newblock Comparision of binless spike train measures.
+\newblock {\em Neural Computing and Applications}, 19:405--419.
 
 \bibitem[Pizzuti, 2008]{Pizzuti2008a}
 Pizzuti, C. (2008).

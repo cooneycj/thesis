@@ -10,7 +10,10 @@ where $f = f_1\o f_2\o \ldots \o f_n$ is any transformation that takes spike-tra
 
 The permitted elementary transformations are insertion of a spike, with a cost of 1; deletion of a spike, with a cost of 1 also; and translation of a spike by a distance $\delta t$, with a cost of $q\delta t$.  Thus, each spike in $X$ and $Y$ has an associated transformation which has a fixed cost; but there is a lack of symmetry between 
 
-The SPIKE distance proposed by Kreuz et al in \cite{Kreuzetal2011a} is an instantaneous parameter-free distance measure between spike-trains.  By instantaneous measure, it is meant that for each time $t$ there is a time-local distance between two spike-trains.  This measure can the be integrated over the length of the spike-trains to give a parameter-free distance measure between spike trains. In the study of spike-train metrics, often a multi-unit measure is desired (to minimise compounding any errors that may result from inefficient spike-sorting?). A multi-unit measure is a distance between collections of labelled spike-trains.  The SPIKE distance in \cite{Kreuzetal2011a} does not lend itself to a simple multi-unit extension, so instead a simpler version of the SPIKE distance is extended.
+The SPIKE distance proposed in \cite{Kreuzetal2011a} is an instantaneous parameter-free distance measure between spike-trains.  By instantaneous measure, it is meant that for each time $t$ there is a time-local distance between two spike-trains.  This measure can the be integrated over the length of the spike-trains to give a parameter-free distance measure between spike trains. In the study of spike-train metrics, often a multi-unit measure is desired (to minimise compounding any errors that may result from inefficient spike-sorting?). A multi-unit measure is a distance between collections of labelled spike-trains.  The SPIKE distance in \cite{Kreuzetal2011a} does not lend itself to a simple multi-unit extension, so instead a simpler version of the SPIKE distance is extended.
+
+
+
 
 \section{Single-unit recordings}
 With a view to extending the SPIKE distance to a multi-unit distance measure, it is useful to review the definition of the SPIKE measure provided in \cite{Kreuzetal2011}:  Given two spike-trains $x$ and $y$, where $x = \{ t_1^x, \ldots, t_n^x \}$ and $y = \{ t_1^y, \ldots , t_m^y\}$, where $t_1^x,\ldots,t_n^x,t_1^y,\ldots,t_m^y$ are the spike times.  The SPIKE distance in \cite{Kreuzetal2011} has the nice property that the distance is bounded such that it is always between zero and one.  Unfortunately, to achieve a "natural" extension to a multi-unit measure, this property is sacrificed.  A simpler version of the distance, without the strict upper bound of one, is used.
@@ -58,7 +61,7 @@ Here the single-unit distance above is extended to a multi-unit distance by incl
 \end{equation}
 where $\delta(i,j)$ is the Kroneker delta. Hence, if the spikes have the same label in $\mathbf{x}$ and $\mathbf{y}$ there is no added distance, otherwise $k$ is added to the time difference between the spikes.  This is illustrated in Figure \ref{fig:gaps2}:
 
-\begin{figure}[Thb]
+\begin{figure}[htb]
 \begin{center}
 \setlength{\unitlength}{.1cm}
 \begin{picture}(100,40)
@@ -102,7 +105,7 @@ where $\delta(i,j)$ is the Kroneker delta. Hence, if the spikes have the same la
 \put(75,30){\circle{2}}
 \end{picture}
 \end{center}
-\caption{\label{fig:gaps2}An example of how to calculate the gaps between spikes.  If  the circles represent spikes from $\mathbf{X}$ and crosses represent spikes from $\mathbf{Y}$, then in the picture above, the distance $k$ is simply the cost of relabelling a spike.  We also see that the gaps are not necessarily symmetric.}
+\caption{\label{fig:gaps2}An example of how to calculate the gaps between spikes.  If  the circles represent spikes from $\mathbf{X}$ and crosses represent spikes from $\mathbf{Y}$, then in the picture above, the distance $k$ is simply the cost of relabelling a spike.  As seen here, the gaps are not necessarily symmetric.}
 
 \end{figure}
 
@@ -134,6 +137,15 @@ Once more, this distance measure has the nice property that if the time-local me
 \int_0^T s(t)\,dt = \sum_{\mathbf{W}} \sum_{\mathbf{w}_i \in \mathbf{W}} \sum_{\alpha} \Delta t_{\alpha}^{\mathbf{w}_i}
 \end{equation}
 \bigskip
+
+
+\begin{figure}
+\input{BS}
+\end{figure}
+
+\begin{figure}
+\input{bestBS}
+\end{figure}
 %
 %\begin{figure}[hbt]
 %\include{spikemaxvmin}
@@ -155,6 +167,14 @@ Once more, this distance measure has the nice property that if the time-local me
 %\end{figure}
 %\section{}
 %\subsection{}
+\begin{figure}[htb]
+\input{multSPIKE}
+\end{figure}
+
+\begin{figure}[htb]
+\input{bestmultSpike}
+\end{figure}
+
 \newpage
 \section{ISI distance}
 \bigskip
@@ -219,6 +239,11 @@ in which, effectively, the ISIs are averaged across the population before being 
 \subsection{Numerical tests}
 This multi-unit extension of the ISI distance is tested on the same data that was used to test the multi-unit van Rossum distance in Houghton and Sen (2006).   In this simulation, two integrate and fire neurons receive noisy input from two sources.  A parameter $a$ determines how much these two inputs are mixed.  If $a=0$ each receives independent input, if $a=0.5$, each receives an input averaging the two sources.  Both neurons also receive shot noise.  The two inputs are inhomogeneous Poisson processes, and there are five separate randomly chosen inhomogeneous functions. Each of these are used to drive the neurons 20 times, and the distance function is used to cluster these 100 neurons by stimulus in the usual way.  The accuracy of this clustering is evaluated by calculating the Transmitted Information ($h$) of the clustering.  The results are shown in Figures \ref{fig:minmax} and \ref{fig:bestalpha} . Compared to similar graphs in \cite{HoughtonSen2008}, the performance is similar to the multi-unit van Rossum metric; but compared to the van Rossum metric, the optimal value of $\alpha$ in the distance measure is less clearly modulated by $a$.  
 
+\begin{figure}[htb]
+\input{maxmin}
+\caption{\label{mmav}The top line corresponds to the maximum possible transmitted information of $\log(5)$.  Then the upper of the two remaining lines is the average of the maximum transmitted information as $\alpha$ is varied from zero to a half, and the bottom line is the minimum transmitted information over $\alpha$.}
+\end{figure}
+
 %
 %\begin{figure}[thb]
 %\begin{center}
@@ -255,6 +280,20 @@ s(t) = (1-p) \left(\frac{ | \sum_i I^{\mathbf{x}_i}(t) - \sum_i I^{\mathbf{y}_i}
 \end{equation}.
 
 
+\begin{figure}[htb]
+\input{avvspop}
+\caption{The lines, as in figure \ref{mmav} correspond to the maximum and the minimum for: $s_p$, the \lq{}population\rq{} extension, in the solid lines; and $s_a$, the \lq{}average\rq{} extension, in the broken lines.}
+\end{figure}
+
+\begin{figure}[htb]
+\input{bestpav}
+\caption{This figure shows the optimal value for the population parameter $p$ for $s_a$, the \lq{}average\rq{} extension, as the mixing parameter $\alpha$ is varied from zero to a half, with the errorbars showing the standard deviation.}
+\end{figure}
+
+\begin{figure}[htb]
+\input{bestppop}
+\caption{This figure shows the optimal value for the population parameter $p$ for $s_p$, the \lq{}population\rq{} extension, as the mixing parameter $\alpha$ is varied from zero to a half, with the errorbars showing the standard deviation.}
+\end{figure}
 %\begin{figure}[htb]
 %\begin{center}
 %\include{newmaxvmin}
@@ -284,6 +323,13 @@ This is a dissimilarity measure on the ISIs across the two populations.  If the 
 
 Figures \ref{adpop} and \ref{adav} show that this does not work very well, because one would hope that the adaptive measure would perform on a par with the maximum values of transmitted information from figures \ref{popmaxmin} and \ref{avmaxmin}, but it is considerably lower than the max values in both the "average" and "population" ISI measures.
 
+\begin{figure}
+\input{zoav}
+\end{figure}
+
+\begin{figure}
+\input{zopop}
+\end{figure}
 
 %\begin{figure}[Bht]
 %\begin{center}
