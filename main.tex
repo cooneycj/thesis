@@ -1,29 +1,40 @@
 \documentclass[12pt]{report}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{epsfig}
+\bibliographystyle{apalike}
+\linespread{1.5}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
 \graphicspath{ {images/} }
 
 \title{
-	{Spike Train Analysis} \\
-	{\large Trinity College Dublin} \\
+	{Spike-Train Analysis} \\
+	{\large Trinity College Dublin} \bigskip\\
+	{\includegraphics[width=1.5in]{tcd.png}}
 }
 \author{Cathal Cooney}
-\date{5 12 2014}
+\date{2015-1-31}
 
 \begin{document}
+\pagenumbering{roman}
 \maketitle
 
-\chapter*{Abstract}
-
-\chapter*{Dedication}
-
-\chapter*{Declaration}
-
-\chapter*{Acknowledgements}
+%\chapter*{Abstract}
+%
+%\chapter*{Dedication}
+%
+%\chapter*{Declaration}
+%
+%\chapter*{Acknowledgements}
 
 \tableofcontents
 
+
 \chapter{Introduction}
+\pagenumbering{arabic}
 \input{chapters/introduction}
 
 \chapter{Clustering methods in Spike Train Analysis}
@@ -38,9 +49,6 @@
 \chapter{Conclusion}
 \input{chapters/conclusion}
 
-\appendix
-\chapter{Appendix}
-\input{chapters/appendix}
-
+\bibliography{bibliography}
 
 \end{document}
