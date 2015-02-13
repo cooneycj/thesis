@@ -27,12 +27,12 @@
 \contentsline {subsection}{\numberline {3.3.2}Initial extension to multi-unit recordings}{43}
 \contentsline {subsection}{\numberline {3.3.3}Numerical tests}{45}
 \contentsline {subsection}{\numberline {3.3.4}Alternative extensions to the multi-unit case}{47}
-\contentsline {section}{\numberline {3.4}Adaptive SPIKE \& ISI distances}{50}
+\contentsline {section}{\numberline {3.4}Adaptive ISI distances}{49}
 \contentsline {chapter}{\numberline {4}A simple neuron model}{53}
 \contentsline {section}{\numberline {4.1}Estimating the firing rate $r(t)$}{54}
-\contentsline {section}{\numberline {4.2}Markov Process}{57}
-\contentsline {subsection}{\numberline {4.2.1}Estimating the rate function $r(t)$}{60}
-\contentsline {subsection}{\numberline {4.2.2}Change in probability when a spike arrives}{63}
-\contentsline {subsection}{\numberline {4.2.3}Calculating the ISI distribution}{63}
-\contentsline {section}{\numberline {4.3}Testing on data}{66}
-\contentsline {chapter}{\numberline {5}Conclusion}{70}
+\contentsline {section}{\numberline {4.2}Markov Process}{58}
+\contentsline {subsection}{\numberline {4.2.1}Estimating the rate function $r(t)$}{61}
+\contentsline {subsection}{\numberline {4.2.2}Change in probability when a spike arrives}{64}
+\contentsline {subsection}{\numberline {4.2.3}Calculating the ISI distribution}{64}
+\contentsline {section}{\numberline {4.3}Testing on data}{67}
+\contentsline {chapter}{\numberline {5}Conclusion}{71}
