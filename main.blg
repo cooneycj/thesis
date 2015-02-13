@@ -2,64 +2,48 @@ This is BibTeX, Version 0.99d (TeX Live 2012)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: apalike.bst
-Case mismatch error between cite keys Kreuzetal2011a and KreuzEtAl2011a
----line 96 of file main.aux
- : \citation{Kreuzetal2011a
- :                         }
-I'm skipping whatever remains of this command
-Case mismatch error between cite keys Kreuzetal2011a and KreuzEtAl2011a
----line 100 of file main.aux
- : \citation{Kreuzetal2011a
- :                         }
-I'm skipping whatever remains of this command
-Case mismatch error between cite keys Kreuzetal2011a and KreuzEtAl2011a
----line 101 of file main.aux
- : \citation{Kreuzetal2011a
- :                         }
-I'm skipping whatever remains of this command
 Database file #1: bibliography.bib
-Warning--I didn't find a database entry for "Kreuzetal2011"
 Warning--can't use both volume and number fields in DuBoisReymond1884a
 Warning--there's a number but no volume in Lewicki1998a
-You've used 39 entries,
+You've used 38 entries,
             1935 wiz_defined-function locations,
-            756 strings with 9975 characters,
-and the built_in function-call counts, 15414 in all, are:
-= -- 1561
-> -- 482
+            748 strings with 9796 characters,
+and the built_in function-call counts, 14972 in all, are:
+= -- 1516
+> -- 464
 < -- 34
-+ -- 180
-- -- 152
-* -- 1330
-:= -- 2631
-add.period$ -- 118
-call.type$ -- 39
-change.case$ -- 269
-chr.to.int$ -- 35
-cite$ -- 41
-duplicate$ -- 559
-empty$ -- 1161
-format.name$ -- 225
-if$ -- 3021
++ -- 174
+- -- 146
+* -- 1290
+:= -- 2555
+add.period$ -- 115
+call.type$ -- 38
+change.case$ -- 261
+chr.to.int$ -- 34
+cite$ -- 40
+duplicate$ -- 545
+empty$ -- 1130
+format.name$ -- 218
+if$ -- 2936
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 41
-newline$ -- 198
-num.names$ -- 117
-pop$ -- 175
+missing$ -- 40
+newline$ -- 193
+num.names$ -- 114
+pop$ -- 169
 preamble$ -- 1
-purify$ -- 271
+purify$ -- 263
 quote$ -- 0
-skip$ -- 432
+skip$ -- 422
 stack$ -- 0
-substring$ -- 1402
-swap$ -- 52
+substring$ -- 1359
+swap$ -- 51
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 230
+type$ -- 224
 warning$ -- 2
-while$ -- 139
+while$ -- 135
 width$ -- 0
-write$ -- 509
-(There were 3 error messages)
+write$ -- 496
+(There were 2 warnings)

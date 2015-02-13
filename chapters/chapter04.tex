@@ -5,11 +5,64 @@ It is unlikely that a neuron is ever truly ``off'', so it is assumed that a neur
 
 This idea is simplified to the extreme case, where a neuron is either in its up-state and has a high firing-rate, or it is ``off''.   The model is treated as a poisson process, for ease of calculation.
 
+
 The data that is simulated has an ``up rate'' $\lambda_u$ and a ``down rate'' $\lambda_d$.  For the initial trials, $\lambda_d = 0$.  When in the down-state, the state switches ``up'' with expected frequency $u$, and when in the up-state it switches ``down'' with expected frequency $d$.  Thus, the average background rate, $r$, of the inhomogeneous poisson process can be calculated as:
 \begin{equation}\label{lam}
 r = \frac{ \frac{\lambda_u }{d}}{ \frac{1}{u} + \frac{1}{d}} = \frac{u\, \lambda_u}{u+d}
 \end{equation}
 since the expected time for being in the up-state is simply $1/d$ and the expected time in the down-state is $1/u$.
+
+\begin{figure}[htb]
+\begin{center}
+\setlength{\unitlength}{.08cm}
+\begin{picture}(150,75)
+\put(0,14){\mbox{$\lambda_d$}}
+\put(0,34){\mbox{$\lambda_u$}}
+
+\linethickness{1.5pt}
+\put(7,10){\line(1,0){138}}
+\put(7,55){\line(1,0){138}}
+
+\linethickness{1pt}
+\put(7,15){\line(1,0){18}}
+\put(15,15){\vector(0,1){8}}
+\put(17,17){\mbox{$u$}}
+\put(25,15){\line(0,1){20}}
+\put(25,35){\line(1,0){30}}
+\put(38,35){\vector(0,-1){8}}
+\put(40,30){\mbox{$d$}}
+\put(55,35){\line(0,-1){20}}
+\put(55,15){\line(1,0){40}}
+\put(73,15){\vector(0,1){8}}
+\put(75,17){\mbox{$u$}}
+\put(95,15){\line(0,1){20}}
+\put(95,35){\line(1,0){25}}
+\put(106,35){\vector(0,-1){8}}
+\put(108,30){\mbox{$d$}}
+\put(120,35){\line(0,-1){20}}
+\put(120,15){\line(1,0){25}}
+\put(132,15){\vector(0,1){8}}
+\put(134,17){\mbox{$u$}}
+
+\put(27,55){\line(0,1){15}}
+\put(35,55){\line(0,1){15}}
+\put(46,55){\line(0,1){15}}
+\put(50,55){\line(0,1){15}}
+
+\put(67,55){\line(0,1){15}}
+\put(84,55){\line(0,1){15}}
+
+\put(100,55){\line(0,1){15}}
+\put(107,55){\line(0,1){15}}
+\put(116,55){\line(0,1){15}}
+\put(135,55){\line(0,1){15}}
+
+\multiput(8,35)(5,0){28}{\line(1,0){2}}
+%\multiput(8,15)(5,0){28}{\line(1,0){2}}
+\end{picture}
+\caption{ \label{model}An illustration of the model firing rate, and an associated output spike train.  The process has two states, an up-state and a down-state, and has Poisson transition rates: $u$ from down to up, and $d$ from up to down.  Each state has an associated Poisson firing rate: $\lambda_u$ when up and $\lambda_d$ when down.  }
+\end{center}
+\end{figure}
 
 
 \section{Estimating the firing rate $r(t)$}
@@ -60,7 +113,7 @@ y(t+h) &=  y(t)P(\mbox{staying in up-state} | \mbox{up at t}|Y|Z)  \\
 
 \begin{figure}[b!]
 \begin{center}
-\resizebox{0.75\textwidth}{!}{\input{tauoptoverpred}}
+\resizebox{0.75\textwidth}{!}{\input{images/tauoptoverpred}}
 \caption{\label{predovertauopt} This figure shows the ratio of the predicted value for $\tau$ in an exponential model over the empirical optimised value $\tau_o$.}
 \end{center}
 \end{figure}
@@ -123,9 +176,37 @@ Q_s = \begin{pmatrix} -d-\lambda_u & d & \lambda_u \\ u & -u & 0 \\ 0 & 0 & 0\en
 
 The third state of the Markov chain described by the transition matrix $Q_s$ is an ``absorbing'' state, the state of spiking, from which it is impossible to return to either the up or the down state.
 
+\begin{figure}[htb]
+\begin{center}
+\setlength{\unitlength}{.07cm}
+\begin{picture}(120,75)
+\put(90,37){\mbox{$\lambda_d$}}
+\put(25,37){\mbox{$\lambda_u$}}
+\put(59,67){\mbox{$d$}}
+\put(59,49){\mbox{$u$}}
+
+\put(25,60){\oval(40,25)}
+\put(21,58){\mbox{{\bf UP}}}
+\put(95,60){\oval(40,25)}
+\put(85,58){\mbox{{\bf DOWN}}}
+\put(60,20){\oval(40,25)}
+\put(51,18){\mbox{{\bf SPIKE}}}
+
+\put(45,65){\vector(1,0){30}}
+\put(75,55){\vector(-1,0){30}}
+\put(25,47.5){\vector(4,-3){21}}
+\put(95,47.5){\vector(-4,-3){21}}
+\end{picture}
+\caption{\label{markov} An illustration of the state space of the Markov chain at any point in time between two spikes.}
+\end{center}
+\end{figure}
+
+
 The solution to the spiking Markov chain is:
 \begin{equation}
-P(t)  = \begin{pmatrix} Ae^{-\alpha t} + (1-A)e^{-\beta t} & Be^{-\alpha t} - Be^{-\beta t} & 1 - (A+B)e^{-\alpha t} - (1-A-B)e^{-\beta t} \\ Ce^{-\alpha t} - Ce^{-\beta t} & (1-A)e^{-\alpha t} +  Ae^{-\beta t} & 1 - (1-A+C)e^{-\alpha t} - (A+C)e^{-\beta t} \\ 0 & 0 & 1 \end{pmatrix}
+P(t)  = \begin{pmatrix} Ae^{-\alpha t} + (1-A)e^{-\beta t} & Be^{-\alpha t} - Be^{-\beta t} & p_{13}(t)\\ 
+Ce^{-\alpha t} - Ce^{-\beta t} & (1-A)e^{-\alpha t} +  Ae^{-\beta t} & p_{23}(t) \\
+ 0 & 0 & 1 \end{pmatrix}
 \end{equation}
 where $-\alpha,-\beta$ are the roots to the characteristic polynomial of $Q_s$.
 \begin{equation}
@@ -153,9 +234,10 @@ Q_s = \begin{pmatrix} -d-\lambda_u & d & \lambda_u \\ u & -u-\lambda_d & \lambda
 
 This matrix has solution:
 \begin{equation}
+P_s(t) =
 \begin{pmatrix}
-Ae^{-\alpha t} + (1-A)e^{-\beta t} & B\left(e^{-\alpha t} - e^{-\beta t}\right) & 1-e^{-\beta t} - (A+B)\left(e^{-\alpha t} - e^{-\beta t}\right) \\
-C\left(e^{-\alpha t} - e^{-\beta t}\right) & (1-A)e^{-\alpha t} + Ae^{-\beta t} & 1-e^{-\alpha t} - (C-A)\left(e^{-\alpha t} - e^{-\beta t}\right)\\
+Ae^{-\alpha t} + (1-A)e^{-\beta t} & B\left(e^{-\alpha t} - e^{-\beta t}\right) & p_{13}(t) \\
+C\left(e^{-\alpha t} - e^{-\beta t}\right) & (1-A)e^{-\alpha t} + Ae^{-\beta t} & p_{23}(t)\\
 0 & 0 & 1
 \end{pmatrix}
 \end{equation}
@@ -310,12 +392,12 @@ r(t) \rightarrow (\lambda_u +\lambda_d) - \frac{\lambda_u\lambda_d}{r(t)}
 \end{equation}
 
 \begin{figure}[htb]
-\input{estrate}
+\input{images/estrate}
 \caption{An example of the estimated rate, $r(t)$, for a bimodal Poisson spike train.  For this example, $u=d=5$, $\lambda_u=50$ and $\lambda_d=5$.  In this example, the initial rate was set randomly between $\alpha$ and $\beta$.}
 \end{figure}
 
 \begin{figure}
-\input{estrate2}
+\input{images/estrate2}
 \caption{An example of the estimated rate, $r(t)$, for a bimodal Poisson spike train.  For this example, $u=d=5$, $\lambda_u=50$ and $\lambda_d=5$.  In this example, the initial rate was set to zero and it subsequently set itself.}
 \end{figure}
 
@@ -372,12 +454,12 @@ C_0 = 2p(\lambda_2-\lambda_1), \, D_0 = 2(1-p)(\lambda_2-\lambda_1)
 
 
 \section{Testing on data}
-The previous result allows for testing on real data.  The data used in this report is the data used in \cite{SenEtAl2001a}.  An electrode was placed in L1 of anaesthetised zebra finches, and the birds were presented with 20 natural stimuli ten times each.  As the model does not account for the refractory period of neurons, a well-documented feature of neurons \cite{OlshausenField2004a} , the ten presentations of each stimulus are overlaid to counter the impact of the refractory period \cite{BerryMeister1998a}. 
+The previous result allows for testing on real data.  The data used in this report is the data used in \cite{NarayanEtAl2006b}.  An electrode was placed in L1 of anaesthetised zebra finches, and the birds were presented with 20 natural stimuli ten times each.  As the model does not account for the refractory period of neurons, a well-documented feature of neurons \cite{OlshausenField2004a} , the ten presentations of each stimulus are overlaid to counter the impact of the refractory period \cite{BerryMeister1998a}. 
 
 The inter-spike intervals (ISIs) were then aggregated across 16 of the 20 stimuli, to give a representation of a typical ISI distribution for each neuron.  The hyperexponential distribution, $H_2$, was trained on the ISI distribution of the 16 stimuli by minimising the statistic $D_n$ of the Kolmogorov-Smirnov test \cite{Massey1951a} by downhill-simplex search.  Then the remaining four stimuli were aggregated across the ten trials to form a test ISI distribution upon which the calculated minimum hyperexponential distribution was tested using the Kolmogorov-Smirnov test for goodness-of-fit.
 
 \begin{figure}
-\input{ksdists}
+\input{images/ksdists}
 \caption{\label{exphehe3} The Kolmogorov-Smirnov test statistic $D_n$ for (a) the exponential distribution, (b) the hyperexponential distribution with two modes, and (c) the hyperexponential distribution with three modes.  The mean of the $p<0.05$ critical value is indicated by the broken line.}
 \end{figure}
 
