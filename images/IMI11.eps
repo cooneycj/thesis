@@ -1,2056 +1,739 @@
-%!PS-Adobe-3.0 EPSF-3.0
-%%Creator: cairo 1.10.2 (http://cairographics.org)
-%%CreationDate: Sun Jul 22 06:50:35 2012
-%%Pages: 1
-%%BoundingBox: 0 -1 302 227
-%%DocumentData: Clean7Bit
-%%LanguageLevel: 2
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: IMI11.tex
+%%Creator: gnuplot 4.4 patchlevel 4
+%%CreationDate: Tue Feb 17 16:02:10 2015
+%%DocumentFonts: 
+%%BoundingBox: 50 50 410 302
 %%EndComments
 %%BeginProlog
-/cairo_eps_state save def
-/dict_count countdictstack def
-/op_count count 1 sub def
-userdict begin
-/q { gsave } bind def
-/Q { grestore } bind def
-/cm { 6 array astore concat } bind def
-/w { setlinewidth } bind def
-/J { setlinecap } bind def
-/j { setlinejoin } bind def
-/M { setmiterlimit } bind def
-/d { setdash } bind def
-/m { moveto } bind def
-/l { lineto } bind def
-/c { curveto } bind def
-/h { closepath } bind def
-/re { exch dup neg 3 1 roll 5 3 roll moveto 0 rlineto
-      0 exch rlineto 0 rlineto closepath } bind def
-/S { stroke } bind def
-/f { fill } bind def
-/f* { eofill } bind def
-/n { newpath } bind def
-/W { clip } bind def
-/W* { eoclip } bind def
-/BT { } bind def
-/ET { } bind def
-/pdfmark where { pop globaldict /?pdfmark /exec load put }
-    { globaldict begin /?pdfmark /pop load def /pdfmark
-    /cleartomark load def end } ifelse
-/BDC { mark 3 1 roll /BDC pdfmark } bind def
-/EMC { mark /EMC pdfmark } bind def
-/cairo_store_point { /cairo_point_y exch def /cairo_point_x exch def } def
-/Tj { show currentpoint cairo_store_point } bind def
-/TJ {
-  {
-    dup
-    type /stringtype eq
-    { show } { -0.001 mul 0 cairo_font_matrix dtransform rmoveto } ifelse
-  } forall
-  currentpoint cairo_store_point
-} bind def
-/cairo_selectfont { cairo_font_matrix aload pop pop pop 0 0 6 array astore
-    cairo_font exch selectfont cairo_point_x cairo_point_y moveto } bind def
-/Tf { pop /cairo_font exch def /cairo_font_matrix where
-      { pop cairo_selectfont } if } bind def
-/Td { matrix translate cairo_font_matrix matrix concatmatrix dup
-      /cairo_font_matrix exch def dup 4 get exch 5 get cairo_store_point
-      /cairo_font where { pop cairo_selectfont } if } bind def
-/Tm { 2 copy 8 2 roll 6 array astore /cairo_font_matrix exch def
-      cairo_store_point /cairo_font where { pop cairo_selectfont } if } bind def
-/g { setgray } bind def
-/rg { setrgbcolor } bind def
-/d1 { setcachedevice } bind def
+/gnudict 256 dict def
+gnudict begin
+%
+% The following true/false flags may be edited by hand if desired.
+% The unit line width and grayscale image gamma correction may also be changed.
+%
+/Color true def
+/Blacktext true def
+/Solid false def
+/Dashlength 1 def
+/Landscape false def
+/Level1 false def
+/Rounded false def
+/ClipToBoundingBox false def
+/TransparentPatterns false def
+/gnulinewidth 5.000 def
+/userlinewidth gnulinewidth def
+/Gamma 1.0 def
+%
+/vshift -73 def
+/dl1 {
+  10.0 Dashlength mul mul
+  Rounded { currentlinewidth 0.75 mul sub dup 0 le { pop 0.01 } if } if
+} def
+/dl2 {
+  10.0 Dashlength mul mul
+  Rounded { currentlinewidth 0.75 mul add } if
+} def
+/hpt_ 31.5 def
+/vpt_ 31.5 def
+/hpt hpt_ def
+/vpt vpt_ def
+Level1 {} {
+/SDict 10 dict def
+systemdict /pdfmark known not {
+  userdict /pdfmark systemdict /cleartomark get put
+} if
+SDict begin [
+  /Title (IMI11.tex)
+  /Subject (gnuplot plot)
+  /Creator (gnuplot 4.4 patchlevel 4)
+  /Author (Cathal)
+%  /Producer (gnuplot)
+%  /Keywords ()
+  /CreationDate (Tue Feb 17 16:02:10 2015)
+  /DOCINFO pdfmark
+end
+} ifelse
+/doclip {
+  ClipToBoundingBox {
+    newpath 50 50 moveto 410 50 lineto 410 302 lineto 50 302 lineto closepath
+    clip
+  } if
+} def
+%
+% Gnuplot Prolog Version 4.4 (August 2010)
+%
+%/SuppressPDFMark true def
+%
+/M {moveto} bind def
+/L {lineto} bind def
+/R {rmoveto} bind def
+/V {rlineto} bind def
+/N {newpath moveto} bind def
+/Z {closepath} bind def
+/C {setrgbcolor} bind def
+/f {rlineto fill} bind def
+/g {setgray} bind def
+/Gshow {show} def   % May be redefined later in the file to support UTF-8
+/vpt2 vpt 2 mul def
+/hpt2 hpt 2 mul def
+/Lshow {currentpoint stroke M 0 vshift R 
+	Blacktext {gsave 0 setgray show grestore} {show} ifelse} def
+/Rshow {currentpoint stroke M dup stringwidth pop neg vshift R
+	Blacktext {gsave 0 setgray show grestore} {show} ifelse} def
+/Cshow {currentpoint stroke M dup stringwidth pop -2 div vshift R 
+	Blacktext {gsave 0 setgray show grestore} {show} ifelse} def
+/UP {dup vpt_ mul /vpt exch def hpt_ mul /hpt exch def
+  /hpt2 hpt 2 mul def /vpt2 vpt 2 mul def} def
+/DL {Color {setrgbcolor Solid {pop []} if 0 setdash}
+ {pop pop pop 0 setgray Solid {pop []} if 0 setdash} ifelse} def
+/BL {stroke userlinewidth 2 mul setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+/AL {stroke userlinewidth 2 div setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+/UL {dup gnulinewidth mul /userlinewidth exch def
+	dup 1 lt {pop 1} if 10 mul /udl exch def} def
+/PL {stroke userlinewidth setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+3.8 setmiterlimit
+% Default Line colors
+/LCw {1 1 1} def
+/LCb {0 0 0} def
+/LCa {0 0 0} def
+/LC0 {1 0 0} def
+/LC1 {0 1 0} def
+/LC2 {0 0 1} def
+/LC3 {1 0 1} def
+/LC4 {0 1 1} def
+/LC5 {1 1 0} def
+/LC6 {0 0 0} def
+/LC7 {1 0.3 0} def
+/LC8 {0.5 0.5 0.5} def
+% Default Line Types
+/LTw {PL [] 1 setgray} def
+/LTb {BL [] LCb DL} def
+/LTa {AL [1 udl mul 2 udl mul] 0 setdash LCa setrgbcolor} def
+/LT0 {PL [] LC0 DL} def
+/LT1 {PL [4 dl1 2 dl2] LC1 DL} def
+/LT2 {PL [2 dl1 3 dl2] LC2 DL} def
+/LT3 {PL [1 dl1 1.5 dl2] LC3 DL} def
+/LT4 {PL [6 dl1 2 dl2 1 dl1 2 dl2] LC4 DL} def
+/LT5 {PL [3 dl1 3 dl2 1 dl1 3 dl2] LC5 DL} def
+/LT6 {PL [2 dl1 2 dl2 2 dl1 6 dl2] LC6 DL} def
+/LT7 {PL [1 dl1 2 dl2 6 dl1 2 dl2 1 dl1 2 dl2] LC7 DL} def
+/LT8 {PL [2 dl1 2 dl2 2 dl1 2 dl2 2 dl1 2 dl2 2 dl1 4 dl2] LC8 DL} def
+/Pnt {stroke [] 0 setdash gsave 1 setlinecap M 0 0 V stroke grestore} def
+/Dia {stroke [] 0 setdash 2 copy vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath stroke
+  Pnt} def
+/Pls {stroke [] 0 setdash vpt sub M 0 vpt2 V
+  currentpoint stroke M
+  hpt neg vpt neg R hpt2 0 V stroke
+ } def
+/Box {stroke [] 0 setdash 2 copy exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath stroke
+  Pnt} def
+/Crs {stroke [] 0 setdash exch hpt sub exch vpt add M
+  hpt2 vpt2 neg V currentpoint stroke M
+  hpt2 neg 0 R hpt2 vpt2 V stroke} def
+/TriU {stroke [] 0 setdash 2 copy vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath stroke
+  Pnt} def
+/Star {2 copy Pls Crs} def
+/BoxF {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath fill} def
+/TriUF {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath fill} def
+/TriD {stroke [] 0 setdash 2 copy vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath stroke
+  Pnt} def
+/TriDF {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath fill} def
+/DiaF {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath fill} def
+/Pent {stroke [] 0 setdash 2 copy gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath stroke grestore Pnt} def
+/PentF {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath fill grestore} def
+/Circle {stroke [] 0 setdash 2 copy
+  hpt 0 360 arc stroke Pnt} def
+/CircleF {stroke [] 0 setdash hpt 0 360 arc fill} def
+/C0 {BL [] 0 setdash 2 copy moveto vpt 90 450 arc} bind def
+/C1 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C2 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C3 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C4 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 180 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C5 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc
+	2 copy moveto
+	2 copy vpt 180 270 arc closepath fill
+	vpt 0 360 arc} bind def
+/C6 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C7 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C8 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 270 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C9 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 270 450 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C10 {BL [] 0 setdash 2 copy 2 copy moveto vpt 270 360 arc closepath fill
+	2 copy moveto
+	2 copy vpt 90 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C11 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 180 arc closepath fill
+	2 copy moveto
+	2 copy vpt 270 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C12 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 180 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C13 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc closepath fill
+	2 copy moveto
+	2 copy vpt 180 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C14 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 360 arc closepath fill
+	vpt 0 360 arc} bind def
+/C15 {BL [] 0 setdash 2 copy vpt 0 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/Rec {newpath 4 2 roll moveto 1 index 0 rlineto 0 exch rlineto
+	neg 0 rlineto closepath} bind def
+/Square {dup Rec} bind def
+/Bsquare {vpt sub exch vpt sub exch vpt2 Square} bind def
+/S0 {BL [] 0 setdash 2 copy moveto 0 vpt rlineto BL Bsquare} bind def
+/S1 {BL [] 0 setdash 2 copy vpt Square fill Bsquare} bind def
+/S2 {BL [] 0 setdash 2 copy exch vpt sub exch vpt Square fill Bsquare} bind def
+/S3 {BL [] 0 setdash 2 copy exch vpt sub exch vpt2 vpt Rec fill Bsquare} bind def
+/S4 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt Square fill Bsquare} bind def
+/S5 {BL [] 0 setdash 2 copy 2 copy vpt Square fill
+	exch vpt sub exch vpt sub vpt Square fill Bsquare} bind def
+/S6 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt vpt2 Rec fill Bsquare} bind def
+/S7 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt vpt2 Rec fill
+	2 copy vpt Square fill Bsquare} bind def
+/S8 {BL [] 0 setdash 2 copy vpt sub vpt Square fill Bsquare} bind def
+/S9 {BL [] 0 setdash 2 copy vpt sub vpt vpt2 Rec fill Bsquare} bind def
+/S10 {BL [] 0 setdash 2 copy vpt sub vpt Square fill 2 copy exch vpt sub exch vpt Square fill
+	Bsquare} bind def
+/S11 {BL [] 0 setdash 2 copy vpt sub vpt Square fill 2 copy exch vpt sub exch vpt2 vpt Rec fill
+	Bsquare} bind def
+/S12 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill Bsquare} bind def
+/S13 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill
+	2 copy vpt Square fill Bsquare} bind def
+/S14 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill
+	2 copy exch vpt sub exch vpt Square fill Bsquare} bind def
+/S15 {BL [] 0 setdash 2 copy Bsquare fill Bsquare} bind def
+/D0 {gsave translate 45 rotate 0 0 S0 stroke grestore} bind def
+/D1 {gsave translate 45 rotate 0 0 S1 stroke grestore} bind def
+/D2 {gsave translate 45 rotate 0 0 S2 stroke grestore} bind def
+/D3 {gsave translate 45 rotate 0 0 S3 stroke grestore} bind def
+/D4 {gsave translate 45 rotate 0 0 S4 stroke grestore} bind def
+/D5 {gsave translate 45 rotate 0 0 S5 stroke grestore} bind def
+/D6 {gsave translate 45 rotate 0 0 S6 stroke grestore} bind def
+/D7 {gsave translate 45 rotate 0 0 S7 stroke grestore} bind def
+/D8 {gsave translate 45 rotate 0 0 S8 stroke grestore} bind def
+/D9 {gsave translate 45 rotate 0 0 S9 stroke grestore} bind def
+/D10 {gsave translate 45 rotate 0 0 S10 stroke grestore} bind def
+/D11 {gsave translate 45 rotate 0 0 S11 stroke grestore} bind def
+/D12 {gsave translate 45 rotate 0 0 S12 stroke grestore} bind def
+/D13 {gsave translate 45 rotate 0 0 S13 stroke grestore} bind def
+/D14 {gsave translate 45 rotate 0 0 S14 stroke grestore} bind def
+/D15 {gsave translate 45 rotate 0 0 S15 stroke grestore} bind def
+/DiaE {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath stroke} def
+/BoxE {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath stroke} def
+/TriUE {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath stroke} def
+/TriDE {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath stroke} def
+/PentE {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath stroke grestore} def
+/CircE {stroke [] 0 setdash 
+  hpt 0 360 arc stroke} def
+/Opaque {gsave closepath 1 setgray fill grestore 0 setgray closepath} def
+/DiaW {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V Opaque stroke} def
+/BoxW {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V Opaque stroke} def
+/TriUW {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V Opaque stroke} def
+/TriDW {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V Opaque stroke} def
+/PentW {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  Opaque stroke grestore} def
+/CircW {stroke [] 0 setdash 
+  hpt 0 360 arc Opaque stroke} def
+/BoxFill {gsave Rec 1 setgray fill grestore} def
+/Density {
+  /Fillden exch def
+  currentrgbcolor
+  /ColB exch def /ColG exch def /ColR exch def
+  /ColR ColR Fillden mul Fillden sub 1 add def
+  /ColG ColG Fillden mul Fillden sub 1 add def
+  /ColB ColB Fillden mul Fillden sub 1 add def
+  ColR ColG ColB setrgbcolor} def
+/BoxColFill {gsave Rec PolyFill} def
+/PolyFill {gsave Density fill grestore grestore} def
+/h {rlineto rlineto rlineto gsave closepath fill grestore} bind def
+%
+% PostScript Level 1 Pattern Fill routine for rectangles
+% Usage: x y w h s a XX PatternFill
+%	x,y = lower left corner of box to be filled
+%	w,h = width and height of box
+%	  a = angle in degrees between lines and x-axis
+%	 XX = 0/1 for no/yes cross-hatch
+%
+/PatternFill {gsave /PFa [ 9 2 roll ] def
+  PFa 0 get PFa 2 get 2 div add PFa 1 get PFa 3 get 2 div add translate
+  PFa 2 get -2 div PFa 3 get -2 div PFa 2 get PFa 3 get Rec
+  gsave 1 setgray fill grestore clip
+  currentlinewidth 0.5 mul setlinewidth
+  /PFs PFa 2 get dup mul PFa 3 get dup mul add sqrt def
+  0 0 M PFa 5 get rotate PFs -2 div dup translate
+  0 1 PFs PFa 4 get div 1 add floor cvi
+	{PFa 4 get mul 0 M 0 PFs V} for
+  0 PFa 6 get ne {
+	0 1 PFs PFa 4 get div 1 add floor cvi
+	{PFa 4 get mul 0 2 1 roll M PFs 0 V} for
+ } if
+  stroke grestore} def
+%
+/languagelevel where
+ {pop languagelevel} {1} ifelse
+ 2 lt
+	{/InterpretLevel1 true def}
+	{/InterpretLevel1 Level1 def}
+ ifelse
+%
+% PostScript level 2 pattern fill definitions
+%
+/Level2PatternFill {
+/Tile8x8 {/PaintType 2 /PatternType 1 /TilingType 1 /BBox [0 0 8 8] /XStep 8 /YStep 8}
+	bind def
+/KeepColor {currentrgbcolor [/Pattern /DeviceRGB] setcolorspace} bind def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 8 8 L 0 8 M 8 0 L stroke} 
+>> matrix makepattern
+/Pat1 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 8 8 L 0 8 M 8 0 L stroke
+	0 4 M 4 8 L 8 4 L 4 0 L 0 4 L stroke}
+>> matrix makepattern
+/Pat2 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 0 8 L
+	8 8 L 8 0 L 0 0 L fill}
+>> matrix makepattern
+/Pat3 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -4 8 M 8 -4 L
+	0 12 M 12 0 L stroke}
+>> matrix makepattern
+/Pat4 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -4 0 M 8 12 L
+	0 -4 M 12 8 L stroke}
+>> matrix makepattern
+/Pat5 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -2 8 M 4 -4 L
+	0 12 M 8 -4 L 4 12 M 10 0 L stroke}
+>> matrix makepattern
+/Pat6 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -2 0 M 4 12 L
+	0 -4 M 8 12 L 4 -4 M 10 8 L stroke}
+>> matrix makepattern
+/Pat7 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 8 -2 M -4 4 L
+	12 0 M -4 8 L 12 4 M 0 10 L stroke}
+>> matrix makepattern
+/Pat8 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 -2 M 12 4 L
+	-4 0 M 12 8 L -4 4 M 8 10 L stroke}
+>> matrix makepattern
+/Pat9 exch def
+/Pattern1 {PatternBgnd KeepColor Pat1 setpattern} bind def
+/Pattern2 {PatternBgnd KeepColor Pat2 setpattern} bind def
+/Pattern3 {PatternBgnd KeepColor Pat3 setpattern} bind def
+/Pattern4 {PatternBgnd KeepColor Landscape {Pat5} {Pat4} ifelse setpattern} bind def
+/Pattern5 {PatternBgnd KeepColor Landscape {Pat4} {Pat5} ifelse setpattern} bind def
+/Pattern6 {PatternBgnd KeepColor Landscape {Pat9} {Pat6} ifelse setpattern} bind def
+/Pattern7 {PatternBgnd KeepColor Landscape {Pat8} {Pat7} ifelse setpattern} bind def
+} def
+%
+%
+%End of PostScript Level 2 code
+%
+/PatternBgnd {
+  TransparentPatterns {} {gsave 1 setgray fill grestore} ifelse
+} def
+%
+% Substitute for Level 2 pattern fill codes with
+% grayscale if Level 2 support is not selected.
+%
+/Level1PatternFill {
+/Pattern1 {0.250 Density} bind def
+/Pattern2 {0.500 Density} bind def
+/Pattern3 {0.750 Density} bind def
+/Pattern4 {0.125 Density} bind def
+/Pattern5 {0.375 Density} bind def
+/Pattern6 {0.625 Density} bind def
+/Pattern7 {0.875 Density} bind def
+} def
+%
+% Now test for support of Level 2 code
+%
+Level1 {Level1PatternFill} {Level2PatternFill} ifelse
+%
+/Symbol-Oblique /Symbol findfont [1 0 .167 1 0 0] makefont
+dup length dict begin {1 index /FID eq {pop pop} {def} ifelse} forall
+currentdict end definefont pop
+end
 %%EndProlog
-%%Page: 1 1
-%%BeginPageSetup
-%%PageBoundingBox: 0 -1 302 227
-%%EndPageSetup
-q 0 -1 302 228 rectclip q
-0 225.8 m 0 0.249 l 280.051 0.249 l 280.051 225.8 l h
-0 225.8 m W n
-q
-0 226.05 281 -226 re W n
-[ 1 0 0 1 0 -0.949997 ] concat
-  q
-Q q
--2.352 224.852 280.051 -225.551 re W n
-q
-0 225 278 -225 re W n
-[ 4.6675 0 0 3.759167 -2.35 -0.7 ] concat
-/DeviceRGB setcolorspace
-8 dict dup begin
-  /ImageType 1 def
-  /Width 60 def
-  /Height 60 def
-  /BitsPerComponent 8 def
-  /Decode [ 0 1 0 1 0 1 ] def
-  /DataSource currentfile /ASCII85Decode filter /LZWDecode filter def
-  /Interpolate true def
-  /ImageMatrix [ 1 0 0 -1 0 60 ] def
-end
+gnudict begin
+gsave
+doclip
+50 50 translate
+0.050 0.050 scale
+0 setgray
+newpath
+gsave % colour palette begin
+/maxcolors 0 def
+/HSV2RGB {  exch dup 0.0 eq {pop exch pop dup dup} % achromatic gray
+  { /HSVs exch def /HSVv exch def 6.0 mul dup floor dup 3 1 roll sub
+     /HSVf exch def /HSVi exch cvi def /HSVp HSVv 1.0 HSVs sub mul def
+	 /HSVq HSVv 1.0 HSVs HSVf mul sub mul def 
+	 /HSVt HSVv 1.0 HSVs 1.0 HSVf sub mul sub mul def
+	 /HSVi HSVi 6 mod def 0 HSVi eq {HSVv HSVt HSVp}
+	 {1 HSVi eq {HSVq HSVv HSVp}{2 HSVi eq {HSVp HSVv HSVt}
+	 {3 HSVi eq {HSVp HSVq HSVv}{4 HSVi eq {HSVt HSVp HSVv}
+	 {HSVv HSVp HSVq} ifelse} ifelse} ifelse} ifelse} ifelse
+  } ifelse} def
+/Constrain {
+  dup 0 lt {0 exch pop}{dup 1 gt {1 exch pop} if} ifelse} def
+/YIQ2RGB {
+  3 copy -1.702 mul exch -1.105 mul add add Constrain 4 1 roll
+  3 copy -0.647 mul exch -0.272 mul add add Constrain 5 1 roll
+  0.621 mul exch -0.956 mul add add Constrain 3 1 roll } def
+/CMY2RGB {  1 exch sub exch 1 exch sub 3 2 roll 1 exch sub 3 1 roll exch } def
+/XYZ2RGB {  3 copy -0.9017 mul exch -0.1187 mul add exch 0.0585 mul exch add
+  Constrain 4 1 roll 3 copy -0.0279 mul exch 1.999 mul add exch
+  -0.9844 mul add Constrain 5 1 roll -0.2891 mul exch -0.5338 mul add
+  exch 1.91 mul exch add Constrain 3 1 roll} def
+/SelectSpace {ColorSpace (HSV) eq {HSV2RGB}{ColorSpace (XYZ) eq {
+  XYZ2RGB}{ColorSpace (CMY) eq {CMY2RGB}{ColorSpace (YIQ) eq {YIQ2RGB}
+  if} ifelse} ifelse} ifelse} def
+/InterpolatedColor false def
+/cF7 {sqrt} bind def	% sqrt(x)
+/cF5 {dup dup mul mul} bind def	% x^3
+/cF15 {360 mul sin} bind def	% sin(360x)
+/pm3dround {maxcolors 0 gt {dup 1 ge
+	{pop 1} {maxcolors mul floor maxcolors 1 sub div} ifelse} if} def
+/pm3dGamma 1.0 1.5 Gamma mul div def
+/ColorSpace (RGB) def
+Color InterpolatedColor or { % COLOUR vs. GRAY map
+  InterpolatedColor { %% Interpolation vs. RGB-Formula
+    /g {stroke pm3dround /grayv exch def interpolate
+        SelectSpace setrgbcolor} bind def
+  }{
+  /g {stroke pm3dround dup cF7 Constrain exch dup cF5 Constrain exch cF15 Constrain 
+       SelectSpace setrgbcolor} bind def
+  } ifelse
+}{
+  /g {stroke pm3dround pm3dGamma exp setgray} bind def
+} ifelse
+1.000 UL
+LTb
+LCb setrgbcolor
+789 503 M
+-63 0 V
+5066 0 R
+63 0 V
+stroke
+LTb
+789 1215 M
+-63 0 V
+5066 0 R
+63 0 V
+789 1927 M
+-63 0 V
+5066 0 R
+63 0 V
+789 2639 M
+-63 0 V
+5066 0 R
+63 0 V
+789 3351 M
+-63 0 V
+5066 0 R
+63 0 V
+789 4063 M
+-63 0 V
+5066 0 R
+63 0 V
+789 4775 M
+-63 0 V
+5066 0 R
+63 0 V
+789 503 M
+0 -63 V
+0 4335 R
+0 63 V
+1623 503 M
+0 -63 V
+0 4335 R
+0 63 V
+2457 503 M
+0 -63 V
+0 4335 R
+0 63 V
+3291 503 M
+0 -63 V
+0 4335 R
+0 63 V
+4124 503 M
+0 -63 V
+0 4335 R
+0 63 V
+4958 503 M
+0 -63 V
+0 4335 R
+0 63 V
+5792 503 M
+0 -63 V
+0 4335 R
+0 63 V
+stroke
+789 4775 N
+789 503 L
+5003 0 V
+0 4272 V
+-5003 0 V
+Z stroke
+1.000 UP
+1.000 UL
+LTb
+1.000 UL
+LT0
+LC0 setrgbcolor
+LTb
+LCb setrgbcolor
+%%%%BeginImage
+gsave 789 4775 N 789 503 L 5792 503 L 5792 4775 L Z clip
+InterpretLevel1 {
+  %% Construct a box instead of image
+  LTb
+  747 4739 M
+  5003 0 V
+  0 -4272 V
+  -5003 0 V
+  747 4739 L
+  40 -110 R
+  (PS level 2 image) Lshow
+  % Read data but ignore it
+  /imagebuf 2295 string def
+  currentfile imagebuf readstring
+} {
+gsave
+747 4739 translate
+5003 -4272 scale
+%%%%BeginPalette
+[ /Indexed
+  /DeviceRGB 255
+  <
+   000000 100006 17000d 1c0013 200019 24001f 270026 2a002c
+   2d0032 300038 32003e 350044 37004a 3a0050 3c0056 3e005c
+   400062 420068 44006d 460073 470079 49007e 4b0084 4d0089
+   4e008e 500093 510098 53009d 5400a2 5600a7 5700ac 5900b0
+   5a01b5 5c01b9 5d01be 5e01c2 6001c6 6101ca 6201cd 6401d1
+   6501d5 6601d8 6701db 6901de 6a01e1 6b01e4 6c01e7 6d02ea
+   6f02ec 7002ee 7102f1 7202f3 7302f4 7402f6 7502f8 7603f9
+   7703fa 7903fb 7a03fc 7b03fd 7c03fe 7d03fe 7e04ff 7f04ff
+   8004ff 8104ff 8204ff 8305fe 8405fe 8505fd 8605fc 8706fb
+   8706fa 8806f8 8906f7 8a06f5 8b07f3 8c07f2 8d07ef 8e08ed
+   8f08eb 9008e8 9108e6 9109e3 9209e0 9309dd 940ada 950ad6
+   960ad3 970bcf 970bcb 980cc8 990cc4 9a0cc0 9b0dbb 9c0db7
+   9c0eb3 9d0eae 9e0ea9 9f0fa5 a00fa0 a0109b a11096 a21191
+   a3118c a41286 a41281 a5137b a61376 a71470 a7146b a81565
+   a9165f aa1659 aa1753 ab174d ac1847 ad1941 ad193b ae1a35
+   af1b2f b01b29 b01c22 b11d1c b21d16 b31e10 b31f09 b42003
+   b52000 b52100 b62200 b72300 b72300 b82400 b92500 ba2600
+   ba2700 bb2800 bc2800 bc2900 bd2a00 be2b00 be2c00 bf2d00
+   c02e00 c02f00 c13000 c23100 c23200 c33300 c43400 c43500
+   c53600 c63700 c63800 c73900 c73a00 c83c00 c93d00 c93e00
+   ca3f00 cb4000 cb4100 cc4300 cc4400 cd4500 ce4600 ce4800
+   cf4900 d04a00 d04c00 d14d00 d14e00 d25000 d35100 d35200
+   d45400 d45500 d55700 d65800 d65a00 d75b00 d75d00 d85e00
+   d96000 d96100 da6300 da6500 db6600 dc6800 dc6900 dd6b00
+   dd6d00 de6f00 de7000 df7200 e07400 e07600 e17700 e17900
+   e27b00 e27d00 e37f00 e48100 e48300 e58400 e58600 e68800
+   e68a00 e78c00 e78e00 e89000 e99300 e99500 ea9700 ea9900
+   eb9b00 eb9d00 ec9f00 eca200 eda400 eda600 eea800 eeab00
+   efad00 f0af00 f0b200 f1b400 f1b600 f2b900 f2bb00 f3be00
+   f3c000 f4c300 f4c500 f5c800 f5ca00 f6cd00 f6cf00 f7d200
+   f7d500 f8d700 f8da00 f9dd00 f9df00 fae200 fae500 fbe800
+   fbeb00 fced00 fcf000 fdf300 fdf600 fef900 fefc00 ffff00
+  >
+] setcolorspace
+%%%%EndPalette
+<<
+  /ImageType 1
+  /Width 60
+  /Height 60
+  /BitsPerComponent 8
+  /ImageMatrix [ 60 0 0 60 0 0 ]
+  /Decode [ 0 255 ]
+  /DataSource currentfile /ASCII85Decode filter
+  /MultipleDataSources false
+  /Interpolate false
+>>
 image
-J.b*Pi]$r/5QDXo8)b'[cqXQcTVmr,!9X_6!"GS,jA%]W!#%U'P)',m9)p+Bi!!O_!1f5r@j
- ]lLFr(fIJ6K6X`'GAB!%=_NaTWH==obZu!#@D>/.-+3k:Ki9oEP;)NbH31J-k$R6@iLA&/3
- 'mB=(P#1^+TiI;CM9=#4!=\g'(nc#&.7!_udt.f^:U[P=]^iP3FW5Se5@:EM-<('W%lqJ1J
- n9.:6P2D(AK!^H#e,mZdfHNCm&EV]6V#_::UA!Rr!bACt69P"K$p0u];M<6-@>]mAs%5_G^
- f^&@#!n`pr=#<J0ZQcV,!*EBajn0Z#FjZ2!(I'pbf>BRI!<h2*g&cD-10gmsV.LbS9i(U-2
- &i@.5HU*[YI^_@lpiGJgTJ+5E+'BoYO9McT-C&"#fd>r$'bfXl's#j3=I.PF0WjJ11`7[H.
- <3PLQ#FLPe`[R!OSZ-%KdedqI7<0m+EWeS-2q(H*?:b&oioh&_Q`aN7d7n*e_$=B=/2Kc9-
- ViglchA9DaO]-]B8KSkNiSIZl*2)IG+nN:PWD(X:_>[N]_P1bo%XM`*GC-R/PhY_A0"$Uf'
- paK$E0ONmiqDP.";_F2`f?kC+&pe_)<N,&/(&Q>KdQ2oi2UHL3?3"c2kpf%4sPs@NoK\ui)
- =!RB\='!j/Kk40_!It.i2V!UWUBR:jARQhV]m-;R_8VmTUR!<=eflO@VB7&N7A.#I+:5]qc
- 47Gc4;odBQGG/3h8mo>bTu.,:sj&5E_Zm*`>)4pPK^#;75u\T,Or><:'%3%+9W]!=gg<j8!
- t>"*M^+KI3\6^**.\8gAX,58$Y>C&5<RdH/!K%#g>9.$@+Tt$"A/'0CHOgSgVbR2X*7pRfA
- j+2Scj:WbJO\'=pRS$@akMfG\&E"HFOHgk<H[A.LpCps#+4p_.Z[5V_R>8k*&TWO$EW+p8n
- =/PI/b!eme<L7eT'N`u<fTt#oJ_EYXWl'Q\q0Ie^J[;UD1$GIaT)H3E>e3_i8E1$L`aDre+
- '`&O0qkVP*kqb6+:$end[NTJ@H#cOje<HE5r-B""1X#aI4KX:(&oR$5W]q^JG`hZQ(*Mg$K
- :NDo8-ojSW9OC*&NX\B;%nP,&\pN/M@]afc`di.hV(3_HN)7">M)tC3FR9KccKIk^G#YrDr
- S7R<7TkZfDntGH9#Tk8H8On<\nY=N;4'efF4tA'$CL;!$r=h>#A1ZcOtaVD&WNTGK3jn'7`
- &FV,R(Pcl:.M#.UNHneP#agDh9]W@baAfV!c!L]G?O]->m<4rq_I"$kEK]Z7,biW?bZV]af
- `K6Bpmko(f/m9VU.Ao3Bma=W*.Bp6Ts]oGE,LaA`JR/",386IYkAGDXU@Ua?hWYJ_`393&o
- 2\QJ]"s`HdN"Mn^_Zu]$,q2hR7/4JdhPhQWlTk%Zj0!K_gXJ7MYa--eF@aOG;CEjiTG+-<;
- \6#B2.UZnXjOe@:])LbMX[U5K$\0?'5A&3?9s^nUbW'd#9E7-58k@i-bsu';%fs[*g]d8$u
- uu>A46O9W)QaT&N,:KWOj#3@QVP*((2gq:kBhV!6<6p4XPEK7A;dkNKJ$%n4$H/#Sn&FN9=
- iuiV9lpim3WQ:*WEcF2kH3+Gg0R,DG+_,rk$R?\ojJEW'o;8]<2Z1nHGBV)TN,fII5q4@-t
- q]JkN%9hFlE-8M6c.-,,Taf(U.K+SdDGm<qS.bcP2,a=V3@[Dps'9*,sUIM"hE(fI27NpIj
- Q+5aF^i6G21o@!-<UDpl@u!&P?+`+.nN#e>B;tPLZbN6D!_P9=6<+f(/Hs5X%,$;B;L&P=U
- XEbufXV-X!1si[:@F/3Qt`Gb#oU2<KTn6A-Uqr44-Itre3Sa>%Iphtl,l[kS5CHWd"/Z;m5
- tYrrsVR-:/@TLd>.BtE!7*>',L(X.@>0)dJ*\^H-8?cku0C[_/ku!QtF`,E&2HiZ]8N%<lj
- <$+,J^#,'`Uf%Z,516u_J7;Yt8Ad=cWgT_+L(K!2*b""ahrHk^(6MPhtq'*^FiVIie!M=E<
- ol;W3nQmO_Iq_9j&LecG4C.-:VI3[jYKbNPg,HC/,2TqK(+XjpEbh_&#l'+j^,;>$X'>?Ne
- N!P6W*+g"ndNm;3KurDt.*1NP'<qamhkcZe7%)Xc7&9&\;is`Vl"j_C^genr#1;cm"VaF8i
- ICtV?cuqC\>8>Lc2[kl^]YSlDcs\Nom)W.[8o32jq/f:Y!,a.oYoke&KYN7@i*P=6:[JL$<
- ''5AUWVQ^c5;W*29EFfe6`&H%f9V]l+9J;*;pYgJ>eT0./@r,\a/>Ou,d&N^Ubsbg;0nZU4
- *ej@@Oj-;Qi=C2VV7V(!\/$Gp6W3?5(,_k_o0>XKc,e2686D#)Ze,%cO1ZglQ+=Vf:>Vk&X
- 55*OLK!&ofW!!;+$B>he@&EG<-e8]/6VD,AWN'(sE'tPl8e:5=Y(]h[AGXQ5ElJ#M=f8*Zj
- .VWc2i5$7+%o(\$L2GG3A6!\jk/Z:GK,'7D*[h2B)[/1-="lpX1#$6;L>pu#J-I\;pK:_H*
- !_'.$!nf@0_^=Kc5V_hM?#DZ(1\Zi.$S6gC'b)X,RPFSPqkRQ#m%Ek]Sli&0iP]<"29L*eK
- 9eVNZ`LS/O4]IRWDe40+U^ialfa"et<#$=jH87FJ+XJV[8?.Y/_XHLgI*dZ5<QGqu?hP4+I
- @=)*eEjLHsG]$`.>>"u7ce"EFl9nr7q^^]<`TGZYYqF@Y%]]BM1poV!K9D[Mqf/VXh.67_Y
- A]:XY&b.1SKF_Fq8!Ol3<"gp?cOtf8,!#q_NgC<"6dm*oo&7>Oq%02aq'Lh3TSrW`-TRHkF
- M%CHFN+)lS!=T30R3^$N?`[*s"N0-+%rqWVX36jo.dkV(785`b,,``nk@sE-"6N-/i%)oW(
- ^TY.CPC+9f#Lq\(sjp^43*.IiO_mJi[1D:V74LY+,`&:n.ZL!&tuUW<T+&9E^B9r`g,WA,T
- #!GXU^<cWefhrGa[tF1bXOQW'n+J[ZCT_-\iD"cgW0;GTgjEn&[O7@Z8j33(gCTMsQ,*W'k
- bW:l:1VgVq5K!%R:9MPt3;j?mI`O?/o1W"hQM$>4`$?nMbg-?kH^(#UtRjAb8NMU%;n#bu8
- t$-kk,m%-O%DL_^k#R8l^d!t/D$AE`Wd#<bi;K)rg$#OYOb6S(Z,7?3H2TcjlYNCrlaL@*\
- 'n\DYm&(8rj=MV)am427TrLONDD"=\q//Ztd,oAF$t2Y(1W9\sUu3_<CAbron\eVl!fYTF6
- 8hFO0^r?Z0ej=r2%ssi'<s\6nNdjD720`5'X:@HnPL#U<>BLV'r!Z1+9~>
-Q
-q
-0 225 278 -225 re W n
-[ 4.6675 0 0 3.759167 -2.35 -0.7 ] concat
-/DeviceRGB setcolorspace
-8 dict dup begin
-  /ImageType 1 def
-  /Width 60 def
-  /Height 60 def
-  /BitsPerComponent 8 def
-  /Decode [ 0 1 0 1 0 1 ] def
-  /DataSource currentfile /ASCII85Decode filter /LZWDecode filter def
-  /Interpolate true def
-  /ImageMatrix [ 1 0 0 -1 0 60 ] def
+} ifelse
+!$_IDz+92Bs!!!!Pzz7fWMh0dZl#z!!%]Q76!QRzE-2-\zz,V&ip+!r6W+=8Wm/iYU:/j2ZN+YG5g3
+AN371FkKd7Vk%fQq%,V-nkXO0`X$WGq&do!!"5Dz+WMLI!$<@(!$<[@,UFi=-ibkY-8Hke/H@^T!%N
+6o90WD/!/U[U!!"u72kL(b1]UB,!!"GJz)AX>6)B'S5)B1.O-6iL=-7gAe-9;,F-nd(n0d\e;5smSg
+5*C6m-Rp\JCLo):0K)f/!+B(3!!"\Q!$_ID!%/cez,:G2k!!!!B-93=O/1iJ2!$VCpV*"`I!&=NS,:
+RY<P*c4L!(Hsb!!$(#zzzzzzzzzzzz!!#+]zzz,:"H\+XJKX*@*:&1+P=@0/b[H.5rXs4#S]N2D:aW
+I&DH\7Wql6/2=.)2?5=?E$bPb!!!i9z)]Kb<)'0h<*$-O[3@?@/.k!&&,r[1f/1`/#/Lk'VU47;;Im
+tf<4*W61/O:d+BE/#4!!!`6z!#5JT(E"+k!!"2g!!",A!!!!<)ZTj<!!!!>!#tuh!%9KIBJ'8b,q1#
+<!!!!dzzz.45*@+=$q2+!iWr0eXq7-TG$Z-n6J_/MAP-!%)W*!..I!Vcl3?.q^Xr!*VN94@]AOzz!"
+T&0z!"],1zzzzzzz!!!!jzzzz2dSF&3`n^11d:s?z!'($2/$WL_91i9V!(?kf!!!!Kzzzzzz!$;1@,
+6.]D!%@mJzzzFT;Ca!'gMazz!!!!Szzzz!$rcg!$VCC!%S$Lzzz:]LJjzzz!)*@mzzzz0f(9Z/3c0F
+.PNb=!$O6Y1cI>n3Kl2u!(2u-4>d*=!!!!`.KBGKJ,fQL!!"tY:]LIqzz1.X5W03C7k/2mP/!!"]0!
+!"bS!0]PG!*Y+BL-,G9!!"JKz-NF,Hzzzz!$rWc*??.:!%05rzz!'(#ZSH&X7zzz70!;fzzzz+uCPs
+,V1>D!%@mJ!!!!Hz@4<WQQN.#@zzzzzzzz!&#B?-T1rI)C,:_+TMKB)?9a;X8jLG!!!"hzzzzzzzz!
+#tt=!#knPz'`\46z!!!]5z!'pSbzzzzzzz3%Fte/NZ0J01Z(-[/_l\=o\PW1c[00!!"Z0!&J3e63%!
+ezzzzzz!$;1@!$VCCzGlUD9!!$I.zz!$_IDzzzzzzz!%S%(!%0EM-Rhf'2_lgWIK2_8!!"Gh0*!CM/
+hm>+zYlFb(zzzzz1G:0W!%7gI!%e1M;iC\V!+(K^z-nbQL!%\*Mzzzzzzz!$hOE!$Wj8z10T`)/?Ss
+Qz!'UA_!%Bl-zzzzzzz!%BZT+Xd<j-8$s1lu6&,!!#Lh.Q/Uq1B9$b!&O\Ezz!!!!D!!#4`z!!"GJz
+5r^_f0M+P`0eiYs!(4sf7>,l?!'NCe10ct26U4uY?iU1(z!!!!Hzzzz!$a!B!%]N<+X@$f!-4ki/2A
+P:*rmYg.5s"<5QH'0z!!#%[!%e0N!!#)2z!!"YPz!$;1@!!!!>!%^nGJO9D;!)3Fn!!"2Czzzzzzzz
+z2*3NW.nBXn!&"=l/n+fu490/6!!"u$!!!![!'1)[zzzzzzz7@&4!<g#sFRZ[XNzz.KBGK!!!"#zzz
+zzzzz2./=,50a-n>!)cbzzz!!!"6zzzzzzzz5++icG$KA^!)3Fnzzzzzzzzzz!!!o;z<'_r52drWb!
+&afWzzzzzzzzzzzzTRs7>P]DX`7[X5Vzzzzzzzzzzzz.Q/r+.6&q5!,)?4zz!!!!pzzzzzzzzzz,QI
+fEzzzzzzzzzzzzzXS>=TWT7=/!*oR)zzzzzzzzzzzz@*4.UB]<QVKSTU.zzzzzzzzzzzz<';KQ.\&(
+=!&=NS!!!Q1zzzzzzzzzzzbBut4=jj-Q6XVa5GU3=izzzzzz!$)%Z!!">GzzzY$is`3B/]`!&srYzz
+!!!!1!!!!Nzzzzzzzz9hJ@b5!<6QB/orO!!!!Lzzzzzzzzzzz6rZ0(7TF8\!1*Zczzzzzzzzzzzz20
+:RB3DY<a!'^G`;ucmuzzzzzzzzzzz!$=i6z!$;1@zzzzzzzzzzzz!#cdV)B/YV!)NXqzzzzzzzzzzz
+z.l;\T11UA6!0;d5zzzzzzzzzzzz/m*,o/NPL3:auGFzzz!!!!Ezzzzzzzz!&I@M/L`5&BhSL,zzzz
+zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+zz~>
+InterpretLevel1 not {
+  grestore
+} if
+grestore
+%%%%EndImage
+1.000 UL
+LTb
+789 4775 N
+789 503 L
+5003 0 V
+0 4272 V
+-5003 0 V
+Z stroke
+stroke gsave	%% draw gray scale smooth box
+maxcolors 0 gt {/imax maxcolors def} {/imax 1024 def} ifelse
+5980 503 translate 250 4272 scale 0 setlinewidth
+/ystep 1 imax div def /y0 0 def /ii 0 def
+{ y0 g 0 y0 N 1 0 V 0 ystep V -1 0 f
+/y0 y0 ystep add def /ii ii 1 add def
+ii imax ge {exit} if } loop
+grestore 0 setgray
+1.000 UL
+LTb
+5980 503 N
+250 0 V
+0 4272 V
+-250 0 V
+0 -4272 V
+Z stroke
+1.000 UL
+LTb
+1.000 UL
+LTb
+6230 503 M
+-63 0 V
+-187 0 R
+63 0 V
+187 610 R
+-63 0 V
+-187 0 R
+63 0 V
+187 610 R
+-63 0 V
+-187 0 R
+63 0 V
+187 610 R
+-63 0 V
+-187 0 R
+63 0 V
+187 611 R
+-63 0 V
+-187 0 R
+63 0 V
+187 610 R
+-63 0 V
+-187 0 R
+63 0 V
+187 610 R
+-63 0 V
+-187 0 R
+63 0 V
+187 611 R
+-63 0 V
+-187 0 R
+63 0 V
+1.000 UP
+stroke
+grestore % colour palette end
+stroke
+grestore
 end
-image
-J.b*Pi]$r/5QDXo8)b'[cqXQcTVmr,!9X_6!"GS,jA%]W!#%U'P)',m9)p+Bi!!O_!1f5r@j
- ]lLFr(fIJ6K6X`'GAB!%=_NaTWH==obZu!#@D>/.-+3k:Ki9oEP;)NbH31J-k$R6@iLA&/3
- 'mB=(P#1^+TiI;CM9=#4!=\g'(nc#&.7!_udt.f^:U[P=]^iP3FW5Se5@:EM-<('W%lqJ1J
- n9.:6P2D(AK!^H#e,mZdfHNCm&EV]6V#_::UA!Rr!bACt69P"K$p0u];M<6-@>]mAs%5_G^
- f^&@#!n`pr=#<J0ZQcV,!*EBajn0Z#FjZ2!(I'pbf>BRI!<h2*g&cD-10gmsV.LbS9i(U-2
- &i@.5HU*[YI^_@lpiGJgTJ+5E+'BoYO9McT-C&"#fd>r$'bfXl's#j3=I.PF0WjJ11`7[H.
- <3PLQ#FLPe`[R!OSZ-%KdedqI7<0m+EWeS-2q(H*?:b&oioh&_Q`aN7d7n*e_$=B=/2Kc9-
- ViglchA9DaO]-]B8KSkNiSIZl*2)IG+nN:PWD(X:_>[N]_P1bo%XM`*GC-R/PhY_A0"$Uf'
- paK$E0ONmiqDP.";_F2`f?kC+&pe_)<N,&/(&Q>KdQ2oi2UHL3?3"c2kpf%4sPs@NoK\ui)
- =!RB\='!j/Kk40_!It.i2V!UWUBR:jARQhV]m-;R_8VmTUR!<=eflO@VB7&N7A.#I+:5]qc
- 47Gc4;odBQGG/3h8mo>bTu.,:sj&5E_Zm*`>)4pPK^#;75u\T,Or><:'%3%+9W]!=gg<j8!
- t>"*M^+KI3\6^**.\8gAX,58$Y>C&5<RdH/!K%#g>9.$@+Tt$"A/'0CHOgSgVbR2X*7pRfA
- j+2Scj:WbJO\'=pRS$@akMfG\&E"HFOHgk<H[A.LpCps#+4p_.Z[5V_R>8k*&TWO$EW+p8n
- =/PI/b!eme<L7eT'N`u<fTt#oJ_EYXWl'Q\q0Ie^J[;UD1$GIaT)H3E>e3_i8E1$L`aDre+
- '`&O0qkVP*kqb6+:$end[NTJ@H#cOje<HE5r-B""1X#aI4KX:(&oR$5W]q^JG`hZQ(*Mg$K
- :NDo8-ojSW9OC*&NX\B;%nP,&\pN/M@]afc`di.hV(3_HN)7">M)tC3FR9KccKIk^G#YrDr
- S7R<7TkZfDntGH9#Tk8H8On<\nY=N;4'efF4tA'$CL;!$r=h>#A1ZcOtaVD&WNTGK3jn'7`
- &FV,R(Pcl:.M#.UNHneP#agDh9]W@baAfV!c!L]G?O]->m<4rq_I"$kEK]Z7,biW?bZV]af
- `K6Bpmko(f/m9VU.Ao3Bma=W*.Bp6Ts]oGE,LaA`JR/",386IYkAGDXU@Ua?hWYJ_`393&o
- 2\QJ]"s`HdN"Mn^_Zu]$,q2hR7/4JdhPhQWlTk%Zj0!K_gXJ7MYa--eF@aOG;CEjiTG+-<;
- \6#B2.UZnXjOe@:])LbMX[U5K$\0?'5A&3?9s^nUbW'd#9E7-58k@i-bsu';%fs[*g]d8$u
- uu>A46O9W)QaT&N,:KWOj#3@QVP*((2gq:kBhV!6<6p4XPEK7A;dkNKJ$%n4$H/#Sn&FN9=
- iuiV9lpim3WQ:*WEcF2kH3+Gg0R,DG+_,rk$R?\ojJEW'o;8]<2Z1nHGBV)TN,fII5q4@-t
- q]JkN%9hFlE-8M6c.-,,Taf(U.K+SdDGm<qS.bcP2,a=V3@[Dps'9*,sUIM"hE(fI27NpIj
- Q+5aF^i6G21o@!-<UDpl@u!&P?+`+.nN#e>B;tPLZbN6D!_P9=6<+f(/Hs5X%,$;B;L&P=U
- XEbufXV-X!1si[:@F/3Qt`Gb#oU2<KTn6A-Uqr44-Itre3Sa>%Iphtl,l[kS5CHWd"/Z;m5
- tYrrsVR-:/@TLd>.BtE!7*>',L(X.@>0)dJ*\^H-8?cku0C[_/ku!QtF`,E&2HiZ]8N%<lj
- <$+,J^#,'`Uf%Z,516u_J7;Yt8Ad=cWgT_+L(K!2*b""ahrHk^(6MPhtq'*^FiVIie!M=E<
- ol;W3nQmO_Iq_9j&LecG4C.-:VI3[jYKbNPg,HC/,2TqK(+XjpEbh_&#l'+j^,;>$X'>?Ne
- N!P6W*+g"ndNm;3KurDt.*1NP'<qamhkcZe7%)Xc7&9&\;is`Vl"j_C^genr#1;cm"VaF8i
- ICtV?cuqC\>8>Lc2[kl^]YSlDcs\Nom)W.[8o32jq/f:Y!,a.oYoke&KYN7@i*P=6:[JL$<
- ''5AUWVQ^c5;W*29EFfe6`&H%f9V]l+9J;*;pYgJ>eT0./@r,\a/>Ou,d&N^Ubsbg;0nZU4
- *ej@@Oj-;Qi=C2VV7V(!\/$Gp6W3?5(,_k_o0>XKc,e2686D#)Ze,%cO1ZglQ+=Vf:>Vk&X
- 55*OLK!&ofW!!;+$B>he@&EG<-e8]/6VD,AWN'(sE'tPl8e:5=Y(]h[AGXQ5ElJ#M=f8*Zj
- .VWc2i5$7+%o(\$L2GG3A6!\jk/Z:GK,'7D*[h2B)[/1-="lpX1#$6;L>pu#J-I\;pK:_H*
- !_'.$!nf@0_^=Kc5V_hM?#DZ(1\Zi.$S6gC'b)X,RPFSPqkRQ#m%Ek]Sli&0iP]<"29L*eK
- 9eVNZ`LS/O4]IRWDe40+U^ialfa"et<#$=jH87FJ+XJV[8?.Y/_XHLgI*dZ5<QGqu?hP4+I
- @=)*eEjLHsG]$`.>>"u7ce"EFl9nr7q^^]<`TGZYYqF@Y%]]BM1poV!K9D[Mqf/VXh.67_Y
- A]:XY&b.1SKF_Fq8!Ol3<"gp?cOtf8,!#q_NgC<"6dm*oo&7>Oq%02aq'Lh3TSrW`-TRHkF
- M%CHFN+)lS!=T30R3^$N?`[*s"N0-+%rqWVX36jo.dkV(785`b,,``nk@sE-"6N-/i%)oW(
- ^TY.CPC+9f#Lq\(sjp^43*.IiO_mJi[1D:V74LY+,`&:n.ZL!&tuUW<T+&9E^B9r`g,WA,T
- #!GXU^<cWefhrGa[tF1bXOQW'n+J[ZCT_-\iD"cgW0;GTgjEn&[O7@Z8j33(gCTMsQ,*W'k
- bW:l:1VgVq5K!%R:9MPt3;j?mI`O?/o1W"hQM$>4`$?nMbg-?kH^(#UtRjAb8NMU%;n#bu8
- t$-kk,m%-O%DL_^k#R8l^d!t/D$AE`Wd#<bi;K)rg$#OYOb6S(Z,7?3H2TcjlYNCrlaL@*\
- 'n\DYm&(8rj=MV)am427TrLONDD"=\q//Ztd,oAF$t2Y(1W9\sUu3_<CAbron\eVl!fYTF6
- 8hFO0^r?Z0ej=r2%ssi'<s\6nNdjD720`5'X:@HnPL#U<>BLV'r!Z1+9~>
-Q
-q
-0 225 278 -225 re W n
-[ 4.6675 0 0 3.759167 -2.35 -0.7 ] concat
-/DeviceRGB setcolorspace
-8 dict dup begin
-  /ImageType 1 def
-  /Width 60 def
-  /Height 60 def
-  /BitsPerComponent 8 def
-  /Decode [ 0 1 0 1 0 1 ] def
-  /DataSource currentfile /ASCII85Decode filter /LZWDecode filter def
-  /Interpolate true def
-  /ImageMatrix [ 1 0 0 -1 0 60 ] def
-end
-image
-J.b*Pi]$r/5QDXo8)b'[cqXQcTVmr,!9X_6!"GS,jA%]W!#%U'P)',m9)p+Bi!!O_!1f5r@j
- ]lLFr(fIJ6K6X`'GAB!%=_NaTWH==obZu!#@D>/.-+3k:Ki9oEP;)NbH31J-k$R6@iLA&/3
- 'mB=(P#1^+TiI;CM9=#4!=\g'(nc#&.7!_udt.f^:U[P=]^iP3FW5Se5@:EM-<('W%lqJ1J
- n9.:6P2D(AK!^H#e,mZdfHNCm&EV]6V#_::UA!Rr!bACt69P"K$p0u];M<6-@>]mAs%5_G^
- f^&@#!n`pr=#<J0ZQcV,!*EBajn0Z#FjZ2!(I'pbf>BRI!<h2*g&cD-10gmsV.LbS9i(U-2
- &i@.5HU*[YI^_@lpiGJgTJ+5E+'BoYO9McT-C&"#fd>r$'bfXl's#j3=I.PF0WjJ11`7[H.
- <3PLQ#FLPe`[R!OSZ-%KdedqI7<0m+EWeS-2q(H*?:b&oioh&_Q`aN7d7n*e_$=B=/2Kc9-
- ViglchA9DaO]-]B8KSkNiSIZl*2)IG+nN:PWD(X:_>[N]_P1bo%XM`*GC-R/PhY_A0"$Uf'
- paK$E0ONmiqDP.";_F2`f?kC+&pe_)<N,&/(&Q>KdQ2oi2UHL3?3"c2kpf%4sPs@NoK\ui)
- =!RB\='!j/Kk40_!It.i2V!UWUBR:jARQhV]m-;R_8VmTUR!<=eflO@VB7&N7A.#I+:5]qc
- 47Gc4;odBQGG/3h8mo>bTu.,:sj&5E_Zm*`>)4pPK^#;75u\T,Or><:'%3%+9W]!=gg<j8!
- t>"*M^+KI3\6^**.\8gAX,58$Y>C&5<RdH/!K%#g>9.$@+Tt$"A/'0CHOgSgVbR2X*7pRfA
- j+2Scj:WbJO\'=pRS$@akMfG\&E"HFOHgk<H[A.LpCps#+4p_.Z[5V_R>8k*&TWO$EW+p8n
- =/PI/b!eme<L7eT'N`u<fTt#oJ_EYXWl'Q\q0Ie^J[;UD1$GIaT)H3E>e3_i8E1$L`aDre+
- '`&O0qkVP*kqb6+:$end[NTJ@H#cOje<HE5r-B""1X#aI4KX:(&oR$5W]q^JG`hZQ(*Mg$K
- :NDo8-ojSW9OC*&NX\B;%nP,&\pN/M@]afc`di.hV(3_HN)7">M)tC3FR9KccKIk^G#YrDr
- S7R<7TkZfDntGH9#Tk8H8On<\nY=N;4'efF4tA'$CL;!$r=h>#A1ZcOtaVD&WNTGK3jn'7`
- &FV,R(Pcl:.M#.UNHneP#agDh9]W@baAfV!c!L]G?O]->m<4rq_I"$kEK]Z7,biW?bZV]af
- `K6Bpmko(f/m9VU.Ao3Bma=W*.Bp6Ts]oGE,LaA`JR/",386IYkAGDXU@Ua?hWYJ_`393&o
- 2\QJ]"s`HdN"Mn^_Zu]$,q2hR7/4JdhPhQWlTk%Zj0!K_gXJ7MYa--eF@aOG;CEjiTG+-<;
- \6#B2.UZnXjOe@:])LbMX[U5K$\0?'5A&3?9s^nUbW'd#9E7-58k@i-bsu';%fs[*g]d8$u
- uu>A46O9W)QaT&N,:KWOj#3@QVP*((2gq:kBhV!6<6p4XPEK7A;dkNKJ$%n4$H/#Sn&FN9=
- iuiV9lpim3WQ:*WEcF2kH3+Gg0R,DG+_,rk$R?\ojJEW'o;8]<2Z1nHGBV)TN,fII5q4@-t
- q]JkN%9hFlE-8M6c.-,,Taf(U.K+SdDGm<qS.bcP2,a=V3@[Dps'9*,sUIM"hE(fI27NpIj
- Q+5aF^i6G21o@!-<UDpl@u!&P?+`+.nN#e>B;tPLZbN6D!_P9=6<+f(/Hs5X%,$;B;L&P=U
- XEbufXV-X!1si[:@F/3Qt`Gb#oU2<KTn6A-Uqr44-Itre3Sa>%Iphtl,l[kS5CHWd"/Z;m5
- tYrrsVR-:/@TLd>.BtE!7*>',L(X.@>0)dJ*\^H-8?cku0C[_/ku!QtF`,E&2HiZ]8N%<lj
- <$+,J^#,'`Uf%Z,516u_J7;Yt8Ad=cWgT_+L(K!2*b""ahrHk^(6MPhtq'*^FiVIie!M=E<
- ol;W3nQmO_Iq_9j&LecG4C.-:VI3[jYKbNPg,HC/,2TqK(+XjpEbh_&#l'+j^,;>$X'>?Ne
- N!P6W*+g"ndNm;3KurDt.*1NP'<qamhkcZe7%)Xc7&9&\;is`Vl"j_C^genr#1;cm"VaF8i
- ICtV?cuqC\>8>Lc2[kl^]YSlDcs\Nom)W.[8o32jq/f:Y!,a.oYoke&KYN7@i*P=6:[JL$<
- ''5AUWVQ^c5;W*29EFfe6`&H%f9V]l+9J;*;pYgJ>eT0./@r,\a/>Ou,d&N^Ubsbg;0nZU4
- *ej@@Oj-;Qi=C2VV7V(!\/$Gp6W3?5(,_k_o0>XKc,e2686D#)Ze,%cO1ZglQ+=Vf:>Vk&X
- 55*OLK!&ofW!!;+$B>he@&EG<-e8]/6VD,AWN'(sE'tPl8e:5=Y(]h[AGXQ5ElJ#M=f8*Zj
- .VWc2i5$7+%o(\$L2GG3A6!\jk/Z:GK,'7D*[h2B)[/1-="lpX1#$6;L>pu#J-I\;pK:_H*
- !_'.$!nf@0_^=Kc5V_hM?#DZ(1\Zi.$S6gC'b)X,RPFSPqkRQ#m%Ek]Sli&0iP]<"29L*eK
- 9eVNZ`LS/O4]IRWDe40+U^ialfa"et<#$=jH87FJ+XJV[8?.Y/_XHLgI*dZ5<QGqu?hP4+I
- @=)*eEjLHsG]$`.>>"u7ce"EFl9nr7q^^]<`TGZYYqF@Y%]]BM1poV!K9D[Mqf/VXh.67_Y
- A]:XY&b.1SKF_Fq8!Ol3<"gp?cOtf8,!#q_NgC<"6dm*oo&7>Oq%02aq'Lh3TSrW`-TRHkF
- M%CHFN+)lS!=T30R3^$N?`[*s"N0-+%rqWVX36jo.dkV(785`b,,``nk@sE-"6N-/i%)oW(
- ^TY.CPC+9f#Lq\(sjp^43*.IiO_mJi[1D:V74LY+,`&:n.ZL!&tuUW<T+&9E^B9r`g,WA,T
- #!GXU^<cWefhrGa[tF1bXOQW'n+J[ZCT_-\iD"cgW0;GTgjEn&[O7@Z8j33(gCTMsQ,*W'k
- bW:l:1VgVq5K!%R:9MPt3;j?mI`O?/o1W"hQM$>4`$?nMbg-?kH^(#UtRjAb8NMU%;n#bu8
- t$-kk,m%-O%DL_^k#R8l^d!t/D$AE`Wd#<bi;K)rg$#OYOb6S(Z,7?3H2TcjlYNCrlaL@*\
- 'n\DYm&(8rj=MV)am427TrLONDD"=\q//Ztd,oAF$t2Y(1W9\sUu3_<CAbron\eVl!fYTF6
- 8hFO0^r?Z0ej=r2%ssi'<s\6nNdjD720`5'X:@HnPL#U<>BLV'r!Z1+9~>
-Q
-q
-0 225 278 -225 re W n
-[ 4.6675 0 0 3.759167 -2.35 -0.7 ] concat
-/DeviceRGB setcolorspace
-8 dict dup begin
-  /ImageType 1 def
-  /Width 60 def
-  /Height 60 def
-  /BitsPerComponent 8 def
-  /Decode [ 0 1 0 1 0 1 ] def
-  /DataSource currentfile /ASCII85Decode filter /LZWDecode filter def
-  /Interpolate true def
-  /ImageMatrix [ 1 0 0 -1 0 60 ] def
-end
-image
-J,g]g1#N&6",'!KA)IB.(gJJ>'*PN@&etKqJ.XM\8Itl=NW9H[(%_p)!(TVW"E4D(6OJdli?
- uD[q?C+'X^[)Qi!".o#H/s<,L?npE</18FL\je!,.ZkTd-325_&hh7uabJGo-O&S]T9tO9,
- 2%R&J5D,sVNfZ2e!+@HB0EG/XV8'u11"@Z&\f-iam'.DjX?A,ru4^dn;C:20d=;1NkQPQKC
- @+/!nIh<A$k`aD\`4$>RNMgsujFfJTW"ROT;bX6=M.ocZ(Br[O;(#jElX_m#7R)EbJZEqbn
- ',q\6404!,:nUnV.(fRh85VWbX:Hl4ihCA"/*]A2kae6Z:J>lI2%$N,l$-FPdqqmnDW1I@I
- ;="sW[ZXCbd/s[`2tD(1CAi0WS9iDU['us_QguY!b3qhMV_GH^a]&qOs!?9cl_W.b-\kG&F
- ojoA"WsO-Y(d5I]Vipg&W3b:uhWuCk9HbXQWSnKeEe]+!MiMM?`jV:a4&Y[)qQQiZLl,@g=
- \^'B7CeA?Zb^_.XN6@kl0l'[nN`6BHGS?od@>JHo?m^</ta*!@:\<,WbTE7e=o#"hus!!S6
- ^?iUE=AJIY]P\QOLL-_a<O!o#X*D=goqR"p>0BtaFU$@P0Yt@_'U;o"1MYaZceMmP-e-Ki\
- <ME1YS?W^";68.VJ1:ChJS&,`I`ucUL,K#Z4A7t@("*<4+Du/V!?K<3q"W*J%4!-#(/d-\e
- &,s3i2QGnd+kVf11KE#WsV\D3@N>Pk;+P)I*jSWEmE&`mW1f5*m'6c"Il2H%"23To:6A`K/
- `pLZQqdEHp_EX(nK;ugr>_gaeEW@51F]c7%dKbI?S2e1.(iGXkF#F-uIgL7U'OI>_*BX&b(
- @]9pMT"4t'Bk74V/N0h&!d$3[Ia&1YG:%1:P%d4s!?T!PIjlnZ;o"A3igh8F?/I]fdg4?EO
- Uap(,9QuTRKbJp'#%?Vbfm\mfhV=]TeES9LaVD=G(UX2seNY2<lrs4/YhuHKjnf3X_aRG42
- >]qd&')OiKb<5!\+F5muH7YlE)I;Mdg'&odjq-)DS<4,uer2j#S'#pqb*SQj4lTe\G<c@7,
- p?=3LGO0'9B2jo1ii-E+BI?:Ms,U_AKd^BU'uVBIVKTOqp`6H]%ecn4OH".f"/2f/_Zr^9*
- C_Pjs:j!o]IAqQgC*Eho-::?=HML9R3Cf?ii5-nR>hDLs2/3gsnrp4+G1R]KYoO6D+nr9s+
- ?'&>rhp"9FH8Wt"P2(;?N7WfCrBK\R;tI(&!cP@Yj:*u35<mKe*4+\W;^Ua!&O!!AE_mYTk
- gK#G1?r"UN]<7<tH#':O^1kd2p+!:Vg?5'nq-=kVW_3]c\^]\&$"Y@m"ZLDS'""%5j<;SI,
- 'ZeB))i<X'V6It#']U.h;?V]AW&4oIU[\\Q1$"Fo=U?7nH(m)HN/8:ES7eT_'p-32_MQVZ/
- !UDm+E#\@_kI:QL\^!_V4HkZ!\3E(Z*,M8jFOZ4%0@eBhKQmf;Q-Bl50Y=",EB-m]if+C#]
- -c56ui^475>fW!?Wd;7SYc28lNfW)%PR5I7ggS7gY(-K#2W.[3AGDP[e][dt-H%dQ]CBWPW
- ;+Uo0;._>m&)mhnZZ$kh6#!?*5*Gu3;[U7$d$a:rl2`DkM`nj>Nlkqt99BfIIa"VZb56m4:
- 2J2g"bU5^uf%Wl69cDHo)VGSp^KD\aNJ<%t:i?:R(/@1r^lr^)<KTj>[KZb8ZUF:[H6Z;V.
- TsHN4M'89n,ffs41'V)Rn.$0im8q.:rjAM`!d1Qr]G>Y$B;^rp3tA';Vm7$b.PV7$;Z8'W(
- %"H3He;2Nm&W>M!.7M(gHUl*.[%)@hIpY-/*:Bk)<PQ&%uJRY,fZ7I,H@K9P0nmB-BAaboR
- )JU`f%-:O;h>7:ud*.1t8Xt1T88X88OK$Df1!V#BELOX+W#mS=R'>5568FW$"b6Yp865/a7
- ffEp]R.&0j=2LcHH,G)FeiP7%T]1)UND"E+SX&35pmp,p6dK1guBCm8Db\?o5ZVn3.&M\)K
- ]ifo"_,^g6+90^%1!5>]b-sS*dqNg@@CIBXNHLJb^NPuA4WqWMgi;7X<nK9aC/+\>Q,T@;0
- pdkIJ_!>rAr_72UGpYK;2519,+Eh](9)K8/$ILRa2XmhNpbR)gc,@NpXFXE2=c;J@4;Z-Uk
- `SGH/&9dj>G@2c#T6gR0nqu<:0^Ws&L0j18H*`UZj_SopINqK&\W=B+["F;F,5*d4u`i#_t
- !tDaLdFOq,]<`EC'd2[FLImTF-EQHn%Cc?Z%eRD^ICq=Kc`jX]^mc<f5[b!p#$NUOfmJCK<
- igE2QiR4$AZOm4Z9U!!=L$SEIp8L=`fF+@t"=@H%HJ#Y#`>W]Jr"Bjt5o),W1;3_h9[DF!:
- c_7sP;");Ha9MlsB11SJ.:CJI=a;uhFqV,HjW$\83T#KAN,!T4n&K]$Tkh1;9&<X)%5=A+Z
- .PEN2/T%Dkbg(<K.kM3s+r`')XM_<TI7GG9Ec14&jeMpb^Hu*S75niShcoPuDr(B,p]giX>
- $=5]4q5@'7g\-Z08=H&*)d+K~>
-Q
-  Q
-Q
-Q q
-0 226.05 302 -227 re W n
-0 g
-287.051 0.472 14 -0.223 re f
-0.0313726 0 0.00784314 rg
-287.051 0.691 14 -0.219 re f
-0.0431373 0 0.0117647 rg
-287.051 0.909 14 -0.219 re f
-0.054902 0 0.0196078 rg
-287.051 1.132 14 -0.223 re f
-0.0627451 0 0.0235294 rg
-287.051 1.351 14 -0.219 re f
-0.0705882 0 0.0313726 rg
-287.051 1.573 14 -0.223 re f
-0.0784314 0 0.0352941 rg
-287.051 1.792 14 -0.219 re f
-0.0823529 0 0.0431373 rg
-287.051 2.011 14 -0.219 re f
-0.0901961 0 0.0509804 rg
-287.051 2.234 14 -0.223 re f
-0.0941176 0 0.054902 rg
-287.051 2.452 14 -0.219 re f
-0.0980392 0 0.0627451 rg
-287.051 2.671 14 -0.219 re f
-0.101961 0 0.0666667 rg
-287.051 2.894 14 -0.223 re f
-0.109804 0 0.0745098 rg
-287.051 3.113 14 -0.219 re f
-0.113725 0 0.0784314 rg
-287.051 3.335 14 -0.223 re f
-0.117647 0 0.0862745 rg
-287.051 3.554 14 -0.219 re f
-0.121569 0 0.0901961 rg
-287.051 3.773 14 -0.219 re f
-0.12549 0 0.0980392 rg
-287.051 3.995 14 -0.223 re f
-0.129412 0 0.105882 rg
-287.051 4.214 14 -0.219 re f
-0.133333 0 0.109804 rg
-287.051 4.437 14 -0.223 re f
-0.137255 0 0.117647 rg
-287.051 4.655 14 -0.219 re f
-0.141176 0 0.121569 rg
-287.051 4.874 14 -0.219 re f
-0.145098 0 0.129412 rg
-287.051 5.097 14 -0.223 re f
-0.145098 0 0.133333 rg
-287.051 5.316 14 -0.219 re f
-0.14902 0 0.141176 rg
-287.051 5.534 14 -0.219 re f
-0.152941 0 0.145098 rg
-287.051 5.757 14 -0.223 re f
-0.156863 0 0.152941 rg
-287.051 5.976 14 -0.219 re f
-0.160784 0 0.160784 rg
-287.051 6.198 14 -0.223 re f
-0.160784 0 0.164706 rg
-287.051 6.417 14 -0.219 re f
-0.164706 0 0.172549 rg
-287.051 6.636 14 -0.219 re f
-0.168627 0 0.176471 rg
-287.051 6.859 14 -0.223 re f
-0.172549 0 0.184314 rg
-287.051 7.077 14 -0.219 re f
-0.172549 0 0.188235 rg
-287.051 7.3 14 -0.223 re f
-0.176471 0 0.196078 rg
-287.051 7.519 14 -0.219 re f
-0.180392 0 0.2 rg
-287.051 7.738 14 -0.219 re f
-0.180392 0 0.207843 rg
-287.051 7.96 14 -0.223 re f
-0.184314 0 0.211765 rg
-287.051 8.179 14 -0.219 re f
-0.188235 0 0.219608 rg
-287.051 8.402 14 -0.223 re f
-0.188235 0 0.223529 rg
-287.051 8.62 14 -0.223 re f
-0.192157 0 0.231373 rg
-287.051 8.839 14 -0.219 re f
-0.196078 0 0.235294 rg
-287.051 9.062 14 -0.223 re f
-0.196078 0 0.243137 rg
-287.051 9.28 14 -0.219 re f
-0.2 0 0.247059 rg
-287.051 9.503 14 -0.223 re f
-0.203922 0 0.254902 rg
-287.051 9.722 14 -0.219 re f
-0.203922 0 0.258824 rg
-287.051 9.941 14 -0.219 re f
-0.207843 0 0.266667 rg
-287.051 10.163 14 -0.223 re f
-0.207843 0 0.27451 rg
-287.051 10.382 14 -0.219 re f
-0.211765 0 0.278431 rg
-287.051 10.601 14 -0.219 re f
-0.215686 0 0.286275 rg
-287.051 10.823 14 -0.223 re f
-0.215686 0 0.290196 rg
-287.051 11.042 14 -0.219 re f
-0.219608 0 0.298039 rg
-287.051 11.265 14 -0.223 re f
-0.219608 0 0.301961 rg
-287.051 11.484 14 -0.219 re f
-0.223529 0 0.309804 rg
-287.051 11.702 14 -0.219 re f
-0.223529 0 0.313726 rg
-287.051 11.925 14 -0.223 re f
-0.227451 0 0.317647 rg
-287.051 12.144 14 -0.219 re f
-0.231373 0 0.32549 rg
-287.051 12.363 14 -0.219 re f
-0.231373 0 0.329412 rg
-287.051 12.585 14 -0.219 re f
-0.235294 0 0.337255 rg
-287.051 12.804 14 -0.219 re f
-0.235294 0 0.341176 rg
-287.051 13.027 14 -0.223 re f
-0.239216 0 0.34902 rg
-287.051 13.245 14 -0.219 re f
-0.239216 0 0.352941 rg
-287.051 13.464 14 -0.219 re f
-0.243137 0 0.360784 rg
-287.051 13.687 14 -0.223 re f
-0.243137 0 0.364706 rg
-287.051 13.905 14 -0.219 re f
-0.247059 0 0.372549 rg
-287.051 14.128 14 -0.223 re f
-0.247059 0 0.376471 rg
-287.051 14.347 14 -0.219 re f
-0.25098 0 0.384314 rg
-287.051 14.566 14 -0.219 re f
-0.25098 0 0.388235 rg
-287.051 14.788 14 -0.223 re f
-0.254902 0 0.392157 rg
-287.051 15.007 14 -0.219 re f
-0.254902 0 0.4 rg
-287.051 15.23 14 -0.223 re f
-0.258824 0 0.403922 rg
-287.051 15.448 14 -0.219 re f
-0.258824 0 0.411765 rg
-287.051 15.667 14 -0.219 re f
-0.262745 0 0.415686 rg
-287.051 15.89 14 -0.223 re f
-0.262745 0 0.423529 rg
-287.051 16.109 14 -0.219 re f
-0.266667 0 0.427451 rg
-287.051 16.331 14 -0.223 re f
-0.266667 0 0.431373 rg
-287.051 16.55 14 -0.219 re f
-0.270588 0 0.439216 rg
-287.051 16.769 14 -0.219 re f
-0.270588 0 0.443137 rg
-287.051 16.991 14 -0.223 re f
-0.270588 0 0.45098 rg
-287.051 17.21 14 -0.219 re f
-0.27451 0 0.454902 rg
-287.051 17.429 14 -0.219 re f
-0.27451 0 0.458824 rg
-287.051 17.652 14 -0.223 re f
-0.278431 0 0.466667 rg
-287.051 17.87 14 -0.219 re f
-0.278431 0 0.470588 rg
-287.051 18.093 14 -0.223 re f
-0.282353 0 0.478431 rg
-287.051 18.312 14 -0.219 re f
-0.282353 0 0.482353 rg
-287.051 18.53 14 -0.219 re f
-0.286275 0 0.486275 rg
-287.051 18.753 14 -0.223 re f
-0.286275 0 0.494118 rg
-287.051 18.972 14 -0.219 re f
-0.286275 0 0.498039 rg
-287.051 19.195 14 -0.223 re f
-0.290196 0 0.501961 rg
-287.051 19.413 14 -0.219 re f
-0.290196 0 0.509804 rg
-287.051 19.632 14 -0.219 re f
-0.294118 0 0.513726 rg
-287.051 19.855 14 -0.223 re f
-0.294118 0 0.517647 rg
-287.051 20.073 14 -0.219 re f
-0.298039 0 0.52549 rg
-287.051 20.292 14 -0.219 re f
-0.298039 0 0.529412 rg
-287.051 20.515 14 -0.223 re f
-0.298039 0 0.533333 rg
-287.051 20.734 14 -0.219 re f
-0.301961 0 0.541176 rg
-287.051 20.956 14 -0.223 re f
-0.301961 0 0.545098 rg
-287.051 21.175 14 -0.219 re f
-0.305882 0 0.54902 rg
-287.051 21.394 14 -0.219 re f
-0.305882 0 0.552941 rg
-287.051 21.616 14 -0.223 re f
-0.309804 0 0.560784 rg
-287.051 21.835 14 -0.219 re f
-0.309804 0 0.564706 rg
-287.051 22.058 14 -0.223 re f
-0.309804 0 0.568627 rg
-287.051 22.277 14 -0.219 re f
-0.313726 0 0.576471 rg
-287.051 22.495 14 -0.219 re f
-0.313726 0 0.580392 rg
-287.051 22.718 14 -0.223 re f
-0.313726 0 0.584314 rg
-287.051 22.937 14 -0.219 re f
-0.317647 0 0.588235 rg
-287.051 23.155 14 -0.219 re f
-0.317647 0 0.596078 rg
-287.051 23.378 14 -0.223 re f
-0.321569 0 0.6 rg
-287.051 23.597 14 -0.219 re f
-0.321569 0 0.603922 rg
-287.051 23.82 14 -0.223 re f
-0.321569 0 0.611765 rg
-287.051 24.038 14 -0.219 re f
-0.32549 0 0.615686 rg
-287.051 24.257 14 -0.219 re f
-0.32549 0 0.619608 rg
-287.051 24.48 14 -0.223 re f
-0.329412 0 0.623529 rg
-287.051 24.698 14 -0.219 re f
-0.329412 0 0.627451 rg
-287.051 24.921 14 -0.223 re f
-0.329412 0 0.635294 rg
-287.051 25.14 14 -0.219 re f
-0.333333 0 0.639216 rg
-287.051 25.359 14 -0.219 re f
-0.333333 0 0.643137 rg
-287.051 25.581 14 -0.223 re f
-0.333333 0 0.647059 rg
-287.051 25.8 14 -0.219 re f
-0.337255 0 0.65098 rg
-287.051 26.023 14 -0.223 re f
-0.337255 0 0.658824 rg
-287.051 26.241 14 -0.223 re f
-0.341176 0 0.662745 rg
-287.051 26.46 14 -0.219 re f
-0.341176 0 0.666667 rg
-287.051 26.683 14 -0.223 re f
-0.341176 0 0.670588 rg
-287.051 26.902 14 -0.219 re f
-0.345098 0 0.67451 rg
-287.051 27.124 14 -0.223 re f
-0.345098 0 0.678431 rg
-287.051 27.343 14 -0.219 re f
-0.345098 0 0.686275 rg
-287.051 27.562 14 -0.219 re f
-0.34902 0 0.690196 rg
-287.051 27.784 14 -0.223 re f
-0.34902 0 0.694118 rg
-287.051 28.003 14 -0.219 re f
-0.34902 0 0.698039 rg
-287.051 28.222 14 -0.219 re f
-0.352941 0 0.701961 rg
-287.051 28.445 14 -0.223 re f
-0.352941 0 0.705882 rg
-287.051 28.663 14 -0.219 re f
-0.356863 0.00392157 0.709804 rg
-287.051 28.886 14 -0.223 re f
-0.356863 0.00392157 0.713726 rg
-287.051 29.105 14 -0.219 re f
-0.356863 0.00392157 0.721569 rg
-287.051 29.323 14 -0.219 re f
-0.360784 0.00392157 0.72549 rg
-287.051 29.546 14 -0.223 re f
-0.360784 0.00392157 0.729412 rg
-287.051 29.765 14 -0.219 re f
-0.360784 0.00392157 0.733333 rg
-287.051 29.984 14 -0.219 re f
-0.364706 0.00392157 0.737255 rg
-287.051 30.206 14 -0.223 re f
-0.364706 0.00392157 0.741176 rg
-287.051 30.425 14 -0.219 re f
-0.364706 0.00392157 0.745098 rg
-287.051 30.648 14 -0.223 re f
-0.368627 0.00392157 0.74902 rg
-287.051 30.866 14 -0.219 re f
-0.368627 0.00392157 0.752941 rg
-287.051 31.089 14 -0.223 re f
-0.368627 0.00392157 0.756863 rg
-287.051 31.308 14 -0.223 re f
-0.372549 0.00392157 0.760784 rg
-287.051 31.527 14 -0.219 re f
-0.372549 0.00392157 0.764706 rg
-287.051 31.749 14 -0.223 re f
-0.372549 0.00392157 0.768627 rg
-287.051 31.968 14 -0.219 re f
-0.376471 0.00392157 0.772549 rg
-287.051 32.187 14 -0.219 re f
-0.376471 0.00392157 0.776471 rg
-287.051 32.409 14 -0.223 re f
-0.376471 0.00392157 0.780392 rg
-287.051 32.628 14 -0.219 re f
-0.380392 0.00392157 0.784314 rg
-287.051 32.851 14 -0.223 re f
-0.380392 0.00392157 0.788235 rg
-287.051 33.07 14 -0.219 re f
-0.380392 0.00392157 0.792157 rg
-287.051 33.288 14 -0.219 re f
-0.384314 0.00392157 0.796078 rg
-287.051 33.511 14 -0.223 re f
-0.384314 0.00392157 0.8 rg
-287.051 33.73 14 -0.219 re f
-0.384314 0.00392157 0.803922 rg
-287.051 33.952 14 -0.223 re f
-0.388235 0.00392157 0.807843 rg
-287.051 34.171 14 -0.219 re f
-0.388235 0.00392157 0.811765 rg
-287.051 34.39 14 -0.219 re f
-0.388235 0.00392157 0.815686 rg
-287.051 34.613 14 -0.223 re f
-0.392157 0.00392157 0.819608 rg
-287.051 34.831 14 -0.219 re f
-287.051 35.05 14 -0.219 re f
-0.392157 0.00392157 0.823529 rg
-287.051 35.273 14 -0.223 re f
-0.392157 0.00392157 0.827451 rg
-287.051 35.491 14 -0.219 re f
-0.396078 0.00392157 0.831373 rg
-287.051 35.714 14 -0.223 re f
-0.396078 0.00392157 0.835294 rg
-287.051 35.933 14 -0.219 re f
-0.396078 0.00392157 0.839216 rg
-287.051 36.152 14 -0.219 re f
-0.4 0.00392157 0.843137 rg
-287.051 36.374 14 -0.223 re f
-0.4 0.00392157 0.847059 rg
-287.051 36.593 14 -0.219 re f
-287.051 36.816 14 -0.223 re f
-0.403922 0.00392157 0.85098 rg
-287.051 37.034 14 -0.219 re f
-0.403922 0.00392157 0.854902 rg
-287.051 37.253 14 -0.219 re f
-0.403922 0.00392157 0.858824 rg
-287.051 37.476 14 -0.223 re f
-0.407843 0.00392157 0.862745 rg
-287.051 37.695 14 -0.219 re f
-287.051 37.913 14 -0.219 re f
-0.407843 0.00392157 0.866667 rg
-287.051 38.136 14 -0.223 re f
-0.411765 0.00392157 0.870588 rg
-287.051 38.355 14 -0.219 re f
-0.411765 0.00392157 0.87451 rg
-287.051 38.577 14 -0.223 re f
-0.411765 0.00392157 0.878431 rg
-287.051 38.796 14 -0.219 re f
-287.051 39.015 14 -0.219 re f
-0.415686 0.00392157 0.882353 rg
-287.051 39.238 14 -0.223 re f
-0.415686 0.00392157 0.886275 rg
-287.051 39.456 14 -0.219 re f
-287.051 39.679 14 -0.223 re f
-0.419608 0.00392157 0.890196 rg
-287.051 39.898 14 -0.219 re f
-0.419608 0.00392157 0.894118 rg
-287.051 40.116 14 -0.219 re f
-0.419608 0.00392157 0.898039 rg
-287.051 40.339 14 -0.223 re f
-0.423529 0.00392157 0.898039 rg
-287.051 40.558 14 -0.219 re f
-0.423529 0.00392157 0.901961 rg
-287.051 40.777 14 -0.219 re f
-0.423529 0.00392157 0.905882 rg
-287.051 40.999 14 -0.223 re f
-0.423529 0.00784314 0.905882 rg
-287.051 41.218 14 -0.219 re f
-0.427451 0.00784314 0.909804 rg
-287.051 41.441 14 -0.223 re f
-0.427451 0.00784314 0.913725 rg
-287.051 41.659 14 -0.219 re f
-287.051 41.878 14 -0.219 re f
-0.431373 0.00784314 0.917647 rg
-287.051 42.101 14 -0.223 re f
-0.431373 0.00784314 0.921569 rg
-287.051 42.32 14 -0.219 re f
-287.051 42.542 14 -0.223 re f
-0.431373 0.00784314 0.92549 rg
-287.051 42.761 14 -0.219 re f
-0.435294 0.00784314 0.92549 rg
-287.051 42.98 14 -0.219 re f
-0.435294 0.00784314 0.929412 rg
-287.051 43.202 14 -0.223 re f
-0.435294 0.00784314 0.933333 rg
-287.051 43.421 14 -0.219 re f
-0.439216 0.00784314 0.933333 rg
-287.051 43.644 14 -0.223 re f
-0.439216 0.00784314 0.937255 rg
-287.051 43.863 14 -0.219 re f
-287.051 44.081 14 -0.219 re f
-0.439216 0.00784314 0.941176 rg
-287.051 44.304 14 -0.223 re f
-0.443137 0.00784314 0.941176 rg
-287.051 44.523 14 -0.219 re f
-0.443137 0.00784314 0.945098 rg
-287.051 44.741 14 -0.219 re f
-287.051 44.964 14 -0.219 re f
-0.447059 0.00784314 0.94902 rg
-287.051 45.183 14 -0.219 re f
-287.051 45.405 14 -0.223 re f
-0.447059 0.00784314 0.952941 rg
-287.051 45.624 14 -0.219 re f
-287.051 45.843 14 -0.219 re f
-0.45098 0.00784314 0.956863 rg
-287.051 46.066 14 -0.223 re f
-287.051 46.284 14 -0.219 re f
-0.45098 0.00784314 0.960784 rg
-287.051 46.507 14 -0.223 re f
-287.051 46.726 14 -0.219 re f
-0.454902 0.00784314 0.964706 rg
-287.051 46.945 14 -0.219 re f
-287.051 47.167 14 -0.223 re f
-287.051 47.386 14 -0.219 re f
-0.458824 0.00784314 0.968627 rg
-287.051 47.605 14 -0.219 re f
-287.051 47.827 14 -0.223 re f
-0.458824 0.00784314 0.972549 rg
-287.051 48.046 14 -0.219 re f
-287.051 48.269 14 -0.223 re f
-0.462745 0.00784314 0.972549 rg
-287.051 48.488 14 -0.219 re f
-0.462745 0.00784314 0.976471 rg
-287.051 48.71 14 -0.223 re f
-0.462745 0.0117647 0.976471 rg
-287.051 48.929 14 -0.223 re f
-287.051 49.148 14 -0.219 re f
-0.466667 0.0117647 0.980392 rg
-287.051 49.37 14 -0.223 re f
-287.051 49.589 14 -0.219 re f
-287.051 49.808 14 -0.219 re f
-0.470588 0.0117647 0.984314 rg
-287.051 50.03 14 -0.223 re f
-287.051 50.249 14 -0.219 re f
-287.051 50.472 14 -0.223 re f
-287.051 50.691 14 -0.219 re f
-0.47451 0.0117647 0.988235 rg
-287.051 50.909 14 -0.219 re f
-287.051 51.132 14 -0.223 re f
-287.051 51.351 14 -0.219 re f
-287.051 51.573 14 -0.223 re f
-0.478431 0.0117647 0.992157 rg
-287.051 51.792 14 -0.219 re f
-287.051 52.011 14 -0.219 re f
-287.051 52.234 14 -0.223 re f
-287.051 52.452 14 -0.219 re f
-0.482353 0.0117647 0.996078 rg
-287.051 52.671 14 -0.219 re f
-287.051 52.894 14 -0.223 re f
-287.051 53.113 14 -0.219 re f
-287.051 53.335 14 -0.223 re f
-0.486275 0.0117647 0.996078 rg
-287.051 53.554 14 -0.219 re f
-287.051 53.773 14 -0.219 re f
-287.051 53.995 14 -0.223 re f
-0.486275 0.0117647 1 rg
-287.051 54.214 14 -0.219 re f
-0.490196 0.0117647 1 rg
-287.051 54.437 14 -0.223 re f
-0.490196 0.0156863 1 rg
-287.051 54.655 14 -0.219 re f
-287.051 54.874 14 -0.219 re f
-0.494118 0.0156863 1 rg
-287.051 55.097 14 -0.223 re f
-287.051 55.316 14 -0.219 re f
-287.051 55.534 14 -0.219 re f
-287.051 55.757 14 -0.223 re f
-0.498039 0.0156863 1 rg
-287.051 55.976 14 -0.219 re f
-287.051 56.198 14 -0.223 re f
-287.051 56.417 14 -0.219 re f
-287.051 56.636 14 -0.219 re f
-0.501961 0.0156863 1 rg
-287.051 56.859 14 -0.223 re f
-287.051 57.077 14 -0.219 re f
-287.051 57.3 14 -0.223 re f
-287.051 57.519 14 -0.219 re f
-287.051 57.738 14 -0.219 re f
-287.051 57.96 14 -0.223 re f
-0.505882 0.0156863 1 rg
-287.051 58.179 14 -0.219 re f
-287.051 58.402 14 -0.223 re f
-287.051 58.62 14 -0.223 re f
-287.051 58.839 14 -0.219 re f
-0.509804 0.0156863 1 rg
-287.051 59.062 14 -0.223 re f
-0.509804 0.0196078 1 rg
-287.051 59.28 14 -0.219 re f
-287.051 59.499 14 -0.219 re f
-0.509804 0.0196078 0.996078 rg
-287.051 59.722 14 -0.223 re f
-0.513726 0.0196078 0.996078 rg
-287.051 59.941 14 -0.219 re f
-287.051 60.163 14 -0.223 re f
-287.051 60.382 14 -0.219 re f
-287.051 60.601 14 -0.219 re f
-0.517647 0.0196078 0.996078 rg
-287.051 60.823 14 -0.223 re f
-287.051 61.042 14 -0.219 re f
-0.517647 0.0196078 0.992157 rg
-287.051 61.265 14 -0.223 re f
-287.051 61.484 14 -0.219 re f
-0.521569 0.0196078 0.992157 rg
-287.051 61.702 14 -0.219 re f
-287.051 61.925 14 -0.223 re f
-0.521569 0.0196078 0.988235 rg
-287.051 62.144 14 -0.219 re f
-287.051 62.363 14 -0.219 re f
-0.52549 0.0196078 0.988235 rg
-287.051 62.585 14 -0.219 re f
-287.051 62.804 14 -0.219 re f
-0.52549 0.0196078 0.984314 rg
-287.051 63.027 14 -0.223 re f
-287.051 63.245 14 -0.219 re f
-0.529412 0.0235294 0.984314 rg
-287.051 63.464 14 -0.219 re f
-287.051 63.687 14 -0.223 re f
-0.529412 0.0235294 0.980392 rg
-287.051 63.905 14 -0.219 re f
-287.051 64.128 14 -0.223 re f
-287.051 64.347 14 -0.219 re f
-0.533333 0.0235294 0.976471 rg
-287.051 64.566 14 -0.219 re f
-287.051 64.788 14 -0.223 re f
-287.051 65.007 14 -0.219 re f
-0.533333 0.0235294 0.972549 rg
-287.051 65.226 14 -0.219 re f
-0.537255 0.0235294 0.972549 rg
-287.051 65.448 14 -0.223 re f
-287.051 65.667 14 -0.219 re f
-0.537255 0.0235294 0.968627 rg
-287.051 65.89 14 -0.223 re f
-287.051 66.109 14 -0.219 re f
-0.541176 0.0235294 0.964706 rg
-287.051 66.331 14 -0.223 re f
-287.051 66.55 14 -0.219 re f
-287.051 66.769 14 -0.219 re f
-0.541176 0.027451 0.960784 rg
-287.051 66.991 14 -0.223 re f
-0.545098 0.027451 0.960784 rg
-287.051 67.21 14 -0.219 re f
-0.545098 0.027451 0.956863 rg
-287.051 67.429 14 -0.219 re f
-287.051 67.652 14 -0.223 re f
-0.545098 0.027451 0.952941 rg
-287.051 67.87 14 -0.219 re f
-287.051 68.093 14 -0.223 re f
-0.54902 0.027451 0.94902 rg
-287.051 68.312 14 -0.219 re f
-287.051 68.53 14 -0.219 re f
-0.54902 0.027451 0.945098 rg
-287.051 68.753 14 -0.223 re f
-287.051 68.972 14 -0.219 re f
-0.552941 0.027451 0.941176 rg
-287.051 69.195 14 -0.223 re f
-287.051 69.413 14 -0.219 re f
-0.552941 0.027451 0.937255 rg
-287.051 69.632 14 -0.219 re f
-287.051 69.855 14 -0.223 re f
-0.552941 0.027451 0.933333 rg
-287.051 70.073 14 -0.219 re f
-0.556863 0.0313726 0.933333 rg
-287.051 70.292 14 -0.219 re f
-0.556863 0.0313726 0.929412 rg
-287.051 70.515 14 -0.223 re f
-0.556863 0.0313726 0.92549 rg
-287.051 70.734 14 -0.219 re f
-287.051 70.956 14 -0.223 re f
-0.560784 0.0313726 0.921569 rg
-287.051 71.175 14 -0.219 re f
-287.051 71.394 14 -0.219 re f
-0.560784 0.0313726 0.917647 rg
-287.051 71.616 14 -0.223 re f
-0.560784 0.0313726 0.913725 rg
-287.051 71.835 14 -0.219 re f
-287.051 72.054 14 -0.219 re f
-0.564706 0.0313726 0.909804 rg
-287.051 72.277 14 -0.219 re f
-0.564706 0.0313726 0.905882 rg
-287.051 72.495 14 -0.219 re f
-287.051 72.718 14 -0.223 re f
-0.564706 0.0313726 0.901961 rg
-287.051 72.937 14 -0.219 re f
-0.568627 0.0352941 0.898039 rg
-287.051 73.155 14 -0.219 re f
-287.051 73.378 14 -0.223 re f
-0.568627 0.0352941 0.894118 rg
-287.051 73.597 14 -0.219 re f
-0.568627 0.0352941 0.890196 rg
-287.051 73.82 14 -0.223 re f
-0.568627 0.0352941 0.886275 rg
-287.051 74.038 14 -0.219 re f
-0.572549 0.0352941 0.886275 rg
-287.051 74.257 14 -0.219 re f
-0.572549 0.0352941 0.882353 rg
-287.051 74.48 14 -0.223 re f
-0.572549 0.0352941 0.878431 rg
-287.051 74.698 14 -0.219 re f
-287.051 74.921 14 -0.223 re f
-0.576471 0.0352941 0.87451 rg
-287.051 75.14 14 -0.219 re f
-0.576471 0.0352941 0.870588 rg
-287.051 75.359 14 -0.219 re f
-0.576471 0.0352941 0.866667 rg
-287.051 75.581 14 -0.223 re f
-0.576471 0.0392157 0.862745 rg
-287.051 75.8 14 -0.219 re f
-287.051 76.023 14 -0.223 re f
-0.580392 0.0392157 0.858824 rg
-287.051 76.241 14 -0.223 re f
-0.580392 0.0392157 0.854902 rg
-287.051 76.46 14 -0.219 re f
-0.580392 0.0392157 0.85098 rg
-287.051 76.683 14 -0.223 re f
-0.580392 0.0392157 0.847059 rg
-287.051 76.902 14 -0.219 re f
-287.051 77.12 14 -0.219 re f
-0.584314 0.0392157 0.843137 rg
-287.051 77.343 14 -0.223 re f
-0.584314 0.0392157 0.839216 rg
-287.051 77.562 14 -0.219 re f
-0.584314 0.0392157 0.835294 rg
-287.051 77.784 14 -0.223 re f
-0.584314 0.0392157 0.831373 rg
-287.051 78.003 14 -0.219 re f
-0.588235 0.0392157 0.827451 rg
-287.051 78.222 14 -0.219 re f
-0.588235 0.0431373 0.823529 rg
-287.051 78.445 14 -0.223 re f
-0.588235 0.0431373 0.819608 rg
-287.051 78.663 14 -0.219 re f
-287.051 78.886 14 -0.223 re f
-0.588235 0.0431373 0.815686 rg
-287.051 79.105 14 -0.219 re f
-0.592157 0.0431373 0.811765 rg
-287.051 79.323 14 -0.219 re f
-0.592157 0.0431373 0.807843 rg
-287.051 79.546 14 -0.223 re f
-0.592157 0.0431373 0.803922 rg
-287.051 79.765 14 -0.219 re f
-0.592157 0.0431373 0.8 rg
-287.051 79.984 14 -0.219 re f
-0.592157 0.0431373 0.796078 rg
-287.051 80.206 14 -0.223 re f
-0.596078 0.0431373 0.792157 rg
-287.051 80.425 14 -0.219 re f
-0.596078 0.0431373 0.788235 rg
-287.051 80.648 14 -0.223 re f
-0.596078 0.0470588 0.784314 rg
-287.051 80.866 14 -0.219 re f
-0.596078 0.0470588 0.780392 rg
-287.051 81.085 14 -0.219 re f
-0.6 0.0470588 0.776471 rg
-287.051 81.308 14 -0.223 re f
-0.6 0.0470588 0.772549 rg
-287.051 81.527 14 -0.219 re f
-0.6 0.0470588 0.768627 rg
-287.051 81.749 14 -0.223 re f
-0.6 0.0470588 0.764706 rg
-287.051 81.968 14 -0.219 re f
-0.6 0.0470588 0.760784 rg
-287.051 82.187 14 -0.219 re f
-0.603922 0.0470588 0.756863 rg
-287.051 82.409 14 -0.223 re f
-0.603922 0.0470588 0.752941 rg
-287.051 82.628 14 -0.219 re f
-0.603922 0.0470588 0.74902 rg
-287.051 82.847 14 -0.219 re f
-0.603922 0.0509804 0.745098 rg
-287.051 83.07 14 -0.223 re f
-0.603922 0.0509804 0.741176 rg
-287.051 83.288 14 -0.219 re f
-0.607843 0.0509804 0.737255 rg
-287.051 83.511 14 -0.223 re f
-0.607843 0.0509804 0.733333 rg
-287.051 83.73 14 -0.219 re f
-0.607843 0.0509804 0.729412 rg
-287.051 83.952 14 -0.223 re f
-0.607843 0.0509804 0.72549 rg
-287.051 84.171 14 -0.219 re f
-0.607843 0.0509804 0.721569 rg
-287.051 84.39 14 -0.219 re f
-0.611765 0.0509804 0.713726 rg
-287.051 84.613 14 -0.223 re f
-0.611765 0.0509804 0.709804 rg
-287.051 84.831 14 -0.219 re f
-0.611765 0.0509804 0.705882 rg
-287.051 85.05 14 -0.219 re f
-0.611765 0.054902 0.701961 rg
-287.051 85.273 14 -0.223 re f
-0.611765 0.054902 0.698039 rg
-287.051 85.491 14 -0.219 re f
-0.615686 0.054902 0.694118 rg
-287.051 85.714 14 -0.223 re f
-0.615686 0.054902 0.690196 rg
-287.051 85.933 14 -0.219 re f
-0.615686 0.054902 0.686275 rg
-287.051 86.152 14 -0.219 re f
-0.615686 0.054902 0.678431 rg
-287.051 86.374 14 -0.223 re f
-0.615686 0.054902 0.67451 rg
-287.051 86.593 14 -0.219 re f
-0.619608 0.054902 0.670588 rg
-287.051 86.816 14 -0.223 re f
-0.619608 0.054902 0.666667 rg
-287.051 87.034 14 -0.219 re f
-0.619608 0.0588235 0.662745 rg
-287.051 87.253 14 -0.219 re f
-0.619608 0.0588235 0.658824 rg
-287.051 87.476 14 -0.223 re f
-0.619608 0.0588235 0.65098 rg
-287.051 87.695 14 -0.219 re f
-0.623529 0.0588235 0.647059 rg
-287.051 87.917 14 -0.223 re f
-0.623529 0.0588235 0.643137 rg
-287.051 88.136 14 -0.223 re f
-0.623529 0.0588235 0.639216 rg
-287.051 88.355 14 -0.219 re f
-0.623529 0.0588235 0.635294 rg
-287.051 88.573 14 -0.219 re f
-0.623529 0.0588235 0.627451 rg
-287.051 88.796 14 -0.219 re f
-0.627451 0.0588235 0.623529 rg
-287.051 89.015 14 -0.219 re f
-0.627451 0.0627451 0.619608 rg
-287.051 89.238 14 -0.223 re f
-0.627451 0.0627451 0.615686 rg
-287.051 89.456 14 -0.219 re f
-0.627451 0.0627451 0.611765 rg
-287.051 89.679 14 -0.223 re f
-0.627451 0.0627451 0.603922 rg
-287.051 89.898 14 -0.219 re f
-0.631373 0.0627451 0.6 rg
-287.051 90.116 14 -0.219 re f
-0.631373 0.0627451 0.596078 rg
-287.051 90.339 14 -0.223 re f
-0.631373 0.0627451 0.588235 rg
-287.051 90.558 14 -0.219 re f
-0.631373 0.0627451 0.584314 rg
-287.051 90.777 14 -0.219 re f
-0.631373 0.0627451 0.580392 rg
-287.051 90.999 14 -0.219 re f
-0.635294 0.0666667 0.576471 rg
-287.051 91.218 14 -0.219 re f
-0.635294 0.0666667 0.568627 rg
-287.051 91.441 14 -0.223 re f
-0.635294 0.0666667 0.564706 rg
-287.051 91.659 14 -0.219 re f
-0.635294 0.0666667 0.560784 rg
-287.051 91.878 14 -0.219 re f
-0.635294 0.0666667 0.552941 rg
-287.051 92.101 14 -0.223 re f
-0.639216 0.0666667 0.54902 rg
-287.051 92.32 14 -0.219 re f
-0.639216 0.0666667 0.545098 rg
-287.051 92.542 14 -0.223 re f
-0.639216 0.0666667 0.541176 rg
-287.051 92.761 14 -0.219 re f
-0.639216 0.0705882 0.533333 rg
-287.051 92.98 14 -0.219 re f
-0.639216 0.0705882 0.529412 rg
-287.051 93.202 14 -0.223 re f
-0.643137 0.0705882 0.52549 rg
-287.051 93.421 14 -0.219 re f
-0.643137 0.0705882 0.517647 rg
-287.051 93.64 14 -0.219 re f
-0.643137 0.0705882 0.513726 rg
-287.051 93.863 14 -0.219 re f
-0.643137 0.0705882 0.509804 rg
-287.051 94.081 14 -0.219 re f
-0.643137 0.0705882 0.501961 rg
-287.051 94.304 14 -0.223 re f
-0.647059 0.0705882 0.498039 rg
-287.051 94.523 14 -0.219 re f
-0.647059 0.0745098 0.494118 rg
-287.051 94.741 14 -0.219 re f
-0.647059 0.0745098 0.486275 rg
-287.051 94.964 14 -0.223 re f
-0.647059 0.0745098 0.482353 rg
-287.051 95.183 14 -0.219 re f
-0.647059 0.0745098 0.478431 rg
-287.051 95.405 14 -0.223 re f
-0.65098 0.0745098 0.470588 rg
-287.051 95.624 14 -0.219 re f
-0.65098 0.0745098 0.466667 rg
-287.051 95.843 14 -0.219 re f
-0.65098 0.0745098 0.458824 rg
-287.051 96.066 14 -0.219 re f
-0.65098 0.0784314 0.454902 rg
-287.051 96.284 14 -0.219 re f
-0.65098 0.0784314 0.45098 rg
-287.051 96.503 14 -0.219 re f
-0.65098 0.0784314 0.443137 rg
-287.051 96.726 14 -0.223 re f
-0.654902 0.0784314 0.439216 rg
-287.051 96.945 14 -0.219 re f
-0.654902 0.0784314 0.431373 rg
-287.051 97.167 14 -0.223 re f
-0.654902 0.0784314 0.427451 rg
-287.051 97.386 14 -0.219 re f
-0.654902 0.0784314 0.423529 rg
-287.051 97.605 14 -0.219 re f
-0.654902 0.0784314 0.415686 rg
-287.051 97.827 14 -0.219 re f
-0.658824 0.0823529 0.411765 rg
-287.051 98.046 14 -0.219 re f
-0.658824 0.0823529 0.403922 rg
-287.051 98.269 14 -0.223 re f
-0.658824 0.0823529 0.4 rg
-287.051 98.488 14 -0.219 re f
-0.658824 0.0823529 0.392157 rg
-287.051 98.71 14 -0.223 re f
-0.658824 0.0823529 0.388235 rg
-287.051 98.929 14 -0.223 re f
-0.662745 0.0823529 0.384314 rg
-287.051 99.148 14 -0.219 re f
-0.662745 0.0823529 0.376471 rg
-287.051 99.366 14 -0.219 re f
-0.662745 0.0862745 0.372549 rg
-287.051 99.589 14 -0.219 re f
-0.662745 0.0862745 0.364706 rg
-287.051 99.808 14 -0.219 re f
-0.662745 0.0862745 0.360784 rg
-287.051 100.03 14 -0.223 re f
-0.666667 0.0862745 0.352941 rg
-287.051 100.249 14 -0.219 re f
-0.666667 0.0862745 0.34902 rg
-287.051 100.472 14 -0.223 re f
-0.666667 0.0862745 0.341176 rg
-287.051 100.691 14 -0.219 re f
-0.666667 0.0901961 0.337255 rg
-287.051 100.909 14 -0.219 re f
-0.666667 0.0901961 0.329412 rg
-287.051 101.132 14 -0.223 re f
-0.666667 0.0901961 0.32549 rg
-287.051 101.351 14 -0.219 re f
-0.670588 0.0901961 0.317647 rg
-287.051 101.57 14 -0.219 re f
-0.670588 0.0901961 0.313726 rg
-287.051 101.792 14 -0.223 re f
-0.670588 0.0901961 0.309804 rg
-287.051 102.011 14 -0.219 re f
-0.670588 0.0901961 0.301961 rg
-287.051 102.234 14 -0.223 re f
-0.670588 0.0941176 0.298039 rg
-287.051 102.452 14 -0.219 re f
-0.67451 0.0941176 0.290196 rg
-287.051 102.671 14 -0.219 re f
-0.67451 0.0941176 0.286275 rg
-287.051 102.894 14 -0.223 re f
-0.67451 0.0941176 0.278431 rg
-287.051 103.113 14 -0.219 re f
-0.67451 0.0941176 0.27451 rg
-287.051 103.335 14 -0.223 re f
-0.67451 0.0941176 0.266667 rg
-287.051 103.554 14 -0.219 re f
-0.678431 0.0980392 0.258824 rg
-287.051 103.773 14 -0.219 re f
-0.678431 0.0980392 0.254902 rg
-287.051 103.995 14 -0.223 re f
-0.678431 0.0980392 0.247059 rg
-287.051 104.214 14 -0.219 re f
-0.678431 0.0980392 0.243137 rg
-287.051 104.433 14 -0.219 re f
-0.678431 0.0980392 0.235294 rg
-287.051 104.655 14 -0.219 re f
-0.678431 0.0980392 0.231373 rg
-287.051 104.874 14 -0.219 re f
-0.682353 0.0980392 0.223529 rg
-287.051 105.097 14 -0.223 re f
-0.682353 0.101961 0.219608 rg
-287.051 105.316 14 -0.219 re f
-0.682353 0.101961 0.211765 rg
-287.051 105.534 14 -0.219 re f
-0.682353 0.101961 0.207843 rg
-287.051 105.757 14 -0.223 re f
-0.682353 0.101961 0.2 rg
-287.051 105.976 14 -0.219 re f
-0.686275 0.101961 0.196078 rg
-287.051 106.198 14 -0.223 re f
-0.686275 0.101961 0.188235 rg
-287.051 106.417 14 -0.219 re f
-0.686275 0.105882 0.184314 rg
-287.051 106.636 14 -0.219 re f
-0.686275 0.105882 0.176471 rg
-287.051 106.859 14 -0.219 re f
-0.686275 0.105882 0.172549 rg
-287.051 107.077 14 -0.219 re f
-0.686275 0.105882 0.164706 rg
-287.051 107.3 14 -0.223 re f
-0.690196 0.105882 0.160784 rg
-287.051 107.519 14 -0.223 re f
-0.690196 0.105882 0.152941 rg
-287.051 107.738 14 -0.219 re f
-0.690196 0.109804 0.145098 rg
-287.051 107.96 14 -0.223 re f
-0.690196 0.109804 0.141176 rg
-287.051 108.179 14 -0.219 re f
-0.690196 0.109804 0.133333 rg
-287.051 108.398 14 -0.219 re f
-0.694118 0.109804 0.129412 rg
-287.051 108.62 14 -0.219 re f
-0.694118 0.109804 0.121569 rg
-287.051 108.839 14 -0.219 re f
-0.694118 0.109804 0.117647 rg
-287.051 109.062 14 -0.223 re f
-0.694118 0.113725 0.109804 rg
-287.051 109.28 14 -0.219 re f
-0.694118 0.113725 0.105882 rg
-287.051 109.499 14 -0.219 re f
-0.694118 0.113725 0.0980392 rg
-287.051 109.722 14 -0.223 re f
-0.698039 0.113725 0.0901961 rg
-287.051 109.941 14 -0.219 re f
-0.698039 0.113725 0.0862745 rg
-287.051 110.159 14 -0.219 re f
-0.698039 0.117647 0.0784314 rg
-287.051 110.382 14 -0.219 re f
-0.698039 0.117647 0.0745098 rg
-287.051 110.601 14 -0.219 re f
-0.698039 0.117647 0.0666667 rg
-287.051 110.823 14 -0.223 re f
-0.698039 0.117647 0.0627451 rg
-287.051 111.042 14 -0.219 re f
-0.701961 0.117647 0.054902 rg
-287.051 111.265 14 -0.223 re f
-0.701961 0.117647 0.0509804 rg
-287.051 111.484 14 -0.219 re f
-0.701961 0.121569 0.0431373 rg
-287.051 111.702 14 -0.219 re f
-0.701961 0.121569 0.0352941 rg
-287.051 111.925 14 -0.223 re f
-0.701961 0.121569 0.0313726 rg
-287.051 112.144 14 -0.219 re f
-0.705882 0.121569 0.0235294 rg
-287.051 112.363 14 -0.219 re f
-0.705882 0.121569 0.0196078 rg
-287.051 112.585 14 -0.223 re f
-0.705882 0.121569 0.0117647 rg
-287.051 112.804 14 -0.219 re f
-0.705882 0.12549 0.00784314 rg
-287.051 113.027 14 -0.223 re f
-0.705882 0.12549 0 rg
-287.051 113.245 14 -0.219 re f
-287.051 113.464 14 -0.219 re f
-0.709804 0.12549 0 rg
-287.051 113.687 14 -0.223 re f
-287.051 113.905 14 -0.219 re f
-0.709804 0.129412 0 rg
-287.051 114.124 14 -0.219 re f
-287.051 114.347 14 -0.223 re f
-287.051 114.566 14 -0.219 re f
-0.713726 0.129412 0 rg
-287.051 114.788 14 -0.223 re f
-287.051 115.007 14 -0.219 re f
-0.713726 0.133333 0 rg
-287.051 115.226 14 -0.219 re f
-287.051 115.448 14 -0.219 re f
-287.051 115.667 14 -0.219 re f
-287.051 115.89 14 -0.223 re f
-0.717647 0.133333 0 rg
-287.051 116.109 14 -0.219 re f
-0.717647 0.137255 0 rg
-287.051 116.331 14 -0.223 re f
-287.051 116.55 14 -0.223 re f
-287.051 116.769 14 -0.219 re f
-287.051 116.991 14 -0.223 re f
-287.051 117.21 14 -0.219 re f
-0.721569 0.141176 0 rg
-287.051 117.429 14 -0.219 re f
-287.051 117.652 14 -0.223 re f
-287.051 117.87 14 -0.219 re f
-287.051 118.093 14 -0.223 re f
-287.051 118.312 14 -0.223 re f
-0.721569 0.145098 0 rg
-287.051 118.53 14 -0.219 re f
-0.72549 0.145098 0 rg
-287.051 118.753 14 -0.223 re f
-287.051 118.972 14 -0.219 re f
-287.051 119.191 14 -0.219 re f
-287.051 119.413 14 -0.219 re f
-0.72549 0.14902 0 rg
-287.051 119.632 14 -0.219 re f
-287.051 119.855 14 -0.223 re f
-0.729412 0.14902 0 rg
-287.051 120.073 14 -0.219 re f
-287.051 120.292 14 -0.219 re f
-287.051 120.515 14 -0.223 re f
-0.729412 0.152941 0 rg
-287.051 120.734 14 -0.219 re f
-287.051 120.956 14 -0.223 re f
-0.733333 0.152941 0 rg
-287.051 121.175 14 -0.219 re f
-287.051 121.394 14 -0.219 re f
-0.733333 0.156863 0 rg
-287.051 121.616 14 -0.223 re f
-287.051 121.835 14 -0.219 re f
-287.051 122.058 14 -0.223 re f
-287.051 122.277 14 -0.219 re f
-0.737255 0.156863 0 rg
-287.051 122.495 14 -0.219 re f
-0.737255 0.160784 0 rg
-287.051 122.718 14 -0.223 re f
-287.051 122.937 14 -0.219 re f
-287.051 123.155 14 -0.219 re f
-287.051 123.378 14 -0.223 re f
-287.051 123.597 14 -0.219 re f
-0.741176 0.164706 0 rg
-287.051 123.82 14 -0.223 re f
-287.051 124.038 14 -0.219 re f
-287.051 124.257 14 -0.219 re f
-287.051 124.48 14 -0.219 re f
-0.741176 0.168627 0 rg
-287.051 124.698 14 -0.219 re f
-287.051 124.921 14 -0.223 re f
-0.745098 0.168627 0 rg
-287.051 125.14 14 -0.223 re f
-287.051 125.359 14 -0.219 re f
-0.745098 0.172549 0 rg
-287.051 125.581 14 -0.223 re f
-287.051 125.8 14 -0.219 re f
-287.051 126.019 14 -0.219 re f
-287.051 126.241 14 -0.219 re f
-0.74902 0.172549 0 rg
-287.051 126.46 14 -0.219 re f
-0.74902 0.176471 0 rg
-287.051 126.683 14 -0.223 re f
-287.051 126.902 14 -0.219 re f
-287.051 127.124 14 -0.223 re f
-287.051 127.343 14 -0.223 re f
-0.74902 0.180392 0 rg
-287.051 127.562 14 -0.219 re f
-0.752941 0.180392 0 rg
-287.051 127.78 14 -0.219 re f
-287.051 128.003 14 -0.219 re f
-287.051 128.222 14 -0.219 re f
-0.752941 0.184314 0 rg
-287.051 128.445 14 -0.223 re f
-287.051 128.663 14 -0.219 re f
-287.051 128.886 14 -0.223 re f
-0.756863 0.184314 0 rg
-287.051 129.105 14 -0.219 re f
-0.756863 0.188235 0 rg
-287.051 129.323 14 -0.219 re f
-287.051 129.546 14 -0.223 re f
-287.051 129.765 14 -0.219 re f
-287.051 129.984 14 -0.219 re f
-287.051 130.206 14 -0.223 re f
-0.760784 0.192157 0 rg
-287.051 130.425 14 -0.219 re f
-287.051 130.648 14 -0.223 re f
-287.051 130.866 14 -0.219 re f
-287.051 131.085 14 -0.219 re f
-0.760784 0.196078 0 rg
-287.051 131.308 14 -0.223 re f
-287.051 131.527 14 -0.219 re f
-0.764706 0.196078 0 rg
-287.051 131.745 14 -0.219 re f
-0.764706 0.2 0 rg
-287.051 131.968 14 -0.223 re f
-287.051 132.187 14 -0.219 re f
-287.051 132.409 14 -0.223 re f
-287.051 132.628 14 -0.219 re f
-0.764706 0.203922 0 rg
-287.051 132.851 14 -0.223 re f
-0.768627 0.203922 0 rg
-287.051 133.07 14 -0.219 re f
-287.051 133.288 14 -0.219 re f
-287.051 133.507 14 -0.219 re f
-0.768627 0.207843 0 rg
-287.051 133.73 14 -0.219 re f
-287.051 133.948 14 -0.219 re f
-287.051 134.171 14 -0.223 re f
-0.772549 0.207843 0 rg
-287.051 134.39 14 -0.219 re f
-0.772549 0.211765 0 rg
-287.051 134.613 14 -0.223 re f
-287.051 134.831 14 -0.219 re f
-287.051 135.05 14 -0.219 re f
-287.051 135.273 14 -0.219 re f
-0.772549 0.215686 0 rg
-287.051 135.491 14 -0.219 re f
-287.051 135.714 14 -0.223 re f
-0.776471 0.215686 0 rg
-287.051 135.933 14 -0.223 re f
-0.776471 0.219608 0 rg
-287.051 136.152 14 -0.219 re f
-287.051 136.374 14 -0.223 re f
-287.051 136.593 14 -0.219 re f
-287.051 136.812 14 -0.219 re f
-0.776471 0.223529 0 rg
-287.051 137.034 14 -0.219 re f
-0.780392 0.223529 0 rg
-287.051 137.253 14 -0.219 re f
-287.051 137.476 14 -0.223 re f
-287.051 137.695 14 -0.219 re f
-0.780392 0.227451 0 rg
-287.051 137.917 14 -0.223 re f
-287.051 138.136 14 -0.223 re f
-287.051 138.355 14 -0.219 re f
-0.784314 0.231373 0 rg
-287.051 138.573 14 -0.219 re f
-287.051 138.796 14 -0.219 re f
-287.051 139.015 14 -0.219 re f
-287.051 139.238 14 -0.223 re f
-0.784314 0.235294 0 rg
-287.051 139.456 14 -0.219 re f
-287.051 139.679 14 -0.223 re f
-0.788235 0.235294 0 rg
-287.051 139.898 14 -0.219 re f
-0.788235 0.239216 0 rg
-287.051 140.116 14 -0.219 re f
-287.051 140.339 14 -0.223 re f
-287.051 140.558 14 -0.219 re f
-287.051 140.777 14 -0.219 re f
-0.788235 0.243137 0 rg
-287.051 140.999 14 -0.223 re f
-287.051 141.218 14 -0.219 re f
-0.792157 0.243137 0 rg
-287.051 141.441 14 -0.223 re f
-0.792157 0.247059 0 rg
-287.051 141.659 14 -0.219 re f
-287.051 141.878 14 -0.219 re f
-287.051 142.101 14 -0.223 re f
-287.051 142.32 14 -0.219 re f
-0.792157 0.25098 0 rg
-287.051 142.542 14 -0.223 re f
-0.796078 0.25098 0 rg
-287.051 142.761 14 -0.223 re f
-287.051 142.98 14 -0.219 re f
-0.796078 0.254902 0 rg
-287.051 143.202 14 -0.223 re f
-287.051 143.421 14 -0.219 re f
-287.051 143.64 14 -0.219 re f
-287.051 143.863 14 -0.219 re f
-0.8 0.258824 0 rg
-287.051 144.081 14 -0.219 re f
-287.051 144.304 14 -0.223 re f
-287.051 144.523 14 -0.219 re f
-0.8 0.262745 0 rg
-287.051 144.741 14 -0.219 re f
-287.051 144.964 14 -0.223 re f
-287.051 145.183 14 -0.219 re f
-0.8 0.266667 0 rg
-287.051 145.405 14 -0.223 re f
-0.803922 0.266667 0 rg
-287.051 145.624 14 -0.219 re f
-287.051 145.843 14 -0.219 re f
-0.803922 0.270588 0 rg
-287.051 146.066 14 -0.223 re f
-287.051 146.284 14 -0.219 re f
-287.051 146.507 14 -0.223 re f
-0.803922 0.27451 0 rg
-287.051 146.726 14 -0.223 re f
-0.807843 0.27451 0 rg
-287.051 146.945 14 -0.219 re f
-287.051 147.167 14 -0.223 re f
-287.051 147.386 14 -0.219 re f
-0.807843 0.278431 0 rg
-287.051 147.605 14 -0.219 re f
-287.051 147.827 14 -0.223 re f
-287.051 148.046 14 -0.219 re f
-0.807843 0.282353 0 rg
-287.051 148.269 14 -0.223 re f
-0.811765 0.282353 0 rg
-287.051 148.488 14 -0.219 re f
-287.051 148.71 14 -0.223 re f
-0.811765 0.286275 0 rg
-287.051 148.929 14 -0.223 re f
-287.051 149.148 14 -0.219 re f
-287.051 149.366 14 -0.219 re f
-0.811765 0.290196 0 rg
-287.051 149.589 14 -0.223 re f
-0.815686 0.290196 0 rg
-287.051 149.808 14 -0.219 re f
-287.051 150.03 14 -0.223 re f
-0.815686 0.294118 0 rg
-287.051 150.249 14 -0.219 re f
-287.051 150.472 14 -0.223 re f
-287.051 150.691 14 -0.219 re f
-0.815686 0.298039 0 rg
-287.051 150.909 14 -0.219 re f
-287.051 151.132 14 -0.223 re f
-0.819608 0.298039 0 rg
-287.051 151.351 14 -0.223 re f
-0.819608 0.301961 0 rg
-287.051 151.57 14 -0.219 re f
-287.051 151.792 14 -0.223 re f
-287.051 152.011 14 -0.219 re f
-0.819608 0.305882 0 rg
-287.051 152.234 14 -0.223 re f
-287.051 152.452 14 -0.219 re f
-0.823529 0.305882 0 rg
-287.051 152.671 14 -0.219 re f
-0.823529 0.309804 0 rg
-287.051 152.894 14 -0.223 re f
-287.051 153.113 14 -0.219 re f
-287.051 153.335 14 -0.223 re f
-0.823529 0.313726 0 rg
-287.051 153.554 14 -0.223 re f
-287.051 153.773 14 -0.219 re f
-287.051 153.995 14 -0.223 re f
-0.827451 0.317647 0 rg
-287.051 154.214 14 -0.219 re f
-287.051 154.433 14 -0.219 re f
-287.051 154.655 14 -0.219 re f
-0.827451 0.321569 0 rg
-287.051 154.874 14 -0.219 re f
-287.051 155.097 14 -0.223 re f
-287.051 155.316 14 -0.219 re f
-0.831373 0.32549 0 rg
-287.051 155.534 14 -0.219 re f
-287.051 155.757 14 -0.223 re f
-0.831373 0.329412 0 rg
-287.051 155.976 14 -0.219 re f
-287.051 156.198 14 -0.223 re f
-287.051 156.417 14 -0.219 re f
-0.831373 0.333333 0 rg
-287.051 156.636 14 -0.219 re f
-287.051 156.859 14 -0.223 re f
-0.835294 0.333333 0 rg
-287.051 157.077 14 -0.219 re f
-0.835294 0.337255 0 rg
-287.051 157.3 14 -0.223 re f
-287.051 157.519 14 -0.223 re f
-287.051 157.738 14 -0.219 re f
-0.835294 0.341176 0 rg
-287.051 157.96 14 -0.223 re f
-287.051 158.179 14 -0.219 re f
-0.835294 0.345098 0 rg
-287.051 158.398 14 -0.219 re f
-0.839216 0.345098 0 rg
-287.051 158.62 14 -0.223 re f
-287.051 158.839 14 -0.219 re f
-0.839216 0.34902 0 rg
-287.051 159.062 14 -0.223 re f
-287.051 159.28 14 -0.219 re f
-287.051 159.499 14 -0.219 re f
-0.839216 0.352941 0 rg
-287.051 159.722 14 -0.223 re f
-0.843137 0.352941 0 rg
-287.051 159.941 14 -0.219 re f
-0.843137 0.356863 0 rg
-287.051 160.159 14 -0.219 re f
-287.051 160.382 14 -0.223 re f
-287.051 160.601 14 -0.219 re f
-0.843137 0.360784 0 rg
-287.051 160.823 14 -0.223 re f
-287.051 161.042 14 -0.219 re f
-287.051 161.265 14 -0.223 re f
-0.847059 0.364706 0 rg
-287.051 161.484 14 -0.219 re f
-287.051 161.702 14 -0.219 re f
-0.847059 0.368627 0 rg
-287.051 161.925 14 -0.223 re f
-287.051 162.144 14 -0.223 re f
-287.051 162.363 14 -0.219 re f
-0.847059 0.372549 0 rg
-287.051 162.585 14 -0.223 re f
-287.051 162.804 14 -0.219 re f
-0.85098 0.372549 0 rg
-287.051 163.027 14 -0.223 re f
-0.85098 0.376471 0 rg
-287.051 163.245 14 -0.219 re f
-287.051 163.464 14 -0.219 re f
-0.85098 0.380392 0 rg
-287.051 163.687 14 -0.223 re f
-287.051 163.905 14 -0.219 re f
-287.051 164.128 14 -0.223 re f
-0.85098 0.384314 0 rg
-287.051 164.347 14 -0.223 re f
-0.854902 0.384314 0 rg
-287.051 164.566 14 -0.219 re f
-0.854902 0.388235 0 rg
-287.051 164.788 14 -0.223 re f
-287.051 165.007 14 -0.219 re f
-287.051 165.226 14 -0.219 re f
-0.854902 0.392157 0 rg
-287.051 165.448 14 -0.223 re f
-287.051 165.667 14 -0.219 re f
-0.854902 0.396078 0 rg
-287.051 165.89 14 -0.223 re f
-0.858824 0.396078 0 rg
-287.051 166.109 14 -0.219 re f
-287.051 166.331 14 -0.223 re f
-0.858824 0.4 0 rg
-287.051 166.55 14 -0.223 re f
-287.051 166.769 14 -0.219 re f
-0.858824 0.403922 0 rg
-287.051 166.991 14 -0.223 re f
-287.051 167.21 14 -0.223 re f
-0.862745 0.403922 0 rg
-287.051 167.429 14 -0.219 re f
-0.862745 0.407843 0 rg
-287.051 167.652 14 -0.223 re f
-287.051 167.87 14 -0.219 re f
-0.862745 0.411765 0 rg
-287.051 168.093 14 -0.223 re f
-287.051 168.312 14 -0.223 re f
-287.051 168.53 14 -0.219 re f
-0.862745 0.415686 0 rg
-287.051 168.753 14 -0.223 re f
-0.866667 0.415686 0 rg
-287.051 168.972 14 -0.219 re f
-0.866667 0.419608 0 rg
-287.051 169.191 14 -0.219 re f
-287.051 169.413 14 -0.223 re f
-0.866667 0.423529 0 rg
-287.051 169.632 14 -0.219 re f
-287.051 169.855 14 -0.223 re f
-287.051 170.073 14 -0.219 re f
-0.866667 0.427451 0 rg
-287.051 170.292 14 -0.219 re f
-0.870588 0.427451 0 rg
-287.051 170.515 14 -0.223 re f
-0.870588 0.431373 0 rg
-287.051 170.734 14 -0.219 re f
-287.051 170.956 14 -0.223 re f
-0.870588 0.435294 0 rg
-287.051 171.175 14 -0.223 re f
-287.051 171.394 14 -0.219 re f
-287.051 171.616 14 -0.223 re f
-0.870588 0.439216 0 rg
-287.051 171.835 14 -0.219 re f
-0.87451 0.439216 0 rg
-287.051 172.058 14 -0.223 re f
-0.87451 0.443137 0 rg
-287.051 172.277 14 -0.219 re f
-287.051 172.495 14 -0.219 re f
-0.87451 0.447059 0 rg
-287.051 172.718 14 -0.223 re f
-287.051 172.937 14 -0.223 re f
-287.051 173.155 14 -0.219 re f
-0.87451 0.45098 0 rg
-287.051 173.378 14 -0.223 re f
-0.878431 0.45098 0 rg
-287.051 173.597 14 -0.219 re f
-0.878431 0.454902 0 rg
-287.051 173.82 14 -0.223 re f
-287.051 174.038 14 -0.219 re f
-0.878431 0.458824 0 rg
-287.051 174.257 14 -0.219 re f
-287.051 174.48 14 -0.223 re f
-0.878431 0.462745 0 rg
-287.051 174.698 14 -0.219 re f
-287.051 174.921 14 -0.223 re f
-0.882353 0.462745 0 rg
-287.051 175.14 14 -0.223 re f
-0.882353 0.466667 0 rg
-287.051 175.359 14 -0.219 re f
-287.051 175.581 14 -0.223 re f
-0.882353 0.470588 0 rg
-287.051 175.8 14 -0.219 re f
-287.051 176.019 14 -0.219 re f
-0.882353 0.47451 0 rg
-287.051 176.241 14 -0.223 re f
-287.051 176.46 14 -0.219 re f
-0.886275 0.478431 0 rg
-287.051 176.683 14 -0.223 re f
-287.051 176.902 14 -0.219 re f
-0.886275 0.482353 0 rg
-287.051 177.124 14 -0.223 re f
-287.051 177.343 14 -0.223 re f
-287.051 177.562 14 -0.219 re f
-0.886275 0.486275 0 rg
-287.051 177.78 14 -0.219 re f
-287.051 178.003 14 -0.223 re f
-0.890196 0.490196 0 rg
-287.051 178.222 14 -0.219 re f
-287.051 178.445 14 -0.223 re f
-0.890196 0.494118 0 rg
-287.051 178.663 14 -0.219 re f
-287.051 178.886 14 -0.223 re f
-0.890196 0.498039 0 rg
-287.051 179.105 14 -0.219 re f
-287.051 179.323 14 -0.219 re f
-0.890196 0.501961 0 rg
-287.051 179.546 14 -0.223 re f
-287.051 179.765 14 -0.219 re f
-0.894118 0.501961 0 rg
-287.051 179.984 14 -0.219 re f
-0.894118 0.505882 0 rg
-287.051 180.206 14 -0.223 re f
-287.051 180.425 14 -0.219 re f
-0.894118 0.509804 0 rg
-287.051 180.648 14 -0.223 re f
-287.051 180.866 14 -0.219 re f
-0.894118 0.513726 0 rg
-287.051 181.085 14 -0.219 re f
-287.051 181.308 14 -0.223 re f
-0.898039 0.517647 0 rg
-287.051 181.527 14 -0.219 re f
-287.051 181.749 14 -0.223 re f
-0.898039 0.521569 0 rg
-287.051 181.968 14 -0.223 re f
-287.051 182.187 14 -0.219 re f
-0.898039 0.52549 0 rg
-287.051 182.409 14 -0.223 re f
-287.051 182.628 14 -0.219 re f
-0.898039 0.529412 0 rg
-287.051 182.851 14 -0.223 re f
-0.901961 0.529412 0 rg
-287.051 183.07 14 -0.223 re f
-0.901961 0.533333 0 rg
-287.051 183.288 14 -0.219 re f
-287.051 183.511 14 -0.223 re f
-0.901961 0.537255 0 rg
-287.051 183.73 14 -0.219 re f
-287.051 183.948 14 -0.219 re f
-0.901961 0.541176 0 rg
-287.051 184.171 14 -0.223 re f
-287.051 184.39 14 -0.219 re f
-0.905882 0.545098 0 rg
-287.051 184.613 14 -0.223 re f
-287.051 184.831 14 -0.219 re f
-0.905882 0.54902 0 rg
-287.051 185.05 14 -0.219 re f
-287.051 185.273 14 -0.223 re f
-0.905882 0.552941 0 rg
-287.051 185.491 14 -0.219 re f
-287.051 185.714 14 -0.223 re f
-0.905882 0.556863 0 rg
-287.051 185.933 14 -0.223 re f
-0.909804 0.556863 0 rg
-287.051 186.152 14 -0.219 re f
-0.909804 0.560784 0 rg
-287.051 186.374 14 -0.223 re f
-287.051 186.593 14 -0.219 re f
-0.909804 0.564706 0 rg
-287.051 186.812 14 -0.219 re f
-287.051 187.034 14 -0.223 re f
-0.909804 0.568627 0 rg
-287.051 187.253 14 -0.219 re f
-287.051 187.476 14 -0.223 re f
-0.909804 0.572549 0 rg
-287.051 187.695 14 -0.219 re f
-0.913725 0.572549 0 rg
-287.051 187.917 14 -0.223 re f
-0.913725 0.576471 0 rg
-287.051 188.136 14 -0.223 re f
-287.051 188.355 14 -0.219 re f
-0.913725 0.580392 0 rg
-287.051 188.573 14 -0.219 re f
-287.051 188.796 14 -0.223 re f
-0.913725 0.584314 0 rg
-287.051 189.015 14 -0.219 re f
-287.051 189.238 14 -0.223 re f
-0.917647 0.588235 0 rg
-287.051 189.456 14 -0.219 re f
-287.051 189.679 14 -0.223 re f
-0.917647 0.592157 0 rg
-287.051 189.898 14 -0.219 re f
-287.051 190.116 14 -0.219 re f
-0.917647 0.596078 0 rg
-287.051 190.339 14 -0.223 re f
-287.051 190.558 14 -0.219 re f
-0.917647 0.6 0 rg
-287.051 190.777 14 -0.219 re f
-0.921569 0.603922 0 rg
-287.051 190.999 14 -0.223 re f
-287.051 191.218 14 -0.219 re f
-0.921569 0.607843 0 rg
-287.051 191.441 14 -0.223 re f
-287.051 191.659 14 -0.219 re f
-0.921569 0.611765 0 rg
-287.051 191.878 14 -0.219 re f
-287.051 192.101 14 -0.223 re f
-0.921569 0.615686 0 rg
-287.051 192.32 14 -0.219 re f
-287.051 192.542 14 -0.223 re f
-0.92549 0.619608 0 rg
-287.051 192.761 14 -0.223 re f
-287.051 192.98 14 -0.219 re f
-0.92549 0.623529 0 rg
-287.051 193.202 14 -0.223 re f
-0.92549 0.627451 0 rg
-287.051 193.421 14 -0.219 re f
-287.051 193.64 14 -0.219 re f
-0.92549 0.631373 0 rg
-287.051 193.863 14 -0.223 re f
-287.051 194.081 14 -0.219 re f
-0.929412 0.635294 0 rg
-287.051 194.304 14 -0.223 re f
-287.051 194.523 14 -0.219 re f
-0.929412 0.639216 0 rg
-287.051 194.741 14 -0.219 re f
-287.051 194.964 14 -0.223 re f
-0.929412 0.643137 0 rg
-287.051 195.183 14 -0.219 re f
-0.929412 0.647059 0 rg
-287.051 195.402 14 -0.219 re f
-287.051 195.624 14 -0.219 re f
-0.933333 0.65098 0 rg
-287.051 195.843 14 -0.219 re f
-287.051 196.066 14 -0.223 re f
-0.933333 0.654902 0 rg
-287.051 196.284 14 -0.219 re f
-287.051 196.507 14 -0.223 re f
-0.933333 0.658824 0 rg
-287.051 196.726 14 -0.223 re f
-287.051 196.945 14 -0.219 re f
-0.933333 0.662745 0 rg
-287.051 197.167 14 -0.223 re f
-0.933333 0.666667 0 rg
-287.051 197.386 14 -0.219 re f
-0.937255 0.666667 0 rg
-287.051 197.605 14 -0.219 re f
-0.937255 0.670588 0 rg
-287.051 197.827 14 -0.223 re f
-287.051 198.046 14 -0.219 re f
-0.937255 0.67451 0 rg
-287.051 198.269 14 -0.223 re f
-287.051 198.488 14 -0.219 re f
-0.937255 0.678431 0 rg
-287.051 198.706 14 -0.219 re f
-0.937255 0.682353 0 rg
-287.051 198.929 14 -0.223 re f
-0.941176 0.682353 0 rg
-287.051 199.148 14 -0.219 re f
-0.941176 0.686275 0 rg
-287.051 199.366 14 -0.219 re f
-287.051 199.589 14 -0.223 re f
-0.941176 0.690196 0 rg
-287.051 199.808 14 -0.219 re f
-0.941176 0.694118 0 rg
-287.051 200.03 14 -0.223 re f
-287.051 200.249 14 -0.219 re f
-0.941176 0.698039 0 rg
-287.051 200.468 14 -0.219 re f
-287.051 200.691 14 -0.219 re f
-0.945098 0.701961 0 rg
-287.051 200.909 14 -0.219 re f
-0.945098 0.705882 0 rg
-287.051 201.132 14 -0.223 re f
-287.051 201.351 14 -0.223 re f
-0.945098 0.709804 0 rg
-287.051 201.57 14 -0.219 re f
-287.051 201.792 14 -0.223 re f
-0.945098 0.713726 0 rg
-287.051 202.011 14 -0.219 re f
-287.051 202.234 14 -0.223 re f
-0.94902 0.717647 0 rg
-287.051 202.452 14 -0.219 re f
-0.94902 0.721569 0 rg
-287.051 202.671 14 -0.219 re f
-287.051 202.894 14 -0.223 re f
-0.94902 0.72549 0 rg
-287.051 203.113 14 -0.219 re f
-0.94902 0.729412 0 rg
-287.051 203.335 14 -0.223 re f
-287.051 203.554 14 -0.223 re f
-0.94902 0.733333 0 rg
-287.051 203.773 14 -0.219 re f
-287.051 203.995 14 -0.223 re f
-0.952941 0.737255 0 rg
-287.051 204.214 14 -0.219 re f
-0.952941 0.741176 0 rg
-287.051 204.433 14 -0.219 re f
-287.051 204.655 14 -0.223 re f
-0.952941 0.745098 0 rg
-287.051 204.874 14 -0.219 re f
-287.051 205.097 14 -0.223 re f
-0.952941 0.74902 0 rg
-287.051 205.316 14 -0.219 re f
-0.952941 0.752941 0 rg
-287.051 205.534 14 -0.219 re f
-287.051 205.757 14 -0.223 re f
-0.956863 0.756863 0 rg
-287.051 205.976 14 -0.219 re f
-0.956863 0.760784 0 rg
-287.051 206.195 14 -0.219 re f
-287.051 206.417 14 -0.223 re f
-0.956863 0.764706 0 rg
-287.051 206.636 14 -0.219 re f
-287.051 206.859 14 -0.223 re f
-0.956863 0.768627 0 rg
-287.051 207.077 14 -0.219 re f
-0.956863 0.772549 0 rg
-287.051 207.3 14 -0.223 re f
-0.960784 0.772549 0 rg
-287.051 207.519 14 -0.223 re f
-0.960784 0.776471 0 rg
-287.051 207.738 14 -0.219 re f
-0.960784 0.780392 0 rg
-287.051 207.96 14 -0.223 re f
-287.051 208.179 14 -0.219 re f
-0.960784 0.784314 0 rg
-287.051 208.398 14 -0.219 re f
-287.051 208.62 14 -0.223 re f
-0.960784 0.788235 0 rg
-287.051 208.839 14 -0.219 re f
-0.960784 0.792157 0 rg
-287.051 209.062 14 -0.223 re f
-0.964706 0.792157 0 rg
-287.051 209.28 14 -0.219 re f
-0.964706 0.796078 0 rg
-287.051 209.499 14 -0.219 re f
-0.964706 0.8 0 rg
-287.051 209.722 14 -0.223 re f
-287.051 209.941 14 -0.219 re f
-0.964706 0.803922 0 rg
-287.051 210.159 14 -0.219 re f
-0.964706 0.807843 0 rg
-287.051 210.382 14 -0.223 re f
-287.051 210.601 14 -0.219 re f
-0.964706 0.811765 0 rg
-287.051 210.823 14 -0.223 re f
-0.968627 0.815686 0 rg
-287.051 211.042 14 -0.219 re f
-287.051 211.261 14 -0.219 re f
-0.968627 0.819608 0 rg
-287.051 211.484 14 -0.223 re f
-0.968627 0.823529 0 rg
-287.051 211.702 14 -0.219 re f
-287.051 211.925 14 -0.223 re f
-0.968627 0.827451 0 rg
-287.051 212.144 14 -0.223 re f
-0.968627 0.831373 0 rg
-287.051 212.363 14 -0.219 re f
-0.972549 0.831373 0 rg
-287.051 212.585 14 -0.223 re f
-0.972549 0.835294 0 rg
-287.051 212.804 14 -0.219 re f
-0.972549 0.839216 0 rg
-287.051 213.023 14 -0.219 re f
-287.051 213.245 14 -0.219 re f
-0.972549 0.843137 0 rg
-287.051 213.464 14 -0.219 re f
-0.972549 0.847059 0 rg
-287.051 213.687 14 -0.223 re f
-287.051 213.905 14 -0.219 re f
-0.972549 0.85098 0 rg
-287.051 214.128 14 -0.223 re f
-0.976471 0.854902 0 rg
-287.051 214.347 14 -0.223 re f
-287.051 214.566 14 -0.219 re f
-0.976471 0.858824 0 rg
-287.051 214.784 14 -0.219 re f
-0.976471 0.862745 0 rg
-287.051 215.007 14 -0.219 re f
-287.051 215.226 14 -0.219 re f
-0.976471 0.866667 0 rg
-287.051 215.448 14 -0.223 re f
-0.976471 0.870588 0 rg
-287.051 215.667 14 -0.219 re f
-287.051 215.89 14 -0.223 re f
-0.980392 0.87451 0 rg
-287.051 216.109 14 -0.219 re f
-0.980392 0.878431 0 rg
-287.051 216.327 14 -0.219 re f
-287.051 216.55 14 -0.223 re f
-0.980392 0.882353 0 rg
-287.051 216.769 14 -0.219 re f
-0.980392 0.886275 0 rg
-287.051 216.988 14 -0.219 re f
-287.051 217.21 14 -0.223 re f
-0.980392 0.890196 0 rg
-287.051 217.429 14 -0.219 re f
-0.980392 0.894118 0 rg
-287.051 217.652 14 -0.223 re f
-0.984314 0.894118 0 rg
-287.051 217.87 14 -0.219 re f
-0.984314 0.898039 0 rg
-287.051 218.089 14 -0.219 re f
-0.984314 0.901961 0 rg
-287.051 218.312 14 -0.223 re f
-0.984314 0.905882 0 rg
-287.051 218.53 14 -0.219 re f
-287.051 218.753 14 -0.223 re f
-0.984314 0.909804 0 rg
-287.051 218.972 14 -0.219 re f
-0.984314 0.913725 0 rg
-287.051 219.191 14 -0.219 re f
-287.051 219.413 14 -0.223 re f
-0.988235 0.917647 0 rg
-287.051 219.632 14 -0.219 re f
-0.988235 0.921569 0 rg
-287.051 219.855 14 -0.223 re f
-0.988235 0.92549 0 rg
-287.051 220.073 14 -0.219 re f
-287.051 220.292 14 -0.219 re f
-0.988235 0.929412 0 rg
-287.051 220.515 14 -0.223 re f
-0.988235 0.933333 0 rg
-287.051 220.734 14 -0.219 re f
-287.051 220.956 14 -0.223 re f
-0.988235 0.937255 0 rg
-287.051 221.175 14 -0.223 re f
-0.992157 0.941176 0 rg
-287.051 221.394 14 -0.219 re f
-0.992157 0.945098 0 rg
-287.051 221.616 14 -0.223 re f
-287.051 221.835 14 -0.219 re f
-0.992157 0.94902 0 rg
-287.051 222.054 14 -0.219 re f
-0.992157 0.952941 0 rg
-287.051 222.277 14 -0.223 re f
-287.051 222.495 14 -0.219 re f
-0.992157 0.956863 0 rg
-287.051 222.718 14 -0.223 re f
-0.992157 0.960784 0 rg
-287.051 222.937 14 -0.223 re f
-0.996078 0.964706 0 rg
-287.051 223.155 14 -0.219 re f
-287.051 223.378 14 -0.223 re f
-0.996078 0.968627 0 rg
-287.051 223.597 14 -0.219 re f
-0.996078 0.972549 0 rg
-287.051 223.816 14 -0.219 re f
-0.996078 0.976471 0 rg
-287.051 224.038 14 -0.219 re f
-287.051 224.257 14 -0.219 re f
-0.996078 0.980392 0 rg
-287.051 224.48 14 -0.223 re f
-0.996078 0.984314 0 rg
-287.051 224.698 14 -0.219 re f
-1 0.988235 0 rg
-287.051 224.921 14 -0.223 re f
-287.051 225.14 14 -0.223 re f
-1 0.992157 0 rg
-287.051 225.359 14 -0.219 re f
-1 0.996078 0 rg
-287.051 225.581 14 -0.223 re f
-1 1 0 rg
-287.051 225.8 14 -0.219 re f
-0 g
-0.5 w
-0 J
-0 j
-[] 0.0 d
-10 M q 1 0 0 1 0 226.050003 cm
-287.051 -0.25 14 -225.551 re S Q
-Q Q
 showpage
 %%Trailer
-count op_count sub {pop} repeat
-countdictstack dict_count sub {end} repeat
-cairo_eps_state restore
-%%EOF

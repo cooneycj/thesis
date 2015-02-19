@@ -1,9 +1,35 @@
 \begin{thebibliography}{}
 
+\bibitem[Aronov et~al., 2003]{Aronovetal2003a}
+Aronov, D., Reich, D.~S., Mechler, F., and Victor, J. (2003).
+\newblock Neural coding of spatial phase in v1 of the macaque monkey.
+\newblock {\em Journal of Neurophysiology}, 89:3304--3327.
+
+\bibitem[Averbeck et~al., 2006]{AverbeckEtAl2006a}
+Averbeck, B.~B., Latham, P.~E., and Pouget, A. (2006).
+\newblock Neural correlations, population coding and computation.
+\newblock {\em Nat Rev Neurosci}, 7(5):358--366.
+
+\bibitem[Bair, 1999]{Bair1999a}
+Bair, W. (1999).
+\newblock Spike timing in the mammalian visual system.
+\newblock {\em Current Opinion in Neurobiology}.
+
 \bibitem[Bender and Canfield, 1978]{BenderCanfield1978a}
 Bender, E.~A. and Canfield, E.~R. (1978).
 \newblock The asymptotic number of labeled graphs with given degree sequences.
 \newblock {\em Journal of Combinatorial Theory, Series A}, 24(3):296--307.
+
+\bibitem[Berry and Meister, 1998]{BerryMeister1998a}
+Berry, M.~J. and Meister, M. (1998).
+\newblock Refractoriness and neural precision.
+\newblock {\em The Journal of Neuroscience}, 18(6):2200--2211.
+
+\bibitem[Bi and Poo, 1998]{BiPoo1998a}
+Bi, G. and Poo, M. (1998).
+\newblock Synaptic modifications in cultured hippocampal neurons: Dependence on
+  spike timing, synaptic strength, and postsynaptic cell type.
+\newblock {\em Journal of Neuroscience}, 18:10464--10472.
 
 \bibitem[Bollob{\'a}s, 1980]{Bollobas1980a}
 Bollob{\'a}s, B. (1980).
@@ -22,6 +48,13 @@ Du~Bois-Reymond, E.~H. (1884).
 \newblock {\em Untersuchungen {\"u}ber thierische elektricit{\"a}t: bd., 1.
   abth}, volume~2.
 \newblock G. Reimer.
+
+\bibitem[Engel et~al., 1992]{EngelEtAl1992a}
+Engel, A.~K., K{\"o}nig, P., Kreiter, A.~K., Schillen, T.~B., and Singer, W.
+  (1992).
+\newblock Temporal coding in the visual cortex: new vistas on integration in
+  the nervous system.
+\newblock {\em Trends in neurosciences}, 15(6):218--226.
 
 \bibitem[Gillespie and Houghton, 2011]{GillespieHoughton2009a}
 Gillespie, J. and Houghton, C. (2011).
@@ -50,20 +83,44 @@ Hopfield, J. and Herz, A. (1995).
   with coupled integrate-and-fire neurons.
 \newblock {\em Proceedings of the National Academy of Sciences}, 92:6655--6662.
 
-\bibitem[Houghton and Sen, 2008]{HoughtonSen2008}
-Houghton, C. and Sen, K. (2008).
+\bibitem[Hopfield, 1982]{Hopfield1982a}
+Hopfield, J.~J. (1982).
+\newblock Neural networks and physical systems with emergent collective
+  computational abilities.
+\newblock {\em Proceedings of the national academy of sciences},
+  79(8):2554--2558.
+
+\bibitem[Hopkins and Bass, 1981]{HopkinsBass1981a}
+Hopkins, C.~D. and Bass, A.~H. (1981).
+\newblock Temporal coding of species recognition signals in an electric fish.
+\newblock {\em Science}, 212(4490):85--87.
+
+\bibitem[Houghton and Kreuz, 2012]{HoughtonKreuz2012a}
+Houghton, C. and Kreuz, T. (2012).
+\newblock On the efficient calculation of van rossum distances.
+\newblock {\em Network}, 23:48--58.
+
+\bibitem[Houghton and Sen, 2008a]{HoughtonSen2008a}
+Houghton, C. and Sen, K. (2008a).
+\newblock A new multi-neuron spike-train metric.
+\newblock {\em Neural Computation}, 20(6):1495--1511.
+
+\bibitem[Houghton and Sen, 2008b]{HoughtonSen2008}
+Houghton, C. and Sen, K. (2008b).
 \newblock A new multineuron spike train metric.
 \newblock {\em Neural Computation}, 20(6):1495--1511.
+
+\bibitem[Houghton and Victor, 2012]{HoughtonVictor2009a}
+Houghton, C. and Victor, J. (2012).
+\newblock Spike rates and spike metrics.
+\newblock In Kriegeskorte, N. and Kreiman, G., editors, {\em Visual Population
+  Codes: Toward a Common Multivariate Framework for Cell Recording and
+  Functional Imaging}, chapter~8, pages 391--416. MIT Press, Cambridge, MA.
 
 \bibitem[Humphries, 2011]{Humphries2011a}
 Humphries, M.~D. (2011).
 \newblock Spike-train communities: Finding groups of similar spike trains.
 \newblock {\em Journal of Neuroscience}, 31:2321--2336.
-
-\bibitem[II and Meister, 1998]{BerryMeister1998a}
-II, M. J.~B. and Meister, M. (1998).
-\newblock Refractoriness and neural precision.
-\newblock {\em The Journal of Neuroscience}, 18(6):2200--2211.
 
 \bibitem[Izhikevich, 2004]{Izhikevich2004a}
 Izhikevich, E.~M. (2004).
@@ -76,7 +133,24 @@ Julienne, H. and Houghton, C. (2013).
 \newblock A simple algorithm for averaging spike trains.
 \newblock {\em The Journal of Mathematical Neuroscience}, 3(1):1--14.
 
-\bibitem[Kreuz et~al., 2009]{Kreuzetal2009}
+\bibitem[Kijima and Komoribayashi, 1998]{KijimaKomoribayashi1998a}
+Kijima, M. and Komoribayashi, K. (1998).
+\newblock A markov chain model for valuing credit risk derivatives.
+\newblock {\em The Journal of Derivatives}, 6(1):97--108.
+
+\bibitem[Knight, 1972]{Knight1972a}
+Knight, B.~W. (1972).
+\newblock The relationship between the firing rate of a single neuron and the
+  level of activity in a population of neurons experimental evidence for
+  resonant enhancement in the population response.
+\newblock {\em The Journal of general physiology}, 59(6):767--778.
+
+\bibitem[Kolmogorov, 1933]{Kolmogorov1933a}
+Kolmogorov, A.~N. (1933).
+\newblock Sulla determinazione empirica di una legge di distribuzione.
+\newblock {\em Giorn. Ist. Ital. Attuari}, 4:1--11.
+
+\bibitem[Kreuz et~al., 2009]{KreuzEtAl2009a}
 Kreuz, T., Chicharro, D., Andrzejak, R.~G., Haas, J.~S., and Abarbanel, H.~D.
   (2009).
 \newblock Measuring multiple spike train synchrony.
@@ -88,6 +162,12 @@ Kreuz, T., Chicharro, D., Greschner, M., and Andrzejak, R.~G. (2011).
   synchrony.
 \newblock {\em Journal of Neuroscience Methods}, 195(1):92 -- 106.
 
+\bibitem[Kreuz et~al., 2013]{KreuzEtAl2012a}
+Kreuz, T., Chicharro, D., Houghton, C., Andrzeja, R.~G., and Mormann, F.
+  (2013).
+\newblock Monitoring spike train synchrony.
+\newblock {\em Journal of Neurophysiology}, 109:1457--1472.
+
 \bibitem[Kreuz et~al., 2007]{KreuzEtAl2007a}
 Kreuz, T., Haas, J.~S., Morelli, A., Abarbanel, H. D.~I., and Politi, A.
   (2007).
@@ -98,7 +178,7 @@ Kreuz, T., Haas, J.~S., Morelli, A., Abarbanel, H. D.~I., and Politi, A.
 Lewicki, M. (1998).
 \newblock A review of methods for spike sorting: the detection and
   classification of neural action potentials.
-\newblock {\em Network: Computational Neural Systems}, (9):53--78.
+\newblock {\em Network: Computational Neural Systems}, 9(4):R53--R78.
 
 \bibitem[Massey~Jr, 1951]{Massey1951a}
 Massey~Jr, F.~J. (1951).
@@ -106,11 +186,21 @@ Massey~Jr, F.~J. (1951).
 \newblock {\em Journal of the American statistical Association},
   46(253):68--78.
 
+\bibitem[Mulansky et~al., 2015]{MulanskyEtAl2015a}
+Mulansky, M., Bozanic, N., Sburlea, A., and Kreuz, T. (2015).
+\newblock Spike train synchrony: Measures and algorithms.
+\newblock {\em IEEE Trans. Neural Networks (under review)}.
+
 \bibitem[Narayan et~al., 2006]{NarayanEtAl2006b}
 Narayan, R., Gra{\~{n}}a, G., and Sen, K. (2006).
 \newblock Distinct time scales in cortical discrimination of natural sounds in
   songbirds.
 \newblock {\em Journal of Neurophysiology}, 96:252--258.
+
+\bibitem[Nelder and Mead, 1965]{NelderMead1965a}
+Nelder, J.~A. and Mead, R. (1965).
+\newblock A simplex method for function minimization.
+\newblock {\em The Computer Journal}, 7(4):308--313.
 
 \bibitem[Newman, 2006a]{Newman2006b}
 Newman, M.~E.~J. (2006a).
@@ -134,20 +224,10 @@ Newman, M. E.~J. and Girvan, M. (2004).
 \newblock Finding and evaluating community structure in networks.
 \newblock {\em Physical Review}, 69:026113.
 
-\bibitem[Olshausen and Field, 2004a]{OlshausenField2004}
-Olshausen, B.~A. and Field, D.~J. (2004a).
-\newblock Sparse coding of sensory inputs.
-\newblock {\em Current Opinion in Neurobiology}, 14:481--487.
-
-\bibitem[Olshausen and Field, 2004b]{OlshausenField2004a}
-Olshausen, B.~A. and Field, D.~J. (2004b).
+\bibitem[Olshausen and Field, 2004]{OlshausenField2004a}
+Olshausen, B.~A. and Field, D.~J. (2004).
 \newblock Sparse coding of sensory inputs.
 \newblock {\em Current Opinion in Neurobiology}, 14(4):481--487.
-
-\bibitem[Paiva et~al., 2010]{PaivaParkPrincipe2010}
-Paiva, A.~C., Park, I., and Pr{\'\i}ncipe, J.~C. (2010).
-\newblock Comparision of binless spike train measures.
-\newblock {\em Neural Computing and Applications}, 19:405--419.
 
 \bibitem[Pizzuti, 2008]{Pizzuti2008a}
 Pizzuti, C. (2008).
@@ -156,10 +236,23 @@ Pizzuti, C. (2008).
 \newblock In {\em Parallel Problem Solving from Nature--PPSN X}, pages
   1081--1090. Springer.
 
+\bibitem[Ramon~y Cajal, 1995]{Cajal1894a}
+Ramon~y Cajal, S. (1995).
+\newblock {\em Textura del sistema Nervioso del Hombre y los Vertebrados
+  (1894-1904); Histology of the Nervous System of man and vertebrates (English
+  translation N. Swanson \& L.W. Swanson)}.
+\newblock Oxford University Press.
+
 \bibitem[Schreiber, 2000]{Schreiber2000a}
 Schreiber, T. (2000).
 \newblock Measuring information transfer.
 \newblock {\em Phys. Rev. Lett.}, 85:461--464.
+
+\bibitem[Sen et~al., 2001]{SenEtAl2001a}
+Sen, K., Theunissen, F.~E., and Doupe, A.~J. (2001).
+\newblock Feature analysis of natural sounds in the songbird auditory
+  forebrain.
+\newblock {\em Journal of Neurophysiology}, 86:1445--1458.
 
 \bibitem[Shannon, 1948]{Shannon1948a}
 Shannon, C.~E. (1948).
@@ -172,21 +265,27 @@ Singh, A. and Lesica, N.~A. (2010).
   stregth and dynamics of connections in neuronal circuits.
 \newblock {\em PLOS Computational Biology}, 6(12).
 
+\bibitem[Smirnoff, 1939]{Smirnoff1939a}
+Smirnoff, N. (1939).
+\newblock Sur les {\'e}carts de la courbe de distribution empirique.
+\newblock {\em Matematicheskii Sbornik}, 48(1):3--26.
+
+\bibitem[Song et~al., 2000]{SongEtAl2000a}
+Song, S., Miller, K., and Abbott, L. (2000).
+\newblock Competitive hebbian learning through spike-timing-dependent synaptic
+  plasticity.
+\newblock {\em Nature Neuroscience}, 3:919--926.
+
 \bibitem[Strong et~al., 1998]{BialekEtAl1998a}
 Strong, S.~P., Koberle, R., de~Ruyter~van Steveninck, R.~R., and Bialek, W.
   (1998).
 \newblock Entropy and information in neural spike trains.
 \newblock {\em Physics Review Letters}, 80(1):197--200.
 
-\bibitem[van Rossum, 2001a]{VanRossum2001a}
-van Rossum, M. (2001a).
+\bibitem[van Rossum, 2001]{VanRossum2001a}
+van Rossum, M. (2001).
 \newblock A novel spike distance.
 \newblock {\em Neural Computation}, 13:751--763.
-
-\bibitem[van Rossum, 2001b]{vanRossum2001}
-van Rossum, M. (2001b).
-\newblock A novel spike distance.
-\newblock {\em Neural Computation}, 13(4):751--763.
 
 \bibitem[Victor and Purpura, 1996]{VictorPurpura1996a}
 Victor, J.~D. and Purpura, K.~P. (1996).
@@ -194,14 +293,8 @@ Victor, J.~D. and Purpura, K.~P. (1996).
   metric-space analysis.
 \newblock {\em Journal of Neurophysiology}, 76(2):1310--1326.
 
-\bibitem[Victor and Purpura, 1997a]{VictorPurpura1997a}
-Victor, J.~D. and Purpura, K.~P. (1997a).
-\newblock Metric-space analysis of spike trains: theory, algorithms and
-  application.
-\newblock {\em Network: Computation in Neural Systems}, 8(2):127--164.
-
-\bibitem[Victor and Purpura, 1997b]{VictorPurpura1997}
-Victor, J.~D. and Purpura, K.~P. (1997b).
+\bibitem[Victor and Purpura, 1997]{VictorPurpura1997a}
+Victor, J.~D. and Purpura, K.~P. (1997).
 \newblock Metric-space analysis of spike trains: theory, algorithms and
   application.
 \newblock {\em Network: Computation in Neural Systems}, 8(2):127--164.

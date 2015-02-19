@@ -1,4 +1,4 @@
-Sparse coding has been observed in neurons in the visual tract \cite{OlshausenField2004}, a simple model is proposed for such neurons.
+Sparse coding has been observed in neurons in the visual tract \citep{OlshausenField2004a}, a simple model is proposed for such neurons.
 
 It is unlikely that a neuron is ever truly ``off'', so it is assumed that a neuron has a base-firing state that will be referred to as the ``off-state''.  For the sake of simplicity, it is assumed that a neuron in such an ``off-state'' would have a constant firing rate, $\lambda_d$.  Correspondingly, for sparse-coding a neuron must have a higher firing-rate when the feature that it codes for is present; this firing rate, $\lambda_u$, is also taken to be constant.
 
@@ -60,6 +60,8 @@ since the expected time for being in the up-state is simply $1/d$ and the expect
 \multiput(8,35)(5,0){28}{\line(1,0){2}}
 %\multiput(8,15)(5,0){28}{\line(1,0){2}}
 \end{picture}
+\bigskip
+\rule{35em}{0.5pt}
 \caption{ \label{model}An illustration of the model firing rate, and an associated output spike train.  The process has two states, an up-state and a down-state, and has Poisson transition rates: $u$ from down to up, and $d$ from up to down.  Each state has an associated Poisson firing rate: $\lambda_u$ when up and $\lambda_d$ when down.  }
 \end{center}
 \end{figure}
@@ -67,43 +69,50 @@ since the expected time for being in the up-state is simply $1/d$ and the expect
 
 \section{Estimating the firing rate $r(t)$}
 
-With the model for the firing rate as above, it is possible to explicitly calculate the probability of being in the up-state for the time following a spike.  In the initial setting, where $\lambda_d$ is set to zero, then it is known when there is a spike that the rate is in the up-state, so at the time of spiking $t_0$ the probability $p(t_0)$ of being in the up-state is equal to one.  For the estimate of the rate, $\tilde{r}(t)$, this is reflected by setting $\tilde{r}(t_0) = \lambda_u$.  Then, the probability is reset every time there is a spike, so it is only required to calculate the probability of being in the up-state given that there has been no spike since the time $t_0$ of the last spike.  
+With the model for the firing rate as above, it is possible to explicitly calculate the probability of being in the up-state for the time following a spike.  In the initial setting, where $\lambda_d$ is set to zero, then it is known that when there is a spike that the rate is in the up-state, so at the time of spiking $t_0$ the probability $p(t_0)$ of being in the up-state is equal to one.  
 
-It is possible, using Baye's Theorem, to calculate a first approximation of the probability of being in the up-state at a time $t+\Delta t$, given a spike at time $t=t_0$ for small $\Delta t$.
+For the estimate of the rate, $\tilde{r}(t)$, this is reflected by setting $\tilde{r}(t_0) = \lambda_u$.  The probability is reset  to one every time there is a spike, so it is only required to calculate the probability of being in the up-state given that there has been no spike since the time, $t_0$, of the last spike.  
+
+It is possible, using Bayes' Theorem, to calculate a first approximation of the probability of being in the up-state at a time $t+\Delta t$, given a spike at time $t=t_0$ for small $\Delta t$.
 
  Let $X=$ up at $t=t_0+\Delta t$, $Y=$ no spike since $t=t_0$ and $Z=$ spike at $t=t_0$. Then,
 \begin{equation}\label{p}
-P(X|Y|Z) = \frac{P(Y|X|Z)P(X|Z)}{P(Y|Z)} = \frac{(1-\lambda_u \Delta t) (1-d \Delta t)}{1-r\Delta t}
+P(X|Y|Z) = \frac{P(Y|X,Z)P(X|Z)}{P(Y|Z)} = \frac{(1-\lambda_u \Delta t) (1-d \Delta t)}{1-r\Delta t}
 \end{equation}
 
 Then, it is possible to calculate the first approximation to the probability  of being up at time $t$, by letting $t_0=0, \,\Delta t =t/n$.
 
 \begin{equation}
+P(\mbox{up at } t | Y , Z)   =  \lim_{n \rightarrow \infty}\prod_{k=1}^n \frac{(1-\lambda_ut/n)(1-dt/n)}{1-rt/n}
+\end{equation} 
+in the limit as $n$ goes to infinity all terms smaller than $1/n$ are disregarded, so:
+\begin{equation}
 \begin{split}
-P(\mbox{up at } t | Y | Z)   &=  \lim_{n \rightarrow \infty}\prod_{k=1}^n \frac{(1-\lambda_ut/n)(1-dt/n)}{1-rt/n}  \\
-&= \lim_{n \rightarrow \infty} \prod_{k=1}^n \left(1+ t\frac{r-\lambda_u-d}{n}\right) \\
+P(\mbox{up at } t | Y , Z) &= \lim_{n \rightarrow \infty} \prod_{k=1}^n \left(1+ t\frac{r-\lambda_u-d}{n}\right) \\
 & = \lim_{n \rightarrow \infty} \left(1 + t\frac{r-\lambda_u -d}{n} \right)^n \\
-&=  e^{(r-\lambda_u-d)t}
 \end{split}
 \end{equation}
+This is the famous limit form of calculating the exponential function, so:
+\begin{equation}
+P(\mbox{up at } t | Y,Z) = \exp [ (r-\lambda_u-d) ]
+\end{equation} 
 
 Recalling from equation \ref{lam} that $\lambda_u = r(u+d)/u$, get:
 \begin{equation}
 p=e^{-\frac{d(r+u)}{u}(t-t_0)}
 \end{equation}
 
-
-Comparing this to the exponential kernel in the Van Rossum metric \cite{vanRossum2001}, then:
+Comparing this to the exponential kernel in the Van Rossum metric \citep{VanRossum2001a}, then:
 \begin{equation}
 \tau = \frac{u}{d(r+u)}
 \end{equation}
 
-This is clearly just the first approximation, since it does not take into account the possibility of the model switching into the down-state and back up.  To calculate the full probability, let $y(t) = P(\mbox{up at } t | Y | Z)$, with $Y,Z$ as in equation \ref{p} above.  Then:
+This is clearly just the first approximation, since it does not take into account the possibility of the model switching into the down-state and back up.  To calculate the full probability, let $y(t) = P(\mbox{up at } t | Y , Z)$, with $Y,Z$ as in equation \ref{p} above.  Then:
 
 \begin{equation}
 \begin{split}
-y(t+h) &=  y(t)P(\mbox{staying in up-state} | \mbox{up at t}|Y|Z)  \\
-& + (1-y(t))P(\mbox{switching up} | \mbox{down at t}|Y|Z)\\
+y(t+h) &=  y(t)P(\mbox{staying in up-state} | \mbox{up at t}|Y,Z)  \\
+& + (1-y(t))P(\mbox{switching up} | \mbox{down at t}|Y,Z)\\
 &\\
 &= y(t)\left( \frac{(1-dh)(1-\lambda_uh)}{1-rh} \right) + (1-y(t)) \left(\frac{(uh)(1)}{1-rh}  \right)\\
 &\\
@@ -114,6 +123,8 @@ y(t+h) &=  y(t)P(\mbox{staying in up-state} | \mbox{up at t}|Y|Z)  \\
 \begin{figure}[b!]
 \begin{center}
 \resizebox{0.75\textwidth}{!}{\input{images/tauoptoverpred}}
+\bigskip
+\rule{35em}{0.5pt}
 \caption{\label{predovertauopt} This figure shows the ratio of the predicted value for $\tau$ in an exponential model over the empirical optimised value $\tau_o$.}
 \end{center}
 \end{figure}
@@ -121,7 +132,7 @@ y(t+h) &=  y(t)P(\mbox{staying in up-state} | \mbox{up at t}|Y|Z)  \\
 This leads to the following ordinary differential equation:
 
 \begin{equation}
-y^\prime(t) = \left( r - d - u - \lambda_u \right)y(t) + u
+\frac{dy}{dt}(t) = \left( r - d - u - \lambda_u \right)y(t) + u
 \end{equation}
 
 This ODE has general solution:
@@ -139,11 +150,13 @@ Letting $\lambda_u = r(u+d)/u$, get:
 y(t) = \frac{d(u+r)}{u^2 + d(u+r)} e^{-\frac{u^2+d(u+r)}{u}(t-t_0)} + \frac{u^2}{u^2+ d(u+r)}
 \end{equation}
 
-This solution was tested against a standard exponential model, which was minimised over $\tau$ with a downhill simplex method.  Figure \ref{predovertauopt} shows how the ratio of the predicted value for $\tau$ over the optimised value rises towards one as the value for $u$ increases.  This suggests that, while this method is clearly not completely correct, that it is at least a reasonable approximation.
+This solution was tested against a standard exponential model, which was minimised over $\tau$ with a downhill simplex method \citep{NelderMead1965a}.  Downhill simplex is a non-parametric minimisation algorithm that searches the solution space through reflection and stretching of a simplex.
+
+Figure \ref{predovertauopt} shows how the ratio of the predicted value for $\tau$ over the optimised value rises towards one as the value for $u$ increases.  This suggests that, while this method is clearly not completely correct, that it is at least a reasonable approximation.
 
 \section{Markov Process}
 
-The switching of the up and down states defines a Continuous-time Markov Chain (CTMC).  That is, the future of the process does not depend on the past at all, merely whether the model is currently in the up-state or the down-state.
+The transition between the up and down states is defined only by the switching rates, and not the rate history. In this way, the rate process is a continuous-time Markov chain (CTMC).  That is, the future of the process does not depend on the past at all, merely whether the model is currently in the up-state or the down-state.
 
 By the theory of Markov Chains, this process can be described by the simultaneous differential equations:
 \begin{equation}
@@ -161,14 +174,18 @@ where
 Q =  \begin{pmatrix} -d & d \\ u & -u \end{pmatrix}
 \end{equation}
 
-Then the solution to the matrix $P(t)$ is simply the exponential, $e^{tQ}$ of the transition matrix $Q$. 
+Then the solution to the matrix $P(t)$ is simply the exponential of the transition matrix, $Q$:
+\begin{equation}
+P(t) = e^{tQ}.
+\end{equation}
 
+The solution to the Markov chain of rates is then:
 \begin{equation}
 P(t) = e^{tQ} = \begin{pmatrix} \frac{u}{u+d}+\frac{d}{u+d}e^{-(u+d)t} & \frac{d}{u+d} - \frac{d}{u+d}e^{-(u+d)t} \\ \frac{u}{u+d} - \frac{u}{u+d}e^{-(u+d)t} & \frac{d}{u+d} + \frac{u}{u+d}e^{-(u+d)t}\end{pmatrix}
 \end{equation}
+Thus, if there were no information about the rate of spiking in the two different states, but 
 
-
-To calculate the probability of being in the up-state at a time $t$ after a spike at $t=0$, provided there has been no spike since $t=0$, it suffices to calculate the exponential of the transition matrix $Q_s$ below:
+In order to calculate the probability of being in the up-state at a time $t$ after a spike at $t=0$, it is necessary to introduce another state to the Markov chain.  At any time $t$ between two spikes, $t=0$ and $t=t_1$ say, there is implicit knowledge that there was a spike at time $t=0$, and that there has not been a spike since.  If the spiking state is treated as the end of the particular Markov chain, as a default is in financial mathematics \citep{KijimaKomoribayashi1998a}, then, provided there has been no spike since $t=0$, it suffices to calculate the exponential of the transition matrix $Q_s$ below:
 
 \begin{equation}
 Q_s = \begin{pmatrix} -d-\lambda_u & d & \lambda_u \\ u & -u & 0 \\ 0 & 0 & 0\end{pmatrix}
@@ -197,6 +214,8 @@ The third state of the Markov chain described by the transition matrix $Q_s$ is 
 \put(25,47.5){\vector(4,-3){21}}
 \put(95,47.5){\vector(-4,-3){21}}
 \end{picture}
+\bigskip
+\rule{35em}{0.5pt}
 \caption{\label{markov} An illustration of the state space of the Markov chain at any point in time between two spikes.}
 \end{center}
 \end{figure}
@@ -208,7 +227,7 @@ P(t)  = \begin{pmatrix} Ae^{-\alpha t} + (1-A)e^{-\beta t} & Be^{-\alpha t} - Be
 Ce^{-\alpha t} - Ce^{-\beta t} & (1-A)e^{-\alpha t} +  Ae^{-\beta t} & p_{23}(t) \\
  0 & 0 & 1 \end{pmatrix}
 \end{equation}
-where $-\alpha,-\beta$ are the roots to the characteristic polynomial of $Q_s$.
+where $-\alpha,-\beta$ are the roots to the characteristic polynomial of $Q_s$, and $p_{13}(t), p_{23}(t)$ are such that their rows sum to one.
 \begin{equation}
 \begin{split}
 -\alpha = \frac{-(u+d+\lambda_u) + \sqrt{(u-d-\lambda_u)^2 + 4ud}}{2}\\
@@ -362,7 +381,7 @@ r(t) = \frac{\alpha(\beta - r(0))e^{-\alpha t} + \beta(r(0)-\alpha)e^{-\beta t}}
 
 \subsection{Change in probability when a spike arrives}
 
-In the previous section, the rate function, $r(t)$, and the pdf of the ISI distribution, $p_{ISI}(t)$, were calculated, given that the probability of being in the up-state at the time of the last spike, $p_0$, is known.  However, it is necessary to reevaluate the probability at the time a spike arrives.
+In the previous section, the rate function, $r(t)$, and the probability density function of the ISI distribution, $p_{ISI}(t)$, were calculated, given that the probability of being in the up-state at the time of the last spike, $p_0$, is known.  However, it is necessary to reevaluate the probability at the time a spike arrives.
 
 If the probability of being in the up-state before the spike is $p_u(t)$, then the presence of a spike provides information on the state of the model. By Baye's Theorem:
 
@@ -393,11 +412,15 @@ r(t) \rightarrow (\lambda_u +\lambda_d) - \frac{\lambda_u\lambda_d}{r(t)}
 
 \begin{figure}[htb]
 \input{images/estrate}
+\bigskip
+\rule{35em}{0.5pt}
 \caption{An example of the estimated rate, $r(t)$, for a bimodal Poisson spike train.  For this example, $u=d=5$, $\lambda_u=50$ and $\lambda_d=5$.  In this example, the initial rate was set randomly between $\alpha$ and $\beta$.}
 \end{figure}
 
 \begin{figure}
 \input{images/estrate2}
+\bigskip
+\rule{35em}{0.5pt}
 \caption{An example of the estimated rate, $r(t)$, for a bimodal Poisson spike train.  For this example, $u=d=5$, $\lambda_u=50$ and $\lambda_d=5$.  In this example, the initial rate was set to zero and it subsequently set itself.}
 \end{figure}
 
@@ -454,23 +477,24 @@ C_0 = 2p(\lambda_2-\lambda_1), \, D_0 = 2(1-p)(\lambda_2-\lambda_1)
 
 
 \section{Testing on data}
-The previous result allows for testing on real data.  The data used in this report is the data used in \cite{NarayanEtAl2006b}.  An electrode was placed in L1 of anaesthetised zebra finches, and the birds were presented with 20 natural stimuli ten times each.  As the model does not account for the refractory period of neurons, a well-documented feature of neurons \cite{OlshausenField2004a} , the ten presentations of each stimulus are overlaid to counter the impact of the refractory period \cite{BerryMeister1998a}. 
+The previous result allows for testing on real data.  The data used in this report is the data used in \citep{NarayanEtAl2006b}.  An electrode was placed in L1 of anaesthetised zebra finches, and the birds were presented with 20 natural stimuli ten times each.  As the model does not account for the refractory period of neurons, a well-documented feature of neurons \citep{OlshausenField2004a} , the ten presentations of each stimulus are overlaid to counter the impact of the refractory period \citep{BerryMeister1998a}. 
 
-The inter-spike intervals (ISIs) were then aggregated across 16 of the 20 stimuli, to give a representation of a typical ISI distribution for each neuron.  The hyperexponential distribution, $H_2$, was trained on the ISI distribution of the 16 stimuli by minimising the statistic $D_n$ of the Kolmogorov-Smirnov test \cite{Massey1951a} by downhill-simplex search.  Then the remaining four stimuli were aggregated across the ten trials to form a test ISI distribution upon which the calculated minimum hyperexponential distribution was tested using the Kolmogorov-Smirnov test for goodness-of-fit.
+The inter-spike intervals (ISIs) were then aggregated across 16 of the 20 stimuli, to give a representation of a typical ISI distribution for each neuron.  The hyperexponential distribution, $H_2$, was trained on the ISI distribution of the 16 stimuli by minimising the statistic $D_n$ of the Kolmogorov-Smirnov test \citep{Massey1951a} by downhill-simplex search.  Then the remaining four stimuli were aggregated across the ten trials to form a test ISI distribution upon which the calculated minimum hyperexponential distribution was tested using the Kolmogorov-Smirnov test for goodness-of-fit.
 
 \begin{figure}
 \input{images/ksdists}
+\bigskip
+\rule{35em}{0.5pt}
 \caption{\label{exphehe3} The Kolmogorov-Smirnov test statistic $D_n$ for (a) the exponential distribution, (b) the hyperexponential distribution with two modes, and (c) the hyperexponential distribution with three modes.  The mean of the $p<0.05$ critical value is indicated by the broken line.}
 \end{figure}
 
-The Kolmogorov-Smirnov (KS) test is a nonparametric goodness-of-fit test introduced in \cite{Massey1951a}.  It is used to compare a model probability distribution to a sample.  The KS statistic is the $d_{\infty}$ metric between the cumulative distribution function of the model distribution and the empirical distribution function of the data.
+The Kolmogorov-Smirnov (KS) test is a nonparametric goodness-of-fit test introduced in \citep{Massey1951a}, based on results from \citet{Kolmogorov1933a} and \citet{Smirnoff1939a}.  It is used to compare a model probability distribution to a sample.  The KS statistic is the $d_{\infty}$ metric between the cumulative distribution function of the model distribution and the empirical distribution function of the data.
 \begin{equation}
 D_n = \sup_x \left| \hat{F}_n(x) - F(x) \right|
 \end{equation}
 where $\hat{F}_n(x)$ is the empirical distribution function of the data set of $n$ points and $F(x)$ is the cumulative distribution function of the proposed probability distribution.
 
 Then the ISI distributions were tested against the hyperexponential distribution with both two and three modes $(H_2$ and $H_3)$.  As the exponential distribution is a special case of the hyperexponential distribution, and $H_2$ is a special case of $H_3$ ,it is clear that there should be an improvement with each step.  What was observed, as shown in figure \ref{exphehe3}, was that the $H_2$ distribution was a drastic improvement on the exponential distribution, but the the improvement of $H_3$ over $H_2$ was insignificant. 
-
 
 
 At the $p<0.05$ significance level, only three out of $24$ neurons were not rejected by the Kolmogorov-Smirnov test for both the $H_2$ and the $H_3$ distributions. This could be due to the number of data points, which would make the KS test extremely rigorous.  It is also notable that this model is simply a first approximation to a neuron model; the KS statistic serves as a metric to determine goodness-of-fit rather than fitting the exact ISI distribution.
