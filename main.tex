@@ -1,5 +1,14 @@
 \documentclass[12pt]{report}
 \usepackage[utf8]{inputenc}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={210mm,297mm},
+ left=45mm,
+ right=35mm,
+ top=30mm,
+ bottom=40mm,
+ }
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage[square]{natbib}
@@ -20,8 +29,8 @@
 	{\large Trinity College Dublin} \bigskip\\
 	{\includegraphics[width=2in]{tcd.png}}
 }
-\author{Cathal Cooney}
-\date{2015-2-19}
+\author{Cathal Cooney\\ \bigskip A thesis submitted for the degree of Doctor of Philosophy.}
+\date{20th February 2015}
 
 \begin{document}
 \pagenumbering{roman}
@@ -34,7 +43,8 @@
 \chapter*{Declaration}
 I declare that this thesis has not been submitted as an exercise for a degree at this or any other university and it is entirely my own work.
 
-\bigskipI agree to deposit this thesis in the University's open access institutional repository or allow the library to do so on my behalf, subject to Irish Copyright Legislation and Trinity College Library conditions of use and acknowledgement.
+\bigskip
+I agree to deposit this thesis in the University's open access institutional repository or allow the library to do so on my behalf, subject to Irish Copyright Legislation and Trinity College Library conditions of use and acknowledgement.
 
 \bigskip
 
@@ -54,8 +64,23 @@ Cathal Cooney
 
 20th February 2015
 
-%
-%\chapter*{Acknowledgements}
+\chapter*{Acknowledgements}
+I would like to thank my supervisor Conor Houghton for all his expertise and support throughout the course of my study.  Additionally, without the support of the School of Maths, this thesis would not have been possible.
+
+I would also like to thank the Irish Research Council for funding me in these studies.
+
+I would like to thank my family and friends.  My parents and younger brother Daniel were a great source of support.  Finally, I would like to thank Donna, who was always there for me.
+
+\chapter*{Summary}
+This thesis focuses on the study of spike trains, the information carrying signals conveyed by neurons in the nervous system.
+
+Spiking data from songbirds from \citep{NarayanEtAl2006b} was used prominently in this thesis.  Multi-unit data for Chapter Three was simulated using a model network from \citep{HoughtonSen2008a}.
+
+In Chapter Two, several clustering algorithms are introduced.  The eigenvalue algorithm of \citep{Newman2006b} to cluster networks was used prominently. This algorithm was combined with a measure called the incremental mutual information \citep{SinghLesica2010a} to cluster modules of information in simulated networks of neurons.
+
+Chapter Three deals mainly with two distance measures, the SPIKE distance \citep{KreuzEtAl2012a} and the ISI distance \citep{KreuzEtAl2007a}.  These distance measures were extended from single-unit to multi-unit measures.
+
+In Chapter Four a simple neuron model is proposed, based on the idea of sparse coding in the brain.  The expected firing rate based on the model was calculated, and then the ISI distribution was calculated from the firing rate.  The calculated distribution was tested against the empirical data using the Kolmogorov-Smirnov test for goodness-of-fit \citep{Massey1951a}.
 
 \tableofcontents
 

@@ -1,1 +1,16 @@
-more to follow
+In chapter two of this thesis, clustering methods of network theory were used to attempt to address several problems.  
+
+Initially, there was an attempt to cluster responses by forming a network based on the distance between them, using the van Rossum metric. The clustering algorithms did not separate responses into the correct stimuli particularly well.  This is likely due to the unnatural structure of the network.  Spike train metrics are affected by the noise in the system, and so a responses that is \lq{}close\rq{} may not have a significantly different metric value to one that is not.  A study of baseline expected values of spike train metrics could lead to a better representative network of responses.
+
+The incremental mutual information of \citep{SinghLesica2010a} proved to be a very useful tool to actually determine direction of influence between neurons in a network.  It would, however, be very difficult to collect data sets that are long enough to fully determine the probability spaces.  This is always a problem with any information theory measure, due to the fact that there are no assumptions made about the prior probability distributions.
+
+The bibliographic coupling and cocitation did cluster the network into cooperative groups, but could not completely accurately describe the diagram of the model network.  There may be a way to combine the two couplings to do so, but any method of combining the maximum or the mean of the couplings did not prove to work for the model used in this work. 
+
+In chapter three, several extensions of distance measures were provided to the SPIKE and the ISI distances from \citep{KreuzEtAl2007a,KreuzEtAl2012a}. These extensions proved to be comparable to the multi-unit extensions to the Victor-Purpura metric \citep{AronovEtAl2008a} and the van Rossum metric \citep{HoughtonSen2008a}.
+
+The multi-unit ISI extensions lead to a different understanding of the summed population codes.  This motivated the search for the background rate which Chapter Four was centred on.
+
+The firing model introduced was very simplistic, but it was based on the fact that neurons are often feature-specific.  That assumption suggested that there should be a bimodality in the firing rates of a neuron.
+
+The bimodal firing rate suggest that the ISI distribution of the neuron should be a hyperexponential distribution, with two time-scales, rather than an exponential distribution.  When this distribution was tested on the data, it significantly out-performed the exponential distribution, and adding a third mode did not improve results.  Thus, it seems as though neurons should have this \lq{}on-off\rq{} firing rate.
+

@@ -1,41 +1,42 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}
 \contentsline {section}{\numberline {1.1}Spike trains}{2}
-\contentsline {section}{\numberline {1.2}Spike train metrics}{6}
+\contentsline {section}{\numberline {1.2}Spike train metrics}{5}
 \contentsline {subsection}{\numberline {1.2.1}Victor-Purpura metric}{6}
-\contentsline {subsection}{\numberline {1.2.2}van Rossum metric}{8}
-\contentsline {subsection}{\numberline {1.2.3}ISI distance}{10}
-\contentsline {subsection}{\numberline {1.2.4}SPIKE distance}{12}
-\contentsline {section}{\numberline {1.3}Data used in this thesis}{14}
-\contentsline {section}{\numberline {1.4}Information Theory}{15}
-\contentsline {chapter}{\numberline {2}Clustering methods in spike train analysis}{18}
-\contentsline {section}{\numberline {2.1}Modularity}{19}
+\contentsline {subsection}{\numberline {1.2.2}van Rossum metric}{7}
+\contentsline {subsection}{\numberline {1.2.3}ISI distance}{9}
+\contentsline {subsection}{\numberline {1.2.4}SPIKE distance}{11}
+\contentsline {section}{\numberline {1.3}Information Theory}{13}
+\contentsline {section}{\numberline {1.4}Data sets}{15}
+\contentsline {subsection}{\numberline {1.4.1}Zebra finch data}{15}
+\contentsline {subsection}{\numberline {1.4.2}Multi-unit data}{16}
+\contentsline {chapter}{\numberline {2}Clustering methods in spike train analysis}{19}
+\contentsline {section}{\numberline {2.1}Modularity}{20}
 \contentsline {section}{\numberline {2.2}Newman's eigenvalue algorithm}{23}
-\contentsline {section}{\numberline {2.3}New network clustering algorithms}{27}
+\contentsline {section}{\numberline {2.3}New network clustering algorithms}{28}
 \contentsline {subsection}{\numberline {2.3.1}Genetic algorithm}{28}
 \contentsline {subsection}{\numberline {2.3.2}Simulated annealing}{30}
-\contentsline {section}{\numberline {2.4}$k$-medoids clustering}{31}
-\contentsline {section}{\numberline {2.5}Clustering responses with modularity}{34}
-\contentsline {section}{\numberline {2.6}Mapping information flow in a simulated network of neurons}{36}
-\contentsline {section}{\numberline {2.7}The bibliographic network}{37}
-\contentsline {section}{\numberline {2.8}Incremental mutual information}{38}
-\contentsline {section}{\numberline {2.9}Numerical testing}{39}
-\contentsline {section}{\numberline {2.10}Spike timing dependent plasticity}{43}
-\contentsline {section}{\numberline {2.11}Discussion}{43}
-\contentsline {chapter}{\numberline {3}Multi-unit spike train metrics}{48}
-\contentsline {section}{\numberline {3.1}Alternative SPIKE distance}{48}
-\contentsline {section}{\numberline {3.2}Extensions to multi-unit recordings}{51}
-\contentsline {subsection}{\numberline {3.2.1}Testing on data}{55}
-\contentsline {section}{\numberline {3.3}ISI distance}{58}
-\contentsline {subsection}{\numberline {3.3.1}Single unit recordings}{58}
-\contentsline {subsection}{\numberline {3.3.2}Initial extension to multi-unit recordings}{58}
-\contentsline {subsection}{\numberline {3.3.3}Numerical tests}{61}
-\contentsline {subsection}{\numberline {3.3.4}Alternative extensions to the multi-unit case}{61}
-\contentsline {section}{\numberline {3.4}Adaptive ISI distances}{63}
-\contentsline {chapter}{\numberline {4}A simple neuron model}{74}
-\contentsline {section}{\numberline {4.1}Estimating the firing rate $r(t)$}{76}
-\contentsline {section}{\numberline {4.2}Markov Process}{79}
-\contentsline {subsection}{\numberline {4.2.1}Estimating the rate function $r(t)$}{83}
-\contentsline {subsection}{\numberline {4.2.2}Change in probability when a spike arrives}{86}
-\contentsline {subsection}{\numberline {4.2.3}Calculating the ISI distribution}{87}
-\contentsline {section}{\numberline {4.3}Testing on data}{90}
-\contentsline {chapter}{\numberline {5}Conclusion}{93}
+\contentsline {section}{\numberline {2.4}$k$-medoids clustering}{32}
+\contentsline {section}{\numberline {2.5}Clustering responses with modularity}{33}
+\contentsline {section}{\numberline {2.6}Mapping information flow in a simulated network of neurons}{35}
+\contentsline {section}{\numberline {2.7}The bibliographic network}{36}
+\contentsline {section}{\numberline {2.8}Incremental mutual information}{37}
+\contentsline {section}{\numberline {2.9}Numerical testing}{38}
+\contentsline {section}{\numberline {2.10}Discussion}{41}
+\contentsline {chapter}{\numberline {3}Multi-unit spike train metrics}{45}
+\contentsline {section}{\numberline {3.1}Alternative SPIKE distance}{45}
+\contentsline {section}{\numberline {3.2}Extensions to multi-unit recordings}{47}
+\contentsline {subsection}{\numberline {3.2.1}Testing on data}{51}
+\contentsline {section}{\numberline {3.3}ISI distance}{52}
+\contentsline {subsection}{\numberline {3.3.1}Single unit recordings}{52}
+\contentsline {subsection}{\numberline {3.3.2}Initial extension to multi-unit recordings}{54}
+\contentsline {subsection}{\numberline {3.3.3}Numerical tests}{58}
+\contentsline {subsection}{\numberline {3.3.4}Alternative extensions to the multi-unit case}{58}
+\contentsline {section}{\numberline {3.4}Adaptive ISI distances}{61}
+\contentsline {chapter}{\numberline {4}A simple neuron model}{64}
+\contentsline {section}{\numberline {4.1}Estimating the firing rate $r(t)$}{65}
+\contentsline {section}{\numberline {4.2}Markov Process}{68}
+\contentsline {subsection}{\numberline {4.2.1}Estimating the rate function $r(t)$}{72}
+\contentsline {subsection}{\numberline {4.2.2}Change in probability when a spike arrives}{74}
+\contentsline {subsection}{\numberline {4.2.3}Calculating the ISI distribution}{74}
+\contentsline {section}{\numberline {4.3}Testing on data}{77}
+\contentsline {chapter}{\numberline {5}Conclusion}{80}

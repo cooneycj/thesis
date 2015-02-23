@@ -1,5 +1,11 @@
 \begin{thebibliography}{}
 
+\bibitem[Aronov et~al., 2008]{AronovEtAl2008a}
+Aronov, D., Andalman, A.~S., and Fee, M.~S. (2008).
+\newblock A specialized forebrain circuit for vocal babbling in the juvenile
+  songbird.
+\newblock {\em Science}, 320:630--634.
+
 \bibitem[Aronov et~al., 2003]{Aronovetal2003a}
 Aronov, D., Reich, D.~S., Mechler, F., and Victor, J. (2003).
 \newblock Neural coding of spatial phase in v1 of the macaque monkey.
@@ -236,12 +242,11 @@ Pizzuti, C. (2008).
 \newblock In {\em Parallel Problem Solving from Nature--PPSN X}, pages
   1081--1090. Springer.
 
-\bibitem[Ramon~y Cajal, 1995]{Cajal1894a}
-Ramon~y Cajal, S. (1995).
-\newblock {\em Textura del sistema Nervioso del Hombre y los Vertebrados
-  (1894-1904); Histology of the Nervous System of man and vertebrates (English
-  translation N. Swanson \& L.W. Swanson)}.
-\newblock Oxford University Press.
+\bibitem[Ram{\'o}n~y Cajal, 1904]{Cajal1904a}
+Ram{\'o}n~y Cajal, S. (1904).
+\newblock {\em Textura del Sistema Nervioso del Hombre y de los Vertebrados},
+  volume~2.
+\newblock Madrid.
 
 \bibitem[Schreiber, 2000]{Schreiber2000a}
 Schreiber, T. (2000).
@@ -269,12 +274,6 @@ Singh, A. and Lesica, N.~A. (2010).
 Smirnoff, N. (1939).
 \newblock Sur les {\'e}carts de la courbe de distribution empirique.
 \newblock {\em Matematicheskii Sbornik}, 48(1):3--26.
-
-\bibitem[Song et~al., 2000]{SongEtAl2000a}
-Song, S., Miller, K., and Abbott, L. (2000).
-\newblock Competitive hebbian learning through spike-timing-dependent synaptic
-  plasticity.
-\newblock {\em Nature Neuroscience}, 3:919--926.
 
 \bibitem[Strong et~al., 1998]{BialekEtAl1998a}
 Strong, S.~P., Koberle, R., de~Ruyter~van Steveninck, R.~R., and Bialek, W.
