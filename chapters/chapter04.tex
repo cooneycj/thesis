@@ -3,10 +3,10 @@ Sparse coding has been observed in neurons in the visual tract \citep{OlshausenF
 It is unlikely that a neuron is ever truly ``off'', so it is assumed that a neuron has a base-firing state that will be referred to as the ``off-state''.  For the sake of simplicity, it is assumed that a neuron in such an ``off-state'' would have a constant firing rate, $\lambda_d$.  Correspondingly, for sparse-coding a neuron must have a higher firing-rate when the feature that it codes for is present; this firing rate, $\lambda_u$, is also taken to be constant.
 
 
-This idea is simplified to the extreme case, where a neuron is either in its up-state and has a high firing-rate, or it is ``off''.   The model is treated as a poisson process, for ease of calculation.
+This idea is simplified to the extreme case, where a neuron is either in its up-state and has a high firing-rate, or it is ``off''.   The model is treated as a Poisson process, for ease of calculation.
 
 
-The data that is simulated has an ``up rate'' $\lambda_u$ and a ``down rate'' $\lambda_d$.  For the initial trials, $\lambda_d = 0$.  When in the down-state, the state switches ``up'' with expected frequency $u$, and when in the up-state it switches ``down'' with expected frequency $d$.  Thus, the average background rate, $r$, of the inhomogeneous poisson process can be calculated as:
+The data that is simulated has an ``up rate'' $\lambda_u$ and a ``down rate'' $\lambda_d$.  For the initial trials, $\lambda_d = 0$.  When in the down-state, the state switches ``up'' with expected frequency $u$, and when in the up-state it switches ``down'' with expected frequency $d$.  Thus, the average background rate, $r$, of the inhomogeneous Poisson process can be calculated as:
 \begin{equation}\label{lam}
 r = \frac{ \frac{\lambda_u }{d}}{ \frac{1}{u} + \frac{1}{d}} = \frac{u\, \lambda_u}{u+d}
 \end{equation}
@@ -61,7 +61,7 @@ since the expected time for being in the up-state is simply $1/d$ and the expect
 %\multiput(8,15)(5,0){28}{\line(1,0){2}}
 \end{picture}
 \bigskip
-\rule{35em}{0.5pt}
+\rule{33em}{0.5pt}
 \caption{ \label{model}An illustration of the model firing rate, and an associated output spike train.  The process has two states, an up-state and a down-state, and has Poisson transition rates: $u$ from down to up, and $d$ from up to down.  Each state has an associated Poisson firing rate: $\lambda_u$ when up and $\lambda_d$ when down.  }
 \end{center}
 \end{figure}
@@ -124,7 +124,7 @@ y(t+h) &=  y(t)P(\mbox{staying in up-state} | \mbox{up at t}|Y,Z)  \\
 \begin{center}
 \resizebox{0.75\textwidth}{!}{\input{images/tauoptoverpred}}
 \bigskip
-\rule{35em}{0.5pt}
+\rule{33em}{0.5pt}
 \caption{\label{predovertauopt} This figure shows the ratio of the predicted value for $\tau$ in an exponential model over the empirical optimised value $\tau_o$.}
 \end{center}
 \end{figure}
@@ -183,7 +183,6 @@ The solution to the Markov chain of rates is then:
 \begin{equation}
 P(t) = e^{tQ} = \begin{pmatrix} \frac{u}{u+d}+\frac{d}{u+d}e^{-(u+d)t} & \frac{d}{u+d} - \frac{d}{u+d}e^{-(u+d)t} \\ \frac{u}{u+d} - \frac{u}{u+d}e^{-(u+d)t} & \frac{d}{u+d} + \frac{u}{u+d}e^{-(u+d)t}\end{pmatrix}
 \end{equation}
-Thus, if there were no information about the rate of spiking in the two different states, but 
 
 In order to calculate the probability of being in the up-state at a time $t$ after a spike at $t=0$, it is necessary to introduce another state to the Markov chain.  At any time $t$ between two spikes, $t=0$ and $t=t_1$ say, there is implicit knowledge that there was a spike at time $t=0$, and that there has not been a spike since.  If the spiking state is treated as the end of the particular Markov chain, as a default is in financial mathematics \citep{KijimaKomoribayashi1998a}, then, provided there has been no spike since $t=0$, it suffices to calculate the exponential of the transition matrix $Q_s$ below:
 
@@ -215,7 +214,7 @@ The third state of the Markov chain described by the transition matrix $Q_s$ is 
 \put(95,47.5){\vector(-4,-3){21}}
 \end{picture}
 \bigskip
-\rule{35em}{0.5pt}
+\rule{33em}{0.5pt}
 \caption{\label{markov} An illustration of the state space of the Markov chain at any point in time between two spikes.}
 \end{center}
 \end{figure}
@@ -381,7 +380,7 @@ r(t) = \frac{\alpha(\beta - r(0))e^{-\alpha t} + \beta(r(0)-\alpha)e^{-\beta t}}
 
 \subsection{Change in probability when a spike arrives}
 
-In the previous section, the rate function, $r(t)$, and the probability density function of the ISI distribution, $p_{ISI}(t)$, were calculated, given that the probability of being in the up-state at the time of the last spike, $p_0$, is known.  However, it is necessary to reevaluate the probability at the time a spike arrives.
+In the previous section, the rate function, $r(t)$, and the probability density function of the ISI distribution, $p_{ISI}(t)$, were calculated, given that the probability of being in the up-state at the time of the last spike, $p_0$, is known.  However, it is necessary to re-evaluate the probability at the time a spike arrives.
 
 If the probability of being in the up-state before the spike is $p_u(t)$, then the presence of a spike provides information on the state of the model. By Baye's Theorem:
 
@@ -413,14 +412,14 @@ r(t) \rightarrow (\lambda_u +\lambda_d) - \frac{\lambda_u\lambda_d}{r(t)}
 \begin{figure}[htb]
 \input{images/estrate}
 \bigskip
-\rule{35em}{0.5pt}
+\rule{33em}{0.5pt}
 \caption{An example of the estimated rate, $r(t)$, for a bimodal Poisson spike train.  For this example, $u=d=5$, $\lambda_u=50$ and $\lambda_d=5$.  In this example, the initial rate was set randomly between $\alpha$ and $\beta$.}
 \end{figure}
 
 \begin{figure}
 \input{images/estrate2}
 \bigskip
-\rule{35em}{0.5pt}
+\rule{33em}{0.5pt}
 \caption{An example of the estimated rate, $r(t)$, for a bimodal Poisson spike train.  For this example, $u=d=5$, $\lambda_u=50$ and $\lambda_d=5$.  In this example, the initial rate was set to zero and it subsequently set itself.}
 \end{figure}
 
@@ -477,14 +476,14 @@ C_0 = 2p(\lambda_2-\lambda_1), \, D_0 = 2(1-p)(\lambda_2-\lambda_1)
 
 
 \section{Testing on data}
-The previous result allows for testing on real data.  The data used in this report is the data used in \citep{NarayanEtAl2006b}.  An electrode was placed in L1 of anaesthetised zebra finches, and the birds were presented with 20 natural stimuli ten times each.  As the model does not account for the refractory period of neurons, a well-documented feature of neurons \citep{OlshausenField2004a} , the ten presentations of each stimulus are overlaid to counter the impact of the refractory period \citep{BerryMeister1998a}. 
+The expectation of a hyperexponential ISI distribution allows for testing on real data.  The data used in this report is the data used in \citep{NarayanEtAl2006b}.  An electrode was placed in L1 of anaesthetised zebra finches, and the birds were presented with 20 natural stimuli ten times each.  As the model does not account for the refractory period of neurons, a well-documented feature of neurons \citep{OlshausenField2004a} , the ten presentations of each stimulus are overlaid to counter the impact of the refractory period \citep{BerryMeister1998a}. 
 
 The inter-spike intervals (ISIs) were then aggregated across 16 of the 20 stimuli, to give a representation of a typical ISI distribution for each neuron.  The hyperexponential distribution, $H_2$, was trained on the ISI distribution of the 16 stimuli by minimising the statistic $D_n$ of the Kolmogorov-Smirnov test \citep{Massey1951a} by downhill-simplex search.  Then the remaining four stimuli were aggregated across the ten trials to form a test ISI distribution upon which the calculated minimum hyperexponential distribution was tested using the Kolmogorov-Smirnov test for goodness-of-fit.
 
 \begin{figure}
 \input{images/ksdists}
 \bigskip
-\rule{35em}{0.5pt}
+\rule{33em}{0.5pt}
 \caption{\label{exphehe3} The Kolmogorov-Smirnov test statistic $D_n$ for (a) the exponential distribution, (b) the hyperexponential distribution with two modes, and (c) the hyperexponential distribution with three modes.  The mean of the $p<0.05$ critical value is indicated by the broken line.}
 \end{figure}
 
@@ -494,7 +493,7 @@ D_n = \sup_x \left| \hat{F}_n(x) - F(x) \right|
 \end{equation}
 where $\hat{F}_n(x)$ is the empirical distribution function of the data set of $n$ points and $F(x)$ is the cumulative distribution function of the proposed probability distribution.
 
-Then the ISI distributions were tested against the hyperexponential distribution with both two and three modes $(H_2$ and $H_3)$.  As the exponential distribution is a special case of the hyperexponential distribution, and $H_2$ is a special case of $H_3$ ,it is clear that there should be an improvement with each step.  What was observed, as shown in figure \ref{exphehe3}, was that the $H_2$ distribution was a drastic improvement on the exponential distribution, but the the improvement of $H_3$ over $H_2$ was insignificant. 
+Then the ISI distributions were tested against the hyperexponential distribution with both two and three modes $(H_2$ and $H_3)$.  As the exponential distribution is a special case of the hyperexponential distribution, and $H_2$ is a special case of $H_3$, it is clear that there should be an improvement with each step.  What was observed, as shown in Figure \ref{exphehe3}, was that the $H_2$ distribution was a drastic improvement on the exponential distribution, but the improvement of $H_3$ over $H_2$ was insignificant. 
 
 
 At the $p<0.05$ significance level, only three out of $24$ neurons were not rejected by the Kolmogorov-Smirnov test for both the $H_2$ and the $H_3$ distributions. This could be due to the number of data points, which would make the KS test extremely rigorous.  It is also notable that this model is simply a first approximation to a neuron model; the KS statistic serves as a metric to determine goodness-of-fit rather than fitting the exact ISI distribution.
