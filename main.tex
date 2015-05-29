@@ -1,6 +1,6 @@
-\documentclass[12pt]{report}
+\documentclass[twoside,12pt]{report}
 \usepackage[utf8]{inputenc}
-\usepackage{geometry}
+\usepackage[hmarginratio=1:1]{geometry}
  \geometry{
  a4paper,
  total={210mm,297mm},
@@ -27,15 +27,15 @@
 \title{
 	{Spike Train Analysis} \\
 	{\large Trinity College Dublin} \bigskip\\
-	{\includegraphics[width=2in]{tcd.png}}
+	{\includegraphics[width=1.75in]{tcd.png}}
 }
 \author{Cathal Cooney\\ \bigskip A thesis submitted for the degree of Doctor of Philosophy.}
-\date{20th February 2015}
+\date{May 2015}
 
 \begin{document}
 \pagenumbering{roman}
 \maketitle
-
+\cleardoublepage
 %\chapter*{Abstract}
 %
 %\chapter*{Dedication}
@@ -62,15 +62,15 @@ Signed,
 
 Cathal Cooney
 
-20th February 2015
-
+29th May 2015
+\cleardoublepage
 \chapter*{Acknowledgements}
 I would like to thank my supervisor Conor Houghton for all his expertise and support throughout the course of my study.  Additionally, without the support of the School of Maths, this thesis would not have been possible.
 
 I would also like to thank the Irish Research Council for funding me in these studies.
 
 I would like to thank my family and friends.  My parents and younger brother Daniel were a great source of support.  Finally, I would like to thank Donna, who was always there for me.
-
+\cleardoublepage
 \chapter*{Summary}
 This thesis focuses on the study of spike trains, the information carrying signals conveyed by neurons in the nervous system.
 
@@ -81,26 +81,26 @@ In Chapter Two, several clustering algorithms are introduced.  The eigenvalue al
 Chapter Three deals mainly with two distance measures, the SPIKE distance \citep{KreuzEtAl2012a} and the ISI distance \citep{KreuzEtAl2007a}.  These distance measures were extended from single-unit to multi-unit measures.
 
 In Chapter Four a simple neuron model is proposed, based on the idea of sparse coding in the brain.  The expected firing rate based on the model was calculated, and then the ISI distribution was calculated from the firing rate.  The calculated distribution was tested against the empirical data using the Kolmogorov-Smirnov test for goodness-of-fit \citep{Massey1951a}.
-
+\cleardoublepage
 \tableofcontents
-
+\cleardoublepage
 
 \chapter{Introduction}
 \pagenumbering{arabic}
 \input{chapters/introduction}
-
+\cleardoublepage
 \chapter{Clustering methods in spike train analysis}
 \input{chapters/chapter02}
-
+\cleardoublepage
 \chapter{Multi-unit spike train metrics}
 \input{chapters/chapter03}
-
+\cleardoublepage
 \chapter{A simple neuron model}
 \input{chapters/chapter04}
-
+\cleardoublepage
 \chapter{Conclusion}
 \input{chapters/conclusion}
-
+\cleardoublepage
 \bibliography{bibliography}
 
 \end{document}

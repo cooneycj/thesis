@@ -2,29 +2,36 @@
 This chapter approaches neuroscience from the point of view that there are
 clearly functional connections between neurons in the same region of the brain and
 that these connections could provide a map of information flow in the brain.  Complex network theory, a branch 
-of mathematics closely related to graph theory, is used frequently in computational neuroscience. Complex network theory differs from 
+of mathematics closely related to graph theory, is used frequently in computational neuroscience. 
+
+Complex networks often exhibit a community structure, and so there are many algorithms to find the best clustering of a given network \citep{KarypisHanKumar2000a,NewmanGirvan2004a,Newman2006b}. This chapter introduces the clustering algorithm developed by \citet{Newman2006b}, and suggests some new algorithms based on the modularity measure \citep{NewmanGirvan2004a}.  These new algorithms are based on complexity algorithms, genetic algorithm and simulated annealing, which require nothing more than a \lq{}goodness-of-fit\rq{} function.  Complexity algorithms often produce interesting results, as they do not take a pre-determined path through the solution space.
+
+Newman's algorithm \citep{Newman2006b} is then used to cluster neuron responses dynamically, where the number of stimuli need not be known. A network of responses is formed by comparing the van Rossum distances between the spike trains, and then choosing a distance threshold where any distance less than the threshold forms a link.  By clustering this network using the eigenvalue algorithm of \citet{Newman2006a}, it is not necessary to specify the number of stimuli in advance, unlike the commonly used methods, $k$-means and $k$-medoids.
+
+
+\section{Introduction to networks}
+Complex network theory differs from 
 graph theory in that it focuses on the traits that networks tend to have when they evolve in real life, rather than focusing on purely random networks.  
 The main difference between these would be the connectivity profile of the 
 network; in graph theory connections are usually spread somewhat uniformly 
 throughout the graph, whereas in Network Theory it is  expected that communities would form \citep{Newman2010a}.
 
 A mathematical network is simply a collection of nodes and links between
-these nodes.  An \emph{undirected network} with $n$ nodes can be
-completely described by the adjacency matrix $A_{ij}$ where $A_{ij} =
+these nodes.  A \emph{node} is simply a point in the graph, which is typically discrete and labelled. A \emph{link} is a pair of nodes which indicates a connection between the two nodes.  The \emph{degree} of a node is defined to be the number of links incident to the node.  An \emph{undirected network} with $n$ nodes can be
+completely described by its adjacency matrix $\mathbf{A}$ where $A_{ij} =
 1$ if nodes $i$ and $j$ are connected, and is equal to zero otherwise. In this 
 case $A_{ij} = A_{ji}$ since two nodes are either connected or
 not.  If matrix entries $A_{ij}$ are permitted to take values other than one and zero
-then that is called a \emph{weighted} network, and if the matrix is not symmetric. A network is called a \emph{directed} network if $A_{ij} = 1$ whenever there 
-is an arrow pointing from node $j$ to node $i$, and the adjacency matrix is not symmetric.   Undirected networks which are unweighted form the bulk of the literature, and so the theory is richer
+then that is called a \emph{weighted} network. A network is called a \emph{directed} network if $A_{ij} = 1$ whenever there 
+is an arrow pointing from node $j$ to node $i$, and the adjacency matrix is not  necessarily symmetric.   Undirected networks which are unweighted form the bulk of the literature, and so the theory is richer
 in this case. A reason for this could be that networks such as friend networks \citep{Zachary1977a} would typically not be directed as friendship is typically mutual.
 
 A particularly interesting part of network theory that could be useful for
-neuroscience is clustering, and algorithms to maximise the community structure of the clusterings.  The main focus of this chapter is a measure of community structure known as the
-\emph{modularity} \citep{NewmanGirvan2004a}.
+neuroscience is clustering, and algorithms to maximise the community structure of the clusterings. To maximise the community structure, a measure of such structure is required.
 
 \section{Modularity}
 
-The \emph{modularity} is a measure of a given clustering of a network, which gives a value to the community structure of the clustering. The modularity is defined to measure how much more prominent
+The \emph{modularity} is a measure of a given clustering of a network, which gives a value to the community structure of the clustering \citep{NewmanGirvan2004a}. The modularity is defined to measure how much more prominent
 intra-cluster links are than inter-cluster links in a given
 clustering. The modularity then, as a measure of the given clustering, measures how much community structure is seen in the network.  It was introduced by \citet{NewmanGirvan2004a} in one form, then \citet{Newman2006b, Newman2006a} derived another form using the configuration model for graphs \citep{BenderCanfield1978a,Bollobas1980a}.
 
@@ -33,9 +40,9 @@ clustering. The modularity then, as a measure of the given clustering, measures 
   \centering
   \includegraphics[width=0.9\textwidth]{networkcvsnc.eps}
   \bigskip
-  \rule{33em}{0.5pt}
-  \caption{The advantage to clustering a network correctly is seen here.  Both 
-    of these networks have the same nodes and links, and so are the same 
+  \rule{31.5em}{0.5pt}
+  \caption{The advantage to clustering a network correctly can be seen here.  Shown  
+    are two diagrams which have the same nodes and links, and so form the same 
     network, but they look vastly different because the diagram on the left 
     has been clustered to maximise modularity.}
   \label{netclus}
@@ -71,7 +78,7 @@ degree of node $i$ is $k_i$, then
 m = \frac{1}{2}\sum_i k_i = \frac{1}{2}\sum_{i,j} A_{ij}.
 \end{equation}
 
-At this point, there is some choice as to how similar the random network, that the calculated probabilities are based on , should be to the network itself.  One could suppose that each node 
+At this point, there is some choice as to how similar the random network, that the calculated probabilities are based on, should be to the network itself.  One could suppose that each node 
 in the random network has degree equal to the average degree of the 
 network, but this ignores local structure in the network.  Instead, it is supposed that 
 the random network should keep the same degree for all nodes, and so the network can be treated as an instance of the \emph{configuration model} \citep{BenderCanfield1978a, Bollobas1980a}.  So, the expected 
@@ -81,7 +88,7 @@ degree of each vertex is equal to the actual degree of the vertex:
 \label{probki}
 \end{equation}
 
-If it is supposed that beyond the degree distribution that edges are placed at random, 
+If it is supposed that beyond the degree distribution the edges are placed at random, 
 then the probability of two nodes connecting depends on their 
 degrees. Supposing the probabilities for each end of a single edge is independent, which is a reasonable assumption in a large network \citep{Newman2010a}, where all the degrees are small 
 relative to the total number of edges, $P_{ij} = f(k_i)f(k_j)$ for 
@@ -125,7 +132,7 @@ split,
 s_i = \left\{ \begin{array}{ll} 1 & \mbox{if node $i$ in cluster 1}
   \\ -1 & \mbox{if node $i$ in cluster 2}\end{array} \right.
 \end{equation}
-These vectors $s_i$ then contain the exact same information as the $n\times 2$ matrix $\delta (g_i,g_j)$, so $\delta (g_i,g_j) $ can be factored:
+These vectors $s_i$ then contain the exact same information as the $2\times n$ matrix $\delta (g_i,g_j)$, so $\delta (g_i,g_j) $ can be factored:
 \begin{equation}
 \delta (g_i,g_j) = \frac{1}{2} \left( s_i s_j + 1 \right)
 \end{equation}
@@ -167,11 +174,13 @@ s_i =\left\{ \begin{array}{ll} 1 & \mbox{if } u_{1_i}>0 \\
 
 This gives a clustering of the network into two smaller clusters. Of course, 
 this split is not strictly in the direction of $\lambda_1$, but it is the best 
-possible estimate\footnote{In fact, it has been noted from well-known networks, 
-such as Zachary's karate club \citep{Zachary1977a} that the absolute value of 
+possible estimate, given two 
+clusters. In fact, it has been noted from well-known networks, 
+such as Zachary's karate club \citep{Zachary1977a}, where friendships within a karate club were graphed prior to the club splitting, that the absolute value of 
 the $i$th entry of $\mathbf{u}_1$ gives a good indication of the ``strength'' 
-of the membership of node $i$ to its cluster \citep{Newman2006a}.}, given two 
-clusters. If the modularity of the split is not positive, then reject the 
+of the membership of node $i$ to its cluster \citep{Newman2006a}. That is, an entry $u_1,i$ with absolute value close to one can be observed to be a key intra-cluster node or hub.  In the case of Zachary's karate club these intra-cluster hubs were the different instructors who split the club into two clubs.
+
+If the modularity of the split is not positive, then reject the 
 split and say that the best clustering is to leave the network as it is.  
 Similarly, if the first eigenvalue $\lambda_1 = 0$ then say that the best 
 clustering is to leave the network undivided, as it is known that the modularity 
@@ -203,7 +212,7 @@ $g$ would change, minus the modularity of leaving the subgraph $g$ whole.  Thus,
 & = & \frac{1}{4m}\sum_{i,j \in g}\left[ B_{ij} - \delta_{ij}\sum_{k \in g} B_{ik}\right]s_is_j \cr
 & = & \frac{1}{4m}{\bf s^tB}^{(g)}{\bf s}
 \end{eqnarray}
-and so ${\bf B}^{(g)}$ that takes the value
+and so ${\bf B}^{(g)}$ takes the value
 \begin{equation}
 B^{(g)}_{ij} = B_{ij} - \delta_{ij}\sum_{k \in g} B_{ik}
 \end{equation}
@@ -237,7 +246,7 @@ for labels $i,j$ of nodes in the cluster $g$.
 The same approach as before is used, the most
 positive eigenvalue of ${\bf B}^{(g)}$ determines the favoured split
 ${\bf s}$ to maximise $\Delta Q$. ${\bf B}^{(g)}$ still has the
-property that each of its rows and sum to zero, so there still is a
+property that each of its rows sum to zero, so there still is a
 zero-eigenvalue that represents no split of the cluster.  This can
 now be the stopping criterion for the algorithm; if the most positive eigenvalue is the
 zero-eigenvalue, then that subgraph is indivisible and stop
@@ -260,12 +269,12 @@ which can be computationally expensive, rather than calculating a single eigenva
 
 
 \section{New network clustering algorithms}
-Using the definition of modularity as defined above in equation \ref{NewMod} to measure the community structure of given clusterings, two new algorithms were developed in the course of this thesis.  They both use complexity algorithms, and so tend to be a lot slower than principled clustering algorithms such as in \citep{Newman2006a} \citep{NewmanGirvan2004a}.
+Using the definition of modularity as defined above in equation \ref{NewMod} to measure the community structure of given clusterings, two new algorithms were developed in the course of this thesis.  They both use complexity algorithms, which can often find novel solutions to difficult problems, since they do not make assumptions about the nature of the solutions.
 
 \subsection{Genetic algorithm}
-Genetic algorithms have become widely used to solve complex optimisation problems where it is difficult to calculate the gradient of the objective function.  The algorithm is based on the process of Darwinian evolution where successful genes remain in the gene pool and unsuccessful genes die out.  There have been several clustering algorithms proposed which use the genetic algorithm as their framework, such as \citep{Pizzuti2008a}. In this proposed algorithm the genes are simply the clusterings of a given network and the modularity is then the objective function.
+Genetic algorithms have become widely used to solve complex optimisation problems where it is difficult to calculate the gradient of the objective function.  The algorithm is based on the process of Darwinian evolution where successful genes remain in the gene pool and unsuccessful genes die out.  There have been several clustering algorithms which use the genetic algorithm as their framework, such as \citep{Pizzuti2008a}. In this proposed algorithm the genes are simply the clusterings of a given network and the modularity is then the objective function.
 
-The simplicity of a typical genetic algorithm is that it typically only needs a fitness/objective function to evaluate the fitness of solutions.  A typical genetic algorithm is described in Algorithm \ref{genal}.
+The simplicity of a typical genetic algorithm is that it typically only needs a fitness/objective function to evaluate the fitness of solutions.  A genetic algorithm is described in Algorithm \ref{genal}.
 
 \begin{algorithm}
 \caption{An example of a generic genetic algorithm.}
@@ -293,36 +302,35 @@ It is important to maintain aspects of the ``parent'' genes when breeding the ne
 
 Crossover is defined in this algorithm by randomly choosing a single node in the network according to the degree distribution, and then randomly choosing the cluster which contains the node in one of the parents.  Remove all nodes in the chosen cluster from the selection pool, and continue the process.  If the number of clusters reaches the predefined maximum number of clusters and some nodes remain, then the remaining nodes are placed in the closest cluster to them (by path distance).  Mutation is defined by randomly moving a small percentage, approximately $15\%$, of nodes between clusters in approximately $10\%$ of clusterings.
 
-This algorithm is very computationally expensive for small networks, but scales much better than Newman's eigenvalue algorithm.
+This algorithm is computationally very expensive for small networks, but scales much better than Newman's eigenvalue algorithm.
 
 \subsection{Simulated annealing}
 
 Another algorithm from complexity theory which has previously been used for finding community structure in networks is \emph{simulated annealing}.  Simulated annealing is an algorithm based on the technique of annealing in metallurgy; annealing happens when a metal is heated and then cooled slowly to increase the size of the crystals in the metal, as the metal finds the crystal structure which requires lowest energy as it cools slowly.
 
-Simulated annealing mimics this process to find a solution that minimises an \emph{energy} function, by introducing a \emph{temperature} of sorts to the system. At each temperature level, there is a small change to the solution, and the new energy level is calculated.  If the change lowers the energy, it is always accepted; whereas if it increases the energy it is accepted with a probability based on the temperature of the system.
+Simulated annealing mimics this process to find a solution that minimises an \emph{energy} function, by introducing a \emph{temperature} of sorts to the system. At each temperature level, there is a small change to the solution, and the new energy level is calculated.
 
 The probability of accepting the change to the solution is then determined by an \emph{acceptance probability function}, $P(E(s),E(s'),T)$, which depends on the current energy $E(s)$, the potential new energy $E(s')$ and the temperature $T$.  The basic rule of the algorithm is that any change of state that reduces the energy of the system is automatically accepted, and a change of state that increases the energy is accepted with a probability that decreases as $T\rightarrow0$.
 
 The acceptance probability function used also has the property that small increases in energy are more likely to be accepted than big increases in energy.  The acceptance probability is then a decreasing function of the change in energy $\Delta E = E(s')-E(s)$, which decreases faster as the temperature lowers.  An exponential function satisfies these criteria:
 \begin{equation}
-P(E(s),E(s'),T) = \left\{ \begin{array}{ll} 1 & E(s')-E(s)<0 \\ \exp(-\frac{E(s')-E(s){T}}) & E(s') - E(s)\geq 0 \end{array} \right.
+P(E(s),E(s'),T) = \left\{ \begin{array}{ll} 1 & E(s')-E(s)<0 \\ \exp\left(-\frac{E(s')-E(s)}{T}\right) & E(s') - E(s)\geq 0 \end{array} \right.
 \end{equation}
 
 The solution space for this algorithm was the space of clusterings of a given network $N$.  The ``energy'' function was the modularity with the sign reversed.
 
-It is important for simulated annealing that all moves are small.  With this in mind, the move in this clustering algorithm is simply to select a node at random and move it to either any existing cluster or to form a new cluster from it.  This algorithm was not particularly good at splitting a network to more than two or three clusters, but it did seem to find ``stable'' solutions. For example, in Zachary's karate club network \citep{Zachary1977a} it found the correct split of the network, rather than the clustering which resulted in a slightly higher modularity. 
-
+It is important for simulated annealing that all moves are small.  With this in mind, the move in this clustering algorithm is simply to select a node at random and move it to either any existing cluster or to form a new cluster from it.  From observations, this algorithm did not appear to be very discriminating when required to split a network to more than two or three clusters, but it did seem to find ``stable'' solutions. For example, in Zachary's karate club network \citep{Zachary1977a} it found the correct split of the network, rather than the clustering which resulted in a slightly higher modularity. 
 
 \section{$k$-medoids clustering}
 By defining a metric on spike trains, there is a way to tell how \lq{}close\rq{} different responses are, but there are no co-ordinates in the metric space which 
-would help with clustering responses.  The standard method of clustering 
-spike-trains is similar to $k$-means clustering but it does not require calculating a mean solution. \citep{JulienneHoughton2012a} introduces a method for computing a \lq{}mean spike train\rq{}, so $k$-means clustering could now be used.  However, here the process of $k$-medoids clustering is described.
+would help with clustering responses.  Provided that the number of stimuli is known beforehand, the standard method of clustering 
+spike-trains is an analog to $k$-means clustering which does not require calculating a mean solution. \citep{JulienneHoughton2012a} introduces a method for computing a \lq{}mean spike train\rq{}, so $k$-means clustering could now be used.  However, here the process of $k$-medoids clustering is described.
 
 \begin{figure}[htb]
   \centering
   \includegraphics[width=0.6\textwidth]{kmedoids.eps}
   \bigskip
-  \rule{33em}{0.5pt}
+  \rule{31.5em}{0.5pt}
   \caption{An example of the first step in k-medoids clustering:  (a) Medoids 
     are initially selected at random and the first clustering puts each point 
     in the cluster of the closest medoid. Then we choose the point in the 
@@ -339,7 +347,7 @@ the points in a cluster is calculated to get a new ``centre'' for the cluster an
 each point to the closest of these $k$ means.  This process is repeated until 
 the means are stable, which gives a clustering of the points into $k$ clusters.
 
-The $k$-medoids algorithm begins by choosing $k$ points in the data, called medoids, 
+The $k$-medoids algorithm begins by choosing a pre-determined number, $k$, of points in the data, called medoids, 
 and then  each other point of the data is placed in the cluster of the 
 closest, or least dissimilar), medoid to it.  Then, for each cluster, 
  each point in the cluster is assessed, and the point with 
@@ -356,9 +364,8 @@ stimuli that are presented in a data set. This is addressed in the next section.
 \section{Clustering responses with modularity}
 
 Here it is proposed that current methods of sorting 
-responses could be improved by using the modularity clustering algorithm.  An advantage to such 
-a dynamic method could be that responses could be tested without foreknowledge of the stimuli.  This could potentially be an advantage to future dynamic sorting algorithms. Since the algorithm determines when to stop itself, it 
-could simply be run to completion.  Such a method could perhaps be used for 
+responses could potentially be improved by using the modularity clustering algorithm.  An advantage to such 
+a dynamic method would be the ability to cluster responses without foreknowledge of the stimuli.  This suggests that future dynamic sorting algorithms may be possible. Since the algorithm determines when to stop itself, it is simply be run to completion.  Such a method could perhaps be used for 
 many different data sets, when the number of stimuli was not known, to 
 determine the different responses.
 
@@ -366,11 +373,10 @@ The data set introduced in the introduction from \citep{NarayanEtAl2006b} was us
 from anaesthetised adult male zebra finches as they listened to conspecific 
 songs.
 
-A network was formed by first taking the van Rossum metric distances between 
-each pair of responses, then a threshold value, $\tau$, was chosen for the network 
-and the adjacency matrix was calculated as:
+A distance matrix was calculated by taking the van Rossum metric distances between 
+each pair of responses for each neuron, where the parameter $\tau$ in the metric was chosen to be $12.8$ ms, as this had previously been determined to be a good parameter for the data set used \citep{Houghton2009a}.    Then, given a threshold value, $\mu$, the adjacency matrix for a network was calculated as:
 \begin{equation}
-A^{\tau}_{ij} = \left\{ \begin{array}{ll} 1 & \mbox{if }d(i,j)<\tau \\
+A^{\tau}_{ij} = \left\{ \begin{array}{ll} 1 & \mbox{if }d(i,j)<\mu \\
 0 & \mbox{otherwise}
 \end{array}\right. .
 \end{equation}
@@ -378,44 +384,53 @@ A^{\tau}_{ij} = \left\{ \begin{array}{ll} 1 & \mbox{if }d(i,j)<\tau \\
 \begin{figure}[h!tb]
   \centering
   \includegraphics[width=0.5\textwidth]{expresults.eps}
-  \rule{33em}{0.5pt}
+  \rule{31.5em}{0.5pt}
   \caption{Above is the graph of the modularity versus threshold values
     in two typical cells from the data.  The green crosses represent the 
     modularity of the correct clustering of stimuli; the red plusses represent 
     the maximum modularity, according to the algorithm, of the network.
-    Despite there being clear peaks in the modularity graphs, the green 
-    consistently outperforms the red for every value of the threshold $\tau$.  
-    This seems to imply that network clustering methods are probably not very 
-    good for sorting stimuli.  \label{graphs}}
+      \label{graphs}}
 \end{figure}
 
 Once the adjacency matrix was calculated, the algorithm was run to 
 maximise modularity for the network.  The maximum van Rossum 
 distance, once normalised, between any two trains was one, so the algorithm was run for different 
-threshold values $\tau$ between zero and one incrementing $\tau$ by steps of 
+threshold values $\mu$ between zero and one incrementing $\mu$ by steps of 
 size $0.001$.
 
 As seen in Figure \ref{graphs}, the profile of the graph of the maximum 
-modularity versus the threshold looked promising, as in nearly all cases it had 
-a clear maximum, but unfortunately the clusters of responses bore little 
-resemblance to the stimuli, and usually had too few clusters.
+modularity versus the threshold looked promising, as for each cell the modularity peaked as $\mu$ varied, but unfortunately the clusters of responses bore little 
+resemblance to the stimuli, and usually had too few clusters. Despite there being clear peaks in the modularity graphs, the maximised modularity consistently outperforms the modularity of the correct clustering for every value of the threshold $\mu$.  This seems to imply that network clustering methods are probably not very good for sorting stimuli.
 
 
-The modularity maximisation unfortunately cannot separate the stimuli in these networks. A similar method was used in \citep{Humphries2011a}, where all of the positive eigenvalues were used to 
-cluster the responses with more accuracy. This method is 
+The modularity maximisation of these networks unfortunately cannot cluster the responses by their stimuli. A similar method was used in \citep{Humphries2011a}, where all of the positive eigenvalues were used to 
+cluster responses, . This method is 
 rather computationally expensive, and uses even the very small positive 
 eigenvalues, which themselves may have little effect on the positivity of modularity.  This motivated the attempt to use the clustering method of \citet{Newman2006b}, but it did not perform very well.
 
 The problem with the above method appears to be that there is no natural network formed by the distance matrix of responses to stimuli. The next section introduces a simulated network of neurons, so that there is a definite network structure to investigate.
 
-\section{Mapping information flow in a simulated network of neurons}
+\section{Discussion}
+In this chapter, complex networks were introduced, along with a concept of goodness-of-fit for a specific clustering in the modularity.  The eigenvalue algorithm introduced by \citet{Newman2006b} was introduced in detail, as it has become the benchmark for clustering algorithms.
 
-In this section, a process is proposed for a way to map how information flows through a network of neurons.  The process is proposed due to the observation that given an inter-spike interval (ISI) distribution which arises from a neuron having a hard spiking threshold after each spike, such as the gamma function or the inverted normal distribution, then a very small group of neurons, say 20 to 30, is sufficient for the collection of neurons together to produce an exponential distribution of ISIs - which would be the ISI distribution of a Poisson rate process.  Due to this observation, it is proposed that there should be small clusters of neurons that work together to provide a background ``rate'' to other similar groups of neurons.
+Two new algorithms were introduced to try to find a clustering that would maximise the modularity of a network. Neither produced results better than the standard methods, so were used sparingly. The simulated annealing algorithm appeared to not necessarily maximise the modularity, but seemed to find the highest \lq{}stable\rq{} modularity. 
 
-There are different ways to form the networks of many neurons, but of primary interest are neurons that seem to {\sl drive} other neurons.  That 
-is, neurons whose firing seems to improve the probability of the other neuron 
-firing significantly.  A method of particular interest is the method of 
-{\sl Incremental Mutual Information} of Singh and Lesica 
+Network methods did not cluster stimuli well, perhaps because the network structure was not natural. This may rule out network clustering methods as a tool for discriminating between responses, but \citep{Humphries2011a} seemed to get results with a different data set, so it is not conclusive.  The simulated annealing algorithm introduce in this chapter could potentially provide interesting clusterings of stimuli, but that was not explored in the work for this thesis.
+
+The dynamic response clustering appeared not to work due to a lack of network structure amongst the responses.  The next chapter thus focuses on a simulated network of neurons with known network structure.  This appears to be the optimal way to use network clustering in neuroscience.
+\cleardoublepage
+
+%
+%  NEW CHAPTER
+%
+
+\chapter{Mapping information flow in a simulated network of neurons}
+
+In this chapter, a process is proposed for a way to map how information flows through a network of neurons.  The process is proposed due to the observation that given an inter-spike interval (ISI) distribution which arises from a neuron having a refractoriness after each spike, such as the gamma function or the inverted normal distribution, then a very small group of neurons, say 20 to 30, is sufficient for the collection of neurons together to produce an exponential distribution of ISIs - which would be the ISI distribution of a Poisson rate process.  Due to this observation, it is proposed that there should be small clusters of neurons that work together to provide a background \lq{}rate\rq{} to other similar groups of neurons.
+
+There are different ways to form the networks of many neurons, but of primary interest are neurons whose firing seems to improve the probability of other neurons 
+firing.  A method of particular interest is the method of 
+\emph{Incremental Mutual Information} of Singh and Lesica 
 \citep{SinghLesica2010a}, which tries to reduce the uncertainty of a neuron as 
 much as possible before checking whether another neuron influences it.
 
@@ -424,7 +439,7 @@ method to turn a directed network into an undirected network is needed.  Newman 
 a very neat way to do this in \citep{Newman2010a}, where two nodes are related 
 in the undirected network by how many commons nodes they point to in the 
 directed network.  This relation called the {\sl bibliographic coupling} of two 
-nodes.  In a brain network, this could give a ``map'' of information flow.
+nodes.  In a brain network, this could give a \lq{}map\rq{} of information flow.
 
 \section{The bibliographic network}
 A directed network is defined as a collection of nodes and directed links between those nodes, represented by ordered pairs of nodes.  As mentioned towards the beginning of this chapter, the adjacency matrix $\mathbf{A}$ of a directed network is then defined by:
@@ -451,7 +466,7 @@ where $Z_{\delta}$ is a vector containing information about the future and past 
 Z_{\delta}(t) =  \left(X_p(t),X_f(t),Y_p(t-\delta), Y_f(t-\delta)\right)
 \end{equation}
 
-This is calculated in the typical manner of calculating mutual information between spike-trains introduced in \citep{BialekEtAl1998a}.  The spike-trains are discretised according to a time-scale which is unlikely to contain more than one spike, for example $2$ ms is approximately the spiking threshold in neurons. That is, the spike trains are split into vectors of bins which either contain a spike or do not, and as such are allocated either one or zero.  The probability space is then calculated for each combination of ``words'' of ones and zeros.
+This is calculated in the typical manner of calculating mutual information between spike-trains introduced in \citep{BialekEtAl1998a}.  The spike-trains are discretised according to a time-scale which is unlikely to contain more than one spike, for example $2$ ms which is approximately the absolute refractory period of most neurons. That is, the spike trains are split into vectors of bins which either contain a spike or do not, and as such are allocated either one or zero.  The probability space is then calculated for each combination of ``words'' of ones and zeros.
 
 The downside to this method is that this is a very data-hungry calculation, which limits the amount of `past' and `future' steps used, as for $\Omega$ past and future steps, there are $2^{4\Omega+2}$ possible states. This means that calculating the IMI with two steps forward and back at each time step requires on the order of $2^{15}$ data points to fully populate the sample space.
 
@@ -461,11 +476,11 @@ The downside to this method is that this is a very data-hungry calculation, whic
   \centering
   \includegraphics[width=0.9\textwidth]{modelnetwork.eps}
   \bigskip
-  \rule{33em}{0.5pt}
+  \rule{31.5em}{0.5pt}
   \caption{\label{modelnetwork}The network model which was used to test the effectiveness of the incremental mutual information was based on the schematic shown here.  All simulated neurons in the recurrent layer were aEIF neurons.  The connection probability between two nodes at random was $0.1$, connections along arrows in the diagram occurred with probability $0.8$, and connections from the noise layer to the recurrent layer occurred with probability $0.2$.}
 \end{figure}
 
-IMI requires very long data sets to calculate accurately, which are difficult to record in animals that are awake. Due to the scarcity of  large simultaneous recordings of for long periods of time, the proposed information mapping was instead carried out on a model network.  The network was designed to be small, for ease of calculations, but still had features of note - a divergence and a convergence of groups.  The network was randomly generated based on the schematic in Figure \ref{modelnetwork}.  The neuron-model used was the adaptive exponential integrate and fire neuron-model of \citep{BretteGerstner2005a}, as it strikes a good balance between ease of computation \citep{HopfieldHerz1995a}, and biological accuracy \citep{HodgkinHuxley1952a}.  The network was simulated using the python package Brian \citep{GoodmanBrette2008a}, and each simulation ran for four minutes.  The amplitude of the spikes from the Poisson neurons in the noise layer was varied from 1 mV to 17 mV to investigate how well the IMI dealt with noise.
+IMI requires very long data sets to calculate accurately, which are difficult to record in animals that are awake. Due to the scarcity of  large simultaneous recordings for long periods of time, the proposed information mapping was instead carried out on a model network.  The network was designed to be small, for ease of calculations, but still had features of note - a divergence and a convergence of groups.  The network was randomly generated based on the schematic in Figure \ref{modelnetwork}.  The neuron-model used was the adaptive exponential integrate and fire neuron-model of \citep{BretteGerstner2005a}, as it strikes a good balance between ease of computation \citep{HopfieldHerz1995a}, and biological accuracy \citep{HodgkinHuxley1952a}.  The network was simulated using the python package Brian \citep{GoodmanBrette2008a}, and each simulation ran for four minutes.  The amplitude of the spikes from the Poisson neurons in the noise layer was varied from 1 mV to 17 mV to investigate how well the IMI dealt with noise.
 
 \begin{figure}[h!]
 \centering
@@ -476,8 +491,8 @@ IMI requires very long data sets to calculate accurately, which are difficult to
  & \resizebox{0.4\textwidth}{!}{\input{images/conn1}}
 \end{tabular}
 \bigskip
-\rule{33em}{0.5pt}
-\caption{\label{netwm} {\bf (a)} A typical visualisation of the directed network, very difficult to see what sort of modules exist, despite the layout. {\bf (b) } A heat map of the adjacency matrix of the recurrent layer of aEIF neurons, again there is are very few clusters around the diagonal here, which would indicate a module in the network.}
+\rule{31.5em}{0.5pt}
+\caption{\label{netwm} {\bf (a)} A typical visualisation of the directed network, very difficult to see what sort of modules exist, despite the layout. {\bf (b) } A heat map of the adjacency matrix of the recurrent layer of aEIF neurons, again there are very few clusters around the diagonal here, which would indicate a module in the network.}
 \end{figure}
 
 The proposed method to map the modules of neurons was to initially calculate the peak IMI between each pair of neurons, and set that equal to the non-diagonal elements of an adjacency matrix of a weighted directed network:
@@ -485,33 +500,33 @@ The proposed method to map the modules of neurons was to initially calculate the
 A_{ij} = \left\{ \begin{array}{ll} \max_{\delta} \Delta I_{ij}[\delta] & \text{if } \delta>0 \\ 0 & \text{otherwise} \end{array}\right.
 \end{equation}
 
+
+\begin{figure}[thb]
+\begin{center}
+\begin{tabular}{ll}
+{\bf (i)} & {\bf (ii)} \\
+\resizebox{0.45\textwidth}{!}{\input{images/IMI3}} & \resizebox{0.45\textwidth}{!}{\input{images/IMI7}}\\
+{\bf (iii)} & {\bf (iv)} \\
+\resizebox{0.45\textwidth}{!}{\input{images/IMI11}} & \resizebox{0.45\textwidth}{!}{\input{images/IMI15}} 
+\end{tabular}
+\bigskip
+\rule{31.5em}{0.5pt}
+\caption{\label{imires} Above are shown the peak IMI values between neurons, calculated from their spikes trains. The adjacency matrix is directed so that the peak IMI dictates the direction of influence of the neurons. The amplitude of the individual neurons in the Poisson noise layer increased at each step {\bf (i)} $3$ mV to {\bf (iv)}$15$ mV in steps of $4$ mV. Note that the IMI actually becomes more discriminating as the noise level increases.}
+\end{center}
+\end{figure}
+
+
 The absolute value of the IMI was quite small, particularly as the noise level increased, but the important information was in the discriminability of the measure.  Therefore, the non-zero IMI values were collected and the median was calculated.  This median, $\tau_I$ was then set as the threshold for the network.  The new adjacency matrix was then calculated as:
 \begin{equation}\label{adjmat}
 A_{ij, \tau_I} = \left\{ \begin{array}{ll} 1 & \text{if } \max_{\delta} \Delta I_{ij}[\delta] > \tau_I \\ 0 &  \text{otherwise}. \end{array} \right.
 \end{equation}
 
-\begin{figure}[htb]
-\begin{center}
-\begin{tabular}{lll}
-{\bf (i)} & {\bf (ii)} & {\bf (iii)} \\
-\resizebox{0.3\textwidth}{!}{\input{images/IMI1}} & \resizebox{0.3\textwidth}{!}{\input{images/IMI3}} & \resizebox{0.3\textwidth}{!}{\input{images/IMI5}} \\ 
-{\bf (iv)} & {\bf (v)} & {\bf (vi)} \\
-\resizebox{0.3\textwidth}{!}{\input{images/IMI7}} & \resizebox{0.3\textwidth}{!}{\input{images/IMI9}} & \resizebox{0.3\textwidth}{!}{\input{images/IMI11}} \\ 
-{\bf (vii)} & {\bf (viii)} & {\bf (ix)} \\
-\resizebox{0.3\textwidth}{!}{\input{images/IMI13}} & \resizebox{0.3\textwidth}{!}{\input{images/IMI15}} & \resizebox{0.3\textwidth}{!}{\input{images/IMI17}} 
-\end{tabular}
-\bigskip
-\rule{33em}{0.5pt}
-\caption{\label{imires} Above are shown the peak IMI values between neurons, calculated from their spikes trains. The adjacency matrix is directed so that the peak IMI dictates the direction of influence of the neurons. The amplitude of the individual neurons in the Poisson noise layer increased from {\bf (a)} $1$ mV to {\bf (ix)}$16$ mV in steps of $2$ mV. Note that the IMI actually becomes more discriminating as the noise level increases.}
-\end{center}
-\end{figure}
 
+As can be seen in Figure \ref{imires}, the IMI actually appears to improve in discriminability as the noise level increases.  Accounting for noise was the reason for conditioning for the future along with the past \citep{SinghLesica2010a}, as opposed to just conditioning for the past as \citet{Schreiber2000a} does with the Transfer Entropy measure.  This means that the IMI could be a very good tool to measure influence between neurons in simultaneous recordings, but it does require a lot of data before it is useful, and it has a formidable calculation time.
 
-As can be seen in Figure \ref{imires}, the IMI actually improves its discriminability as the noise level increases.  Accounting for noise was the reason for conditioning for the future along with the past \citep{SinghLesica2010a} , as opposed to just conditioning for the past as\citet{Schreiber2000a} does with the Transfer Entropy measure.  This means that the IMI could be a very good tool to measure influence between neurons in simultaneous recordings, but it does require a lot of data before it is useful, and it has a formidable calculation time.
+The next step in the process is to calculate the bibliographic coupling from the thresholded adjacency matrix, $\mathbf{A}_{\tau_I}$, calculated in equation \ref{adjmat}.  This then gives a new network, which is undirected, and hence can be clustered using common methods such as \citep{NewmanGirvan2004a, Newman2006a}. 
 
-The next step in the process is to calculate the bibliographic coupling from the thresholded adjacency matrix, $\mathbf{A}_{\tau_I}$, calculated in equation \ref{adjmat} .  This then gives a new network, which is undirected, and hence can be clustered using common methods such as \citep{Newman2006a, NewmanGirvan2004a}. 
-
-\begin{figure}[htb]
+\begin{figure}[thb]
 \begin{center}
 \begin{tabular}{ll}
 {\bf (a)} & {\bf (b)}\\
@@ -519,21 +534,21 @@ The next step in the process is to calculate the bibliographic coupling from the
 \end{tabular}
 \end{center}
 \bigskip
-\rule{33em}{0.5pt}
+\rule{31.5em}{0.5pt}
 \caption{\label{bibt} In this figure the thresholded bibliographic network is shown from the IMI network when: {\bf (a)} the noise level is very low, that is 1 mV from each Poisson noise neuron, and {\bf (b)} the noise level is much higher, 17mV from each Poisson neuron. The modular structure of the network is showing a lot more when the noise level is high.}
 \end{figure}
 
 In figure \ref{bibt}, the bibliographic network is shown to roughly group the first three groups together, but the fourth and fifth are also clustered together.  This is because they both influence the sixth group, so they have high bibliographic coupling.  It appears that the bibliographic coupling can detect a divergence of groups in a network, but cannot detect a convergence.
 
-In order to correctly cluster the convergent groups towards the end of the model network, another measure needs to be introduced, the cocitation.  This coupling is similar to the bibliographic coupling, as it is the number of common nodes pointing at both nodes.  That is:
+In order to correctly cluster the convergent groups towards the end of the model network, another measure needs to be introduced, the cocitation.  This coupling is the inverse concept to the bibliographic coupling, as it is the number of common nodes pointing at both nodes.  That is:
 \begin{equation}
-C_{ij} = \sum_k A_{ik}A{jk}
+C_{ij} = \sum_k A_{ik}A_{jk}
 \end{equation}
 The matrix is then $\mathbf{C} = \mathbf{BB}^T$.  This is another very common symmetrisation of matrices.
 
-After running the whole process again with the cocitation instead of the bibliographic coupling, it is clear that the cocitation does indeed detect convergences in the groups of neurons.
+After running the whole process again with the cocitation instead of the bibliographic coupling, it is clear that the cocitation does indeed detect convergences in the groups of neurons, this can be seen in figure \ref{cocitt}.
 
-\begin{figure}[htb]
+\begin{figure}[thb]
 \begin{center}
 \begin{tabular}{ll}
 {\bf (a)} & {\bf (b)}\\
@@ -541,20 +556,14 @@ After running the whole process again with the cocitation instead of the bibliog
 \end{tabular}
 \end{center}
 \bigskip
-\rule{33em}{0.5pt}
+\rule{31.5em}{0.5pt}
 \caption{\label{cocitt} In this figure the thresholded cocitation network is shown from  the IMI network when: {\bf (a)} the noise level is very low, that is 1 mV from each Poisson noise neuron, and {\bf (b)} the noise level is much higher, 17mV from each Poisson neuron. The modular structure of the network is showing a lot more when the noise level is high.}
 \end{figure}
 
-%\begin{equation}
-%
-%\end{equation}
-
 
 \section{Discussion}
-Two new algorithms were introduced to try to find a clustering that would maximise the modularity of a network. Neither produced results better than the standard methods, so were used sparingly.  The simulated annealing algorithm appeared to not necessarily maximise the modularity, but seemed to find the highest \lq{}stable\rq{} modularity. 
+The incremental mutual information proved to be a remarkably useful tool in noisy networks, but it requires very large data sets to calculate, these can be very difficult to record in vivo.  The length of data sets required may rule out the IMI as a useful measure of real world data.
 
-Network methods did not cluster stimuli well, perhaps because the network structure was not natural.  Perhaps the simulated annealing algorithm introduce in this chapter could provide interesting clusterings of stimuli.
+The bibliographic coupling and  the cocitation both gave interesting clusterings of the network, but combining them to consistently return a provided network was a difficult task, which was unfortunately not completed in the course of this work.
 
-The incremental mutual information proved to be a remarkably useful tool in noisy networks, but it requires very long data sets to calculate.  The length of data sets required may rule out the IMI as a useful measure of real world data.
-
-The bibliographic coupling and  the cocitation both gave interesting clusterings of the network, but combining them proved to be a difficult task.
+Perhaps attempting to map the information flow in a network is beyond current data capabilities, but there should be some consistent way to compare simultaneous recordings of many neurons.  Previous multi-unit spike train metrics have had both time-scale and population parameters which needed to be tuned. By extending the time-scale free distance measures developed by \citet{KreuzEtAl2007a,KreuzEtAl2012a}, this will reduce the need for at least one of the parameters.

@@ -1,13 +1,177 @@
-The SPIKE distance \citep{KreuzEtAl2011a,KreuzEtAl2012a} which was introduced in Chapter One is a time-local parameter-free distance measure between spike-trains.  This measure can then be integrated over the length of the spike-trains to give a parameter-free distance measure between two spike trains.  
+In this chapter, two parameter-free spike train distances are introduced, and multi-unit extensions are then suggested.  The ISI distance \citep{KreuzEtAl2007a} was introduced as a parameter-free measure of spike train synchrony. That is, it compares the rates of two spike trains at any point in time. Similarly, the SPIKE distance \citep{KreuzEtAl2012a} is a time-local parameter-free distance measure between spike-trains, which bears some resemblance to edit-length measures such as the Victor-Purpura metric \citep{VictorPurpura1997a}.  These time-local measures can then be integrated over the length of the spike-trains to give parameter-free distance measures between spike trains. 
 
-In the study of spike-train metrics, often a multi-unit measure is desired, as many data sets record several neurons at once.  A multi-unit measure is a distance between collections of labelled spike-trains.  The SPIKE distance in \citep{KreuzEtAl2011a} does not lend itself to a simple multi-unit extension, so instead a simpler version of the SPIKE distance is extended.
+These multi-unit extensions are then tested on the data used in \citep{HoughtonSen2008a} to determine their suitability as multi-unit measures.  In testing these extensions, it is observed that there are different ways to consider how to code for a population of neurons which act together.
+
+
+\section{Parameter-free spike train distances}
+Two distances have been introduced by \citet{KreuzEtAl2007a,KreuzEtAl2012a} recently, which do not require a time-scale parameter such as the $q$ in the Victor-Purpura metric \citep{VictorPurpura1997a} and the $\tau$ in the van Rossum metric \citep{VanRossum2001a}.  These distance measures are introduced below, and then several multi-unit extensions are proposed.
+
+
+\subsection{ISI distance}
+In \citep{KreuzEtAl2007a} a new type of measure was introduced.  The ISI distance is a time-local measure of spike train synchrony.  The ISI distance is defined for any $t$, $0<t<T$, in the trial.  The distance is a local comparison of the estimated firing rates of spike trains $X$ and $Y$.  
+
+For any time $t$ in the trial, the firing rate of spike train $X$ is estimated by the reciprocal of the current inter-spike interval in $X$, and similarly for $Y$:
+\begin{equation}
+r_x(t) = \frac{1}{I_x(t)}, \hspace{20pt} r_y(t) = \frac{1}{I_y(t)}
+\end{equation}
+Typically one rate will be bigger than the other rate. Dividing by that rate a similarity measure, with values between zero and one, for the spike trains can be calculated:
+\begin{equation}
+s_{ISI}(X,Y)(t) = \left\{ \begin{array}{ll} r_x(t)/r_y(t) & ,r_y(t) \geq r_x(t)\\ r_y(t)/r_x(t) & , r_x(t) > r_y(t) \end{array}\right.
+\end{equation}
+
+\begin{figure}[hbt]
+\begin{center}
+\setlength{\unitlength}{.085cm}
+\begin{picture}(140,65)
+\put(3,9){\mbox{$\mathbf{Y}$}}
+\put(3,39){\mbox{$\mathbf{X}$}}
+\put(74.1,62.5){\mbox{$\mathbf{t}$}}
+\linethickness{1pt}
+\put(10,10){\line(1,0){130}}
+\put(10,40){\line(1,0){130}}
+\linethickness{0.5pt}
+\put(25,10){\line(0,1){10}}
+\put(50,10){\line(0,1){10}}
+\put(100,10){\line(0,1){10}}
+\put(130,10){\line(0,1){10}}
+\put(20,40){\line(0,1){10}}
+\put(60,40){\line(0,1){10}}
+\put(120,40){\line(0,1){10}}
+\put(135,40){\line(0,1){10}}
+\linethickness{1.5pt}
+\put(75,0){\line(0,1){9}}
+\put(75,11){\line(0,1){3}}
+%\put(75,16){\line(0,1){2}}
+\put(75,22){\line(0,1){17}}
+\put(75,41){\line(0,1){3}}
+\put(75,46){\line(0,1){14}}
+\linethickness{1pt}
+\put(75,15){\vector(-1,0){25}}
+\put(75,15){\vector(1,0){25}}
+\put(90,45){\vector(-1,0){30}}
+\put(90,45){\vector(1,0){30}}
+\put(72.5,17.5){\mbox{$\mathbf{I_{y}(t)}$}}
+\put(87.5,47.5){\mbox{$\mathbf{I_{x}(t)}$}}
+\end{picture}
+\bigskip
+\rule{31.5em}{0.5pt}
+\caption{\label{isiex} Shown here is an example pair of spike trains $X$ and $Y$.  At each point $t$ in the trial there are respective intervals $I_x(t)$ and $I_y(t)$. By taking the reciprocal of $I_x(t)$ and $I_y(t)$, an estimator for the firing rate of $X$ and $Y$ at time $t$ is calculated.}
+\end{center}
+\end{figure}
+
+Since the rates are estimated by the ISIs, and $1/a \geq 1/b \implies a \leq b$, this can be rewritten as:
+\begin{equation}
+s_{ISI}(X,Y)(t) = \left\{ \begin{array}{ll} I_y(t)/I_x(t) & ,I_x(t) \geq I_y(t)\\ I_x(t)/I_y(t) & , I_y(t) > I_x(t) \end{array}\right.
+\end{equation}
+
+This similarity measure is always between zero and one, so to change it to a distance measure between spike trains, all that had to be done was to subtract it from one.  Then the ISI distance, as defined in \citep{KreuzEtAl2007a,KreuzEtAl2009a}, is:
+\begin{equation}
+d_{ISI}(X,Y)(t) = \left\{ \begin{array}{ll} 1 - \frac{I_y(t)}{I_x(t)} & ,\, I_x(t) \geq I_y(t) \\ 1 - \frac{I_x(t)}{I_y(t)} & ,\, I_y(t) > I_x(t) \end{array} \right.
+\end{equation}
+The ISI distance is zero when the inter-spike intervals of $X$ and $Y$ are the same, and tends towards one as the ratio between them increases.  It is worth noting that, unlike the van Rossum metric, the ISI distance does not require a timescale parameter, and thus can be used without tuning for an optimal parameter.
+
+The ISI distance was found to have a simpler form, which benefits the extension work of Chapter Three of this thesis, as it shows the nature of the ISI distance to be that of an $L_1$ metric:
+\begin{equation}
+d_{ISI}(X,Y)(t) = \frac{| I_x(t) - I_y(t) |}{\max \left\{ I_x(t), I_y(t)\right\}}
+\end{equation}
+
+This time-local measure can be integrated over the length of the trial to give a metric on full spike trains.
+\begin{equation}
+d_{ISI}(X,Y) = \frac{1}{T}\int_0^T d_{ISI}(X,Y)(t)\,dt = \frac{1}{T}\int_0^T \frac{| I_x(t) - I_y(t) |}{\max \{I_x(t),I_y(t)\}}\, dt
+\end{equation}
+
+
+\subsection{SPIKE distance}
+In \citep{KreuzEtAl2011a,KreuzEtAl2012a} another distance measure was proposed which does not require a time-scale parameter and which can also be used as a time-local measure of spike train synchrony.  This measure is similar in ways to the metric of \citet{VictorPurpura1997a} as it is a temporal distance measure rather than a rate metric like the ISI distance.
+
+At each time $t$, there are four \lq{}corner\rq{} spikes,  the preceding and following spikes in both $X$ and $Y$. These spikes are denoted by $t^x_p, t^x_f, t^y_p$ and $t^y_f$, where $p$ stands for preceding and $f$ for following.  Each of these spikes then has an associated \lq{}gap\rq{} value, as shown in figure \ref{spikeex}.  This gap, $\Delta t^x_i$, is simply the shortest distance to any spike in the other spike train:
+\begin{equation}
+\Delta t^x_i = \min_j | t^x_i - t^y_j |
+\end{equation}
+
+\begin{figure}[hbt]
+\begin{center}
+\setlength{\unitlength}{.085cm}
+\begin{picture}(140,65)
+\put(3,9){\mbox{$\mathbf{Y}$}}
+\put(3,39){\mbox{$\mathbf{X}$}}
+\put(74.1,62.5){\mbox{$\mathbf{t}$}}
+\linethickness{1pt}
+\put(10,10){\line(1,0){130}}
+\put(10,40){\line(1,0){130}}
+\put(110,21){\vector(1,0){10}}
+\put(110,21){\vector(-1,0){10}}
+\put(55,51){\vector(1,0){5}}
+\put(55,51){\vector(-1,0){5}}
+\put(55,21){\vector(1,0){5}}
+\put(55,21){\vector(-1,0){5}}
+\put(125,51){\vector(1,0){5}}
+\put(125,51){\vector(-1,0){5}}
+\linethickness{0.5pt}
+\put(25,10){\line(0,1){10}}
+\put(49,5){\mbox{$\mathbf{t^y_p}$}}
+\put(52,24){\mbox{$\mathbf{\Delta t^y_p}$}}
+\put(99,5){\mbox{$\mathbf{t^y_f}$}}
+\put(107,24){\mbox{$\mathbf{\Delta t^y_f}$}}
+\put(130,10){\line(0,1){10}}
+\put(20,40){\line(0,1){10}}
+\put(59,35){\mbox{$\mathbf{t^x_p}$}}
+\put(52,54){\mbox{$\mathbf{\Delta t^x_p}$}}
+\put(119,35){\mbox{$\mathbf{t^y_f}$}}
+\put(122,54){\mbox{$\mathbf{\Delta t^x_f}$}}
+\put(135,40){\line(0,1){10}}
+\linethickness{2pt}
+\put(120,40){\line(0,1){10}}
+\put(60,40){\line(0,1){10}}
+\put(100,10){\line(0,1){10}}
+\put(50,10){\line(0,1){10}}
+\linethickness{1.5pt}
+\put(75,0){\line(0,1){9}}
+\put(75,11){\line(0,1){3}}
+%\put(75,16){\line(0,1){2}}
+\put(75,22){\line(0,1){17}}
+\put(75,41){\line(0,1){3}}
+\put(75,46){\line(0,1){14}}
+\linethickness{0.5pt}
+\put(75,15){\vector(-1,0){25}}
+\put(75,15){\vector(1,0){25}}
+\put(90,45){\vector(-1,0){30}}
+\put(90,45){\vector(1,0){30}}
+\put(72.5,17.5){\mbox{$I_{y}(t)$}}
+\put(87.5,47.5){\mbox{$I_{x}(t)$}}
+\end{picture}
+\bigskip
+\rule{31.5em}{0.5pt}
+\caption{\label{spikeex} Shown here is the same pair of spike trains $X$ and $Y$ as in Figure \ref{isiex}, but here the measures relevant for the SPIKE distance \citep{KreuzEtAl2012a} are highlighted.  At each point $t$ in the trial there is a preceding and a following spike in each spike train, called $t^x_p, t^x_f, t^y_p, t^y_f$ respectively. At each of these, so called, \lq{}corner\rq{} spikes a \lq{}gap\rq{} is calculated.  The gap for each spike is the shortest distance to a spike in the other spike train.}
+\end{center}
+\end{figure}
+
+These gaps are similar to the translation costs in the Victor-Purpura metric, but they do not have an upper bound, or indeed a timescale parameter.  Rather than introducing a somewhat arbitrary parameter such as $q$, the gaps are scaled according to the firing rate of the spike train at that point in time.  
+
+The firing rate is estimated as before with the ISI distance above, and is just the reciprocal of the current inter-spike interval.  To get a continuous function of time, the distance measure interpolates smoothly between spikes in each spike train. So, each spike train must then be summed separately, for $X$:
+\begin{equation}
+S_X(X,Y)(t) = \frac{(t-t^x_p)\Delta t^x_f + (t^x_f - t)\Delta t^x_p}{I_x(t)}
+\end{equation}
+and for $Y$:
+\begin{equation}
+S_Y(X,Y)(t) = \frac{(t-t^y_p)\Delta t^y_f + (t^y_f - t)\Delta t^y_p}{I_y(t)}
+\end{equation}
+where the inter-spike interval value in the denominator is squared to normalise the measure and keep the distance between zero and one.
+
+These distances are then multiplied by the inter-spike interval of the other spike train, and divided by the square of the average of the interstice intervals to get a symmetric distance measure of local spike times, called the SPIKE distance \citep{KreuzEtAl2012a}:
+\begin{equation}
+S(X,Y)(t) =  \frac{I_y(t)S_X(X,Y)(t) + I_y(t)S_Y(X,Y)(t)}{2[I_x(t) + I_y(t)]^2}
+\end{equation}
+As above with the ISI distance, the SPIKE distance can be integrated over the course of a trial to get a distance measure between spike trains.
+
+In the study of spike-train metrics, often a multi-unit measure is desired, as many data sets record several neurons at once.  A multi-unit measure is a distance between collections of labelled spike-trains.  The SPIKE distance in \citep{KreuzEtAl2011a} does not lend itself to a simple multi-unit extension, so instead a simpler version of the SPIKE distance is extended.  This alternative has the added advantage that the measure between two full spike trains can be calculated in a fraction of the time of the integral of the SPIKE distance.
 
 \section{Alternative SPIKE distance}
 With a view to extending the SPIKE distance to a multi-unit distance measure, it is useful to review the definition of the SPIKE measure provided in \citep{KreuzEtAl2011a}:  Given two spike-trains $X$ and $Y$, where $x = \{ t_1^x, \ldots, t_n^x \}$ and $y = \{ t_1^y, \ldots , t_m^y\}$, where $t_1^x,\ldots,t_n^x,t_1^y,\ldots,t_m^y$ are the spike times.  The SPIKE distance in \citep{KreuzEtAl2011a} has the nice property that the distance is bounded such that it is always between zero and one.  Unfortunately, to achieve a natural extension to a multi-unit measure, this property is sacrificed.  A simpler version of the distance, without the strict upper bound of one, is used.
 
 The simpler distance is very quick and easy to calculate.  A gap is associated with each spike; this is the distance to the nearest spike in the other spike-train.  The total distance between two spike trains is then simply the sum of these gaps.  
 
-The original SPIKE distance included additional normalisation factors that have been omitted here. This simplifies the measure between complete spike trains greatly. The simpler measure is also provably a metric between spike trains. This measure is certainly symmetric and non-negative, and the triangle inequality holds due the $L^1$ metric.
+The original SPIKE distance included additional normalisation factors that have been omitted here. This simplifies the measure between complete spike trains greatly. The simpler measure is not strictly a metric between spike trains, as it fails the triangle inequality, but the standard SPIKE distance does also. This measure is certainly symmetric and non-negative, and the triangle inequality holds due the $L^1$ metric.
 
 To form the time-local distance, a weighted sum of the gaps for the corner spikes is made, that is, the spikes preceding and following the time of interest in each of the two spike trains.  The weighting is chosen so that the integral of the time-local function is just the sum of the gaps.
 
@@ -15,7 +179,7 @@ First, the gaps are calculated for each spike in the two spike-trains.  This is 
 \begin{equation}
 \Delta t_i^x = \min_i ( | t_i^x - t_i^y |)
 \end{equation}
-At each time instant, these is a unique set of four corner spikes: the preceding and following spikes from each spike train, which are labelled $t_P^x(t), t_F^x(t), t_P^y(t)$ and  $t_F^y(t)$; these are, respectively, the preceding and following spikes in spike-train $X$ and the preceding and following spikes in spike-train $Y$.
+At each time instant, these is a unique set of two corner spikes for each spike train: the preceding and following spikes from each spike train, which are labelled $t_P^x(t), t_F^x(t), t_P^y(t)$ and  $t_F^y(t)$; these are, respectively, the preceding and following spikes in spike-train $X$ and the preceding and following spikes in spike-train $Y$.
 
 For each spike-train, $W\in \{ X, Y \}$, a time-local distance is then calculated using the associated gap of the four corner spikes for each spike-train, $w=x,y$:
 \begin{equation}
@@ -27,7 +191,7 @@ where
 \lambda_F^w(t) &= \frac{t- t_P^w(t)}{I^w(t)}\\ \lambda_P^w(t) &= \frac{ t_F^w(t) - t}{I^w(t)}
 \end{split}
 \end{equation}
-and $I^w(t)$ is the size of the interval in which $t$ is contained:
+and $I^w(t)$ is the size of the interspike interval in which $t$ is contained:
 \begin{equation}
 I^w(t) = t_F^w(t) - t_P^w(t).
 \end{equation}
@@ -41,7 +205,7 @@ This simplified time-local SPIKE distance has the advantage that its integral is
 \int_0^T s(t)\, dt = \sum_w \sum_i \Delta t_i^w.
 \end{equation}
 
-In practice this simplified version of SPIKE produces similar time profiles to the version described in \citep{KreuzEtAl2011a}.
+In practice this simplified version of the SPIKE distance, which is given the name Simple-SPIKE for the remainder of this thesis, produces similar time profiles to the version described in \citep{KreuzEtAl2011a}.
 
 
 \section{Extensions to multi-unit recordings}
@@ -49,13 +213,13 @@ As recording methods have improved, there are now more and more data sets record
 
 The first extreme case would be where each neuron is carrying a completely independent signal to all the other neurons.  In this case, each spike-train from a specific neuron should only be compared to other spike-trains from the same neuron.  This is called a \emph{labelled line} (LL) code.  For a LL code, a spike train labelled $i$ will only be compared to other spike trains with the same label, and then the distances are summed over all the labels.
 
-The second extreme case would be that all the neurons are carrying the same signal.  In this case, it would not make sense to only compare spike trains with the same label; it would be expected that the signal would be carried by the whole population.  This is called a \emph{summed population} (SP) code.  Typically for a SP code, the spike trains are all pooled together and they are then treated as one large spike train.
+The second extreme case would be that all the neurons complement each other and carry a signal together as a community.  In this case, it would not make sense to only compare spike trains with the same label; it would be expected that the signal would be carried by the whole population.  This is called a \emph{summed population} (SP) code.  Typically for a SP code, the spike trains are all pooled together and they are then treated as one large spike train.
 
-In \citep{HoughtonSen2008a}, the van Rossum metric which was introduced in Chapter One was extended to the multi-unit case, and in \citep{Aronovetal2003a} the Victor-Purpura metric was extended.  A multi-unit distance is defined to be between two sets of spike-trains; $\mathbf{X}=\{ X_i \}$ and $ \mathbf{Y}=\{ Y_i \}$, where $i \in 1\ldots N$ and the index $i$ labels the neuron.
+In \citep{HoughtonSen2008a}, the van Rossum metric which was introduced in Chapter One was extended to the multi-unit case, and in \citep{AronovEtAl2003a} the Victor-Purpura metric was extended.  A multi-unit distance is defined to be between two sets of spike-trains; $\mathbf{X}=\{ X_i \}$ and $ \mathbf{Y}=\{ Y_i \}$, where $i \in 1\ldots N$ and the index $i$ labels the neuron.
 
-The single-unit distance from the previous section is extended to a multi-unit distance. All that is required to calculate is the gap associated with each spike in each set of spike trains. By including the possibility that the nearest spike may belong to a different neuron in the other set, this is achieved. However there must a distance penalty associated with changing from one neuron to the other. This penalty is similar to the costs in edit-length metrics such as Victor-Purpura \citep{VictorPurpura1997a}. 
+The single-unit distance, Simple-SPIKE, from the previous section is extended to a multi-unit distance. All that is required to calculate is the gap associated with each spike in each set of spike trains. By including the possibility that the nearest spike may belong to a different neuron in the other set, this is achieved. However there must a distance penalty associated with changing from one neuron to the other. This penalty is similar to the costs in edit-length metrics such as Victor-Purpura \citep{VictorPurpura1997a}. 
 
-In other words, it is necessary to introduce a parameter $k$, which quantifies a fictional distance between spikes fired in different cells.  The size of this distance quantifies the importance of the labelling of the neurons, and varying $k$ interpolates smoothly from $k=0$, a summed population (SP) code, to $k$ large, a labeled line  (LL) code.  While theoretically the LL code occurs as $k \rightarrow \infty$, in practice a LL code occurs when $k$ is on the order of $2/\lambda$, where $\lambda$ is the average frequency of the trials.   The gaps can then be calculated as follows:
+In other words, it is necessary to introduce a parameter $k$, which quantifies a fictional distance between spikes fired in different cells.  The size of this distance quantifies the importance of the labelling of the neurons, and varying $k$ interpolates smoothly from $k=0$, a summed population (SP) code, to $k$ large, a labeled line  (LL) code.  While theoretically the LL code occurs as $k \rightarrow \infty$, in practice a LL code occurs when $k$ is on the order of the largest ISI in the trial.   The gaps can then be calculated as follows:
 
 \begin{equation}\label{initspike}
 \Delta t_{\alpha}^{x_i}(k) = \min_{\beta,j} \left( |t_{\alpha}^{x_i} - t_{\beta}^{y_j} | + k\left[1-\delta(i,j)\right] \right)
@@ -65,7 +229,7 @@ where $\delta(i,j)$ is the Kroneker delta, which is one if $i$ and $j$ match and
 \begin{figure}[htb]
 \begin{center}
 \setlength{\unitlength}{.1cm}
-\begin{picture}(100,40)
+\begin{picture}(100,45)
 
 \linethickness{1.5pt}
 \put(5,8.7){\mbox{$\mathbf{2}$}}
@@ -113,12 +277,11 @@ where $\delta(i,j)$ is the Kroneker delta, which is one if $i$ and $j$ match and
 \put(73,25){\mbox{{\bf d}}}
 \end{picture}
 \end{center}
-\bigskip
-\rule{33em}{0.5pt}
-\caption{\label{fig:gaps2}An example of how to calculate the gaps between spikes.  If  the circles represent spikes from $\mathbf{X}$ and crosses represent spikes from $\mathbf{Y}$, then in the picture above, the distance $k$ is simply the cost of relabelling a spike.  Spike {\bf e} in $Y_2$ is much closer to spike {\bf a} in $X_1$ than {\bf f} in $X_2$, so it pays the cost $k$ to get its $\Delta$ from {\bf a}.}
+\rule{31.5em}{0.5pt}
+\caption{\label{fig:gaps2}An example of how to calculate the gaps between spikes.  If  the crosses represent spikes from $\mathbf{X}$ and circles represent spikes from $\mathbf{Y}$, then in the picture above, the distance $k$ is simply the cost of relabelling a spike.  Spike {\bf e} in $X_2$ is much closer to spike {\bf a} in $Y_1$ than {\bf f} in $Y_2$, so it pays the cost $k$ to calculate its gap, $\Delta t^{x_2}_e$, according to spike {\bf a} rather than spike {\bf f}.}
 \end{figure}
 
-The time-local distance measure is then defined as before, using the corner spikes normalised by the inter-spike-interval:
+The time-local distance measure is then defined as before, using the corner spikes normalised by the interspike-interval:
 \begin{equation}
 s_{\mathbf{X}}(t) = \sum_{\mathbf{x}_i \in \mathbf{X}} \frac{\lambda_{\mathrm{P}}(t)\Delta t_{\mathrm{P}}^{\mathbf{x}_i} (t) + \lambda_{\mathrm{F}}(t)\Delta t_{\mathrm{F}}^{\mathbf{x}_i}(t) }{I^{\mathbf{x}_i}(t) }%t_{\mathrm{F}}^{\mathbf{x}_i} - t_{\mathrm{P}}^{\mathbf{x}_i}}
 \end{equation}
@@ -141,19 +304,31 @@ Once more, this distance measure has the nice property that if the time-local me
 \int_0^T s(t)\,dt = \sum_{\mathbf{W}} \sum_{\mathbf{w}_i \in \mathbf{W}} \sum_{\alpha} \Delta t_{\alpha}^{\mathbf{w}_i}
 \end{equation}
 
-While this extension seems like the most natural extension of the altered SPIKE distance measure, it does not have a clear boundary for when it becomes an LL code.  It appears that the distance stabilises at approximately twice the reciprocal of the rate, $2/r$, but this is not a precise bound.  If $2/r$ is the upper bound, then that would give a nice symmetry to the upper bound for the translation of spikes in the Victor-Purpura metric, as was mentioned in the introduction.
+While this extension seems like the most natural extension of the Simple-SPIKE distance measure, it does not have a clear boundary for when it becomes an LL code.  It appears that the distance stabilises at approximately twice the reciprocal of the rate, $2/r$, but this is not a precise bound.  If $2/r$ is the upper bound, then that would give a nice symmetry to the upper bound for the translation of spikes in the Victor-Purpura metric, as was mentioned in the introduction. The penalty parameter $k$ is difficult to compare to a more conventional population parameter which would vary between zero and one.
 
-Motivated by \citep{HoughtonSen2008a}, another variant on the SPIKE extension was created.  \citet{HoughtonSen2008a} used geometry to compare the rate functions by rotating the vectors from perpendicular to parallel.  Since the SPIKE metric is an $L^1$ metric, any rotations must be along the $n-1$ simplex in $\mathbb{R}^n$.
+Motivated by \citep{HoughtonSen2008a}, another variant on the SPIKE extension was created.  \citet{HoughtonSen2008a} used geometry to compare the rate functions by rotating the vectors from perpendicular to parallel.  Since the SPIKE metric is an $L^1$ metric, any rotations must be along the $(n-1)$-simplex in $\mathbb{R}^n$.
+
 
 A simplex is a convex mathematical object in $\mathbb{R}^n$, which is defined as all points $(a_1,\dots,a_n)$, such that $\sum_i a_i = 1$, and all $a_i\geq0$.  The $1$-simplex is a line in $\mathbb{R}^2$, the $2$-simplex is a triangle in $\mathbb{R}^3$ and the $3$-simplex is a tetrahedron in $\mathbb{R}^4$.
 
+
 If each label $i$ is initially positioned at the $i$th unit vector, $(0,\ldots,1,\dots,0)$, then all the labels should travel along the simplex and meet at the centroid, $(1/n,\ldots,1/n)$.
+
 
 A way to use this geometry could be by dividing the distances between labels $i$ and $j$ by the $j$th coordinate of label $i$ on the simplex.  That is:
 \begin{equation}\label{multspike}
 \Delta t_{\alpha}^{x_i}(p) = \left\{ \begin{array}{ll} \min_{\beta} | t_{\alpha}^{x_i} - t_{\beta}^{x_i} | & , \, p=0 \\
 \min_{j,\beta}\left\{ \frac{n}{n-(n-1)p} | t_{\alpha}^{x_i} - t_{\beta}^{x_i} |,\frac{n}{p} | t_{\alpha}^{x_i} - t_{\beta}^{x_j} |\right\} & , \, 0<p\leq1 \end{array}\right.
 \end{equation}
+
+
+\begin{figure}[bht]
+\begin{center}
+\resizebox{0.75\textwidth}{!}{\input{images/BS}}
+\end{center}
+\rule{31.5em}{0.5pt}
+\caption{\label{haadds}This figure shows the performance of the multi-unit Simple-SPIKE extension in identifying stimuli correctly in the data set described above.  The plot shows the maximum and minimum values of the transmitted information for each value of the mixing parameter $a$, averaged over 20 trials. This compares favourably with Figure 3 in \citep{HoughtonSen2008a}.}
+\end{figure}
 
 While this equation seems completely different to equation \ref{initspike} above, with a cost of $k$, this can actually be compared to it easily.  If the distance between labels is kept constant, then this equation becomes:
 \begin{equation}
@@ -164,36 +339,40 @@ So, there is an equivalence between $k$ and $p$, as follows:
 \begin{equation}
 k = \frac{n-pn}{n | t_{\alpha}^{x_i} - t_{\beta}^{x_j} |}
 \end{equation}
+
 %
 %\begin{figure}[hbt]
 %\include{spikemaxvmin}
 %\caption{Performance of the proposed distance measure for different values of the mixing parameter $a$.  For each value of the mixing parameter $a$ the average value of the Transmitted Information is calculated for different values of $k$.  The solid line shows the maximum value over $k$, and the dotted line is the minimum value.  This figure should be compared to Figure 3 in \citep{HoughtonSen2008}.\label{fig:spikeminmax} }
 %\end{figure}
 
- \subsection{Testing on data}
 % 
 % \begin{figure}[thb]
 %\include{spikebest}
 %\caption{The relationship between $k$ and $a$.  For each value of $a$, the value of $k$ giving the highest Transmitted Information is calculated over 20 runs.  The average is plotted, along with error bars representing the standard deviation.\label{fig:bestk}}
 %\end{figure}
 
-\begin{figure}[htb]
-\input{images/BS}
-\bigskip
-\rule{33em}{0.5pt}
-\caption{This figure shows the performance of the multi-unit SPIKE extension in identifying stimuli correctly in the data set described above.  The plot shows the maximum and minimum values of the transmitted information for each value of the mixing parameter $a$, averaged over 20 trials. This compares favourably with Figure 3 in \citep{HoughtonSen2008a}.}
+  \begin{figure}[htb]
+  \begin{center}
+  \resizebox{0.75\textwidth}{!}{\input{images/bestBS}}
+  \end{center}
+\rule{31.5em}{0.5pt}
+\caption{\label{bestkadds}This figure shows the value for the penalty cost $k$ for the multi-unit Simple-SPIKE distance which gave the maximum transmitted information for each value of $a$.  There does not appear to be any trend towards LL or SP in either direction, the best value was always a mix of the two.}
 \end{figure}
 
+
+ \subsection{Results}
  The new extended measures were tested on the \citep{HoughtonSen2008a} test data as described in Chapter One. Two Poisson neurons form a receptive field and are each connected to two leaky integrate-and-fire neurons (LIF) with relative strength $a$ and $1-a$.  Hence, for $a=0$ each receptive neuron is connected to a single LIF neuron, and for $a=0.5$, each LIF neuron receives input equally from each of the receptive neurons.
  
-  \begin{figure}[htb]
-\input{images/bestBS}
-\bigskip
-\rule{33em}{0.5pt}
-\caption{This figure shows the value for the penalty cost $k$ for the multi-unit SPIKE distance which gave the maximum transmitted information for each value of $a$.  There does not appear to be any trend towards LL or SP in either direction, the best value was always a mix of the two.}
+\begin{figure}[thb]
+\begin{center}
+\resizebox{0.75\textwidth}{!}{\input{images/multSPIKE}}
+\end{center}
+\rule{31.5em}{0.5pt}
+\caption{\label{hamults}This figure shows the performance of the multiplicative multi-unit Simple-SPIKE extension, using the gaps from equation \ref{multspike}, in identifying stimuli correctly in the data set described above.  The plot shows the maximum and minimum values of the transmitted information for each value of the mixing parameter $a$, averaged over 20 trials.}
 \end{figure}
 
-The maximum and minimum values of transmitted information, $h$, are then plotted against the mixing parameter $a$.  This allows comparison with the multi-unit van Rossum and multi-unit Victor-Purpura metrics which are plotted in \citep{HoughtonSen2008a}.
+In figures \ref{haadds} and \ref{hamults} the maximum and minimum values of transmitted information, $h$, are then plotted against the mixing parameter $a$, for the additive and multiplicative distances respectively.  This allows comparison with the multi-unit van Rossum and multi-unit Victor-Purpura metrics which are plotted in \citep{HoughtonSen2008a}.  In figures \ref{bestkadds} and \ref{bestpmults} the optimal values of population parameters are plotted against the mixing parameter $a$, to give a visual representation of how well each measure mixes according to the population parameters.
  
 %
 %\begin{figure}[htb]
@@ -202,26 +381,25 @@ The maximum and minimum values of transmitted information, $h$, are then plotted
 %\end{figure}
 %\section{}
 %\subsection{}
+\newpage
 \begin{figure}[htb]
-\input{images/multSPIKE}
-\bigskip
-\rule{33em}{0.5pt}
-\caption{This figure shows the performance of the multiplicative multi-unit SPIKE extension, using the gaps from equation \ref{multspike}, in identifying stimuli correctly in the data set described above.  The plot shows the maximum and minimum values of the transmitted information for each value of the mixing parameter $a$, averaged over 20 trials.}
+\begin{center}
+\resizebox{0.75\textwidth}{!}{\input{images/bestmultSPIKE}}
+\end{center}
+\rule{31.5em}{0.5pt}
+\caption{\label{bestpmults}This figure shows the value for the population parameter $p$ for the multiplicative multi-unit Simple-SPIKE distance which gave the maximum transmitted information for each value of $a$.  There does not appear to be any trend towards LL or SP in either direction.}
 \end{figure}
 
-\begin{figure}[htb]
-\input{images/bestmultSpike}
-\bigskip
-\rule{33em}{0.5pt}
-\caption{This figure shows the value for the population parameter $p$ for the multiplicative multi-unit SPIKE distance which gave the maximum transmitted information for each value of $a$.  There does not appear to be any trend towards LL or SP in either direction.}
-\end{figure}
 
 \newpage
-\section{ISI distance}
-\bigskip
+
+\newpage
+
+\section{Multi-Unit ISI distance}
+
 \subsection{Single unit recordings}
 
-With a view to extending the ISI distance to a multi-unit distance measure, it is useful to review the previous definition of the ISI distance between two spike trains $\mathbf{x}$ and $\mathbf{y}$ .  The ISI distance can be thought of as a rate-comparison, where the inter-spike interval (ISI) is used as a proxy for the firing rate.  As with all the time-local distance measures, it is defined as the interval over time of a local distance function $s(t)$.
+With a view to extending the ISI distance to a multi-unit distance measure, it is useful to review the previous definition of the ISI distance between two spike trains $\mathbf{x}$ and $\mathbf{y}$ .  The ISI distance can be thought of as a rate-comparison, where the inter-spike interval (ISI) is used as a proxy for the firing rate.  As with all the time-local distance measures, it is defined as the integral over time of a local distance function $s(t)$.
 
 Given two spike-trains $\mathbf{x}$ and $\mathbf{y}$, then $I^{\mathbf{x}}(t)$, $I^{\mathbf{y}}(t)$ are the inter-spike intervals at time $t$, for the spike-trains $\mathbf{x}$ and $\mathbf{y}$.  The time-local distance function is then defined in Kreuz et al. (2007) as:
 \begin{equation}
@@ -236,9 +414,9 @@ s(t) = \frac{ | I^{\mathbf{x}}(t) - I^{\mathbf{y}}(t) | }{\max (I^{\mathbf{x}}(t
 
 In the multi-unit case a distance is defined to be between two multi-unit recordings.  Thus, rather than two spike-trains there are two sets of spike-trains; $\mathbf{X}=\{ \mathbf{x}_i \}$ and $ \mathbf{Y}=\{ \mathbf{y}_i \}$, where $i \in 1\ldots N$ and the index $i$ is labelling the neuron.
 
-The ISI-distance is a rate-based metric, so here a similar approach to multi-unit recordings as was used successfully for the van Rossum metric, another metric calculated using estimated rates, is used.  That approach, outlined in \citep{HoughtonSen2008}, replaces the rate with a rate-vector in an $N$-dimensional space.  To do this, each neuron is assigned a unit vector describing its direction in the rate-space.  At a given time, this is multiplied by the estimated rate of the neuron to give a rate-vector. The population rate-vector is then the sum of individual rate-vectors for each of the neurons in the population.  
+The ISI-distance is a rate-based metric, so here a similar approach to multi-unit recordings as was used successfully for the van Rossum metric, another metric calculated using estimated rates, is used.  That approach, outlined in \citep{HoughtonSen2008a}, replaces the rate with a rate-vector in an $N$-dimensional space.  To do this, each neuron is assigned a unit vector describing its direction in the rate-space.  At a given time, this is multiplied by the estimated rate of the neuron to give a rate-vector. The population rate-vector is then the sum of individual rate-vectors for each of the neurons in the population.  
 
-An $L^1$ norm, $| I^{\mathbf{x}}(t) - I^{\mathbf{y}}(t) | $, appears in the numerator of $s(t)$ in the single-unit case, so the natural extension of this idea to the multi-unit ISI-distance involves an $L^1$-structure on the $N$-dimensional space, which is the ISI-space in this case. In practice this means the individual vectors are unit vectors under the $L^1$-norm; so for example for $N=2$, one vector may be $(1,0)$ and the other one would be $(1-\alpha,\alpha)$.  The corresponding individual neuron ISI-vectors would then be: 
+An $L^1$ norm, $| I^{\mathbf{x}}(t) - I^{\mathbf{y}}(t) | $, appears in the numerator of $s(t)$ in the single-unit case, so the natural extension of this idea to the multi-unit ISI-distance involves an $L^1$-structure on the $N$-dimensional space, which is the ISI-space in this case. In practice this means the individual vectors are unit vectors under the $L^1$-norm. For example for $N=2$, one vector may be $(1,0)$ and the other one would be $(1-\alpha,\alpha)$.  The corresponding individual neuron ISI-vectors would then be: 
 \begin{equation}
 \mathbf{I}^{\mathbf{x}_1}(t)=\begin{pmatrix}I^{\mathbf{x}_1}(t)\\0\end{pmatrix}
 \end{equation}
@@ -279,11 +457,11 @@ in which, effectively, the ISIs are averaged across the population before being 
 \begin{figure}[htb]
 \input{images/maxmin}
 \bigskip
-\rule{33em}{0.5pt}
-\caption{\label{mmav}The top line corresponds to the maximum possible transmitted information of $\log(5)$.  Then the upper of the two remaining lines is the average of the maximum transmitted information as $\alpha$ is varied from zero to a half, and the bottom line is the minimum transmitted information over $\alpha$.}
+\rule{31.5em}{0.5pt}
+\caption{\label{mmav}The dashed line at the top corresponds to the maximum possible transmitted information of $\log(5)$.  Then the upper of the two remaining lines is the average of the maximum transmitted information as $\alpha$ is varied from zero to a half, and the bottom line is the minimum transmitted information over $\alpha$.}
 \end{figure}
 
-\subsection{Numerical tests}
+\subsection{Results}
 This multi-unit extension of the ISI distance is tested on the same data that was used above to test the multi-unit SPIKE distance. The ISI extension does not cluster the responses as well as the SPIKE extension when the mixing parameter $a$ is low, but it clusters the responses very well when the signals are more mixed.
 
 While the extension proposed above was derived logically from the single-unit case, it does not agree with the standard definition of a summed-population code, that is, it is possible to find a population of neurons which have spiked at exactly the same time, but where the average inter-spike intervals are not equal at a given time.
@@ -307,32 +485,32 @@ with notation as before, and $I^{\mathbf{x}}(t)$ is the interval in $\mathbf{x}$
 %\caption{\label{popmaxmin}This is the performance of the extension proposed in the paper by Kreuz et al. \citep{Kreuzetal2009}.  The solid line represents the average of the maximum transmitted information ($h$) value across 20 trials, and the dotted line the minimum.  As we saw with the previous metric, the more the inputs are mixed, the more difficult it is to cluster the responses.}
 %\end{figure}
 
-The extension proposed above can be compared to the extension in \citep{KreuzEtAl2009a} by replacing the ISI of the ``population neuron'' with the average of the ISIs across the population of neurons.  This leads to the following equation: 
+The extension proposed above can be compared to the extension in \citep{KreuzEtAl2009b} by replacing the ISI of the ``population neuron'' with the average of the ISIs across the population of neurons.  This leads to the following equation: 
 \begin{equation}
 \label{av}
-s_a(t) = (1-p) \left(\frac{ | \sum_i I^{\mathbf{x}_i}(t) - \sum_i I^{\mathbf{y}_i}(t) |}{\max (\sum_i I^{\mathbf{x}_i}(t),\sum_i I^{\mathbf{y}_i}(t) )}\right) + p\left( \frac{\sum_i | I^{\mathbf{x}_i}(t) - I^{\mathbf{y}_i}(t) |}{\sum_i \max (I^{\mathbf{x}_i},I^{\mathbf{y}_i})} \right),
+s_a(t) = (1-p) \left(\frac{ | \sum_i I^{\mathbf{x}_i}(t) - \sum_i I^{\mathbf{y}_i}(t) |}{\max (\sum_i I^{\mathbf{x}_i}(t),\sum_i I^{\mathbf{y}_i}(t) )}  \right) + p\left( \frac{\sum_i | I^{\mathbf{x}_i}(t) - I^{\mathbf{y}_i}(t) |}{\sum_i \max (I^{\mathbf{x}_i},I^{\mathbf{y}_i})} \right),
 \end{equation}.
 
 
 \begin{figure}[htb]
 \input{images/avvspop}
 \bigskip
-\rule{33em}{0.5pt}
-\caption{The lines, as in figure \ref{mmav} correspond to the maximum and the minimum for: $s_p$, the \lq{}population\rq{} extension, in the solid lines; and $s_a$, the \lq{}average\rq{} extension, in the broken lines.}
+\rule{31.5em}{0.5pt}
+\caption{\label{avvspoppic}The lines, as in figure \ref{mmav} correspond to the maximum and the minimum for: $s_p$, the \lq{}population\rq{} extension, in the solid lines; and $s_a$, the \lq{}average\rq{} extension, in the broken lines.  The \lq{}average\rq{} extension has a large difference between the maximum transmitted information and minimum when there is minimal mixing of input, and small difference when the inputs are fully mixed. The \lq{}population\rq{} extension, however, performs exactly like previous extensions.}
 \end{figure}
 
 \begin{figure}[htb]
 \input{images/bestpav}
 \bigskip
-\rule{33em}{0.5pt}
-\caption{This figure shows the optimal value for the population parameter $p$ for $s_a$, the \lq{}average\rq{} extension, as the mixing parameter $a$ is varied from zero to a half, with the errorbars showing the standard deviation.}
+\rule{31.5em}{0.5pt}
+\caption{\label{bestpav}This figure shows the optimal value for the population parameter $p$ for $s_a$, the \lq{}average\rq{} extension, as the mixing parameter $a$ is varied from zero to a half, with the errorbars showing the standard deviation.}
 \end{figure}
 
 \begin{figure}[htb]
 \input{images/bestppop}
 \bigskip
-\rule{33em}{0.5pt}
-\caption{This figure shows the optimal value for the population parameter $p$ for $s_p$, the \lq{}population\rq{} extension, as the mixing parameter $a$ is varied from zero to a half, with the errorbars showing the standard deviation.}
+\rule{31.5em}{0.5pt}
+\caption{\label{bestppop}This figure shows the optimal value for the population parameter $p$ for $s_p$, the \lq{}population\rq{} extension, as the mixing parameter $a$ is varied from zero to a half, with the errorbars showing the standard deviation.}
 \end{figure}
 %\begin{figure}[htb]
 %\begin{center}
@@ -341,13 +519,15 @@ s_a(t) = (1-p) \left(\frac{ | \sum_i I^{\mathbf{x}_i}(t) - \sum_i I^{\mathbf{y}_
 %\caption{\label{avmaxmin} This is the performance of the alternative extension, using the average ISI, proposed here as a complementary measure. The solid line again represents the average of the maximum transmitted information across 20 trials, and the dotted lie the minimum.  The maximum is very comparable to the population ISI measure. The average ISI's minimum transmitted information performs worse when the signals are separate, and considerably better when the signals are mixed.}
 %\end{figure}
 
+Figure \ref{avvspoppic} shows the different behaviour of the two extensions.  The \lq{}average\rq{} extension depends heavily on the chosen population parameter when there is not much mixing of inputs, and does not depend on the parameter as much when the input is well-mixed.  On the other hand, the \lq{}population\rq{} extension behaves just like the previous extensions in \citep{AronovEtAl2003a, HoughtonSen2008a}.
+
 There is a fundamental difference in how each of these distance measures view what a SP metric should be.  The example from \citep{KreuzEtAl2009a} assumes that there is information being carried by the frequency of arrival of spikes across the population, regardless of origin, and the second measure using the average ISI assumes that each neuron is essentially carrying the same message, with an inherent noise due to the biological constraints of neurons.  Each argument has its own merits, and it could be useful to have both of these measures, as in equations \ref{pop} and \ref{av}, depending on the focus of the experiment.
 
 
 \newpage
 \section{Adaptive ISI distances}
 
-The downside to the measures introduced above is that there must be parameters to vary between the SP and LL cases, and thus far there is a way to choose a parameter, which often leads to a grid search to find the optimal parameter.  A goal of this work is to find a way for the data itself to choose its own population parameter.  The SPIKE and ISI distances for single neurons are both parameter-free, so it would be ideal if an extension could be found that was also parameter-free.
+The downside to the measures introduced above is that there must be parameters to vary between the SP and LL cases, and thus far there is no way to choose a parameter, which often leads to a grid search to find the optimal parameter.  A goal of this work is to find a way for the data itself to choose its own population parameter.  The SPIKE and ISI distances for single neurons are both parameter-free, so it would be ideal if an extension could be found that was also parameter-free.
 
 Since the ISI distance is a distance based on the firing rate of the neurons, the assumption was made that if the rates of the individual neurons were reasonably similar throughout the two populations, then the correct code to use would be an SP code, whereas if they were very different, then a LL code should be used.
 
@@ -357,7 +537,7 @@ p(x) = \lambda^2 x e^{-\lambda x},
 \end{equation}
 then the expected ISI distance between two Poisson process with constant rate $\lambda$ is:
 \begin{equation}
-\mathbf{E}[d_{ISI}(t)] = \lambda^4 \int_0^{\infty} \left( \int_0^{\infty} xye^{-\lambda(x+y)\,dy}\right) dx
+\mathbf{E}[d_{ISI}(t)] = \lambda^4 \int_0^{\infty} \left( \int_0^{\infty} xye^{-\lambda(x+y)}\,dy\right) dx
 \end{equation}
 The $dy$ integral must be split into two integrals, $y<x$ and $y>x$, which gives:
 \begin{equation}
@@ -370,9 +550,9 @@ In fact, given two Poisson neurons with a ratio $r$ between their firing rates, 
 \mathbf{E}[d_{ISI}(t)] = \frac{1}{(1+r)^2} + \frac{1}{(1+1/r)^2}
 \end{equation}
 
-This then led to an adaptive distance where $p$ at a given moment in time was set to either one or zero, depending on the average distance between spike trains in the same trial.  These adaptive measures are summed up in Figure \ref{zeroone}
+This then led to an adaptive distance where $p$ at a given moment in time was set to either one or zero, depending on the average distance between spike trains in the same trial.  As it can be observed from previous figures, such as \ref{bestpav} and \ref{bestppop}, that the best population parameter for the ISI distance is typically less than a half, $p<0.5$, another adaptive distance was proposed which took population parameters $p=0$ or $p=0.5$ instead. These adaptive measures are summed up in Figure \ref{zeroone}.
 
-
+The zero-one adaptive ISI distance clearly does not work well for the \lq{}population\rq{} distance, which suggests that the \lq{}average\rq{} distance is more representative for rate-based measures.  However, the \lq{}population\rq{} distance performs very well with the zero-half adaptive distance, perhaps due to the small number of mixed stimuli. 
 
 \begin{figure}
 \begin{center}
@@ -383,8 +563,15 @@ This then led to an adaptive distance where $p$ at a given moment in time was se
 \resizebox{0.5\textwidth}{!}{\input{images/zhav} } & \resizebox{0.5\textwidth}{!}{\input{images/zhpop}}
 \end{tabular}
 \bigskip
-\rule{33em}{0.5pt}
-\caption{ \label{zeroone} Above is the performance of the adaptive multi-unit ISI metrics.  (a) $s_a$ with population parameter $p$ at each instant set to one if $s(t)<0.5$ and set to zero otherwise. (b) $s_p$ with population parameter $p$ at each instant set to one if $s(t)<0.5$ and set to zero otherwise. (c) $s_a$ with population parameter $p$ at each instant set to 0.5 if $s(t)<0.5$ and set to zero otherwise. (d) $s_p$ with population parameter $p$ at each instant set t0 0.5 if $s(t)<0.5$ and set to zero otherwise.}
+\rule{31.5em}{0.5pt}
+\caption{ \label{zeroone} Above is the performance of the adaptive multi-unit ISI metrics.  (a) $s_a$ with population parameter $p$ at each instant set to one if $s(t)<0.5$ and set to zero otherwise. (b) $s_p$ with population parameter $p$ at each instant set to one if $s(t)<0.5$ and set to zero otherwise. (c) $s_a$ with population parameter $p$ at each instant set to 0.5 if $s(t)<0.5$ and set to zero otherwise. (d) $s_p$ with population parameter $p$ at each instant set to 0.5 if $s(t)<0.5$ and set to zero otherwise.}
 \end{center}
 \end{figure}
+
+\section{Discussion}
+The different multi-unit extensions introduced in this chapter combine to give an interesting picture of multi-unit extensions.  It is not clear precisely what an SP code should look like, as it has to be considered whether the distance measure is rate-based, like the ISI distance is, or based more on temporal precision, like the SPIKE distance.  It appears that an average of the population should be used in the case of rate-based measures, but a pooled population has been the standard for multi-unit extensions up to this point.
+
+The adaptive measures developed all chose the population parameter at the specific point in time, so it is odd to compare their transmitted information to the maximum transmitted information depending on a static population parameter. The local population parameter was chosen as it can then be used for instantaneous spike train synchrony. There is definitely potential to choose population parameter for a trial as a whole, but it is beyond the scope of this thesis.
+
+To improve the adaptive measures, it would be beneficial to understand the model of the background firing rate.  In the next chapter a simple model is introduced, which could in future be used to improve the adaptive measures above.
 

@@ -1,12 +1,6 @@
 \begin{thebibliography}{}
 
-\bibitem[Aronov et~al., 2008]{AronovEtAl2008a}
-Aronov, D., Andalman, A.~S., and Fee, M.~S. (2008).
-\newblock A specialized forebrain circuit for vocal babbling in the juvenile
-  songbird.
-\newblock {\em Science}, 320:630--634.
-
-\bibitem[Aronov et~al., 2003]{Aronovetal2003a}
+\bibitem[Aronov et~al., 2003]{AronovEtAl2003a}
 Aronov, D., Reich, D.~S., Mechler, F., and Victor, J. (2003).
 \newblock Neural coding of spatial phase in v1 of the macaque monkey.
 \newblock {\em Journal of Neurophysiology}, 89:3304--3327.
@@ -101,19 +95,20 @@ Hopkins, C.~D. and Bass, A.~H. (1981).
 \newblock Temporal coding of species recognition signals in an electric fish.
 \newblock {\em Science}, 212(4490):85--87.
 
+\bibitem[Houghton, 2009]{Houghton2009a}
+Houghton, C. (2009).
+\newblock Studying spike trains using a van rossum metric with a synapses-like
+  filter.
+\newblock {\em Journal of Computational Neuroscience}, 26(1):149--155.
+
 \bibitem[Houghton and Kreuz, 2012]{HoughtonKreuz2012a}
 Houghton, C. and Kreuz, T. (2012).
 \newblock On the efficient calculation of van rossum distances.
 \newblock {\em Network}, 23:48--58.
 
-\bibitem[Houghton and Sen, 2008a]{HoughtonSen2008a}
-Houghton, C. and Sen, K. (2008a).
+\bibitem[Houghton and Sen, 2008]{HoughtonSen2008a}
+Houghton, C. and Sen, K. (2008).
 \newblock A new multi-neuron spike-train metric.
-\newblock {\em Neural Computation}, 20(6):1495--1511.
-
-\bibitem[Houghton and Sen, 2008b]{HoughtonSen2008}
-Houghton, C. and Sen, K. (2008b).
-\newblock A new multineuron spike train metric.
 \newblock {\em Neural Computation}, 20(6):1495--1511.
 
 \bibitem[Houghton and Victor, 2012]{HoughtonVictor2009a}
@@ -139,6 +134,10 @@ Julienne, H. and Houghton, C. (2013).
 \newblock A simple algorithm for averaging spike trains.
 \newblock {\em The Journal of Mathematical Neuroscience}, 3(1):1--14.
 
+\bibitem[Karypis et~al., 2000]{KarypisHanKumar2000a}
+Karypis, G., Han, E., and Kumar, V. (2000).
+\newblock Multilevel refinement for hierarchical clustering.
+
 \bibitem[Kijima and Komoribayashi, 1998]{KijimaKomoribayashi1998a}
 Kijima, M. and Komoribayashi, K. (1998).
 \newblock A markov chain model for valuing credit risk derivatives.
@@ -156,9 +155,14 @@ Kolmogorov, A.~N. (1933).
 \newblock Sulla determinazione empirica di una legge di distribuzione.
 \newblock {\em Giorn. Ist. Ital. Attuari}, 4:1--11.
 
-\bibitem[Kreuz et~al., 2009]{KreuzEtAl2009a}
+\bibitem[Kreuz et~al., 2009a]{KreuzEtAl2009b}
+Kreuz, T., Chicarro, D., and Andrzejak, R.~G. (2009a).
+\newblock Measuring spike train synchrony between neuronal populations.
+\newblock Presented at CNS2009.
+
+\bibitem[Kreuz et~al., 2009b]{KreuzEtAl2009a}
 Kreuz, T., Chicharro, D., Andrzejak, R.~G., Haas, J.~S., and Abarbanel, H.~D.
-  (2009).
+  (2009b).
 \newblock Measuring multiple spike train synchrony.
 \newblock {\em Journal of Neuroscience Methods}, 183(2):287--299.
 
@@ -280,6 +284,12 @@ Strong, S.~P., Koberle, R., de~Ruyter~van Steveninck, R.~R., and Bialek, W.
   (1998).
 \newblock Entropy and information in neural spike trains.
 \newblock {\em Physics Review Letters}, 80(1):197--200.
+
+\bibitem[Theunissen et~al., 2000]{TheunissenEtAl2000a}
+Theunissen, F., Sen, K., and Doupe, A.~J. (2000).
+\newblock Spectral-temporal receptive fields of nonlinear auditory neurons
+  obtained using natural sounds.
+\newblock {\em Journal of Neuroscience}, 20(6):2315--2331.
 
 \bibitem[van Rossum, 2001]{VanRossum2001a}
 van Rossum, M. (2001).
